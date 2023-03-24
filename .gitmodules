@@ -2,3 +2,8 @@
 	path = TDG22016-reliex
 	url = git@github.com:Onmi-Engineering/TDG22016-reliex.git
 	branch = main
+
+[submodule "OCA/l10n-spain"]
+	path = OCA/l10n-spain
+	url = git@github.com:OCA/l10n-spain.git
+	branch = 15.0
