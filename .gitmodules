@@ -22,3 +22,7 @@
 	path = OCA/server-ux
 	url = git@github.com:OCA/server-ux.git
 	branch = 15.0
+[submodule "odoo-apps-store"]
+	path = odoo-apps-store
+	url = git@github.com:Onmi-Engineering/odoo-apps-store.git
+	branch = reliex
