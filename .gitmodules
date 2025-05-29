@@ -26,3 +26,8 @@
 	path = odoo-apps-store
 	url = git@github.com:Onmi-Engineering/odoo-apps-store.git
 	branch = reliex
+
+[submodule "OCA/social"]
+	path = OCA/social
+	url = git@github.com:OCA/social.git
+	branch = 17.0
