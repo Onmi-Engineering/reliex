@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oeng_inherit_product_template_form_view" model="ir.ui.view">
+            <field name="name">oeng_inherit_product_template_form_view</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" position="inside">
+                    <field name="is_system_complete" readonly="1"/>
+                    <label for="is_system_complete"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

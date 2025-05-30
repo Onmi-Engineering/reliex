@@ -1,0 +1,26 @@
+.status-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    margin-right: 1px;
+    margin-top: 10px;
+}
+
+.status-circle-red {
+    background-color: red;
+}
+
+.status-circle-green {
+    background-color: green;
+}
+.o_horizontal_alignment {
+    display: flex;
+    align-items: center;
+}
+.invoice-status-field {
+    min-width: 150px;  /* Adjust this value as needed */
+    max-width: 300px;  /* Set a max-width if you want to limit it */
+    margin-left: 10px; /* Adds space between the field and the spans */
+    margin-top: 5px;
+}

@@ -1,0 +1,78 @@
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<section class="oe_container lead bi_title_box">
+    <div>
+        <div>
+            <h2 class="oe_slogan bi_title">
+                <b>RELIEX OPORTUNIDADES DE FRECUENCIA</b>
+            </h2>
+            <b>Descripción:</b><br/>
+            <p>
+                Se requiere generar un nuevo menú en el que existan nuevos registros ordenados por la fecha calculada de la próxima limpieza que indicarán los
+                establecimientos que necesitan generar un nuevo presupuesto de frecuencia y en que día se debe generar. Para obtener esto tendremos una vista tipo lista
+                dentro del CRM en el que podremos ver diferentes registros con las siguientes columnas: [8 h]
+            <ul>
+                <li>
+                    Nombre establecimiento
+                </li>
+                <li>
+                    Provincia
+                </li>
+                <li>
+                    Población
+                </li>
+                <li>
+                    Fecha calculada próxima limpieza (fecha trabajo anterior ir) + retraso de frecuencia en días)
+                </li>
+                <li>
+                    Fecha trabajo anterior (último parte asociado a establecimiento)
+                </li>
+                <li>
+                    Frecuencia (retraso de frecuencia)
+                </li>
+                <li>
+                    Número de días necesarios (suma de días de limpieza de cada instalación asociada al establecimiento)
+                </li>
+                <li>
+                    Estado ("En vigor", "Vencido")
+                </li>
+            </ul>
+            </p>
+            <p>
+                Dentro de este listado tendremos un botón para generar la oportunidad correspondiente que lo que hará será llevarnos a un listado de oportunidades de
+                frecuencia generadas en las que podremos tramitar sus presupuestos y demás detalles propios del flujo CRM.
+            </p>
+            <p>
+                Cuando se genera esta oportunidad, ese registro con el que hemos generado esta oportunidad de frecuencia pasa de estar en el estado "En vigor" (estado por
+                defecto) a estar en el estado "Vencido". Para que ese registro de ese establecimiento se vuelva a generar debe finalizarse una orden de trabajo que tenga
+                alguno de los checks de Sistema completo, filtro, ... de la orden marcados.
+            </p>
+            <p>
+                En la oportunidad deberemos ver en todo momento un botón (smart button) de incidencias de tipo presupuesto que estén sin tramitar, de forma que podamos
+                marcarlas como tramitadas en el caso de que el nuevo presupuesto aceptado de la oportunidad tenga los trabajos que se piden en esas incidencias de tipo
+                presupuesto.
+            </p>
+            <p>
+                Se generan un esquema sobre la relacion entre los modelos de Odoo y como se vinculan dentro de este flujo de trabajo.
+            </p>
+            <img src="/onmi_reliex_frecuency_leads/static/src/img/general_flow.png" alt="Flujo general entre modelos">
+            <p>
+                Además, se incluye un último esquema indicando los pasos a seguir para que el flujo de trabajo se genere correctamente.
+            </p>
+            <img src="/onmi_reliex_frecuency_leads/static/src/img/workflow.png" alt="Flujo de trabajo">
+        </div>
+    </div>
+</section>
+<section class="oe_container">
+    <div>
+        <div>
+            <h3 class="oe_slogan">Soporte</h3>
+            <p class="oe_slogan" style="font-size: 18px;">
+                En caso de tener alguna duda o incidencia, ponerse en contacto con <strong>r.morato@onmi.es.</strong>
+            </p>
+        </div>
+    </div>
+</section>
+</body>

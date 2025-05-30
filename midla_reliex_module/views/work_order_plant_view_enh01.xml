@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record id="view_work_order_plant_form_inherit" model="ir.ui.view">
+            <field name="name">work.order.plant.form.inherit</field>
+            <field name="model">work.order.plant</field>
+            <field name="inherit_id" ref="onmi_reliex_operations.work_order_plant_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='sale_id']" position="attributes">
+                    <attribute name="readonly">sale_id != False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='sale_id']" position="after">
+                    <field name="is_new_created" invisible="True"/>
+                </xpath>
+
+                <xpath expr="//button[@name='action_create_invoice']" position="attributes">
+                    <attribute name="invisible">sale_id != False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="invisible">is_new_created == False</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='employee_ids']" position="after">
+
+                    <field invisible="1" name="state"></field>
+                    <div class="o_horizontal_alignment">
+                        <div class="o_field_label">Estado:</div>
+                        <span style="width: 200px; padding: 5px;" class="status-text" invisible="state!='invoiced'">Facturado</span>
+                        <span style="width: 200px; padding: 5px;" invisible="state=='invoiced'">A facturar</span>
+                    </div>
+                    <span invisible="state=='invoiced'" class="status-circle status-circle-red"></span>
+                    <span invisible="state!='invoiced'" class="status-circle status-circle-green"></span>
+
+                </xpath>
+
+                <xpath expr="//page[@name='other_info']/field[@name='worksheet_ids']" position="replace">
+                    <field name="worksheet_real_ids" readonly="1"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

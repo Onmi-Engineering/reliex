@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_bank_to_cash_transfer_wizard_form" model="ir.ui.view">
+            <field name="name">bank.to.cash.transfer.wizard.form</field>
+            <field name="model">bank.to.cash.transfer.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Traspaso">
+                    <group>
+                        <field name="journal_id"/>
+                    </group>
+                    <footer>
+                        <button string="Transferir" type="object" name="transfer_to_cash" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

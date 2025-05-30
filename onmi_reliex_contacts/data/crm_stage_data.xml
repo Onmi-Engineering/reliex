@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--region LIMPIEZA-->
+    <record model="crm.stage" id="stage_qualified_opportunity_cleaning">
+        <field name="name">Qualified opportunity</field>
+        <field name="sequence">1</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_established_contact_cleaning">
+        <field name="name">Established Contact</field>
+        <field name="sequence">2</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_taking_data_cleaning">
+        <field name="name">Taking Data</field>
+        <field name="sequence">3</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_frecuency_quotation_cleaning">
+        <field name="name">Frecuency Quotation</field>
+        <field name="sequence">4</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="True"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_incident_quotation_cleaning">
+        <field name="name">Incident Quotation</field>
+        <field name="sequence">5</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="True"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_quotation_send_cleaning">
+        <field name="name">Quotation send</field>
+        <field name="sequence">6</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_quotation_accepted_cleaning">
+        <field name="name">Accepted Quotation</field>
+        <field name="sequence">7</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_won_cleaning">
+        <field name="name">Won</field>
+        <field name="sequence">8</field>
+        <field name="type">cleaning</field>
+        <field name="is_won" eval="True"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <!--endregion-->
+
+    <!--region INSTALACIÓN-->
+    <record model="crm.stage" id="stage_qualified_opportunity_new_plant">
+        <field name="name">Qualified opportunity</field>
+        <field name="sequence">1</field>
+        <field name="type">new_plant</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_established_contact_new_plant">
+        <field name="name">Established Contact</field>
+        <field name="sequence">2</field>
+        <field name="type">new_plant</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_taking_data_new_plant">
+        <field name="name">Taking Data</field>
+        <field name="sequence">3</field>
+        <field name="type">new_plant</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_doing_quotation_new_plant">
+        <field name="name">Doing Quotation</field>
+        <field name="sequence">4</field>
+        <field name="type">new_plant</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="True"/>
+    </record>
+    <record model="crm.stage" id="stage_quotation_send_new_plant">
+        <field name="name">Quotation send</field>
+        <field name="sequence">5</field>
+        <field name="type">new_plant</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_quotation_accepted_new_plant">
+        <field name="name">Accepted Quotation</field>
+        <field name="sequence">6</field>
+        <field name="type">new_plant</field>
+        <field name="is_won" eval="False"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <record model="crm.stage" id="stage_won_new_plant">
+        <field name="name">Won</field>
+        <field name="sequence">7</field>
+        <field name="type">new_plant</field>
+        <field name="is_won" eval="True"/>
+        <field name="frecuency" eval="False"/>
+        <field name="incident" eval="False"/>
+        <field name="doing_quotation" eval="False"/>
+    </record>
+    <!--endregion-->
+
+</odoo>

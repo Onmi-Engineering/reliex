@@ -1,0 +1,1185 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* onmi_reliex_contacts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-09 06:11+0000\n"
+"PO-Revision-Date: 2024-04-09 08:12+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/res_partner.py:0
+#, python-format
+msgid ""
+"\n"
+"Plants that had been cleaned:\n"
+msgstr ""
+"\n"
+"Instalaciones limpiadas:\n"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__number_filters
+msgid "# Filters"
+msgstr "Número Filtros"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__establishment_count
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__establishment_count
+msgid "# of Establishments"
+msgstr "Establecimientos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__dimmensions__49_35
+msgid "490x350"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__dimmensions__49_49
+msgid "490x490"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/res_partner.py:0
+#, python-format
+msgid ""
+"<p><strong>User:</strong><br/><strong>Password:</strong><br/><strong>Tfno:</"
+"strong><br/><strong>Contact:</strong><br/><strong>Mail:</strong><br/></p>"
+msgstr ""
+"<p><strong>Usuario:</strong><br/><strong>Contraseña:</strong><br/><strong>Tfno.:</"
+"strong><br/><strong>Contacto:</strong><br/><strong>Correo:</strong><br/></p>"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_crm_lead_form_inherit_wo_type
+msgid ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('incident_opened_count', "
+"'&lt;', 2)]}\">\n"
+"                                Pending Incidents\n"
+"                            </span>\n"
+"                            <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('incident_opened_count', '&gt;', 1)]}\">\n"
+"                                Pending Incident\n"
+"                            </span>"
+msgstr ""
+"<span class=\"o_stat_text\" attrs=\"{'invisible': [('incident_opened_count', "
+"'&lt;', 2)]}\">\n"
+"                                Incidencias Pend.\n"
+"                            </span>\n"
+"                            <span class=\"o_stat_text\" attrs=\"{'invisible': "
+"[('incident_opened_count', '&gt;', 1)]}\">\n"
+"                                Incidencia Pend.\n"
+"                            </span>"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_crm_lead_form_inherit_wo_type
+msgid ""
+"<span class=\"o_stat_text\">\n"
+"                                All Incidents\n"
+"                            </span>"
+msgstr ""
+"<span class=\"o_stat_text\">\n"
+"                               Todas Incidencias\n"
+"                            </span>"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_quotation_accepted_cleaning
+#: model:crm.stage,name:onmi_reliex_contacts.stage_quotation_accepted_new_plant
+msgid "Accepted Quotation"
+msgstr "Presupuesto Aceptado"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__type
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__type
+msgid "Address Type"
+msgstr "Tipo de dirección"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__attachment_ids
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__attachment_ids
+msgid "Attachments"
+msgstr "Cálculos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__locations__attic
+msgid "Attic"
+msgstr "Altillo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__belt_ref
+msgid "Belt ref"
+msgstr "Referencia Correas"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__boss_name
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__boss_name
+msgid "Boss"
+msgstr "Gerente"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_stage__frecuency
+msgid "By frecuency"
+msgstr "Por Frecuencia"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_stage__incident
+msgid "By indicent"
+msgstr "Por incidencias"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model,name:onmi_reliex_contacts.model_crm_stage
+msgid "CRM Stages"
+msgstr "Etapas del CRM"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Calculations & Previous Croquis"
+msgstr "Cálculos y Croquis previo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__location__central
+msgid "Central"
+msgstr "Central doble"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__type__centrifugal
+msgid "Centrifugal"
+msgstr "Centrífugo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__crm_lead__wo_type__cleaning
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__crm_stage__type__cleaning
+msgid "Cleaning"
+msgstr "Limpieza"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__cleaning_filters
+msgid "Cleaning of filters?"
+msgstr "¿Limpieza Filtros?"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_res_partner_search_inherit_plant_est_client
+msgid "Clients"
+msgstr "Clientes"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__comments
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__comments
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__comments
+msgid "Comments"
+msgstr "Observaciones"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_sale_order__complete_system
+msgid "Complete system"
+msgstr "Sistema completo"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_order_form_inherit_booleans
+msgid "Confirm Quotation"
+msgstr "Confirmar Presupuesto"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model,name:onmi_reliex_contacts.model_res_partner
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__contact_ids
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__contact_ids
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Contact person"
+msgstr "Persona de Contacto"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__days_clean
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__days_clean
+msgid "Contracted days of cleaning"
+msgstr "Días limpieza contratados por cliente"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model,name:onmi_reliex_contacts.model_cooker_hood
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__cooker_hood_ids
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__cooker_hood_ids
+msgid "Cooker Hoods"
+msgstr "Campanas"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_sale_order__cooker_hood
+msgid "Cooker hood"
+msgstr "Campana"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__name
+msgid "Cooker hood name"
+msgstr "Nombre Campana"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Cooker hoods"
+msgstr "Campana"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.actions.act_window,help:onmi_reliex_contacts.crm_lead_action_pipeline_cleaning
+msgid "Crea una oportunidad para empezar a jugar con tu pipeline."
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_crm_lead_form_inherit_wo_type
+msgid "Create Material List"
+msgstr "Crear Listado Materiales"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_lead__created_by_frecuency
+msgid "Create by frecuency"
+msgstr "Creado por frecuencia"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__days_plant
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__days_plant
+msgid "Days on plant"
+msgstr "Días en Instalación"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__access_url
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__access_url
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Dealings"
+msgstr "Accesos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__soiling_degree
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__soiling_degree
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__soiling_degree
+msgid "Degree of soiling"
+msgstr "Suciedad"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__demountable_roof
+msgid "Demountable roof?"
+msgstr "¿Techo desmontable?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__dimmensions_diameter
+msgid "Dimmensions Ø"
+msgstr "Dimensiones Ø"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__dimmensions_square
+msgid "Dimmensions □"
+msgstr "Dimensiones □"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__transmission__direct
+msgid "Direct"
+msgstr "Directa"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__do_registers
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__do_registers
+msgid "Do registers"
+msgstr "Hacer registros"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_doing_quotation_new_plant
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_stage__doing_quotation
+msgid "Doing Quotation"
+msgstr "Haciendo Presupuesto"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__type__double_insulated_plate
+msgid "Double insulated plate"
+msgstr "Chapa aislada doble"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_sale_order__duct
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Duct"
+msgstr "Conducto"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__name
+msgid "Duct name"
+msgstr "Nombre Conducto"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model,name:onmi_reliex_contacts.model_duct
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__duct_ids
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__duct_ids
+msgid "Ducts"
+msgstr "Conductos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__type__ei30
+msgid "EI30"
+msgstr "Lleva EI30"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__epis
+msgid "EPIS high work"
+msgstr "EPIS trabajo en altura"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_established_contact_cleaning
+#: model:crm.stage,name:onmi_reliex_contacts.stage_established_contact_new_plant
+msgid "Established Contact"
+msgstr "Contacto establecido"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_sale_order__establishment_id
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__res_partner__type__establishment
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_crm_lead_form_inherit_wo_type
+msgid "Establishment"
+msgstr "Establecimiento"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Establishment &amp; Plants"
+msgstr "Establecimientos y Instalaciones"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Establishment name only"
+msgstr "Nombre de establecimiento"
+
+#. module: onmi_reliex_contacts
+#: model:ir.actions.act_window,name:onmi_reliex_contacts.action_establishment
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_res_partner_search_inherit_plant_est_client
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Establishments"
+msgstr "Establecimientos"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid ""
+"Este correo electrónico está en la lista negra para envíos masivos. Haga clic para "
+"eliminar la lista negra."
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_sale_order__extractor
+msgid "Extractor"
+msgstr "Nombre extractor"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__name
+msgid "Extractor name"
+msgstr "Nombre extractor"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model,name:onmi_reliex_contacts.model_extractor
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__extractor_ids
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__extractor_ids
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Extractors"
+msgstr "Extractores"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__location__facade
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__location__facade
+msgid "Facade"
+msgstr "Fachada"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__locations__false_ceiling
+msgid "False Ceiling"
+msgstr "Falso Techo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__type__fibre
+msgid "Fibre"
+msgstr "Fibra"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_res_partner_search_inherit_plant_est_client
+msgid "Ficticious Customers"
+msgstr "Clientes Ficticios"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__fictitious_customer
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__fictitious_customer
+msgid "Fictitious customer"
+msgstr "Cliente Ficticio"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__dimmensions
+msgid "Filters Dimmensions"
+msgstr "Dimensiones filtros"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__material_filter
+msgid "Filters Materials"
+msgstr "Material Filtros"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__location_filter
+msgid "Filters Type"
+msgstr "Tipo filtros"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_sale_order__filtronic
+msgid "Filtronic"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__type__flexible
+msgid "Flexible"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_frecuency_quotation_cleaning
+msgid "Frecuency Quotation"
+msgstr "Presupuesto Frecuencia"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__delay
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__delay
+msgid "Frecuency delay (days)"
+msgstr "Retraso de frecuencia(días)"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__material__galvan
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__material_filter__galvan
+msgid "Galva"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__has_power_supply
+msgid "Has power supply?"
+msgstr "¿Tienen toma de corriente?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__has_water_intake
+msgid "Has water intake?"
+msgstr "¿Tiene toma de agua?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__type__helicoidal
+msgid "Helicoidal"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__soiling_degree__3
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__soiling_degree__3
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__soiling_degree__3
+msgid "High"
+msgstr "Alto"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__soiling_degree__5
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__soiling_degree__5
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__soiling_degree__5
+msgid "Highest"
+msgstr "Más alto"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__horizontal_meters
+msgid "Horizontal meters"
+msgstr "Metros Horizontales"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__hydraulic_machine
+msgid "Hydraulic machine?"
+msgstr "¿Máquina hidráulica?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__id
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__id
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_incident_quotation_cleaning
+msgid "Incident Quotation"
+msgstr "Presupuesto Incidencia"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_lead__incident_opened_count
+msgid "Incident opened"
+msgstr "Incidencias abiertas"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Incidents"
+msgstr "Incidencias"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__material__inox
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__material_filter__inox
+msgid "Inox"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__type__insulated_plate
+msgid "Insulated plate"
+msgstr "Chapa aislada"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,help:onmi_reliex_contacts.field_res_partner__type
+#: model:ir.model.fields,help:onmi_reliex_contacts.field_res_users__type
+msgid ""
+"Invoice & Delivery addresses are used in sales orders. Private addresses are only "
+"visible by authorized users."
+msgstr ""
+"Las direcciones de facturación y de entrega son usadas en órdenes de venta. Las "
+"direcciones privadas sólo son visibles por usuarios autorizados."
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__location_filter__lamas
+msgid "Lamas"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood____last_update
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct____last_update
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/res_partner.py:0
+#, python-format
+msgid "Last Workorder: "
+msgstr "Última Orden de trabajo: "
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/res_partner.py:0
+#, python-format
+msgid "Lead created by Frecuency"
+msgstr "Oportunidad creadas por Frecuencia"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model,name:onmi_reliex_contacts.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Oportunidad"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__location
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__location
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__locations
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__soiling_degree__1
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__soiling_degree__1
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__soiling_degree__1
+msgid "Low"
+msgstr "Bajo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__location_filter__malla
+msgid "Malla"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__manually_machine
+msgid "Manually machine?"
+msgstr "¿Máquina de mano?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__material
+msgid "Material"
+msgstr "Materiales"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_crm_lead_form_inherit_wo_type
+msgid "Material Lists"
+msgstr "Listado Materiales"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__soiling_degree__2
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__soiling_degree__2
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__soiling_degree__2
+msgid "Medium"
+msgstr "Medio"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__model_and_brand
+msgid "Model and brand"
+msgstr "Marca y modelo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.ui.menu,name:onmi_reliex_contacts.menu_crm_opportunities_cleaning
+msgid "My Pipeline Cleaning"
+msgstr "Mi Pipeline Limpieza"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Name"
+msgstr "Nombre"
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__crm_lead__wo_type__new_plant
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__crm_stage__type__new_plant
+msgid "New Plant"
+msgstr "Instalación"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__new_display_name
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__new_display_name
+msgid "New display Name"
+msgstr "Nuevo nombre mostrado"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__noise_problems
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__noise_problems
+msgid "Noise problems"
+msgstr "Problemas de ruido"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__noise_problems
+msgid "Noise problems?"
+msgstr "¿Problemas ruido?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__noise
+msgid "Noise?"
+msgstr "¿Ruido?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__soiling_degree__0
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__soiling_degree__0
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__soiling_degree__0
+msgid "None"
+msgstr "Nada"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_crm_lead_form_inherit_wo_type
+msgid "Notes for workorder"
+msgstr "Notas Orden de trabajo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__access_notifications
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__access_notifications
+msgid "Notifications of access"
+msgstr "Notificaciones de acceso"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__incident_count
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__incident_count
+msgid "Number of Incidents"
+msgstr "Número de Incidencias"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__list_material_count
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__list_material_count
+msgid "Number of List Materials"
+msgstr "Número de Listados de Materiales"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_count
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_count
+msgid "Number of Plants"
+msgstr "Número de Instalaciones"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__policy_making_count
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__policy_making_count
+msgid "Number of Policy-makings"
+msgstr "Número de Toma de Requisitos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__dimmensions__other
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__location__other
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__location__other
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__locations__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__material__inox_galvan0
+msgid "Outdoor Inox / Indoor Galva"
+msgstr "Inox exterior/ Galva interior"
+
+#. module: onmi_reliex_contacts
+#: model:ir.actions.act_window,name:onmi_reliex_contacts.crm_lead_action_pipeline_cleaning
+msgid "Pipeline Cleaning"
+msgstr "Pipeline Limpieza"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__plant_id
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__res_partner__type__plant
+msgid "Plant"
+msgstr "Instalación"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Plant Croquis"
+msgstr "Croquis Instalación"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_picture
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_picture
+msgid "Plant Picture"
+msgstr "Croquis Instalación"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_picture_1
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_picture_1
+msgid "Plant Picture 1"
+msgstr "Croquis 1"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_picture_2
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_picture_2
+msgid "Plant Picture 2"
+msgstr "Croquis 2"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_picture_3
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_picture_3
+msgid "Plant Picture 3"
+msgstr "Croquis 3"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_picture_4
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_picture_4
+msgid "Plant Picture 4"
+msgstr "Croquis 4"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_type
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_type
+msgid "Plant type"
+msgstr "Tipo de Instalación"
+
+#. module: onmi_reliex_contacts
+#: model:ir.actions.act_window,name:onmi_reliex_contacts.action_plants
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_lead__plant_ids
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__plant_ids
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__plant_ids
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_res_partner_search_inherit_plant_est_client
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Plants"
+msgstr "Instalaciones"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__type__plate
+msgid "Plate"
+msgstr "Chapa"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__price
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__transmission__pulley
+msgid "Pulley"
+msgstr "Por poleas"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_qualified_opportunity_cleaning
+#: model:crm.stage,name:onmi_reliex_contacts.stage_qualified_opportunity_new_plant
+msgid "Qualified opportunity"
+msgstr "Oportunidad cualificada"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_quotation_send_cleaning
+#: model:crm.stage,name:onmi_reliex_contacts.stage_quotation_send_new_plant
+msgid "Quotation send"
+msgstr "Presupuesto enviado"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__frecuency_active
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__frecuency_active
+msgid "Quotations by frecuency active"
+msgstr "Presupuestos por frecuencia activo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__shape__rectangular
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__shape__rectangular
+msgid "Rectangular"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__ref
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__ref
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__register_dimmensions
+msgid "Register dimmensions"
+msgstr "Dimensiones registros"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__register_installed
+msgid "Register installed"
+msgstr "Registros instalados"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__register_qty
+msgid "Register qty"
+msgstr "Cantidad registros"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__register_qty_round
+msgid "Register qty Ø"
+msgstr "Cantidad Ø"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__register_qty_squared
+msgid "Register qty □"
+msgstr "Cantidad □"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__locations__rooftop
+msgid "Rooftop"
+msgstr "Azotea"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__round
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__shape__round
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__shape__round
+msgid "Round"
+msgstr "Redondo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model,name:onmi_reliex_contacts.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__access_check
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__access_check
+msgid "Saltar Acceso"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Select Files"
+msgstr "Seleccionar Archivos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__shape
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__shape
+msgid "Shape"
+msgstr "Forma"
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid "Sorry, You dont have permissions to do this action."
+msgstr "Lo siento, no tiene permisos para realizar esta acción."
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid "Sorry, You have to fill plants for this lead to mark as win."
+msgstr ""
+"Lo siento, tiene que rellenar el campo instalaciones para marcar esta oportunidad "
+"como ganada."
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid ""
+"Sorry, You have to have a sale order related with this lead to mark as win.\n"
+"Please, create a new one or confirm which exists."
+msgstr ""
+"Lo siento, tiene que tener un pedido de venta asociado a esta oportunidad para "
+"marcarla como ganada.\n"
+"Por favor, cree una nueva o confirme el presupuesto existente."
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__square
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__shape__square
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__shape__square
+msgid "Square"
+msgstr "Cuadrado"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__substitute_belt
+msgid "Substitute belts?"
+msgstr "¿Sustituir correas?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__location__sun
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__location__sun
+msgid "Sun"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__supervisor_name
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__supervisor_name
+msgid "Supervisor"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__supervisor_email
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__supervisor_email
+msgid "Supervisor email"
+msgstr "Correo electrónico supervisor"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__supervisor_phone
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__supervisor_phone
+msgid "Supervisor phone"
+msgstr "Teléfono supervisor"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_res_partner_search_inherit_plant_est_client
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__take_lifeline
+msgid "Take Lifeline?"
+msgstr "¿Llevar linea de vida?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__take_harness
+msgid "Take harness?"
+msgstr "¿Llevar Arnés?"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__plenum
+msgid "Take plenum"
+msgstr "Lleva Plenum"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "Take technical data"
+msgstr "Toma de Datos Técnicos"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_taking_data_cleaning
+#: model:crm.stage,name:onmi_reliex_contacts.stage_taking_data_new_plant
+msgid "Taking Data"
+msgstr "Toma de Datos"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_partner__technical_analysis
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_res_users__technical_analysis
+msgid "Technical analysis"
+msgstr "Estudio técnico"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__location__terrace
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__location__terrace
+msgid "Terrace"
+msgstr "Patio Luces"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__res_partner__plant_type__to_plant
+msgid "To Plant"
+msgstr "A instalar"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__res_partner__plant_type__to_clean
+msgid "To clean"
+msgstr "A limpiar"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__transmission
+msgid "Transmission"
+msgstr "Transmisión"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_cooker_hood__location
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__type
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_extractor__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_sale_order__make_visible
+msgid "User"
+msgstr "Usuario"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.actions.act_window,help:onmi_reliex_contacts.crm_lead_action_pipeline_cleaning
+msgid ""
+"Utiliza el botón <i>Crear</i> en la parte superior izquiera, o envía un correo "
+"electrónico a"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__vertical_meters
+msgid "Vertical meters"
+msgstr "Metros Verticales"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__soiling_degree__4
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__duct__soiling_degree__4
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__extractor__soiling_degree__4
+msgid "Very High"
+msgstr "Muy Alto"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_lead__wo_type
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_stage__type
+msgid "WO Type"
+msgstr "Tipo"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields.selection,name:onmi_reliex_contacts.selection__cooker_hood__location__wall
+msgid "Wall"
+msgstr "Pared"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_duct__ei30
+msgid "With EI30"
+msgstr "Lleva EI30"
+
+#. module: onmi_reliex_contacts
+#: model:crm.stage,name:onmi_reliex_contacts.stage_won_cleaning
+#: model:crm.stage,name:onmi_reliex_contacts.stage_won_new_plant
+msgid "Won"
+msgstr "Ganado"
+
+#. module: onmi_reliex_contacts
+#: model:ir.model.fields,field_description:onmi_reliex_contacts.field_crm_lead__work_notes
+msgid "Work notes"
+msgstr "Notas Orden de trabajo"
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid "Yo have to indicate type ( Cleaning or Plant)"
+msgstr "Tiene que indicar el tipo ( Limpieza o Instalación)"
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid "You can´t change this values of stage. Please, follow the workflow."
+msgstr "No puede cambiar el estado a estos valores. Por favor, siga el flujo."
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid ""
+"You can´t create a material list with a establishment from a ficticious partner.\n"
+"Please, change its parent partner to continue creating quotation."
+msgstr ""
+"No puede crear un listado de materiales con un establecimiento perteneciente a un "
+"cliente ficticio.\n"
+"Por favor, cambie el cliente asociado al establecimiento para crear el listado."
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid ""
+"You can´t create a quotation with a establishment from a ficticious partner.\n"
+"Please, change its parent partner to continue creating quotation."
+msgstr ""
+"No puede crear un presupuesto con un establecimiento perteneciente a un cliente "
+"ficticio.\n"
+"Por favor, cambie el cliente asociado al establecimiento para crear el presupuesto."
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid ""
+"You can´t create a quotation without plants assigned.\n"
+"Please, fill it to create a quotation."
+msgstr ""
+"No puede crear un presupuesto sin instalaciones asignadas.\n"
+"Por favor, rellénelas para crear un presupuesto."
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid "You have to fill establishment and plants to create a quotation."
+msgstr ""
+"Tiene que rellenar los datos de establecimiento e instalaciones para crear un "
+"presupuesto."
+
+#. module: onmi_reliex_contacts
+#: code:addons/onmi_reliex_contacts/models/crm_lead.py:0
+#, python-format
+msgid "You have to indicate plants to clean."
+msgstr "Debe indicar las instalaciones de limpieza."
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "e.g. Brandom Freeman"
+msgstr "p. e. Brandom Freeman"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "e.g. Building (if exists) - Plant"
+msgstr "p. e. Edificio (si procede) - Instalación"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_contacts.onmi_view_partner_form_inherit_page
+msgid "e.g. Lumber Inc"
+msgstr "p.e. EMPRESA S.A"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.actions.act_window,help:onmi_reliex_contacts.crm_lead_action_pipeline_cleaning
+msgid "info@gestion-reliex.odoo.com"
+msgstr ""
+
+#. module: onmi_reliex_contacts
+#: model:ir.actions.server,name:onmi_reliex_contacts.onmi_res_partner_frecuency_cron_ir_actions_server
+#: model:ir.cron,cron_name:onmi_reliex_contacts.onmi_res_partner_frecuency_cron
+#: model:ir.cron,name:onmi_reliex_contacts.onmi_res_partner_frecuency_cron
+msgid "onmi res partner frecuency"
+msgstr "onmi res partner frecuencia"
+
+#. module: onmi_reliex_contacts
+#: model_terms:ir.actions.act_window,help:onmi_reliex_contacts.crm_lead_action_pipeline_cleaning
+msgid "para probar el correo electrónico."
+msgstr ""

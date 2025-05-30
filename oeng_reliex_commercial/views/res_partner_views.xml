@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oeng_res_partner_form_inherit_total_days" model="ir.ui.view">
+            <field name="name">oeng.res.partner.form.inherit.plant.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="onmi_reliex_contacts.onmi_view_partner_form_inherit_page"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='delay']" position="after">
+                    <field invisible="type != 'establishment'" name="establishment_days_clean"/>
+                    <field invisible="type != 'establishment'" name="establishment_days_plant"/>
+                </xpath></field>
+        </record>
+        <record id="oeng_res_partner_form_inherit_plant_view" model="ir.ui.view">
+            <field name="name">oeng.res.partner.form.inherit.plant.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']/button[@name='schedule_meeting']" position="before">
+                    <button class="oe_stat_button" icon="fa-folder" invisible="type != 'establishment'" name="action_view_woc" type="object">
+                        <field name="woc_count" string="WOC's" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" icon="fa-folder" invisible="type != 'establishment'" name="action_view_wop" type="object">
+                        <field name="wop_count" string="WOP's" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//page[@name='technical_data']" position="replace"/>
+                <xpath expr="//div[@name='button_box']" position="attributes">
+                    <attribute name="invisible">type == 'plant'</attribute>
+                </xpath>
+                <xpath expr="//widget[@name='web_ribbon']" position="before">
+                    <div class="oe_button_box" invisible="type != 'plant'" name="button_box">
+                        <button class="oe_stat_button" icon="fa-list" name="action_view_duct_registers" type="object">
+                            Registers
+                        </button>
+                    </div>
+                </xpath>
+                <xpath expr="//group" position="attributes">
+                    <attribute name="invisible">type == 'plant'</attribute>
+                </xpath>
+                <xpath expr="//notebook" position="attributes">
+                    <attribute name="invisible">type == 'plant'</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_title')]" position="after">
+                    <field invisible="type != 'plant'" name="plant_type" options="{'horizontal': true}" widget="radio"/>
+                    <group invisible="type != 'plant'">
+                        <group>
+                            <field name="total_days_clean"/>
+                            <field name="days_clean" string="Contracted days of cleaning"/>
+                        </group>
+                        <group>
+                            <field name="days_plant"/>
+                        </group>
+                    </group>
+                    <group invisible="type != 'plant'" name="technical_data" string="TECHNICAL DATA">
+                        <div colspan="2">
+                            <field name="cooker_hood_ids" nolabel="1">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                                <form string="Cooker Hood data">
+                                    <sheet>
+                                        <field class="oe_avatar" name="cooker_image"
+                                               options="{'preview_image': 'cooker_image'}" widget="image"/>
+                                        <div class="oe_title">
+                                            <label for="name"/>
+                                            <h1>
+                                                <field name="name" placeholder="Name" required="1"/>
+                                            </h1>
+                                        </div>
+                                        <div class="o_row">
+                                            <label for="plant_id"/>
+                                            <field domain="[('id', '=', id)]" name="plant_id" readonly="True"/>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="location"/>
+                                                <field name="material"/>
+                                                <field name="plenum"/>
+                                                <field name="cooker_dimmensions"/>
+                                                <field name="soiling_degree" widget="priority"/>
+                                            </group>
+                                            <group>
+                                                <field name="number_filters"/>
+                                                <field name="material_filter"/>
+                                                <field name="location_filter"/>
+                                                <field name="dimmensions"/>
+                                                <field name="cleaning_filters"/>
+                                                <field name="fire_protection"/>
+                                                <field name="waterproof_luminaire"/>
+                                            </group>
+                                        </group>
+                                        <label for="cooker_comments"/>
+                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                            <field name="cooker_comments" nolabel="1"/>
+                                        </group>
+                                        <separator/>
+                                        <group name="duct" string="DUCT DATA">
+                                            <group>
+                                                <field name="duct_ref"/>
+                                                <field name="duct_type"/>
+                                                <field name="round"/>
+                                                <field invisible="round == False" name="dimmensions_diameter"/>
+                                                <field invisible="round == False" name="ei30"/>
+                                                <field name="square"/>
+                                                <field invisible="square == False" name="dimmensions_square"/>
+                                                <field name="duct_location"/>
+                                                <field name="demountable_roof"/>
+                                                <field invisible="demountable_roof == True" name="do_registers"/>
+                                            </group>
+                                            <group>
+                                                <field name="vertical_meters"/>
+                                                <field name="horizontal_meters"/>
+                                                <field name="soiling_degree_duct" widget="priority"/>
+                                                <field name="manually_machine"/>
+                                                <field name="hydraulic_machine"/>
+                                                <field name="noise_problems"/>
+                                                <field name="duct_leaks"/>
+                                                <field name="height_on_floor"/>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="install_registers"/>
+                                        </group>
+                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                            <field context="{'default_plant_id': plant_id}"
+                                                   domain="[('plant_id', '=', plant_id)]"
+                                                   invisible="install_registers == False" name="duct_register_ids"
+                                                   nolabel="1">
+                                                <tree decoration-danger="qty &gt; 0" decoration-muted="qty == 0"
+                                                      decoration-success="qty &lt; 0" default_order="product_id"
+                                                      editable="top">
+                                                    <field name="plant_id" optional="hide"/>
+                                                    <field invisible="1" name="worksheet_id"/>
+                                                    <field name="worksheet_name" optional="show"
+                                                           readonly="worksheet_id != False"/>
+                                                    <field name="product_id" readonly="worksheet_id != False"/>
+                                                    <field name="qty" readonly="worksheet_id != False" sum="Total qty"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                        <label for="duct_comments"/>
+                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                            <field name="duct_comments" nolabel="1"/>
+                                        </group>
+                                        <separator/>
+                                        <group name="extractor_data" string="EXTRACTOR DATA">
+                                            <group>
+                                                <field name="model_and_brand"/>
+                                            </group>
+                                            <group>
+                                                <field class="oe_avatar" name="extractor_image"
+                                                       options="{'preview_image': 'extractor_image'}" widget="image"/>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <group>
+                                                <field name="extractor_location"/>
+                                            </group>
+                                            <group>
+                                                <field class="oe_avatar" name="location_image"
+                                                       options="{'preview_image': 'location_image'}" widget="image"/>
+                                            </group>
+                                        </group>
+                                        <group>
+<!--                                            Se reemplaza este por el de abajo por pedido de Ismael (jefe)-->
+<!--                                            <group>-->
+<!--                                                <field name="extractor_ref"/>-->
+<!--                                                <field name="extractor_type"/>-->
+<!--                                                <field invisible="extractor_type != 'centrifugal'"-->
+<!--                                                       name="extractor_transmission"/>-->
+<!--                                                <field invisible="extractor_transmission != 'pulley'" name="belt_ref"/>-->
+<!--                                                <field class="oe_avatar" invisible="extractor_transmission != 'pulley'"-->
+<!--                                                       name="belt_ref_image"-->
+<!--                                                       options="{'preview_image': 'belt_ref_image'}" widget="image"/>-->
+<!--                                                <field invisible="extractor_transmission != 'pulley'"-->
+<!--                                                       name="substitute_belt"/>-->
+<!--                                                <field name="bearing_noise"/>-->
+<!--                                                <field invisible="bearing_noise == False" name="bearing_ref"/>-->
+<!--                                            </group>-->
+                                            <group>
+                                                <field name="extractor_ref"/>
+                                                <field name="extractor_type"/>
+                                                <field name="extractor_transmission"/>
+                                                <field name="belt_ref"/>
+                                                <field class="oe_avatar" name="belt_ref_image"
+                                                       options="{'preview_image': 'belt_ref_image'}" widget="image"/>
+                                                <field name="substitute_belt"/>
+                                                <field name="bearing_noise"/>
+                                                <field name="bearing_ref"/>
+                                            </group>
+                                            <group>
+                                                <field invisible="1" name="do_registers"/>
+                                                <field name="antivibration_gasket"/>
+                                                <field name="place_tray"/>
+                                                <field name="place_sineblocks"/>
+                                                <field name="clean_extractor"/>
+                                                <field name="box_dimmensions"/>
+                                                <field name="extractor_height_on_floor"/>
+                                                <field name="grease_leaks"/>
+                                                <field name="has_water_intake"/>
+                                                <field name="epis"/>
+                                                <field name="has_power_supply"/>
+                                                <field name="neighbor_noise"/>
+                                                <field name="extractor_soiling_degree" widget="priority"/>
+                                            </group>
+                                        </group>
+                                        <label for="extractor_comments"/>
+                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                            <field name="extractor_comments" nolabel="1"/>
+                                        </group>
+                                        <separator/>
+                                        <group name="filtronic" string="FILTRONIC DATA">
+                                            <group>
+                                                <field name="filtronic_cleaning"/>
+                                                <field invisible="filtronic_cleaning == False" name="full_cleaning"/>
+                                                <field invisible="filtronic_cleaning == False"
+                                                       name="electrostatic_filter_cleaning"/>
+                                            </group>
+                                            <group>
+                                                <field invisible="filtronic_cleaning == False"
+                                                       name="active_carbon_filter_replacement"/>
+                                                <field invisible="filtronic_cleaning == False"
+                                                       name="filtrina_replacement"/>
+                                            </group>
+                                        </group>
+                                        <label for="filtronic_comments"/>
+                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                            <field name="filtronic_comments" nolabel="1"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </div>
+                    </group>
+                    <group>
+                        <field invisible="1" name="duct_ids"/>
+                    </group>
+                    <group>
+                        <field invisible="1" name="extractor_ids"/>
+                    </group>
+                    <group invisible="type != 'plant'" name="plant_notes" string="Plant notes">
+                        <div colspan="2">
+                            <field name="comment" nolabel="1" placeholder="Internal notes..."/>
+                        </div>
+                    </group>
+                    <group invisible="type != 'plant'" name="audit_notes" string="AUDIT NOTES">
+                        <div colspan="2">
+                            <field name="audit_notes" nolabel="1" placeholder="Audit notes..."/>
+                        </div>
+                    </group>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page invisible="type != 'establishment'" name="other_data" string="Other data of interest">
+                        <group>
+                            <group>
+                                <field name="clean_filtronic"/>
+                                <field name="clean_solar_panel"/>
+                                <field name="clean_sink"/>
+                                <field name="clean_terrace"/>
+                            </group>
+                            <group>
+                                <field name="clean_by_external"/>
+                                <field invisible="clean_by_external == False" name="ex_company_name"/>
+                                <field name="grease_separator_cleaning"/>
+                                <field invisible="grease_separator_cleaning == False" name="ex_company_name_oil"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath></field>
+        </record>
+    </data>
+</odoo>

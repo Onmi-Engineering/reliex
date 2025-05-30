@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="oeng_sale_order_form_inherit_new_notes" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.notes</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="comments_notes" string="Observations to workers">
+                        <field name="comments_notes" nolabel="1"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

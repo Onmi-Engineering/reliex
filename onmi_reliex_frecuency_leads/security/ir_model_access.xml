@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oeng_frecuency_lead_admin" model="ir.model.access">
+            <field name="name">oeng_frecuency_lead_admin</field>
+            <field name="model_id" ref="model_frecuency_lead"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+    </data>
+</odoo>

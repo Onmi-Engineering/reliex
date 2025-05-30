@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="duct_register_tree_view" model="ir.ui.view">
+            <field name="name">duct.register.tree</field>
+            <field name="model">duct.register</field>
+            <field name="arch" type="xml">
+                <tree create="1" decoration-danger="qty == 1" decoration-muted="qty == 0" decoration-success="qty == 2" default_order="qty desc" editable="top">
+                    <field invisible="1" name="worksheet_id"/>
+                    <field name="plant_id" optional="hide"/>
+                    <field name="worksheet_name" optional="show" readonly="worksheet_id != False"/>
+                    <field name="worksheet_id" optional="hide" readonly="worksheet_id != False"/>
+                    <field name="product_id" readonly="worksheet_id != False"/>
+                    <field name="qty" readonly="worksheet_id != False" sum="Total qty"/>
+                </tree></field>
+        </record>
+        <record id="duct_register_search_view" model="ir.ui.view">
+            <field name="name">duct.register.search</field>
+            <field name="model">duct.register</field>
+            <field name="arch" type="xml">
+                <search string="Duct Registers">
+                    <group expand="0" string="Group By">
+                        <filter context="{'group_by':'cooker_id'}" domain="[]" name="cooker_id" string="Cooker"/>
+                        <filter context="{'group_by':'product_id'}" domain="[]" name="product_id" string="Product"/>
+                    </group>
+                </search></field>
+        </record>
+        <record id="duct_register_act_window" model="ir.actions.act_window">
+            <field name="name">Duct Registers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">duct.register</field>
+            <field name="view_mode">tree</field>
+            <field name="context">{"search_default_cooker_id":1, "search_default_product_id":1, "group_by_no_leaf": 0}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Duct Registers.
+                </p></field>
+        </record>
+    </data>
+</odoo>

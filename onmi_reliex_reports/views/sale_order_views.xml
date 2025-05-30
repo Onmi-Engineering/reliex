@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="report_saleorder_document_inherit"
+              name="Report Saleorder Document Inherit"
+              inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[hasclass('page')]//h2[hasclass('mt-4')]" position="inside">
+            <div>
+                <span t-out="doc.opportunity_id.name"></span>
+            </div>
+        </xpath>
+        <xpath expr="//span[@t-field='doc.user_id']" position="replace">
+            <span class="m-0" t-field="doc.partner_id.user_id"/>
+        </xpath>
+        <xpath expr="//t[@t-set='information_block']" position="inside">
+            <t t-if="doc.establishment_id">
+                Establecimiento:
+                <span t-field="doc.establishment_id"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

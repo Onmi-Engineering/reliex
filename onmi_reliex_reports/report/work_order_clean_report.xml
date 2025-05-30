@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_report_work_order_clean" model="ir.actions.report">
+            <field name="name">Report Cleaning</field>
+            <field name="model">work.order.clean</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">onmi_reliex_reports.report_cleaning</field>
+            <field name="report_file">onmi_reliex_reports.report_cleaning</field>
+            <field name="print_report_name">
+                'Report Cleaning - %s' % (object.name)
+            </field>
+            <field name="binding_model_id" ref="onmi_reliex_operations.model_work_order_clean"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="action_report_certifieds_work_order_clean" model="ir.actions.report">
+            <field name="name">Cleaning Certified</field>
+            <field name="model">work.order.clean</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">onmi_reliex_reports.report_cleaning_certified</field>
+            <field name="report_file">onmi_reliex_reports.report_cleaning_certified</field>
+            <field name="print_report_name">
+                'Cleaning Certified - %s' % (object.name)
+            </field>
+            <field name="binding_model_id" ref="onmi_reliex_operations.model_work_order_clean"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

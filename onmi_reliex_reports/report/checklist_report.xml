@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_checklist" model="ir.actions.report">
+            <field name="name">Checklist Fume</field>
+            <field name="model">checklist</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">onmi_reliex_reports.report_checklist</field>
+            <field name="report_file">onmi_reliex_reports.report_checklist</field>
+            <field name="print_report_name">
+                'Checklist - %s' % (object.name)
+            </field>
+            <field name="binding_model_id" ref="onmi_reliex_operations.model_checklist"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

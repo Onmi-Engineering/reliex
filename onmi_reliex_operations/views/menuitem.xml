@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--MODULO-->
+        <menuitem
+                id="main_menu_operations_module"
+                name="Operations"
+                web_icon="onmi_reliex_operations,static/description/operations_icon.png"
+                groups="base.group_user"
+                sequence="137"
+        />
+
+    </data>
+</odoo>

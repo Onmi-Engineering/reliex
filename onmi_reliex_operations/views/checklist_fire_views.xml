@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="checklist_fire_form_view" model="ir.ui.view">
+            <field name="name">checklist.fire.form</field>
+            <field name="model">checklist.fire</field>
+            <field name="arch" type="xml">
+                <form string="Checklist">
+                    <header>
+                        <button class="oe_highlight" invisible="state != 'new'" name="button_finish" string="Finish" type="object"/>
+                        <button class="oe_highlight" invisible="state != 'finished'" name="button_reset" string="Reset" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Identificator"/>
+                            </h1>
+                        </div>
+                        <div>
+                            <strong>
+                                General data
+                            </strong>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="company_id" readonly="1"/>
+                                <field name="workorder_plant_id" readonly="1"/>
+                                <field name="plant_id" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="inspection_date"/>
+                                <field name="checking_type"/>
+                                <field name="next_checking"/>
+                            </group>
+                        </group>
+                        <div>
+                            <strong>
+                                Checking system
+                            </strong>
+                        </div>
+                        <group col="4">
+                            <field name="charge_state" options="{'horizontal': true}" widget="radio"/>
+                            <field name="charge_state_comments" required="charge_state == 'comments'"/>
+                            <field name="preassure_check" options="{'horizontal': true}" widget="radio"/>
+                            <field name="preassure_check_comments" required="preassure_check == 'comments'"/>
+                            <field name="correct_opening" options="{'horizontal': true}" widget="radio"/>
+                            <field name="correct_opening_comments" required="correct_opening == 'comments'"/>
+                            <field name="correct_preassure" options="{'horizontal': true}" widget="radio"/>
+                            <field name="correct_preassure_comments" required="correct_preassure == 'comments'"/>
+                            <field name="discharge_emitters" options="{'horizontal': true}" widget="radio"/>
+                            <field name="discharge_emitters_comments" required="discharge_emitters == 'comments'"/>
+                            <field name="good_conditions" options="{'horizontal': true}" widget="radio"/>
+                            <field name="good_conditions_comments" required="good_conditions == 'comments'"/>
+                            <field name="signaling_circuits" options="{'horizontal': true}" widget="radio"/>
+                            <field name="signaling_circuits_comments" required="signaling_circuits == 'comments'"/>
+                            <field name="check_components" options="{'horizontal': true}" widget="radio"/>
+                            <field name="check_components_comments" required="check_components == 'comments'"/>
+                            <field name="general_cleaning" options="{'horizontal': true}" widget="radio"/>
+                            <field name="general_cleaning_comments" required="general_cleaning == 'comments'"/>
+                        </group>
+                        <div>
+                            Corrective Actions
+                        </div>
+                        <group>
+                            <field class="oe_inline oe_no_button" name="corrective_ids" nolabel="1" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="corrective_action"/>
+                                    <field name="completion_date"/>
+                                    <field name="user_execute"/>
+                                </tree></field>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="normative"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="checked_by"/>
+                            </group>
+                            <group>
+                                <field name="signature_checked" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group col="2">
+                            <field name="checked_date"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="endorsed_by"/>
+                            </group>
+                            <group>
+                                <field name="signature_endorsed" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group col="2">
+                            <field name="endorsed_date"/>
+                        </group>
+                    </sheet>
+                </form></field>
+        </record>
+        <record id="checklist_fire_tree_view" model="ir.ui.view">
+            <field name="name">checklist.fire.tree</field>
+            <field name="model">checklist.fire</field>
+            <field name="arch" type="xml">
+                <tree string="Checklist">
+                    <field name="name"/>
+                    <field name="workorder_plant_id"/>
+                    <field name="state"/>
+                </tree></field>
+        </record>
+        <record id="checklist_fire_act_window" model="ir.actions.act_window">
+            <field name="name">Checklists Fire</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">checklist.fire</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    There is no examples click here to add new Checklist fire.
+                </p></field>
+        </record>
+        <menuitem action="checklist_fire_act_window" id="checklist_fire_menu" name="Checklists fire" parent="checklist_menu_parent"/>
+    </data>
+</odoo>

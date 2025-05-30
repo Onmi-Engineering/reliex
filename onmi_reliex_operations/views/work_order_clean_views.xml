@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- region Vistas OT Limpieza -->
+        <record id="work_order_clean_form_view" model="ir.ui.view">
+            <field name="name">work.order.clean.form.view</field>
+            <field name="model">work.order.clean</field>
+            <field name="arch" type="xml">
+                <form string="Cleanning Work Order">
+                    <header>
+                        <!--region PROGRESO DE ESTADO-->
+                        <button class="oe_highlight"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'confirm'" name="action_handled" string="Handled"
+                                title="Click when is Handled" type="object"/>
+                        <button class="oe_highlight"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'handled'" name="action_to_finish" string="Finish"
+                                title="Click when is To Finished" type="object"/>
+                        <button class="oe_highlight"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'to_finish'" name="action_finished" string="Finished"
+                                title="Click when is Finished" type="object"/>
+                        <button class="oe_highlight"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'finished'" name="action_invoiced" string="Invoiced"
+                                title="Click when is To Finished" type="object"/>
+                        <button class="oe_highlight"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                name="action_reset" string="Reset" title="Click when you want to reset the state"
+                                type="object"/>
+                        <button class="oe_highlight" invisible="state != 'waiting'" name="action_open_popup"
+                                string="Respuesta Cliente" type="object"/>
+                        <!--endregion-->
+                        <!--region BOTONES DE ACCION-->
+                        <button class="oe_highlight" data-hotkey="l"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state == 'waiting' or state == 'assign' or state == 'confirm' or state == 'handled' or state == 'to_finish' or state == 'finished' or state == 'invoiced'"
+                                name="action_send_by_mail" string="Date proposal" title="Send by OT by mail"
+                                type="object"/>
+                        <button class="oe_highlight" data-hotkey="l"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'assign'" name="action_confirm_by_mail" string="Para tramitar"
+                                title="Send by OT by mail" type="object"/>
+                        <button class="oe_highlight"
+                                confirm="Are you still sure you want to continue creating the invoice?" data-hotkey="l"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'finished'" name="action_create_invoice" string="Create invoice"
+                                title="Create invoice" type="object"/>
+                        <button class="oe_highlight" data-hotkey="l"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'finished'" name="action_send_reports" string="Send Reports"
+                                title="Send Reports" type="object"/>
+                        <!--endregion-->
+                        <button class="oe_highlight" data-hotkey="l"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="1" name="action_worksheet_new" string="New Worksheet"
+                                title="Create new Part WorkOrder" type="object"/>
+                        <button class="oe_highlight" data-hotkey="l"
+                                groups="onmi_reliex_operations.group_operation_administrator_cleaning,onmi_reliex_operations.group_operation_invoicing_cleaning,onmi_reliex_operations.group_operation_handled_cleaning"
+                                invisible="state != 'reschedule'" name="action_reschedule" string="Reprogramar"
+                                title="Create new Part WorkOrder" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <!-- RICARDO -->
+                            <button class="oe_stat_button" icon="fa-history" name="action_view_worksheetclean"
+                                    type="object">
+                                <field name="worksheetclean_count" string="Historial" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" icon="fa-calendar" name="action_view_worksheet"
+                                    type="object">
+                                <field name="worksheet_count" string="Parts" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" icon="fa-exclamation-triangle" name="action_view_incident"
+                                    type="object">
+                                <field name="incident_count" string="Incidents" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <div invisible="pending_debts == False" name="message_alert"
+                                 style="color: #e50a0a !important;text-align: center;">
+                                This customer have some pending debts.
+                            </div>
+                            <field invisible="1" name="operators_notified"/>
+                            <div invisible="operators_notified == False" name="message_alert"
+                                 style="text-align:right; font-size: 16px;">
+                                <strong>
+                                    The operators have been notified successfully.
+                                </strong>
+                            </div>
+                            <label for="name">
+                                Reference of Work Order Clean
+                            </label>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field domain="[('is_company', '=', True)]" invisible="1" name="partner_id"/>
+                                <field domain="[('type', '=', 'establishment'),('parent_id','=', partner_id)]"
+                                       name="establishment_id"/>
+                                <field name="alert_establishment_related" readonly="1"
+                                       options="{'safe': true}" class="text-danger"/>
+                                <field name="user_id"/>
+                                <field name="employee_id" options="{'color_field': 'color', 'no_create_edit': True}"
+                                       widget="many2many_tags"/>
+                                <field name="accepted_date"/>
+                                <field name="access_check" widget="boolean_toggle"/>
+                            </group>
+                            <group>
+                                <field invisible="state != 'finished' and state != 'invoiced'" name="invoice_created"/>
+                                <field invisible="state != 'finished' and state != 'invoiced'" name="report_sent"/>
+                                <field name="start_date"/>
+                                <field name="description_date" nolabel="1" colspan="2"/>
+                                <field name="end_date" readonly="1"/>
+                                <field invisible="1" name="pending_debts"/>
+                                <field name="lead_id" readonly="True" string="Oportunidad de origen"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field invisible="1" name="make_visible"/>
+                                <field name="complete_system" readonly="make_visible == False"/>
+                                <field name="cooker_hood" readonly="make_visible == False"/>
+                            </group>
+                            <group>
+                                <field name="duct" readonly="make_visible == False"/>
+                                <field name="extractor" readonly="make_visible == False"/>
+                                <field name="filtronic" readonly="make_visible == False"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="direccion" string="Dirección">
+                                <group>
+                                    <group string="DIRECCIÓN">
+                                        <field invisible="1" name="parent_id"/>
+                                        <field class="o_address_street" name="street" placeholder="Street..."
+                                               readonly="type == 'contact' and parent_id != False" string="Calle"/>
+                                        <field class="o_address_street" name="street2" placeholder="Street 2..."
+                                               readonly="type == 'contact' and parent_id != False" string="Calle2"/>
+                                        <field class="o_address_city" name="city" placeholder="City"
+                                               readonly="type == 'contact' and parent_id != False" string="Ciudad"/>
+                                        <field class="o_address_state"
+                                               context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"
+                                               name="state_id" options="{'no_open': True, 'no_quick_create': True}"
+                                               placeholder="State" readonly="type == 'contact' and parent_id != False"
+                                               string="Estado"/>
+                                        <field class="o_address_zip" name="zip" placeholder="ZIP"
+                                               readonly="type == 'contact' and parent_id != False"/>
+                                        <field class="o_address_country" name="country_id"
+                                               options='{"no_open": True, "no_create": True}' placeholder="Country"
+                                               readonly="type == 'contact' and parent_id != False" string="País"/>
+                                    </group>
+                                    <group string="OTROS">
+                                        <field invisible="1" name="is_company"/>
+                                        <field invisible="1" name="type"/>
+                                        <field invisible="1" name="user_ids"/>
+                                        <field invisible="is_company == True" name="function"
+                                               placeholder="e.g. Sales Director"/>
+                                        <field name="phone" widget="phone"/>
+                                        <field name="mobile" widget="phone"/>
+                                        <div invisible="type != 'establishment'" style="text-align:center;">
+                                            <strong>
+                                                Info Gerente
+                                            </strong>
+                                        </div>
+                                        <field invisible="type != 'establishment'" name="boss_name"/>
+                                        <label class="oe_inline" for="email" invisible="type != 'establishment'"/>
+                                        <div class="o_row o_row_readonly" invisible="type != 'establishment'">
+                                            <field context="{'gravatar_image': True}"
+                                                   modifiers='{"required": [["user_ids", "!=", []]]}' name="email"
+                                                   on_change="1" required="user_ids != []" string="Email"
+                                                   widget="email"/>
+                                        </div>
+                                        <field invisible="type != 'establishment'" name="mobile" string="Teléfono"
+                                               widget="phone"/>
+                                        <div invisible="type != 'establishment'" style="text-align:center;">
+                                            <strong>
+                                                Info Supervisor
+                                            </strong>
+                                        </div>
+                                        <field invisible="type != 'establishment'" name="supervisor_name"/>
+                                        <field invisible="type != 'establishment'" name="supervisor_phone"
+                                               widget="phone"/>
+                                        <field invisible="type != 'establishment'" name="supervisor_email"
+                                               widget="email"/>
+                                        <field context="{'gravatar_image': True}" name="email" required="user_ids != []"
+                                               widget="email"/>
+                                        <field name="website" placeholder="e.g. https://www.odoo.com" string="Website"
+                                               widget="url"/>
+                                        <field name="category_id"
+                                               options="{'color_field': 'color', 'no_create_edit': True}"
+                                               placeholder="Tags..." widget="many2many_tags"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="resources" string="Resources">
+                                <field name="line_ids" widget="one2many_list">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field name="description_sale"/>
+                                        <field name="quantity"/>
+                                        <field name="qty_on_parts"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="comments" string="Comments">
+                                <field invisible="1" name="comments"/>
+                                <field name="comments_notes" options="{'sanitize':false}"/>
+                            </page>
+                            <page name="notes" string="Notes">
+                                <field name="work_notes" nolabel="1"/>
+                            </page>
+                            <page name="related_plants" string="Related Plants">
+                                <field name="related_plant_ids" readonly="True"/>
+                            </page>
+                            <page invisible="state == 'handled' or state == 'to_finish' or state == 'finished' or state == 'invoiced'"
+                                  name="dealings" string="Dealings">
+                                <group>
+                                    <field name="access_url" widget="url"/>
+                                </group>
+                                <group>
+                                    <field name="access_notifications" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="o_attachment_preview" options="{'preview_priority_type': 'pdf'}"/>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="work_order_clean_tree_view" model="ir.ui.view">
+            <field name="name">work.order.clean.tree</field>
+            <field name="model">work.order.clean</field>
+            <field name="arch" type="xml">
+                <tree string="Cleanning Work Order">
+                    <field name="name"/>
+                    <field name="establishment_id"/>
+                    <field name="start_date"/>
+                    <field decoration-danger="state == 'proposed'" decoration-success="state == 'assign'"
+                           decoration-warning="state == 'waiting'" name="state" widget="badge"/>
+                    <field name="end_date" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+        <record id="work_order_clean_historial_tree_view" model="ir.ui.view">
+            <field name="name">work.order.clean.tree</field>
+            <field name="model">work.order.clean</field>
+            <field name="arch" type="xml">
+                <tree string="Cleanning Work Order">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="employee_id" widget="many2many_tags"/>
+                    <field name="establishment_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="work_order_clean_calendar_view" model="ir.ui.view">
+            <field name="name">work_order_clean_calendar_view</field>
+            <field name="model">work.order.clean</field>
+            <field name="arch" type="xml">
+                <!--                <calendar string="Planning Work Orders" create="1" all_day="allday" mode="week" color="user_id"-->
+                <!--                          event_open_popup="1"-->
+                <!--                          form_view_id="%(onmi_reliex_operations.work_order_clean_form_view)d"-->
+                <!--                          quick_add="0"-->
+                <!--                          date_start="start_date"-->
+                <!--                          hide_time="false">-->
+                <!--                    <field name="name"/>-->
+                <!--                    <field name="partner_id"/>-->
+                <!--                    <field name="user_id" filters="1" invisible="0"/>-->
+                <!--                </calendar>-->
+                <calendar string="Planning Work Orders" create="0" all_day="allday" mode="week" color="user_id"
+                          event_open_popup="1"
+                          form_view_id="%(onmi_reliex_operations.work_order_clean_form_view)d"
+                          date_start="start_date"
+                          hide_time="false" event_limit="20">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="user_id" filters="1" invisible="0"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <record id="view_work_order_clean_filter" model="ir.ui.view">
+            <field name="name">view.work.order.clean.filter</field>
+            <field name="model">work.order.clean</field>
+            <field name="arch" type="xml">
+                <search string="Search Cleanning Work Order">
+                    <field filter_domain="[('establishment_id', 'ilike', self)]" name="establishment_id"
+                           string="Establishment"/>
+                    <field filter_domain="['|', ('name', 'ilike', self), ('partner_id', 'child_of', self)]" name="name"
+                           string="Order"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field filter_domain="[('establishment_id', 'ilike', self)]" name="establishment_id"
+                           string="Establishment"/>
+                    <field name="user_id"/>
+                    <filter domain="[('state','=','confirmed')]" name="conmfirmed_work_orders_clean_filter"
+                            string="Confirmed"/>
+                    <group expand="0" string="Group By">
+                        <filter context="{'group_by': 'user_id'}" domain="[]" name="team" string="Team"/>
+                        <filter context="{'group_by': 'partner_id'}" domain="[]" name="customer" string="Customer"/>
+                        <filter context="{'group_by': 'establishment_id'}" domain="[]" name="establishment"
+                                string="Establishment"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!-- endregion -->
+        <!--region Acciones de ventana OT Limpieza -->
+        <!-- ACTION Para OT's "PARA PLANIFICAR" -->
+        <record id="onmi_action_work_order_clean_to_plan" model="ir.actions.act_window">
+            <field name="name">Work Orders to plan</field>
+            <field name="res_model">work.order.clean</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_clean_tree_view"/>
+            <field name="domain">[('state', '=', 'to_plan')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_clean_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_clean_form_view')}),                           ]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders to plan
+                </p>
+                <p>
+                    View Work order to plan, register Work orders to plan.
+                </p>
+            </field>
+        </record>
+        <!-- ACTION Para OT's "PLANIFICADAS" -->
+        <record id="onmi_action_work_order_clean_planned" model="ir.actions.act_window">
+            <field name="name">Cleanning Work Orders To confirm</field>
+            <field name="res_model">work.order.clean</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_clean_calendar_view"/>
+            <field name="search_view_id" ref="view_work_order_clean_filter"/>
+            <field name="domain">['|','|', ('state', '=', 'waiting'),('state', '=', 'assign'), ('state', '=',
+                'proposed')]
+            </field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_clean_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_clean_form_view')}),                           ]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders Planned
+                </p>
+                <p>
+                    View Work order Planned, register Work orders Planned.
+                </p>
+            </field>
+        </record>
+        <!-- ACTION Para OT's "CONFIRMADAS" -->
+        <record id="onmi_action_work_order_clean_confirm" model="ir.actions.act_window">
+            <field name="name">Cleanning Work Orders To Handled</field>
+            <field name="res_model">work.order.clean</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="view_id" ref="work_order_clean_tree_view"/>
+            <!--            <field name="search_view_id" ref="view_work_order_clean_filter"/>-->
+            <field name="domain">[('state', '=', 'confirm')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'calendar', 'view_id': ref('work_order_clean_calendar_view')}),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_clean_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_clean_form_view')}),                           ]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders Planned
+                </p>
+                <p>
+                    View Work order Planned, register Work orders Planned.
+                </p>
+            </field>
+        </record>
+        <!-- ACTION Para OT's "TRAMITADAS" -->
+        <record id="onmi_action_work_order_clean_handling" model="ir.actions.act_window">
+            <field name="name">Work Orders In process</field>
+            <field name="res_model">work.order.clean</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_clean_tree_view"/>
+            <field name="domain">[('state', '=', 'handled')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_clean_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_clean_form_view')}),                           ]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders Handling
+                </p>
+                <p>
+                    View Work order Handling, register Work orders Handling.
+                </p>
+            </field>
+        </record>
+        <!-- ACTION Para OT's "PARA FINALIZAR" -->
+        <record id="onmi_action_work_order_clean_to_finish" model="ir.actions.act_window">
+            <field name="name">Work Orders to finish</field>
+            <field name="res_model">work.order.clean</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_clean_tree_view"/>
+            <field name="domain">[('state', '=', 'to_finish')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_clean_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_clean_form_view')}),                           ]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders to finish.
+                </p>
+                <p>
+                    View Work order to finish, register Work orders to finish.
+                </p>
+            </field>
+        </record>
+        <!-- ACTION Para OT's "FINALIZADAS" & "FACTURADAS"-->
+        <record id="onmi_action_work_order_clean" model="ir.actions.act_window">
+            <field name="name">Cleanning Work Orders Processed</field>
+            <field name="res_model">work.order.clean</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_clean_tree_view"/>
+            <field name="domain">['|', ('state', '=', 'finished'), ('state', '=', 'invoiced')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_clean_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_clean_form_view')})]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders processed
+                </p>
+                <p>
+                    View Work order, register Work orders.
+                </p>
+            </field>
+        </record>
+        <!-- ACTION Para TODAS LAS OT's limpieza-->
+        <record id="onmi_action_work_order_clean_full" model="ir.actions.act_window">
+            <field name="name">Cleanning Work Orders</field>
+            <field name="res_model">work.order.clean</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_clean_tree_view"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_clean_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_clean_form_view')})]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders
+                </p>
+                <p>
+                    View Work order, register Work orders.
+                </p>
+            </field>
+        </record>
+        <!--endregion-->
+        <!--region MENÚS Y SUBMENÚS OT Limpieza-->
+        <menuitem groups="group_operation_administrator_cleaning,group_operation_invoicing_cleaning"
+                  id="work_orders_clean_main_menu_operations_module" name="Cleaning Work Orders"
+                  parent="main_menu_operations_module" sequence="2"/>
+        <!-- endregion -->
+        <!-- region SUBMENÚS DE OT's Limpieza -->
+        <menuitem action="onmi_action_work_order_clean_to_plan" groups="group_operation_administrator_cleaning"
+                  id="work_order_clean_planning_menu_operations_module" name="To plan"
+                  parent="work_orders_clean_main_menu_operations_module" sequence="1"/>
+        <menuitem action="onmi_action_work_order_clean_planned" groups="group_operation_administrator_cleaning"
+                  id="work_order_clean_planned_menu_operations_module" name="To confirm"
+                  parent="work_orders_clean_main_menu_operations_module" sequence="2"/>
+        <menuitem action="onmi_action_work_order_clean_confirm" groups="group_operation_administrator_cleaning"
+                  id="work_order_clean_confirm_menu_operations_module" name="To Handled"
+                  parent="work_orders_clean_main_menu_operations_module" sequence="3"/>
+        <menuitem action="onmi_action_work_order_clean_handling" groups="group_operation_administrator_cleaning"
+                  id="work_order_clean_handling_menu_operations_module" name="In process"
+                  parent="work_orders_clean_main_menu_operations_module" sequence="4"/>
+        <menuitem action="onmi_action_work_order_clean_to_finish" groups="group_operation_administrator_cleaning"
+                  id="work_order_clean_in_process_menu_operations_module" name="To Finish"
+                  parent="work_orders_clean_main_menu_operations_module" sequence="5"/>
+        <menuitem action="onmi_action_work_order_clean"
+                  groups="group_operation_administrator_cleaning,group_operation_invoicing_cleaning"
+                  id="work_order_clean_menu_operations_module" name="Finalized Invoiced"
+                  parent="work_orders_clean_main_menu_operations_module" sequence="6"/>
+        <menuitem action="onmi_action_work_order_clean_full" groups="group_operation_administrator_cleaning"
+                  id="work_order_clean_menu_operations_module_full" name="Full WO CLeanning"
+                  parent="work_orders_clean_main_menu_operations_module" sequence="7"/>
+        <record id="view_custom1_model_form" model="ir.ui.view">
+            <field name="name">accept.model.form</field>
+            <field name="model">accept.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="selection_field"/>
+                    </group>
+                    <footer>
+                        <button class="oe_highlight" name="safe_state" string="Aceptar" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="view_custom12_model_form" model="ir.ui.view">
+            <field name="name">custom.model.form</field>
+            <field name="model">custom.model</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="selection_field"/>
+                    </group>
+                    <footer>
+                        <button class="oe_highlight" name="safe_state" string="Aceptar" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!--endregion-->
+    </data>
+</odoo>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="documents_photo_report_folder" model="documents.folder">
+            <field name="name">Photographical Report</field>
+            <field name="description" type="html">
+                <center>
+                    <p>Categorize, share and keep track of all your photographical documents.</p>
+                </center>
+            </field>
+        </record>
+        <record id="photo_documents" model="documents.facet">
+            <field name="name">Photographies</field>
+            <field name="folder_id" ref="onmi_reliex_operations.documents_photo_report_folder"/>
+        </record>
+    </data>
+</odoo>

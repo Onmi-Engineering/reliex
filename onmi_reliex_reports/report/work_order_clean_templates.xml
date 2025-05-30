@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_cleaning_document">
+            <t t-call="web.external_layout">
+                <t t-set="company" t-value="res_company"></t>
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h1>INFORME DEL SERVICIO DE LIMPIEZA E HIGIENIZACIÓN DEL CONDUCTO DE EXTRACCIÓN</h1>
+                    <p>
+                        Su finalidad es la de documentar al usuario de las actuaciones realizadas y de las limitaciones
+                        que ofrece la instalación, para un mayor control y seguimiento de las acciones realizadas y con
+                        el fin de facilitar al usuario los posibles problemas derivados de la actuación en el conducto.
+                    </p>
+                    <p>
+                        Se entrega un certificado donde constará la fecha de la limpieza, así como el protocolo seguido.
+                        También se proporcionan los resultados mediante fotografías de la instalación del antes y
+                        después de la limpieza.
+                    </p>
+                    <p>
+                        <span t-field="doc.establishment_id.parent_id.name"/>
+                        <br/>
+                        <span t-field="doc.establishment_id.name"/>
+                        <br/>
+                        <span t-field="doc.establishment_id.street"/>
+                        <br/>
+                        <span t-field="doc.establishment_id.city"/>(
+                        <span t-field="doc.establishment_id.state_id.name"/>
+                        )
+                        <br/>
+                        Report date:
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"
+                              style="margin-left:5px;"/>
+                    </p>
+                    <h2>MEMORIA DEL SERVICIO</h2>
+                    <p>
+                        LIMPIEZA DEL SISTEMA DE EXTRACCIÓN DE HUMOS EN<span t-field="doc.establishment_id.name"/>.
+                    </p>
+                    <h3>1. ANTECEDENTES</h3>
+                    <p>
+                        La dirección de
+                        <span t-field="doc.establishment_id.parent_id.name"/>
+                        solicitó a RELIEX la realización de lasoperaciones de Higienización de sus equipos y
+                        conducciones de extracción de humos en cocina sita en
+                        <span t-field="doc.establishment_id.name"/>
+                        .
+                    </p>
+                    <h4>1. DESCRIPCION DEL SERVICIO. FASE 1.</h4>
+                    <p>
+                        El servicio comprende dos fases que se describen a continuación:
+                        <br/>
+                        <br/>
+                        1.1. Evaluación del estado técnico e higiénico de la instalación del que comprende:
+                        <br/>
+                        <ul>
+                            <li>
+                                Toma de imágenes.
+                            </li>
+                            <li>
+                                Programación de los trabajos derivados de los puntos anteriores.
+                            </li>
+                        </ul>
+                        1.2. Reducción del riesgo de incendio y/o contaminación de los productos de alimentación,
+                        realizando
+                        trabajos de:
+                        <br/>
+
+                        <ul>
+                            <li>
+                                Desengrase.
+                            </li>
+                            <li>
+                                Limpieza.
+                            </li>
+                            <li>
+                                Verificación.
+                            </li>
+                        </ul>
+                    </p>
+                    <h4>2. DESCRIPCION DEL SERVICIO. FASE 2.</h4>
+                    <p>
+                        El servicio realizado consiste en:
+                        <dl>
+                            <dd>
+                                2.1. Estudio “in situ” de las instalaciones, su estado, distribución y realización de
+                                accesos
+                                al disponer de planos actualizados de las mismas.
+                            </dd>
+                            <dd>
+                                2.2. Con los resultados de la inspección efectuada se genera una Programación de los
+                                Trabajos, métodos y productos a utilizar en los procesos siguientes.
+                            </dd>
+                            <dd>
+                                2.3. Los trabajos de Desengrase y Limpieza que se han realizado se llevaron a cabo en el
+                                conducto de extracción:
+                            </dd>
+                        </dl>
+                    </p>
+
+                    <p>
+                        Los trabajos efectuados son los siguientes:
+                        <ul>
+                            <li>
+                                EXTRACTORES:
+                                <ul>
+                                    <li>
+                                        Desmontaje.
+                                    </li>
+                                    <li>
+                                        Limpieza.
+                                    </li>
+                                    <li>
+                                        Comprobación Técnica.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                CONDUCTOS Y CAMPANAS:
+                                <ul>
+                                    <li>
+                                        Limpieza del interior del plenum en campana.
+                                    </li>
+                                    <li>
+                                        Limpieza del interior de los conductos.
+                                    </li>
+                                    <li>
+                                        Realización de registros de limpieza en conductos.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                    <h4>CONTROL DE CALIDAD DEL SERVICIO</h4>
+                    <p>
+                        <dl>
+                            <dd>
+                                3.1. Una vez finalizados los trabajos descritos, se procedió de nuevo a la realización
+                                de mediciones e inspecciones visuales para comparar con los resultados obtenidos en la
+                                revisión realizada antes de las operaciones de limpieza.
+                            </dd>
+                            <dd>
+                                3.2. A juicio del Director del proyecto, los resultados arrojados por estas nuevas
+                                pruebas han sido muy satisfactorias.
+                            </dd>
+                        </dl>
+                    </p>
+                    <h4>4. CONDICIONES QUE CUMPLEN LOS MATERIALES</h4>
+                    <p>
+                        Todos los materiales utilizados para la realización del presente proyecto son productos normales
+                        de un fabricante de reconocida garantía técnica y de calidad acreditada, conservándose hasta su
+                        utilización en las debidas condiciones al objeto de preservarlos de toda alteración.
+                    </p>
+                    <p>
+                        Todos los materiales y productos utilizados son de la mejor calidad entre los de su clase, en
+                        armonía con las aplicaciones a las que hayan de ser sometidos.
+                    </p>
+                    <h4>5. EQUIPOS Y MAQUINARIA</h4>
+                    <p>
+                        RELIEX ha utilizado equipos y maquinaria que presentan y cumplen con la norma vigente que les
+                        sea aplicable de la Delegación de Industria local o departamento correspondiente, presentando
+                        buen estado de conservación, no representando un peligro para el propio trabajador o terceros.
+                    </p>
+                    <h4>6. PRODUCTOS QUÍMICOS</h4>
+                    <p>
+                        Los productos químicos utilizados:
+                        <ul>
+                            <li>
+                                Bioteq15
+                            </li>
+                            <li>
+                                Relidex
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        Se aportan fichas técnicas, de seguridad, así como los protocolos utilizados.
+                    </p>
+                    <p>
+                        Además, se incluyen las observaciones y recomendaciones de las medidas correctoras oportunas
+                        para conseguir las condiciones higiénico-sanitarias óptimas en la instalación.
+                    </p>
+                    <h3>
+                        2. OBSERVACIONES, RECOMENDACIONES Y MEDIDAS CORRECTORAS PARA CONSEGUIR LAS CONDICIONES
+                        HIGIÉNICO-SANITARIAS ÓPTIMAS EN LA INSTALACIÓN.
+                    </h3>
+                    <p>
+                        <span t-field="doc.report_cleaning_comments"/>
+                    </p>
+                    <t t-set="cus_incidents"
+                       t-value="env['incident'].search([('worksheet_id.id', 'in', doc.worksheet_ids.ids)])"/>
+                    <t t-if="cus_incidents">
+                        <h4>
+                            Incidencias
+                        </h4>
+                        <t t-foreach="cus_incidents" t-as="cus_incident">
+                            <t t-if="cus_incident.incident_type == 'customer_info'">
+                                <p>
+                                    <strong>
+                                        <t t-esc="cus_incident.name"/>
+                                        <t t-if="cus_incident.incident_type2">
+                                            - Tipo:
+                                            <t t-esc="dict(cus_incident.fields_get(allfields=['incident_type2'])['incident_type2']['selection'])[cus_incident.incident_type2]"/>
+                                        </t>
+                                    </strong>
+                                    <br/>
+                                    <strong>Instalación:</strong>
+                                    <t t-esc="cus_incident.plant_id.name"/>
+                                    <br/>
+                                    <strong>Descripción:</strong>
+                                    <t t-esc="cus_incident.description"/>
+                                </p>
+                            </t>
+                        </t>
+                        <br/>
+                        <br/>
+                    </t>
+                    <t t-if="company.signature_leader">
+                        <img style="max-height: 4cm; max-width: 8cm;"
+                             t-att-src="image_data_uri(company.signature_leader)"/>
+                    </t>
+                    <br/>
+                    <strong>Fdo.:</strong>
+                    Ismael Murcia Llorca
+                    <br/>
+                    (Boss)
+                    <br/>
+                    <p style="color: grey;">
+                        En cumplimiento de lo establecido en la Ley Orgánica 15/1999, de 13 de diciembre, de Protección
+                        de Datos de Carácter Personal, le informamos de que los datos que figuran en el presente
+                        documento forman parte de un fichero propiedad de GESTIÓN EN SISTEMAS DE EXTRACCIÓN, S.L
+                        inscrito en la Agencia Española de Protección de Datos.
+                    </p>
+                    <p style="color: grey;">
+                        Asimismo, le comunicamos que puede ejercer sus derechos de acceso, rectificación, cancelación y
+                        oposición ante el Responsable del Fichero en nuestras oficinas de C/ Morera, 43 Parcela 9 P.I.
+                        El Saladar – Totana (Murcia), debiéndose identificar mediante DNI, Pasaporte o Tarjeta de
+                        Residencia.
+                    </p>
+                </div>
+            </t>
+        </template>
+        <template id="report_certified_document">
+            <t t-call="web.external_layout">
+                <t t-set="company" t-value="res_company"></t>
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <div class="page">
+                    <style>
+                        {
+                        }
+                    </style>
+                    <div class="oe_structure"/>
+                    <table width="100%" name="title">
+                        <tr>
+                            <td>
+                                <h1>Cleaning Certified</h1>
+                            </td>
+                            <td>
+                                <strong>Date:</strong>
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table name="company_data" width="100%" style="border: 1px solid;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;text-align:center;">
+                                    Identification details of sanitation &amp; cleaning company
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">Bussiness name</td>
+                                <td colspan="3" style="border: 1px solid;">
+                                    <span t-field="company.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">
+                                    Authorized record keeper
+                                </td>
+                                <td colspan="3" style="border: 1px solid;">
+                                    30/38912
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">
+                                    Address
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    <span t-field="company.street"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    City:
+                                    <span t-field="company.city"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    State:
+                                    <span t-field="company.state_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="border: 1px solid;">
+                                    Office: 968 639 820 - 635 254 359
+                                    <br/>
+                                    Technical Dep.: 689 036 722
+                                </td>
+                                <td colspan="2" style="border: 1px solid;">
+                                    <span t-field="company.email"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align:center;border: 1px solid;">
+                                    <span t-field="company.website"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="partner_data" width="100%" style="border: 1px solid; margin-top:10px;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;text-align:center;">
+                                    Identification details of hiring company and plant processed
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">Bussiness name</td>
+                                <td colspan="3" style="border: 1px solid;">
+                                    <span t-field="doc.establishment_id.parent_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">
+                                    Address
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    <span t-field="doc.establishment_id.parent_id.street"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    City:
+                                    <span t-field="doc.establishment_id.parent_id.city"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    State:
+                                    <span t-field="doc.establishment_id.parent_id.state_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align:center;border: 1px solid;">
+                                    <span t-field="doc.establishment_id.parent_id.email"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="border: 1px solid;">
+                                    Treatment date:
+                                    <span t-field="doc.start_date"
+                                          t-options='{"widget": "date","format": "dd/MM/yyyy"}'/>
+                                </td>
+                                <td colspan="2" style="border: 1px solid;">
+                                    VAT:
+                                    <span t-field="doc.establishment_id.parent_id.vat"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;">
+                                    Plant worked: LIMPIEZA E HIGIENIZACIÓN DEL SISTEMA DE EXTRACCIÓN DE HUMOS
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;">
+                                    Establishment worked:
+                                    <span t-field="doc.establishment_id.name"/>
+                                </td>
+                            </tr>
+                            <!--ASI ESTABA EN LA V15 de ODOO pero se reemplaza porque daba error-->
+<!--                            <tr t-if="doc.establishment_id.frecuency_active">-->
+<!--                                <td colspan="4">-->
+<!--                                    Estimated next cleaning date:-->
+<!--                                    <span t-field="doc.env['worksheet.part'].search([('workorder_id', '=', doc.id)])[0].next_frecuency_date"-->
+<!--                                          t-options='{"widget": "date","format": "dd/MM/yyyy"}'/>-->
+<!--                                </td>-->
+<!--                            </tr>-->
+
+                            <!--agrego una condición para verificar si la búsqueda devuelve algún registro antes de intentar acceder al primer elemento-->
+                            <tr t-if="doc.establishment_id.frecuency_active">
+                                <td colspan="4">
+                                    Estimated next cleaning date:
+                                    <span t-if="doc.env['worksheet.part'].search([('workorder_id', '=', doc.id)])"
+                                          t-field="doc.env['worksheet.part'].search([('workorder_id', '=', doc.id)])[0].next_frecuency_date"
+                                          t-options='{"widget": "date","format": "dd/MM/yyyy"}'/>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                    <table name="product_data" width="100%" style="border: 1px solid;margin-top:10px;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;text-align:center;">
+                                    Used Products
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">
+                                    Product Names: RELIDEX &amp; BIOTEC15.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="page-break-after:always;"/>
+                    <table name="action_protocol_data" width="100%" style="border: 1px solid;margin-top:10px;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td style="border: 1px solid;text-align:center;">
+                                    Action Protocol
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid;">
+                                    <t t-if="doc.complete_system">
+                                        Evaluación del estado higiénico de las instalaciones del sistema de extracción.
+                                        <br/>
+                                        Limpieza y desengrase de campana mediante espumado activo y aclarado
+                                        posterior.
+                                        <br/>
+                                        Limpieza y desengrase de extractor mediante espumado activo y aclarado
+                                        posterior.
+                                        <br/>
+                                        Limpieza y desengrase en conducto mediante cepillado automático.
+                                        <br/>
+                                        Verificación posterior de la limpieza.
+                                        <br/>
+                                    </t>
+                                    <t t-else="">
+                                        Evaluación del estado higiénico de las instalaciones del sistema de extracción.
+                                        <t t-if="doc.cooker_hood">
+                                            <br/>
+                                            Limpieza y desengrase de campana mediante espumado activo y aclarado
+                                            posterior.
+                                        </t>
+                                        <t t-if="doc.duct">
+                                            <br/>
+                                            Limpieza y desengrase en conducto mediante cepillado automático.
+                                        </t>
+                                        <t t-if="doc.extractor">
+                                            <br/>
+                                            Limpieza y desengrase de extractor mediante espumado activo y aclarado
+                                            posterior.
+                                        </t>
+                                        <br/>
+                                        Verificación posterior de la limpieza.
+                                    </t>
+                                    <br/>
+                                    <br/>
+                                    De acuerdo con el Real Decreto 314/2006, de 17 de marzo, por el que se aprueba
+                                    el Código Técnico de la Edificación y la normativa contra incendios, donde se
+                                    estipula una limpieza periódica anual para campanas, conductos y extractores. Y
+                                    para campanas con una superficie mayor a 2m2 se estipula una frecuencia de
+                                    limpieza mínima semestral.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="signature" width="40%" style="border: 1px solid;margin-top:10px;">
+                        <tr>
+                            <td>
+                                <strong>Treatment leader</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <t t-if="company.signature_leader">
+                                    <img style="max-height: 6cm; max-width: 12cm;"
+                                         t-att-src="image_data_uri(company.signature_leader)"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Fdo.:</strong>
+                                Ismael Murcia Llorca
+                                <br/>
+                                (Boss)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_cleaning">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="onmi_reliex_reports.report_cleaning_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+        <template id="report_cleaning_certified">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="onmi_reliex_reports.report_certified_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

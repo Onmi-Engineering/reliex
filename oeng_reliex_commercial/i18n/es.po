@@ -1,0 +1,768 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* oeng_reliex_commercial
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-08 09:09+0000\n"
+"PO-Revision-Date: 2024-04-08 11:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__material_filter__active_carbon
+msgid "Active carbon"
+msgstr "Carbón activo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__active_carbon_filter_replacement
+msgid "Active carbon filter replacement"
+msgstr "Reemplazar filtro Carbón activo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__antivibration_gasket
+msgid "Anti-vibration gasket"
+msgstr "Junta antivibración"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_location__attic
+msgid "Attic"
+msgstr "Ático"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__bearing_noise
+msgid "Bearing noise"
+msgstr "Ruido rodamientos"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__bearing_ref
+msgid "Bearing reference"
+msgstr "Referencia rodamientos"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__belt_ref
+msgid "Belt ref"
+msgstr "Referencia correas"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__belt_ref_image
+msgid "Belt reference"
+msgstr "Referencia correas"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__box_dimmensions
+msgid "Box dimmensions"
+msgstr "Medidas caja"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_type__centrifugal
+msgid "Centrifugal"
+msgstr "Centrífugo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__clean_filtronic
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__clean_filtronic
+msgid "Clean Filtronic"
+msgstr "Limpiar Filtronic"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__clean_extractor
+msgid "Clean extractor area"
+msgstr "Limpiar zona extractor"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__clean_sink
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__clean_sink
+msgid "Clean sink"
+msgstr "Limpiar sumideros"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__clean_solar_panel
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__clean_solar_panel
+msgid "Clean solar panel"
+msgstr "Limpiar placa solar"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__clean_terrace
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__clean_terrace
+msgid "Clean terrace"
+msgstr "Limpiar terraza"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model,name:oeng_reliex_commercial.model_work_order_clean
+msgid "Cleanning Work Orders"
+msgstr "Órdenes de trabajo Limpieza"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__cooker_comments
+msgid "Comments"
+msgstr "Observaciones"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model,name:oeng_reliex_commercial.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__days_clean
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__days_clean
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Contracted days of cleaning"
+msgstr "Días limpieza contratados por cliente"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__cooker_id
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.duct_register_search_view
+msgid "Cooker"
+msgstr "Campana"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Cooker Hood data"
+msgstr "Datos Campana"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model,name:oeng_reliex_commercial.model_cooker_hood
+msgid "Cooker Hoods"
+msgstr "Campanas"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__cooker_image
+msgid "Cooker image"
+msgstr "Imagen campana"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "DUCT DATA"
+msgstr "DATOS CONDUCTO"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__days_plant
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__days_plant
+msgid "Days on plant"
+msgstr "Días en la instalación"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_soiling_degree
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__soiling_degree_duct
+msgid "Degree of soiling"
+msgstr "Grado de suciedad"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__demountable_roof
+msgid "Demountable roof?"
+msgstr "¿Techo desmontable?"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__cooker_dimmensions
+msgid "Dimmensions"
+msgstr "Dimensiones"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__dimmensions_diameter
+msgid "Dimmensions Ø"
+msgstr "Dimensiones Ø"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__dimmensions_square
+msgid "Dimmensions □"
+msgstr "Dimensiones □"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_transmission__direct
+msgid "Direct"
+msgstr "Directo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__do_registers
+msgid "Do registers on fixed roof"
+msgstr "Hacer registros en techo fijo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_type__double_insulated_plate
+msgid "Double insulated plate"
+msgstr "Placa con doble aislamiento"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__duct_ref
+msgid "Duct Ref"
+msgstr "Referencia Conducto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.actions.act_window,name:oeng_reliex_commercial.duct_register_act_window
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.duct_register_search_view
+msgid "Duct Registers"
+msgstr "Registros de conducto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__duct_comments
+msgid "Duct comments"
+msgstr "Observaciones conducto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__duct_leaks
+msgid "Duct leaks"
+msgstr "Fugas en conducto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__duct_register_ids
+msgid "Duct registers"
+msgstr "Registros en conducto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_type__ei30
+msgid "EI30"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__epis
+msgid "EPIS high work"
+msgstr "EPIS"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "EXTRACTOR DATA"
+msgstr "DATOS EXTRACTOR"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__electrostatic_filter_cleaning
+msgid "Electrostatic filter cleaning"
+msgstr "Limpieza filtro electroestático"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__ex_company_name
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__ex_company_name
+msgid "External company name"
+msgstr "Nombre compañía externa"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_comments
+msgid "Extractor comments"
+msgstr "Observaciones extractor"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "FILTRONIC DATA"
+msgstr "DATOS FILTRONIC"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_location__facade
+msgid "Facade"
+msgstr "Fachada"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_location__false_ceiling
+msgid "False Ceiling"
+msgstr "Falso techo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_type__fibre
+msgid "Fibre"
+msgstr "Fibra"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__material_filter
+msgid "Filters Materials"
+msgstr "Material Filtros"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__filtrina_replacement
+msgid "Filtrina replacement"
+msgstr "Reemplazar filtrina"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__filtronic_cleaning
+msgid "Filtronic cleaning"
+msgstr "Limpieza de Filtronic"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__filtronic_comments
+msgid "Filtronic comments"
+msgstr "Comentarios Filtronic"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__fire_protection
+msgid "Fire protection"
+msgstr "Contra incendios"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_type__flexible
+msgid "Flexible"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__full_cleaning
+msgid "Full cleaning"
+msgstr "Limpieza completa"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__material__galvan
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__material_filter__galvan
+msgid "Galva"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__grease_leaks
+msgid "Grease leaks"
+msgstr "Goteras de grasa"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__grease_separator_cleaning
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__grease_separator_cleaning
+msgid "Grease separator cleaning"
+msgstr "Limpieza separador de grasas"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.duct_register_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__has_power_supply
+msgid "Has power supply?"
+msgstr "¿Tiene toma de corriente?"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__has_water_intake
+msgid "Has water intake?"
+msgstr "¿Tiene toma de agua?"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_height_on_floor
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__height_on_floor
+msgid "Height on floor (meters)"
+msgstr "Altura respecto al suelo (m)"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_type__helicoidal
+msgid "Helicoidal"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_soiling_degree__3
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__soiling_degree_duct__3
+msgid "High"
+msgstr "Alto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_soiling_degree__5
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__soiling_degree_duct__5
+msgid "Highest"
+msgstr "Muy alto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__horizontal_meters
+msgid "Horizontal meters"
+msgstr "Metros horizontales"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__hydraulic_machine
+msgid "Hydraulic machine?"
+msgstr "¿Máquina hidráulica?"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_image
+msgid "Identification plate"
+msgstr "Placa de identificación"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__material__inox
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__material_filter__inox
+msgid "Inox"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__install_registers
+msgid "Install registers"
+msgstr "Instalar registros"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_type__insulated_plate
+msgid "Insulated plate"
+msgstr "Placa aislada"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Internal notes..."
+msgstr "Notas internas..."
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__cooker_type__island
+msgid "Island"
+msgstr "Isla"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_location
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__location_image
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__duct_location
+msgid "Location of vertical"
+msgstr "Ubicación de la vertical"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_type__lock
+msgid "Lock"
+msgstr "Chapa"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_soiling_degree__1
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__soiling_degree_duct__1
+msgid "Low"
+msgstr "Bajo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__manually_machine
+msgid "Manually machine?"
+msgstr "¿Máquina manual?"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__material
+msgid "Material"
+msgstr "Materiales"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_soiling_degree__2
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__soiling_degree_duct__2
+msgid "Medium"
+msgstr "Medio"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__model_and_brand
+msgid "Model and brand"
+msgstr "Modelo y marca"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__ex_company_name_oil
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__ex_company_name_oil
+msgid "Name of used oil management company"
+msgstr "Nombre compañía gestora de aceite usado"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__total_days_clean
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__total_days_clean
+msgid "Necessary days of cleaning"
+msgstr "Días necesarios para limpieza"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__noise_problems
+msgid "Noise problems?"
+msgstr "¿Problemas de ruido?"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__neighbor_noise
+msgid "Noise to neighbors"
+msgstr "Ruido a vecinos"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_soiling_degree__0
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__soiling_degree_duct__0
+msgid "None"
+msgstr "Nada"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_sale_order__comments_notes
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_sale_order_form_inherit_new_notes
+msgid "Observations to workers"
+msgstr "Observaciones a trabajadores"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_sale_order__name
+msgid "Order Reference"
+msgstr "Referencia del pedido"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_location__other
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_location__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Other data of interest"
+msgstr "Otros datos de interés"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__material__inox_galvan0
+msgid "Outdoor Inox / Indoor Galva"
+msgstr "Inox exterior/ Galva interior"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__place_sineblocks
+msgid "Place sineblocks"
+msgstr "Colocar sineblocks"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__place_tray
+msgid "Place tray"
+msgstr "Colocar bandeja"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__plant_id
+msgid "Plant"
+msgstr "Instalación"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Plant notes"
+msgstr "Observaciones Instalación"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_type__plate
+msgid "Plate"
+msgstr "Placa"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__plug
+msgid "Plug"
+msgstr "Toma de corriente"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__product_id
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.duct_register_search_view
+msgid "Product"
+msgstr "Producto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_transmission__pulley
+msgid "Pulley"
+msgstr "Por poleas"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__qty
+msgid "Qty"
+msgstr "Cantidad"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__shape__rectangular
+msgid "Rectangular"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Registers"
+msgstr "Registros"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_location__rooftop
+msgid "Rooftop"
+msgstr "Azotea"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__round
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__shape__round
+msgid "Round"
+msgstr "Redondo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model,name:oeng_reliex_commercial.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__shape
+msgid "Shape"
+msgstr "Forma"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__square
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__shape__square
+msgid "Square"
+msgstr "Cuadrado"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__substitute_belt
+msgid "Substitute belts?"
+msgstr "¿Sustituir correas?"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_location__sun
+msgid "Sun"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "TECHNICAL DATA"
+msgstr "DATOS TÉCNICOS"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__plenum
+msgid "Take plenum"
+msgstr "Lleva Plenum"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__duct_location__terrace
+msgid "Terrace"
+msgstr "Patio de luces"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.actions.act_window,help:oeng_reliex_commercial.duct_register_act_window
+msgid "There is no examples click here to add new Duct Registers."
+msgstr "No hay ejemplos, haga click aquí para añadir un nuevo registro en conducto."
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__establishment_days_clean
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__establishment_days_clean
+msgid "Total days cleaning"
+msgstr "Días totales limpieza"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__establishment_days_plant
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__establishment_days_plant
+msgid "Total days plant"
+msgstr "Días totales en instalación"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.duct_register_tree_view
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "Total qty"
+msgstr "Cantidad total"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_transmission
+msgid "Transmission"
+msgstr "Transmisión"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__cooker_type
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__duct_type
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__extractor_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__vertical_meters
+msgid "Vertical meters"
+msgstr "Metros verticales"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__extractor_soiling_degree__4
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__soiling_degree_duct__4
+msgid "Very High"
+msgstr "Muy alto"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__vibration
+msgid "Vibration"
+msgstr "Vibración"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__woc_count
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__wop_count
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__woc_count
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__wop_count
+msgid "WOC count"
+msgstr "Cuenta OTL"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "WOC's"
+msgstr "OTLs"
+
+#. module: oeng_reliex_commercial
+#: model_terms:ir.ui.view,arch_db:oeng_reliex_commercial.oeng_res_partner_form_inherit_plant_view
+msgid "WOP's"
+msgstr "OTIs"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields.selection,name:oeng_reliex_commercial.selection__cooker_hood__cooker_type__wall
+msgid "Wall"
+msgstr "Muro"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__waterproof_luminaire
+msgid "Waterproof luminaire"
+msgstr "Luminaria estanca"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_partner__clean_by_external
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_res_users__clean_by_external
+msgid "Window cleaning by an external company"
+msgstr "Limpieza ventanas por compañía externa"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_cooker_hood__ei30
+msgid "With EI30"
+msgstr "Con EI30"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__worksheet_id
+msgid "Worksheet"
+msgstr "Parte de Trabajo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model.fields,field_description:oeng_reliex_commercial.field_duct_register__worksheet_name
+msgid "Worksheet Reference"
+msgstr "Referencia de Parte de Trabajo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model,name:oeng_reliex_commercial.model_worksheet_part
+msgid "Worksheets"
+msgstr "Partes de Trabajo"
+
+#. module: oeng_reliex_commercial
+#: model:ir.model,name:oeng_reliex_commercial.model_duct_register
+msgid "duct.register"
+msgstr ""
+
+#. module: oeng_reliex_commercial
+#: model:ir.actions.server,name:oeng_reliex_commercial.oeng_assign_new_duct_and_extractor_data_ir_actions_server
+#: model:ir.cron,cron_name:oeng_reliex_commercial.oeng_assign_new_duct_and_extractor_data
+#: model:ir.cron,name:oeng_reliex_commercial.oeng_assign_new_duct_and_extractor_data
+msgid "oeng_assign_new_duct_and_extractor_data"
+msgstr ""

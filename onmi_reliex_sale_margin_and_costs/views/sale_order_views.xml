@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="onmi_sale_order_form_inherit_margin_and_costs" model="ir.ui.view">
+            <field name="name">onmi.sale.order.form.inherit.margin.and.costs</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="replace"/>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_uom_qty']" position="after">
+                    <field invisible="1" name="part_type"/>
+                    <field column_invisible="parent.part_type == 'cleaning'" name="cost"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                    <field groups="product.group_discount_per_so_line" name="discount" optional="show" string="Disc.%"
+                           widget="product_discount"/>
+                    <field column_invisible="parent.part_type == 'cleaning'" name="margin_qty" readonly="1"/>
+                    <field column_invisible="parent.part_type == 'cleaning'" name="margin_percentage"
+                           widget="product_discount"/>
+                    <button class="oe_link" name="apply_margin" string="Apply"
+                            title="Apply margin on price unit if you put cost too." type="object"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="before">
+                    <field invisible="part_type == 'cleaning'" name="subtotal_cost" readonly="True" widget="monetary"/>
+                </xpath>
+                <xpath expr="//field[@name='tax_totals']" position="before">
+                    <field invisible="part_type == 'cleaning'" name="costs" readonly="True" widget="monetary"/>
+                    <field invisible="part_type == 'cleaning'" name="benefits" readonly="True" widget="monetary"/>
+                    <field invisible="part_type == 'cleaning'" name="benefits_percent" readonly="True"
+                           widget="product_discount"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']" position="after">
+                    <div colspan="2">
+                        <button invisible="cm_applied != False and cm_reset != True" name="update_line_values"
+                                string="Update benefits" title="Update benefit, benefit (%) of order lines."
+                                type="object"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='tax_totals']" position="after">
+                    <field invisible="1" name="cm_applied"/>
+                    <field invisible="1" name="cm_reset"/>
+                    <field invisible="1" name="part_type"/>
+                    <field invisible="part_type == 'cleaning'" name="commercial_margin"
+                           readonly="cm_applied != False and cm_reset != True" widget="product_discount"/>
+                    <field name="commercial_margin_qty" readonly="True" widget="monetary"/>
+                    <div colspan="2" invisible="part_type == 'cleaning'">
+                        <p invisible="cm_applied != False and cm_reset != True">
+                            To apply commercial margin press
+                            <button class="oe_link" name="apply_commercial_margin" string="here"
+                                    title="Include commmercial margin to line margin" type="object"/>
+                        </p>
+                        <p invisible="cm_applied != True and cm_reset != False">
+                            <strong>
+                                Commercial margin has been applied.
+                            </strong>
+                            <br/>
+                            To revert and introduce a new one, press
+                            <button class="oe_link" name="reset_commercial_margin" string="here"
+                                    title="Include commmercial margin to line margin" type="object"/>
+                        </p>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

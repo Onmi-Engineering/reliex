@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oeng_inherit_work_order_clean_form_view" model="ir.ui.view">
+            <field name="name">oeng_inherit_work_order_clean_form_view</field>
+            <field name="model">work.order.clean</field>
+            <field name="inherit_id" ref="onmi_reliex_operations.work_order_clean_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='lead_id']" position="after">
+                    <field name="frecuency_oport_related" readonly="True" string="Oportunidad de frecuencia relacionada"
+                           invisible="frecuency_oport_related == False"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

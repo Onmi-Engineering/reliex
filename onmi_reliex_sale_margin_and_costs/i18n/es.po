@@ -1,0 +1,155 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* onmi_reliex_sale_margin_and_costs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-08 18:26+0000\n"
+"PO-Revision-Date: 2024-04-08 20:27+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid ""
+"<strong>Commercial margin has been applied.</strong>\n"
+"                            <br/>To revert and introduce a new one, press"
+msgstr ""
+"<strong>Margen comercial aplicado.</strong>\n"
+"                            <br/>Para revertirlo e introducir uno nuevo, presione"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "Apply margin on price unit if you put cost too."
+msgstr "Aplicar el margen al precio unitario si indica el coste también."
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__benefits
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order_line__margin_qty
+msgid "Benefits"
+msgstr "Beneficios"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__benefits_percent
+msgid "Benefits %"
+msgstr "Beneficios %"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order_line__margin_percentage
+msgid "Benefits (%)"
+msgstr "Beneficios (%)"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__cm_applied
+msgid "CM Applied"
+msgstr "MC Aplicado"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__cm_reset
+msgid "CM Reset"
+msgstr "MC Reiniciado"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__commercial_margin_qty
+msgid "Commercial Margin"
+msgstr "Margen comercial"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__commercial_margin
+msgid "Commercial Margin (%)"
+msgstr "Margen comercial (%)"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order_line__cost
+msgid "Cost"
+msgstr "Coste"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__costs
+msgid "Costs"
+msgstr "Costes"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "Disc.%"
+msgstr "Desc. %"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "Include commmercial margin to line margin"
+msgstr "Incluye margen comercial a líneas"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model,name:onmi_reliex_sale_margin_and_costs.model_material_list
+msgid "List of Materials"
+msgstr "Listado de Materiales"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order_line__opportunity_id
+msgid "Opportunity"
+msgstr "Oportunidad"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model,name:onmi_reliex_sale_margin_and_costs.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model,name:onmi_reliex_sale_margin_and_costs.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order_line__subtotal_cost
+msgid "Subtotal costs"
+msgstr "Subtotal Costes"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order_line__price_subtotal_without_margin
+msgid "Subtotal without margin"
+msgstr "Subtotal sin margen"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "To apply commercial margin press"
+msgstr "Para aplicar margen comercial, presione"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "Update benefit, benefit (%) of order lines."
+msgstr "Actualizar beneficio y  % beneficio de líneas."
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "Update benefits"
+msgstr "Actualizar beneficios"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order__part_type
+#: model:ir.model.fields,field_description:onmi_reliex_sale_margin_and_costs.field_sale_order_line__part_type
+msgid "WO Type"
+msgstr "Tipo OT"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_sale_margin_and_costs.onmi_sale_order_form_inherit_margin_and_costs
+msgid "here"
+msgstr "aquí"
+
+#. module: onmi_reliex_sale_margin_and_costs
+#: code:addons/onmi_reliex_sale_margin_and_costs/models/sale_order_line.py:0
+#, python-format
+msgid "you have to indicate cost to apply margin."
+msgstr "Tiene que indicar el coste para aplicar el margen."

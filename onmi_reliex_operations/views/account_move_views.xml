@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="onmi_view_account_invoice_filter_inherit_invoice_lines" model="ir.ui.view">
+            <field name="name">onmi_view_account_invoice_filter_inherit_invoice_lines</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="invoice_line_ids" string="Lines"
+                           filter_domain="[('invoice_line_ids', 'ilike', self)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

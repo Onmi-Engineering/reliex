@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="otl_editable" model="res.groups">
+            <field name="name">OTL pueden editar</field>
+        </record>
+        <!-- region Categoría de modulo -->
+        <record model="ir.module.category" id="onmi_module_category_operations_cleaning">
+            <field name="name">Operations Cleaning</field>
+            <field name="sequence">1</field>
+        </record>
+        <record model="ir.module.category" id="onmi_module_category_operations_plant">
+            <field name="name">Operations Plant</field>
+            <field name="sequence">2</field>
+        </record>
+        <record model="ir.module.category" id="onmi_module_category_commercial">
+            <field name="name">Commercial</field>
+            <field name="sequence">3</field>
+        </record>
+        <!-- endregion -->
+
+        <!-- region Grupos asociados al módulo operaciones -->
+
+        <!--region GRUPOS LIMPIEZA-->
+        <record id="group_operation_handled_cleaning" model="res.groups">
+            <field name="name">Handling</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_cleaning"/>
+        </record>
+        <record id="group_operation_invoicing_cleaning" model="res.groups">
+            <field name="name">Invoicing</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_cleaning"/>
+        </record>
+        <record id="group_operation_boss_team_cleaning" model="res.groups">
+            <field name="name">Boss team</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_cleaning"/>
+        </record>
+        <record id="group_operation_administrator_cleaning" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_cleaning"/>
+        </record>
+        <!--endregion-->
+
+        <!--region GRUPOS INSTALACIONES-->
+        <record id="group_operation_invoicing_plant" model="res.groups">
+            <field name="name">Invoicing</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_plant"/>
+        </record>
+        <record id="group_operation_handled_plant" model="res.groups">
+            <field name="name">Handling</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_plant"/>
+        </record>
+        <record id="group_operation_boss_team_plant" model="res.groups">
+            <field name="name">Boss team</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_plant"/>
+        </record>
+        <record id="group_operation_administrator_plant" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_operations_plant"/>
+        </record>
+        <!--endregion-->
+
+        <!--region GRUPOS COMERCIAL-->
+        <record id="group_commercial_administrator" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="onmi_reliex_operations.onmi_module_category_commercial"/>
+        </record>
+        <!--endregion-->
+        <!-- endregion -->
+
+        <!-- region Accesos por modelo y grupo -->
+        <!-- region Accesos para OPERACIONES LIMPIEZA/ ADMIN: MODELOS work.order.clean ; worksheet.part -->
+        <record id="work_order_clean_model_access_right_operation_cleaning" model="ir.model.access">
+            <field name="name">work_order_clean_model_access_right_operation_cleaning</field>
+            <field name="model_id" ref="model_work_order_clean"/>
+            <field name="group_id" ref="group_operation_administrator_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="worksheet_part_model_access_right_operation_cleaning" model="ir.model.access">
+            <field name="name">worksheet_part_model_access_right_operation_cleaning</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="group_id" ref="group_operation_administrator_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="sign_info_wizard_model_access_right_operation_cleaning" model="ir.model.access">
+            <field name="name">sign_info_wizard_model_access_right_operation_cleaning</field>
+            <field name="model_id" ref="model_sign_info_wizard"/>
+            <field name="group_id" ref="group_operation_administrator_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="materials_model_access_right_operation_cleaning" model="ir.model.access">
+            <field name="name">materials_model_access_right_operation_cleaning</field>
+            <field name="model_id" ref="model_materials"/>
+            <field name="group_id" ref="group_operation_administrator_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_incident_operation_cleaning" model="ir.model.access">
+            <field name="name">access_incident_operation_cleaning</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="group_id" ref="group_operation_administrator_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- endregion -->
+
+        <!-- region Accesos para OPERACIONES INSTALACIÓN/ ADMIN: MODELOS work.order.plant ; worksheet.part -->
+
+        <record id="material_list_model_access_right_operation_plant" model="ir.model.access">
+            <field name="name">material_list_plant_model_access_right_operation_plant</field>
+            <field name="model_id" ref="model_material_list"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="work_order_plant_model_access_right_operation_plant" model="ir.model.access">
+            <field name="name">work_order_plant_model_access_right_operation_plant</field>
+            <field name="model_id" ref="model_work_order_plant"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="worksheet_part_model_access_right_admin_operation_plant" model="ir.model.access">
+            <field name="name">worksheet_part_model_access_right_admin_operation_plant</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_incident_admin_operation_plant" model="ir.model.access">
+            <field name="name">access_incident_admin_operation_plant</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_human_resources_admin_operation_plant" model="ir.model.access">
+            <field name="name">access_human_resources_admin_operation_plant</field>
+            <field name="model_id" ref="model_human_resources"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_checklist_fire_admin_operation_plant" model="ir.model.access">
+            <field name="name">access_checklist_fire_admin_operation_plant</field>
+            <field name="model_id" ref="model_checklist_fire"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_corrective_action_admin_plant" model="ir.model.access">
+            <field name="name">access_corrective_action_admin_plant</field>
+            <field name="model_id" ref="model_corrective_action"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_sign_info_wizard_admin_plant" model="ir.model.access">
+            <field name="name">access_sign_info_wizard_admin_plant</field>
+            <field name="model_id" ref="model_sign_info_wizard"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_checklist_admin_operation_plant" model="ir.model.access">
+            <field name="name">access_checklist_admin_operation_plant</field>
+            <field name="model_id" ref="model_checklist"/>
+            <field name="group_id" ref="group_operation_administrator_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- endregion -->
+
+        <!-- region Accesos para OPERACIONES INSTALACIÓN/ JEFE EQUIPO: MODELOS work.order.plant ; worksheet.part -->
+
+        <record id="material_list_model_access_right_operation_plant_team_boss" model="ir.model.access">
+            <field name="name">material_list_model_access_right_operation_plant_team_boss</field>
+            <field name="model_id" ref="model_material_list"/>
+            <field name="group_id" ref="group_operation_boss_team_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="work_order_plant_model_access_right_operation_plant_team_boss" model="ir.model.access">
+            <field name="name">work_order_plant_model_access_right_operation_plant_team_boss</field>
+            <field name="model_id" ref="model_work_order_plant"/>
+            <field name="group_id" ref="group_operation_boss_team_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+        <record id="account_move_line_model_access_right_operation_plant_team_boss" model="ir.model.access">
+            <field name="name">account_move_line_model_access_right_operation_plant_team_boss</field>
+            <field name="model_id" ref="account.model_account_move_line"/>
+            <field name="group_id" ref="group_operation_boss_team_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+        <record id="worksheet_part_model_access_right_admin_operation_plant_team_boss" model="ir.model.access">
+            <field name="name">worksheet_part_model_access_right_admin_operation_plant_team_boss</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="group_id" ref="group_operation_boss_team_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <record id="sign_info_wizard_model_access_right_admin_operation_plant_team_boss" model="ir.model.access">
+            <field name="name">sign_info_wizard_model_access_right_admin_operation_plant_team_boss</field>
+            <field name="model_id" ref="model_sign_info_wizard"/>
+            <field name="group_id" ref="group_operation_boss_team_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_incident_admin_operation_plant_team_boss" model="ir.model.access">
+            <field name="name">access_incident_admin_operation_plant_team_boss</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="group_id" ref="group_operation_boss_team_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_human_resources_admin_operation_plant_team_boss" model="ir.model.access">
+            <field name="name">access_human_resources_admin_operation_plant_team_boss</field>
+            <field name="model_id" ref="model_human_resources"/>
+            <field name="group_id" ref="group_operation_boss_team_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- endregion -->
+
+        <!-- region Accesos para OPERACIONES LIMPIEZA/ JEFE EQUIPO: MODELOS work.order.clean ; worksheet.part -->
+        <record id="work_order_clean_model_access_right_operation_cleaning_boss_team" model="ir.model.access">
+            <field name="name">work_order_clean_model_access_right_operation_cleaning_boss_team</field>
+            <field name="model_id" ref="model_work_order_clean"/>
+            <field name="group_id" ref="group_operation_boss_team_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="worksheet_part_model_access_right_operation_cleaning_boss_team" model="ir.model.access">
+            <field name="name">worksheet_part_model_access_right_operation_cleaning_boss_team</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="group_id" ref="group_operation_boss_team_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <record id="sign_info_wizard_model_access_right_operation_cleaning_boss_team" model="ir.model.access">
+            <field name="name">sign_info_wizard_model_access_right_operation_cleaning_boss_team</field>
+            <field name="model_id" ref="model_sign_info_wizard"/>
+            <field name="group_id" ref="group_operation_invoicing_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="materials_model_access_right_operation_cleaning_boss_team" model="ir.model.access">
+            <field name="name">materials_model_access_right_operation_cleaning_boss_team</field>
+            <field name="model_id" ref="model_materials"/>
+            <field name="group_id" ref="group_operation_boss_team_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_incident_operation_cleaning_boss_team" model="ir.model.access">
+            <field name="name">access_incident_operation_cleaning_boss_team</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="group_id" ref="group_operation_boss_team_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- endregion -->
+
+        <!-- region Accesos para OPERACIONES INSTALACIÓN/ FACTURACIÓN: MODELOS work.order.clean ; worksheet.part -->
+        <record id="work_order_clean_model_access_right_operation_plant_invoicing" model="ir.model.access">
+            <field name="name">work_order_clean_model_access_right_operation_plant_invoicing</field>
+            <field name="model_id" ref="model_work_order_plant"/>
+            <field name="group_id" ref="group_operation_invoicing_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="worksheet_part_model_access_right_operation_plant_invoicing" model="ir.model.access">
+            <field name="name">worksheet_part_model_access_right_operation_plant_invoicing</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="group_id" ref="group_operation_invoicing_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+        <record id="sign_info_wizard_model_access_right_operation_plant_invoicing" model="ir.model.access">
+            <field name="name">sign_info_wizard_model_access_right_operation_plant_invoicing</field>
+            <field name="model_id" ref="model_sign_info_wizard"/>
+            <field name="group_id" ref="group_operation_invoicing_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="materials_model_access_right_operation_plant_invoicing" model="ir.model.access">
+            <field name="name">materials_model_access_right_operation_plant_invoicing</field>
+            <field name="model_id" ref="model_materials"/>
+            <field name="group_id" ref="group_operation_invoicing_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="access_incident_operation_plant_invoicing" model="ir.model.access">
+            <field name="name">access_incident_operation_plant_invoicing</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="group_id" ref="group_operation_invoicing_plant"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- endregion -->
+
+        <!-- region Accesos para OPERACIONES LIMPIEZA/ FACTURACIÓN: MODELOS work.order.clean ; worksheet.part -->
+        <record id="work_order_clean_model_access_right_operation_cleaning_invoicing" model="ir.model.access">
+            <field name="name">work_order_clean_model_access_right_operation_cleaning_invoicing</field>
+            <field name="model_id" ref="model_work_order_clean"/>
+            <field name="group_id" ref="group_operation_invoicing_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="worksheet_part_model_access_right_operation_cleaning_invoicing" model="ir.model.access">
+            <field name="name">worksheet_part_model_access_right_operation_cleaning_invoicing</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="group_id" ref="group_operation_invoicing_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+        <record id="sign_info_wizard_model_access_right_operation_cleaning_invoicing" model="ir.model.access">
+            <field name="name">sign_info_wizard_model_access_right_operation_cleaning_invoicing</field>
+            <field name="model_id" ref="model_sign_info_wizard"/>
+            <field name="group_id" ref="group_operation_invoicing_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="materials_model_access_right_operation_cleaning_invoicing" model="ir.model.access">
+            <field name="name">materials_model_access_right_operation_cleaning_invoicing</field>
+            <field name="model_id" ref="model_materials"/>
+            <field name="group_id" ref="group_operation_invoicing_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="access_incident_operation_cleaning_invoicing" model="ir.model.access">
+            <field name="name">access_incident_operation_cleaning_invoicing</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="group_id" ref="group_operation_invoicing_cleaning"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- endregion -->
+
+        <!--region Accesos COMERCIAL/ADMIN -->
+        <record id="incident_model_access_right_comercial_admin" model="ir.model.access">
+            <field name="name">incident_model_access_right_comercial_admin</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="group_id" ref="group_commercial_administrator"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="material_list_model_access_right_comercial_admin" model="ir.model.access">
+            <field name="name">material_list_model_access_right_comercial_admin</field>
+            <field name="model_id" ref="model_material_list"/>
+            <field name="group_id" ref="group_commercial_administrator"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="materials_model_access_right_comercial_admin" model="ir.model.access">
+            <field name="name">materials_model_access_right_comercial_admin</field>
+            <field name="model_id" ref="model_materials"/>
+            <field name="group_id" ref="group_commercial_administrator"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="accept_model_mode" model="ir.model.access">
+            <field name="name">accept_model_mode</field>
+            <field name="model_id" ref="model_accept_model"/>
+            <field name="group_id" ref="group_commercial_administrator"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="custom_model_model" model="ir.model.access">
+            <field name="name">custom_model_model</field>
+            <field name="model_id" ref="model_custom_model"/>
+            <field name="group_id" ref="group_commercial_administrator"/>
+            <field name="active">1</field>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!--endregion-->
+
+        <!--grupos especiales-->
+    <record id="onmi_category_permisos_especiales" model="ir.module.category">
+        <field name="name">Permisos Especiales</field>
+        <field name="description">Categoría para permisos especiales en el sistema</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="onmi_group_permisos_especiales" model="res.groups">
+        <field name="name">Bloqueo de campos</field>
+        <field name="category_id" ref="onmi_category_permisos_especiales"/>
+        <field name="comment">Usuarios con bloqueo para editar campos restringidos</field>
+    </record>
+
+    </data>
+</odoo>

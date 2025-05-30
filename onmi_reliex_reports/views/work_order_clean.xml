@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="work_order_clean_form_view_inherit_notify_operators" model="ir.ui.view">
+            <field name="name">work_order_clean_form_view_inherit_notify_operators</field>
+            <field name="model">work.order.clean</field>
+            <field name="inherit_id" ref="onmi_reliex_operations.work_order_clean_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button class="oe_highlight" data-hotkey="l"
+                            invisible="state == 'confirm' or state == 'handled' or state == 'to_finish' or state == 'finished' or state == 'invoiced' or state == 'assign'"
+                            name="notify_operators" string="Notify Operators" title="Notify operators from worksheets"
+                            type="object"/>
+                    <!--                    <field invisible="1" name="message_main_attachment_id"/>-->
+                    <button class="oe_highlight" data-hotkey="l"
+                            invisible="state == 'proposed' or state == 'waiting' or state == 'confirm' or state == 'handled' or state == 'to_plan' or state == 'to_finish' or state == 'assign'"
+                            name="report_foto_zip" string="Ft.Zip" title="Informe fotografico zip" type="object"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

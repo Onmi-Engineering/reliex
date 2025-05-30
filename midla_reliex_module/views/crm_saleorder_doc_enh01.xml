@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="report_saleorder_document_inherit"
+              name="Report Saleorder Document Inherit"
+              inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[hasclass('page')]//h2[hasclass('mt-4')]" position="after">
+            <div>
+                <span t-out="doc.opportunity_id.name"></span>
+            </div>
+        </xpath>
+    </template>
+</odoo>

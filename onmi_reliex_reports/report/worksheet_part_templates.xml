@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--region TEMPLATES FIRMA CLIENTE-->
+        <template id="report_worksheet_document">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <!--region BASIC INFO-->
+                    <table name="table_info_worksheet" width="100%">
+                        <tr style="border: thin solid;">
+                            <td name="td_init_date">
+                                <strong>DATE</strong>
+                                <span style="margin-left:10px;" t-field="doc.start_date"
+                                      t-options='{"widget": "date", "format": "dd/MM/YYYY"}'/>
+                            </td>
+                            <td name="td_init_time">
+                                <strong>INIT TIME</strong>
+                                <span style="margin-left:10px;" t-field="doc.start_date"
+                                      t-options='{"format": "hh:mm a"}'/>
+                            </td>
+                            <td name="td_end_time">
+                                <strong>END TIME</strong>
+                                <span style="margin-left:10px;" t-field="doc.end_date"
+                                      t-options='{"format": "hh:mm a"}'/>
+                            </td>
+                        </tr>
+                        <tr style="border: thin solid;">
+                            <td name="td_technicians" colspan="3">
+                                <strong>TECHNICIANS: Boss team:</strong>
+                                <span style="margin-left:5px;margin-right:10px;" t-field="doc.user_id.name"/>
+                                <strong>Workers:</strong>
+                                <t t-foreach="doc.employee_id" t-as="emp">
+                                    <span style="margin-right:5px;" t-field="emp.name"/>
+                                </t>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--endregion-->
+                    <!--region PARTNER INFO-->
+                    <table name="table_partner_info" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr style="border: thin solid;">
+                                <td style="text-align:center; " colspan="3">
+                                    <strong>PARTNER</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: thin solid;">
+                                <td colspan="3">
+                                    <strong style="margin-right: 10px;">COMMERCIAL NAME</strong>
+                                    <span t-field="doc.establishment_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td colspan="3">
+                                    <strong style="margin-right: 10px;">ADDRESS</strong>
+                                    <span t-field="doc.establishment_id.street"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong style="margin-right: 10px;">CITY</strong>
+                                    <span t-field="doc.establishment_id.city"/>
+                                </td>
+                                <td>
+                                    <strong style="margin-right: 10px;">STATE</strong>
+                                    <span t-field="doc.establishment_id.state_id.name"/>
+                                </td>
+                                <td>
+                                    <strong style="margin-right: 10px;">PHONE</strong>
+                                    <span t-field="doc.establishment_id.mobile"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--endregion-->
+                    <!--region PLANT/S INFO-->
+                    <t t-if="doc.part_type == 'plant'">
+                        <t t-set="plants" t-value="doc.line_ids.plant_id"/>
+                    </t>
+                    <table name="table_plant_info" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr t-if="doc.part_type == 'cleaning'" style="border: thin solid;">
+                                <td style="text-align:center;">
+                                    <strong>PLANT PROCESSED</strong>
+                                </td>
+                            </tr>
+                            <tr t-if="doc.part_type == 'plant'" style="border: thin solid;">
+                                <td style="text-align:center;">
+                                    <strong>PLANTS PROCESSED</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-if="doc.part_type == 'cleaning'" style="border: thin solid;">
+                                <td>
+                                    <span t-field="doc.plant_id.name"/>
+                                </td>
+                            </tr>
+                            <tr t-if="doc.part_type == 'plant'" style="border: thin solid;">
+                                <t t-foreach="plants" t-as="plant">
+                                    <td>
+                                        <span t-field="plant.name"/>
+                                    </td>
+                                </t>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--endregion-->
+                    <!--region RESOURCES CONSUMED-->
+                    <table name="table_resources_info" width="100%">
+                        <thead style="background-color:#A9A9A9;">
+                            <tr style="border: thin solid;" t-if="doc.cleaning_line_ids">
+                                <td style="text-align:center;" colspan="3">
+                                    <strong>RESOURCES CONSUMED</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="doc.part_type == 'cleaning'" t-foreach="doc.cleaning_line_ids" t-as="line">
+                                <tr style="border: thin solid;">
+                                    <td width="80%">
+                                        <span t-field="line.product_id.name"/>
+                                    </td>
+                                    <td width="20%">
+                                        <span style="margin-right: 3px;" t-field="line.qty_consumed"/>
+                                        uds.
+                                    </td>
+                                </tr>
+                            </t>
+                            <t t-if="doc.part_type == 'plant'" t-foreach="doc.line_ids" t-as="line">
+                                <tr style="border: thin solid;">
+                                    <td width="40%">
+                                        <span t-field="line.product_id.name"/>
+                                    </td>
+                                    <td width="20%">
+                                        <span style="margin-right: 3px;" t-field="line.qty_consumed"/>
+                                        uds.
+                                    </td>
+                                    <td width="40%">
+                                        Plant:
+                                        <span style="margin-right: 5px;" t-field="line.plant_id.name"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <!--endregion-->
+                    <!--region INCIDENTS-->
+                    <t t-if="doc.incident_ids">
+                        <table name="table_incidents_info" width="100%">
+                            <thead style="background-color:#A9A9A9">
+                                <tr style="border: thin solid;">
+                                    <td style="text-align:center;">
+                                        <strong>INCIDENTS</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.incident_ids" t-as="incident">
+                                    <t t-if="incident.incident_type != 'reliex_info'">
+                                        <tr style="border: thin solid;">
+                                            <td>
+                                                <span t-field="incident.description"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <!--endregion-->
+                    <!--region OBSERVACIONES-->
+                    <t t-if="doc.certified_comment">
+                        <table name="table_observations" style="border: thin solid;" width="100%">
+                            <thead style="background-color:#A9A9A9">
+                                <tr style="border: thin solid;">
+                                    <td style="text-align:center;">
+                                        <strong>OBSERVATIONS</strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.certified_comment"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                    <!--endregion-->
+                    <!--region SIGNATURE INFO-->
+                    <table name="table_signatures_info" style="border: thin solid;" width="100%">
+                        <tr>
+                            <td width="40%" style="text-align:center;">
+                                Reliex leader sign
+                            </td>
+                            <td width="40%" style="text-align:center;">
+                                Establishment leader sign, confirm that work is over and checked.
+                            </td>
+                            <td width="20%"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <t t-if="doc.signature_commercial">
+                                    <img t-att-src="image_data_uri(doc.signature_commercial)"
+                                         style="max-height: 6rem; max-width: 100%; color:black;"/>
+                                </t>
+                            </td>
+                            <td>
+                                <t t-if="not doc.refuses_sign and doc.signature_client">
+                                    <img t-att-src="image_data_uri(doc.signature_client)"
+                                         style="max-height: 6rem; max-width: 100%; color:black;"/>
+                                </t>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td style="background-color:#A9A9A9; border: thin solid;">
+                                <strong>WORKSHEET PART</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span t-field="doc.commercial_datas"/>
+                            </td>
+                            <td>
+                                <t t-if="not doc.refuses_sign">
+                                    <span t-field="doc.client_datas"/>
+                                </t>
+                                <t t-if="doc.refuses_sign">
+                                    Refuses to sign
+                                </t>
+                            </td>
+                            <td style="border: thin solid;">
+                                <strong>
+                                    <span t-field=" doc.name"/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--endregion-->
+                </div>
+            </t>
+        </template>
+
+        <template id="report_worksheet">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="onmi_reliex_reports.report_worksheet_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+        <!--endregion-->
+        <!--region TEMPLATES CERTIFICADO LIMPIEZA-->
+        <template id="report_worksheet_certified_document">
+
+            <t t-call="web.external_layout">
+                <t t-set="company" t-value="res_company"></t>
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <div class="page">
+                    <style>
+                        {
+                        }
+                    </style>
+                    <div class="oe_structure"/>
+                    <table width="100%" name="title">
+                        <tr>
+                            <td>
+                                <h1>Cleaning Certified</h1>
+                            </td>
+                            <td>
+                                <strong>Date:</strong>
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table name="company_data" width="100%" style="border: 1px solid;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;text-align:center;">
+                                    Identification details of sanitation &amp; cleaning company
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">Bussiness name</td>
+                                <td colspan="3" style="border: 1px solid;">
+                                    <span t-field="company.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">
+                                    Address
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    <span t-field="company.street"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    City:
+                                    <span t-field="company.city"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    State:
+                                    <span t-field="company.state_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="border: 1px solid;">
+                                    Office:
+                                    <span t-field="company.phone"/>
+                                    <br/>
+                                    Mobile:
+                                    <span t-field="company.mobile"/>
+                                </td>
+                                <td colspan="2" style="border: 1px solid;">
+                                    <span t-field="company.email"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align:center;border: 1px solid;">
+                                    <span t-field="company.website"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="partner_data" width="100%" style="border: 1px solid; margin-top:10px;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;text-align:center;">
+                                    Identification details of hiring company and plant processed
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">Bussiness name</td>
+                                <td colspan="3" style="border: 1px solid;">
+                                    <span t-field="doc.establishment_id.parent_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">
+                                    Address
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    <span t-field="doc.establishment_id.parent_id.street"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    City:
+                                    <span t-field="doc.establishment_id.parent_id.city"/>
+                                </td>
+                                <td colspan="1" style="border: 1px solid;">
+                                    State:
+                                    <span t-field="doc.establishment_id.parent_id.state_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align:center;border: 1px solid;">
+                                    <span t-field="doc.establishment_id.parent_id.email"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="border: 1px solid;">
+                                    Treatment date:
+                                    <span t-field="doc.start_date"
+                                          t-options='{"widget": "date","format": "dd/MM/yyyy"}'/>
+                                </td>
+                                <td colspan="2" style="border: 1px solid;">
+                                    VAT:
+                                    <span t-field="doc.establishment_id.parent_id.vat"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;">
+                                    Plant worked:
+                                    <span t-field="doc.plant_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="border: 1px solid;">
+                                    Establishment worked:
+                                    <span t-field="doc.establishment_id.name"/>
+                                </td>
+                            </tr>
+                            <tr t-if="doc.establishment_id.frecuency_active">
+                                <td colspan="4">
+                                    Estimated next cleaning date:
+                                    <span t-field="doc.next_frecuency_date"
+                                          t-options='{"widget": "date","format": "dd/MM/yyyy"}'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="product_data" width="100%" style="border: 1px solid;margin-top:10px;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;text-align:center;">
+                                    Used Products
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="1" style="border: 1px solid;">
+                                    Product Names: RELIDEX &amp; BIOTEC15.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table name="action_protocol_data" width="100%" style="border: 1px solid;margin-top:10px;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td style="border: 1px solid;text-align:center;">
+                                    Action Protocol
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid;">
+                                    <span t-field="doc.action_protocol"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="signature" width="40%" style="border: 1px solid;margin-top:10px;">
+                        <tr>
+                            <td>
+                                <strong>Treatment leader</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <t t-if="company.signature_leader">
+                                    <img style="max-height: 6cm; max-width: 12cm;"
+                                         t-att-src="image_data_uri(company.signature_leader)"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Fdo.:</strong>
+                                Ismael Murcia Llorca
+                                <br/>
+                                (Boss)
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_worksheet_certified">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="onmi_reliex_reports.report_worksheet_certified_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+        <!--endregion-->
+    </data>
+</odoo>

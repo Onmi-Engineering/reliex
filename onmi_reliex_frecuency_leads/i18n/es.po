@@ -1,0 +1,300 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* onmi_reliex_frecuency_leads
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-04 12:39+0000\n"
+"PO-Revision-Date: 2024-04-04 14:40+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: onmi_reliex_frecuency_leads
+#: code:addons/onmi_reliex_frecuency_leads/models/frecuency_lead.py:0
+#, python-format
+msgid ""
+"\n"
+"Plants that had been cleaned:\n"
+msgstr ""
+"\n"
+"Instalaciones que han sido limpiadas en la anterior orden:\n"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.oeng_crm_lead_form_inherit_starred_button
+msgid ""
+"<span class=\"o_stat_text\">\n"
+"                                All Incident\n"
+"                            </span>"
+msgstr ""
+"<span class=\"o_stat_text\">\n"
+"                                Incidencias\n"
+"                            </span>"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model,name:onmi_reliex_frecuency_leads.model_work_order_clean
+msgid "Cleanning Work Orders"
+msgstr "Órdenes de trabajo Limpieza"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_crm_lead__client_id
+msgid "Client"
+msgstr "Cliente"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_tree_view
+msgid "Create Lead"
+msgstr "Crear Oportunidad"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields.selection,name:onmi_reliex_frecuency_leads.selection__frecuency_lead__status__current
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_search_view
+msgid "Current"
+msgstr "En vigor"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__full_cleanning_days
+msgid "Days of full cleaning"
+msgstr "Dias de limpieza completa"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__establishment
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__establishment_id
+msgid "Establishment"
+msgstr "Establecimiento"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields.selection,name:onmi_reliex_frecuency_leads.selection__frecuency_lead__status__expired
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_search_view
+msgid "Expired"
+msgstr "Vencido"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__delay
+msgid "Frecuency delay (days)"
+msgstr "Retraso de frecuencia (días)"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.actions.act_window,name:onmi_reliex_frecuency_leads.frecuency_lead_act_window
+#: model:ir.ui.menu,name:onmi_reliex_frecuency_leads.frecuency_lead_menu
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_search_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_tree_view
+msgid "Frecuency leads"
+msgstr "Oportunidades de Frecuencia"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.oeng_crm_lead_form_inherit_starred_button
+msgid "Generate partner"
+msgstr "Generar cliente"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_search_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Handling"
+msgstr "Tramitando"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_crm_lead__has_quotation_incidents
+msgid "Has quotation incidents"
+msgstr "Tiene incidencias de presupuesto"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Incident type"
+msgstr "Tipo de Incidencia"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Incidents"
+msgstr "Incidencias"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_search_view
+msgid "Last WOC date"
+msgstr "Fecha última OTL"
+
+#. module: onmi_reliex_frecuency_leads
+#: code:addons/onmi_reliex_frecuency_leads/models/frecuency_lead.py:0
+#, python-format
+msgid "Last Workorder: "
+msgstr "Última orden de trabajo: "
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__last_workorder_date
+msgid "Last workorder date"
+msgstr "Fecha última OTL"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__lead_id
+msgid "Lead"
+msgstr "Oportunidad"
+
+#. module: onmi_reliex_frecuency_leads
+#: code:addons/onmi_reliex_frecuency_leads/models/frecuency_lead.py:0
+#, python-format
+msgid "Lead created by Frecuency - "
+msgstr "Oportunidad creada por Frecuencia - "
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model,name:onmi_reliex_frecuency_leads.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Oportunidad"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model,name:onmi_reliex_frecuency_leads.model_frecuency_lead
+msgid "Leads of frecuency"
+msgstr "Oportunidades de frecuencia"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__name
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_form_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__calculated_date
+msgid "Next cleanning date"
+msgstr "Siguiente fecha de limpieza"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Not handling"
+msgstr "Sin Tramitar"
+
+#. module: onmi_reliex_frecuency_leads
+#: code:addons/onmi_reliex_frecuency_leads/models/frecuency_lead.py:0
+#: code:addons/onmi_reliex_frecuency_leads/models/work_order_clean.py:0
+#, python-format
+msgid "PENDING FRECUENCY LEAD - "
+msgstr "PRESUPUESTO DE FREC. PENDIENTE - "
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_crm_lead__parent_partner_id
+msgid "Parent Partner"
+msgstr "Cliente de establecimiento"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Pending Quot incidents"
+msgstr "Incidencias de presupuesto pendientes"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__previous_workorder_id
+msgid "Previous WOC"
+msgstr "Anterior OTL"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_tree_view
+msgid "Recalculate WOC dates"
+msgstr "Recalcular fecha OTL"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.incident_search_view
+msgid "Second Incident type"
+msgstr "Tipo de Incidencia segundo"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,help:onmi_reliex_frecuency_leads.field_frecuency_lead__last_workorder_date
+msgid "Start date of last workorder of this establishment."
+msgstr "Fecha de inicio de la última OTL de este establecimiento."
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_frecuency_leads.frecuency_lead_search_view
+msgid "State of establishment"
+msgstr "Provincia del Establecimiento"
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__status
+msgid "Status"
+msgstr "Estado"
+
+#. module: onmi_reliex_frecuency_leads
+#: model_terms:ir.actions.act_window,help:onmi_reliex_frecuency_leads.frecuency_lead_act_window
+msgid "There is no examples click here to add new Frecuency leads."
+msgstr ""
+"No hay registros, haga clic aquí para añadir una nueva oportunidad de "
+"frecuencia."
+
+#. module: onmi_reliex_frecuency_leads
+#: code:addons/onmi_reliex_frecuency_leads/models/crm_lead.py:0
+#, python-format
+msgid "VAT of "
+msgstr "Razón social de "
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.model.fields,field_description:onmi_reliex_frecuency_leads.field_frecuency_lead__workorder_id
+msgid "WOC generated"
+msgstr "OTL generada"
+
+#. module: onmi_reliex_frecuency_leads
+#: code:addons/onmi_reliex_frecuency_leads/models/crm_lead.py:0
+#, python-format
+msgid "You cant generate client if you dont define establishment."
+msgstr "No puede generar un cliente si no define el establecimiento."
+
+#. module: onmi_reliex_frecuency_leads
+#: model:ir.actions.server,name:onmi_reliex_frecuency_leads.oeng_generate_pending_frecuency_leads_cron_ir_actions_server
+#: model:ir.cron,cron_name:onmi_reliex_frecuency_leads.oeng_generate_pending_frecuency_leads_cron
+#: model:ir.cron,name:onmi_reliex_frecuency_leads.oeng_generate_pending_frecuency_leads_cron
+msgid "oeng_generate_pending_frecuency_leads"
+msgstr ""

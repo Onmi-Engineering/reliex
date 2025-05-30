@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- region Vistas OT Instalación -->
+        <record id="work_order_plant_form_view" model="ir.ui.view">
+            <field name="name">work.order.plant.form.view</field>
+            <field name="model">work.order.plant</field>
+            <field name="arch" type="xml">
+                <form string="Plant Work Order">
+                    <header>
+                        <!--region PROGRESO DE ESTADO-->
+                        <button class="oe_highlight" invisible="state != 'to_plan'" name="button_planned" string="Planned" title="Click when is planned" type="object"/>
+                        <button class="oe_highlight" invisible="state != 'to_hand'" name="button_handled" string="Handled" title="Click when is Confirm by Customer" type="object"/>
+                        <button class="oe_highlight" invisible="state != 'in_process'" name="button_finished" string="Finished" title="Click when is finished" type="object"/>
+                        <button class="oe_highlight" invisible="state != 'finished'" name="button_invoiced" string="Invoiced" title="Click when is invoiced" type="object"/>
+                        <button class="oe_highlight" name="button_reset" string="Reset" title="Click when you want to reset the state" type="object"/>
+                        <!--endregion-->
+                        <button class="oe_highlight" invisible="state in ['in_process', 'finished', 'invoiced']" name="button_notify_operators" string="Notify Operators" title="Click when you want to send info to operators." type="object"/>
+                        <button class="oe_highlight" data-hotkey="l" name="action_worksheet_new" string="New Worksheet" title="Create new Part WorkOrder" type="object"/>
+                        <button class="oe_highlight" confirm="Are you still sure you want to continue creating the invoice?" data-hotkey="l" invisible="state != 'finished'" name="action_create_invoice" string="To invoice this plant" title="Create invoice" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" icon="fa-shopping-cart" name="action_view_purchase_orders" type="object">
+                                <field name="purchase_order_count" string="Purchases" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" icon="fa-exclamation-triangle" name="action_view_incident" type="object">
+                                <field name="incident_count" string="Incidents" widget="statinfo"/>
+                            </button>
+                            <button class="oe_stat_button" icon="fa-info" name="action_without_function" style="width: 180px !important;" type="object">
+                                <field name="opened_worksheet_count" string="WO invoiced for this plant" style="font-size:10px !important;" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <div invisible="pending_debts == False" name="message_alert" style="color: #e50a0a !important;text-align: center;">
+                                This customer have some pending debts. Please...
+                            </div>
+                            <field invisible="1" name="operators_notified"/>
+                            <div invisible="operators_notified == False" name="message_alert" style="text-align:right; font-size: 16px;">
+                                <strong>
+                                    The operators have been notified successfully.
+                                </strong>
+                            </div>
+                            <label class="o_light_label" for="name">
+                                Reference of Work Order Plant
+                            </label>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field domain="[('is_company', '=', True)]" invisible="1" name="partner_id"/>
+                                <field domain="[('type', '=', 'establishment'),('parent_id','=', partner_id)]" name="establishment_id"/>
+                                <field domain="[('type', '=', 'plant'),('parent_id','=', establishment_id)]" name="plant_id"/>
+                                <field name="sale_id"/>
+                                <field name="provisioned"/>
+                                <field name="access_done"/>
+                                <field name="certification_needed"/>
+                                <field name="checklist_fume_needed"/>
+                                <field name="checklist_fire_needed"/>
+                            </group>
+                            <group>
+                                <field name="list_id"/>
+                                <field name="start_date"/>
+                                <field name="duration" widget="float_time"/>
+                                <field name="user_id"/>
+                                <field name="employee_ids" options="{'color_field': 'color', 'no_create_edit': True}" widget="many2many_tags"/>
+                                <field invisible="1" name="pending_debts"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="materials" string="Materials">
+                                <field name="line_ids" widget="one2many_list">
+                                    <tree editable="bottom">
+                                        <control>
+                                            <create name="add_product_control" string="Add a product"/>
+                                        </control>
+                                        <field name="product_id"/>
+                                        <field name="quantity"/>
+                                        <field name="qty_on_parts"/>
+                                        <field name="supplier_id"/>
+                                        <field name="location"/>
+                                        <field name="delivery_date"/>
+                                    </tree></field>
+                                <label for="plant_picture"/>
+                                <field name="plant_picture" nolabel="1" widget="image"/>
+                            </page>
+                            <page invisible="state == 'in_process' or state == 'finished' or state == 'invoiced'" name="dealings" string="Dealings">
+                                <group>
+                                    <field name="access_url" widget="url"/>
+                                </group>
+                                <group>
+                                    <field name="access_notifications" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page name="other_info" string="Other Info">
+                                <field name="worksheet_ids" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="o_attachment_preview" options="{'preview_priority_type': 'pdf'}"/>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form></field>
+        </record>
+        <record id="work_order_plant_tree_view" model="ir.ui.view">
+            <field name="name">work.order.plant.tree</field>
+            <field name="model">work.order.plant</field>
+            <field name="arch" type="xml">
+                <tree string="Plant Work Order">
+                    <field name="name"/>
+                    <field name="plant_id"/>
+                    <field name="start_date"/>
+                </tree></field>
+        </record>
+        <!--region Vista calendario (no usada por ahora)-->
+<!--        <record id="work_order_plant_calendar_view" model="ir.ui.view">-->
+<!--            <field name="name">work.order.plant.calendar.view</field>-->
+<!--            <field name="model">work.order.plant</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <calendar all_day="allday" color="user_id" create="1" date_start="start_date" date_stop="end_date" event_open_popup="1" form_view_id="%(onmi_reliex_operations.work_order_plant_form_view)d" hide_time="false" mode="week" quick_add="0" string="Planning Work Orders">-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="partner_id"/>-->
+<!--                    <field filters="1" invisible="0" name="user_id"/>-->
+<!--                </calendar></field>-->
+<!--        </record>-->
+        <!--endregion-->
+        <record id="view_work_order_plant_filter" model="ir.ui.view">
+            <field name="name">view.work.order.plant.filter</field>
+            <field name="model">work.order.plant</field>
+            <field name="arch" type="xml">
+                <search string="Search Plant Work Order">
+                    <field filter_domain="['|', ('name', 'ilike', self), ('partner_id', 'child_of', self)]" name="name" string="Order"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id"/>
+                    <filter domain="[('state','=','confirmed')]" name="conmfirmed_work_orders_plant_filter" string="Confirmed"/>
+                    <filter domain="[('state','=','planned')]" name="planned_work_orders_plant_filter" string="Planned"/>
+                    <group expand="0" string="Group By">
+                        <filter context="{'group_by': 'user_id'}" domain="[]" name="team" string="Team"/>
+                        <filter context="{'group_by': 'partner_id'}" domain="[]" name="customer" string="Customer"/>
+                        <filter context="{'group_by': 'establishment_id'}" domain="[]" name="establishment" string="Establishment"/>
+                    </group>
+                </search></field>
+        </record>
+        <!-- endregion -->
+        <!--region Acciones de ventana OT Instalación -->
+        <!-- ACTION Para OT's "PARA APROVISIONAR" -->
+        <!--        <record id="onmi_action_work_order_plant_to_handling" model="ir.actions.act_window">-->
+        <!--            <field name="name">Work Orders to provision</field>-->
+        <!--            <field name="res_model">work.order.plant</field>-->
+        <!--            <field name="view_mode">tree,form</field>-->
+        <!--            <field name="view_id" ref="work_order_plant_tree_view"/>-->
+        <!--            <field name="domain">[('state', '=', 'to_provision')]</field>-->
+        <!--            <field name="context">{}</field>-->
+        <!--            <field name="view_ids"-->
+        <!--                   eval="[(5, 0, 0),-->
+        <!--                          (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),-->
+        <!--                          (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')}),-->
+        <!--                          ]"/>-->
+        <!--            <field name="help" type="html">-->
+        <!--                <p class="o_view_nocontent_smiling_face">-->
+        <!--                    View Work orders to plan-->
+        <!--                </p>-->
+        <!--                <p>-->
+        <!--                    View Work order to plan, register Work orders to plan.-->
+        <!--                </p>-->
+        <!--</field>-->
+        <!--        </record>-->
+        <!-- ACTION Para OT's "PARA PLANIFICAR" -->
+        <record id="onmi_action_work_order_plant_to_plan" model="ir.actions.act_window">
+            <field name="name">Plant Work Orders To Plan</field>
+            <field name="res_model">work.order.plant</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_work_order_plant_filter"/>
+            <field name="domain">[('state', '=', 'to_plan')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')}),                           ]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders Planned
+                </p>
+                <p>
+                    View Work order Planned, register Work orders Planned.
+                </p></field>
+        </record>
+        <!-- ACTION Para OT's "PARA CONFIRMAR" -->
+        <!--        <record id="onmi_action_work_order_plant_planned" model="ir.actions.act_window">-->
+        <!--            <field name="name">Plant Work Orders Planned</field>-->
+        <!--            <field name="res_model">work.order.plant</field>-->
+        <!--            <field name="view_mode">calendar,tree,form</field>-->
+        <!--            <field name="search_view_id" ref="view_work_order_plant_filter"/>-->
+        <!--            <field name="domain">[('state', '=', 'to_confirm')]</field>-->
+        <!--            <field name="context">{}</field>-->
+        <!--            <field name="view_ids"-->
+        <!--                   eval="[(5, 0, 0),-->
+        <!--                          (0, 0, {'view_mode': 'calendar', 'view_id': ref('work_order_plant_calendar_view')}),-->
+        <!--                          (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),-->
+        <!--                          (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')}),-->
+        <!--                          ]"/>-->
+        <!--            <field name="help" type="html">-->
+        <!--                <p class="o_view_nocontent_smiling_face">-->
+        <!--                    View Work orders Planned-->
+        <!--                </p>-->
+        <!--                <p>-->
+        <!--                    View Work order Planned, register Work orders Planned.-->
+        <!--                </p>-->
+        <!--</field>-->
+        <!--        </record>-->
+        <!-- ACTION Para OT's "PARA TRAMITAR" -->
+        <record id="onmi_action_work_order_plant_confirm" model="ir.actions.act_window">
+            <field name="name">Plant Work Orders Confirm</field>
+            <field name="res_model">work.order.plant</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_plant_tree_view"/>
+            <field name="domain">[('state', '=', 'to_hand')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')}),                           ]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders Planned
+                </p>
+                <p>
+                    View Work order Planned, register Work orders Planned.
+                </p></field>
+        </record>
+        <!-- ACTION Para OT's "PARA TRAMITAR" -->
+        <record id="onmi_action_work_order_plant_confirm" model="ir.actions.act_window">
+            <field name="name">Plant Work Orders Confirm</field>
+            <field name="res_model">work.order.plant</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_plant_tree_view"/>
+            <field name="domain">[('state', '=', 'to_hand')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')}),                           ]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders Planned
+                </p>
+                <p>
+                    View Work order Planned, register Work orders Planned.
+                </p></field>
+        </record>
+        <!-- ACTION Para OT's "EN PROCESO" -->
+        <record id="onmi_action_work_order_plant_in_process" model="ir.actions.act_window">
+            <field name="name">Plant Work Orders Confirm</field>
+            <field name="res_model">work.order.plant</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_plant_tree_view"/>
+            <field name="domain">[('state', '=', 'in_process')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')}),                           ]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders Planned
+                </p>
+                <p>
+                    View Work order Planned, register Work orders Planned.
+                </p></field>
+        </record>
+        <!-- ACTION PAra OT's "FINALIZADAS" & "FACTURADAS"-->
+        <record id="onmi_action_work_order_plant" model="ir.actions.act_window">
+            <field name="name">Plant Work Orders Processed</field>
+            <field name="res_model">work.order.plant</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_plant_tree_view"/>
+            <field name="domain">['|', ('state', '=', 'finished'), ('state', '=', 'invoiced')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')})]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders processed
+                </p>
+                <p>
+                    View Work order, register Work orders.
+                </p></field>
+        </record>
+        <!-- ACTION PAra OT's TOTALES-->
+        <record id="onmi_action_work_order_plant_full" model="ir.actions.act_window">
+            <field name="name">Plant Work Orders</field>
+            <field name="res_model">work.order.plant</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="work_order_plant_tree_view"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('work_order_plant_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('work_order_plant_form_view')})]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Work orders
+                </p>
+                <p>
+                    View Work order, register Work orders.
+                </p></field>
+        </record>
+        <!--endregion-->
+        <!--region MENÚS OT Instalación-->
+        <menuitem groups="group_operation_administrator_plant,group_operation_invoicing_plant" id="work_orders_plant_main_menu_operations_module" name="Plant Work Orders" parent="main_menu_operations_module" sequence="3"/>
+        <!-- endregion -->
+        <!-- region SUBMENÚS DE OT's Instalación -->
+        <menuitem action="onmi_action_work_order_plant_to_plan" groups="group_operation_administrator_plant" id="work_order_plant_to_plan_menu_operations_module" name="To Plan" parent="work_orders_plant_main_menu_operations_module" sequence="2"/>
+        <menuitem action="onmi_action_work_order_plant_confirm" groups="group_operation_administrator_plant" id="work_order_plant_confirm_menu_operations_module" name="To Hand" parent="work_orders_plant_main_menu_operations_module" sequence="4"/>
+        <menuitem action="onmi_action_work_order_plant_in_process" groups="group_operation_administrator_plant" id="work_order_plant_in_process_menu_operations_module" name="In process" parent="work_orders_plant_main_menu_operations_module" sequence="5"/>
+        <menuitem action="onmi_action_work_order_plant" groups="group_operation_invoicing_plant,group_operation_administrator_plant" id="work_order_plant_menu_operations_module" name="Finalized and Invoiced" parent="work_orders_plant_main_menu_operations_module" sequence="6"/>
+        <menuitem action="onmi_action_work_order_plant_full" groups="group_operation_administrator_plant" id="work_order_plant_menu_operations_module_full" name="Full Work Orders" parent="work_orders_plant_main_menu_operations_module" sequence="7"/>
+        <!--endregion-->
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="onmi_res_partner_filter_inherit" model="ir.ui.view">
+            <field name="name">onmi_res_partner_filter_inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="name" filter_domain="[('complete_name', 'ilike', self), ('type', '=', 'establishment')]" string="Establecimento"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,2814 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* onmi_reliex_operations
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-17 08:06+0000\n"
+"PO-Revision-Date: 2024-12-17 09:07+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__purchase_order_count
+msgid "# Purchase Orders related"
+msgstr "Nº compras relacionadas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__type
+msgid ""
+"- Contact: Use this to organize the contact details of employees of a given "
+"company (e.g. CEO, CFO, ...).\n"
+"- Invoice Address: Preferred address for all invoices. Selected by default "
+"when you invoice an order that belongs to this company.\n"
+"- Delivery Address: Preferred address for all deliveries. Selected by "
+"default when you deliver an order that belongs to this company.\n"
+"- Private: Private addresses are only visible by authorized users and "
+"contain sensitive data (employee home addresses, ...).\n"
+"- Follow-up Address: Preferred address for follow-up reports. Selected by "
+"default when you send reminders about overdue invoices.\n"
+"- Other: Other address for the company (e.g. subsidiary, ...)"
+msgstr ""
+"Direcciones de facturación y entrega se usan en ventas. Direcciones "
+"privadas son solo visibles por usuarios autorizados."
+
+#. module: onmi_reliex_operations
+#: model:mail.template,body_html:onmi_reliex_operations.email_template_work_order_plant
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p>\n"
+"                        Hello,\n"
+"                        <br>\n"
+"                        You have new worksheets to do.\n"
+"                        <br>\n"
+"                        This is your planning:\n"
+"                        <br>\n"
+"                        <p>\n"
+"                            PT/XXX\n"
+"                            :\n"
+"                            dd/mm/YYYY HH:MM\n"
+"                        </p>\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p>\n"
+"                        Hola,\n"
+"                        <br/>\n"
+"                        Tiene nuevos partes de trabajo a realizar.\n"
+"                        <br/>\n"
+"                        Este es su planning:\n"
+"                        <br/>\n"
+"                        <p>\n"
+"                            PT/XXX\n"
+"                            :\n"
+"                            dd/mm/YYYY HH:MM\n"
+"                        </p>\n"
+"\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid ""
+"<strong>\n"
+"                                                Info Gerente\n"
+"                                            </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid ""
+"<strong>\n"
+"                                                Info Supervisor\n"
+"                                            </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view_plants
+msgid ""
+"<strong>\n"
+"                                    Comments\n"
+"                                </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid ""
+"<strong>\n"
+"                                    The operators have been notified "
+"successfully.\n"
+"                                </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid ""
+"<strong>\n"
+"                                2.1 Extract system\n"
+"                            </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_form_view
+msgid ""
+"<strong>\n"
+"                                Checking system\n"
+"                            </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid ""
+"<strong>\n"
+"                                General data\n"
+"                            </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view_plants
+msgid ""
+"<strong>\n"
+"                                Incidents\n"
+"                            </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view_plants
+msgid ""
+"<strong>\n"
+"                                Resources applied\n"
+"                            </strong>"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_accept_model
+msgid "Accept Model"
+msgstr "Aceptación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__accepted
+msgid "Accepted"
+msgstr "Aceptado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__access_check
+msgid "Acceso documental"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__access_done
+msgid "Access done"
+msgstr "Acceso realizado"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "According to this report, duct is:"
+msgstr "DE ACUERDO A INFORME, EL CONDUCTO ES:"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_custom12_model_form
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_custom1_model_form
+msgid "Aceptar"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_needaction
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_needaction
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_needaction
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_needaction
+msgid "Action Needed"
+msgstr "Acción necesitada"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__action_protocol
+msgid "Action protocol"
+msgstr "Protocolo de Actuación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__activity_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Add a product"
+msgstr "Añadir un producto"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+msgid "Add a title for the incident"
+msgstr "Agregue un título para el incidente"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__type
+msgid "Address Type"
+msgstr "Tipo de dirección"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__worksheet_part__part_plant_type__administration
+msgid "Administration"
+msgstr "Administración"
+
+#. module: onmi_reliex_operations
+#: model:res.groups,name:onmi_reliex_operations.group_commercial_administrator
+#: model:res.groups,name:onmi_reliex_operations.group_operation_administrator_cleaning
+#: model:res.groups,name:onmi_reliex_operations.group_operation_administrator_plant
+msgid "Administrator"
+msgstr "Administrador"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.full_worksheet_menu_operations_module
+msgid "All Worksheets"
+msgstr "Todos los partes de trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__allday
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__allday
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__allday
+msgid "Apply all day long"
+msgstr "Aplicar todo el día"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Are you still sure you want to continue creating the invoice?"
+msgstr "¿Está seguro de continuar creando la factura?"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_form_view
+msgid "Are you sure to create a sale order?"
+msgstr "¿Está seguro de crear el presupuesto de venta?"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_form_view
+msgid "Are you sure to create the purchase orders?"
+msgstr "¿Está seguro de crear presupuestos de compra?"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__assign
+msgid "Asignar Operarios"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__accept_model__selection_field__assign
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__custom_model__selection_field__assign
+msgid "Asignar operarios"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__part_type
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__part_type
+msgid "Associated to"
+msgstr "Asociado a"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_attachment_count
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_attachment_count
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_attachment_count
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_attachment_count
+msgid "Attachment Count"
+msgstr "Número de Adjuntos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__attachment_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__attachment_ids
+msgid "Attachments"
+msgstr "Adjuntos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__user_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__user_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__user_id
+msgid "Boss Team"
+msgstr "Jefe de Equipo"
+
+#. module: onmi_reliex_operations
+#: model:res.groups,name:onmi_reliex_operations.group_operation_boss_team_cleaning
+#: model:res.groups,name:onmi_reliex_operations.group_operation_boss_team_plant
+msgid "Boss team"
+msgstr "Jefe de Equipo"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Calle"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Calle2"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__selection_field
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__selection_field
+msgid "Campo de Selección"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view_plants
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: onmi_reliex_operations
+#: model_terms:documents.folder,description:onmi_reliex_operations.documents_photo_report_folder
+msgid "Categorize, share and keep track of all your photographical documents."
+msgstr ""
+"Categorice, comparta y mantenga el tracking de todos sus documentos "
+"fotográficos."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__certification_needed
+msgid "Certification needed"
+msgstr "Necesita certificación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__certified_comment
+msgid "Certified comments"
+msgstr "Comentarios Certificación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Revisar si el contacto es una compañía, en otro caso, es una persona"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Checked"
+msgstr "Revisado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__checked_by
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__checked_by
+msgid "Checked by"
+msgstr "Revisado por"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__checked_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__checked_date
+msgid "Checked date"
+msgstr "Fecha Revisión"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__operation_review
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__operation_review
+msgid "Checking of correct operation of kitchen equipment"
+msgstr "Revisión del correcto funcionamiento del equipamiento en cocina."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__correct_preassure
+msgid ""
+"Checking the correct pressure of the detection line (end-of-line manometer)"
+msgstr ""
+"Comprobación de la correcta presión de la línea de detección (manómetro "
+"final de línea)"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__preassure_check
+msgid "Checking the pressure of the extinguishing container"
+msgstr "Comprobación de la presión del recipiente de extinción"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__signaling_circuits
+msgid "Checking the signaling circuits"
+msgstr "Comprobación de los circuitos de señalización"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__charge_state
+msgid ""
+"Checking the state of charge of the extinguishing agent in the "
+"extinguishing container"
+msgstr ""
+"Comprobación del estado de carga del agente extintor en el recipiente de "
+"extinción"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__checking_type
+msgid "Checking type"
+msgstr "Tipo de Revisión"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__checklist_id
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_tree_view
+msgid "Checklist"
+msgstr "Verificación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__checklist_fire_id
+msgid "Checklist Fire"
+msgstr "Verificación sistema contra incendios"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_tree_view
+msgid "Checklist Fumes"
+msgstr "Verificación Extracción de humos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__checklist_fire_needed
+msgid "Checklist fire needed"
+msgstr "Lista de verificación incendios necesaria"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_checklist_fire
+msgid "Checklist fire of workorders plant"
+msgstr "Verificación Extracción de humos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__checklist_fume_needed
+msgid "Checklist fume needed"
+msgstr "Verificación de humos necesaria"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_checklist
+msgid "Checklist of workorders plant"
+msgstr "Checklist de órdenes de trabajo instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.checklist_menu_parent
+msgid "Checklists"
+msgstr "Verificaciones"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.checklist_fire_act_window
+msgid "Checklists Fire"
+msgstr "Verificación contra incendios"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.checklist_act_window
+#: model:ir.ui.menu,name:onmi_reliex_operations.checklist_menu
+msgid "Checklists Fumes"
+msgstr "Verificaciones Extracción Humos"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.checklist_fire_menu
+msgid "Checklists fire"
+msgstr "Verificación contra incendios"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__city
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "City"
+msgstr "Ciudad"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Ciudad"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__incident_type
+msgid "Clase inf"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sale_order__opportunity_wo_type__cleaning
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__worksheet_part__part_type__cleaning
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Cleaning"
+msgstr "Limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__resource_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__cleaning_line_ids
+msgid "Cleaning Line"
+msgstr "Líneas limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_orders_clean_main_menu_operations_module
+msgid "Cleaning Work Orders"
+msgstr "Órdenes de trabajo Limpieza"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Cleaning type Worksheets"
+msgstr "Partes de limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__workorder_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__workorder_id
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_historial_tree_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_tree_view
+msgid "Cleanning Work Order"
+msgstr "Orden de trabajo Limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_clean_full
+#: model:ir.model,name:onmi_reliex_operations.model_work_order_clean
+msgid "Cleanning Work Orders"
+msgstr "Órdenes de trabajo Limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_clean
+msgid "Cleanning Work Orders Processed"
+msgstr "OTL Finalizadas y Facturadas"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_clean_confirm
+msgid "Cleanning Work Orders To Handled"
+msgstr "OTL Para Tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_clean_planned
+msgid "Cleanning Work Orders To confirm"
+msgstr "OTL Para Confirmar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Click when is Confirm by Customer"
+msgstr "Clickar cuando esté confirmado por cliente"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Click when is Finished"
+msgstr "Clickar cuando esté finalizada"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Click when is Handled"
+msgstr "Clickar cuando esté tramidada"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Click when is To Finished"
+msgstr "Clickada cuando esté \"Para finalizar\""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Click when is finished"
+msgstr "Clickar cuando esté finalizado"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Click when is invoiced"
+msgstr "Clickar cuando esté facturada"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Click when is planned"
+msgstr "Clickar cuando esté planificada"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Click when work is checked"
+msgstr "Clickar cuando el trabajo esté revisado"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Click when work is finished"
+msgstr "Clickar cuando el estado esté finalizado"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Click when you want to reset the state"
+msgstr "Clickar cuando quiera resetear el estado"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Click when you want to reset worksheet"
+msgstr "Clickar cuando quiera resetear el parte"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Click when you want to send info to operators."
+msgstr "Pinchar cuando quiera enviar información de partes a los operarios."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__partner_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__partner_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__partner_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__partner_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__partner_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__partner_id
+msgid "Client"
+msgstr "Cliente"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__cracks_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__cracks_ducts_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__cracks_machine_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__exit_duct_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__general_others_1_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__general_others_2_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__holder_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__holder_machine_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__joints_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__joints_machine_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others_1_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others_2_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others_machine_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__seal_ducts_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__seal_machine_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__staples_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__charge_state_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__check_components_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__correct_opening_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__correct_preassure_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__discharge_emitters_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__general_cleaning_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__good_conditions_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__preassure_check_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__signaling_circuits_comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__cracks__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__cracks_ducts__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__cracks_machine__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__exit_duct__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__general_others_1__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__general_others_2__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__holder__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__holder_machine__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__hung_distance__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__joints__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__joints_machine__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others_1__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others_2__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others_machine__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__seal_ducts__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__seal_machine__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__staples__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__charge_state__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__check_components__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__correct_opening__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__correct_preassure__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__discharge_emitters__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__general_cleaning__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__good_conditions__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__preassure_check__comments
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__signaling_circuits__comments
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Comments"
+msgstr "Comentarios"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__comments_notes
+msgid "Comments Notes"
+msgstr "Notas"
+
+#. module: onmi_reliex_operations
+#: model:ir.module.category,name:onmi_reliex_operations.onmi_module_category_commercial
+msgid "Commercial"
+msgstr "Comercial"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__company_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__complete_system
+msgid "Complete system"
+msgstr "Sistema completo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__completion_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__completion_date
+msgid "Completion date"
+msgstr "Fecha de cierre"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view_plants
+msgid "Confirm and send"
+msgstr "Confirmar y enviar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_clean_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+msgid "Confirmed"
+msgstr "Para Tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__cooker_hood
+msgid "Cooker hood"
+msgstr "Campana"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__corrective_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__corrective_ids
+msgid "Corrective"
+msgstr "Medida correctiva"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__corrective_action
+msgid "Corrective  action"
+msgstr "Medida correctiva"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_corrective_action
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "Corrective Actions"
+msgstr "Medidas Correctivas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__email
+msgid "Correo electrónico"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__country_id
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Country"
+msgstr "País"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__cracks
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__cracks_ducts
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__cracks_machine
+msgid "Cracks, oxide, general state"
+msgstr "GRIETAS, FISURAS, ÓXIDOS, ESTADO GENERAL"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_form_view
+msgid "Create Purchase Orders"
+msgstr "Crear Compras"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_form_view
+msgid "Create Sale Order"
+msgstr "Crear Ventas"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Create invoice"
+msgstr "Crear Factura"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Create new Part WorkOrder"
+msgstr "Crear nuevo Parte de Trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__create_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__create_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_custom_model
+msgid "Custom Model"
+msgstr "Modelo"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_clean_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__incident_type__customer_info
+msgid "Customer Information"
+msgstr "Informativa Cliente"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "DIRECCIÓN"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Date proposal"
+msgstr "Proposición de Fecha"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__access_url
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__access_url
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Dealings"
+msgstr "Accesos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__delivery_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__delivery_date
+msgid "Delivery date"
+msgstr "Fecha de entrega"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Descripción"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__description
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__description_sale
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+msgid "Description"
+msgstr "Descripción"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__description_date
+msgid "Description Date"
+msgstr "Descripción fecha"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__details
+msgid "Details of works to do"
+msgstr "DETALLE DE LOS TRABAJOS A REALIZAR"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__devices_checked
+msgid "Devices checked (Fryer, plates, Broiler, Extractor, etc.)"
+msgstr "Comprobación Aparatos: Freidora, planchas, Broiler, Extractor, etc,.."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Dirección"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__display_type
+msgid "Display Type"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__worksheet_part__state__done_and_check
+msgid "Done & Checked"
+msgstr "Hecho y Revisado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__duct
+msgid "Duct"
+msgstr "Conducto"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "Ducts"
+msgstr "Conductos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__duration
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__duration
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__duration
+msgid "Duration"
+msgstr "Duración"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Email"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Asistente de redacción de correo electrónico"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__employee_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__employee_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__employee_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__employee_id
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__end_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__end_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__end_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__end_date
+msgid "End date"
+msgstr "Fecha de fin"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__endorsed_by
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__endorsed_by
+msgid "Endorsed by"
+msgstr "Visado por"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__endorsed_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__endorsed_date
+msgid "Endorsed date"
+msgstr "Fecha"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__waiting
+msgid "Esperando respuesta"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.onmi_res_partner_filter_inherit
+msgid "Establecimento"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__establishment_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__establishment_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__establishment_list
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__establishment_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__establishment_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__establishment_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__establishment_id
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_clean_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Establishment"
+msgstr "Establecimiento"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Estado"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__exit_duct
+msgid "Exit ducts & cap nuts"
+msgstr "CONDUCTOS SALIDA Y SOMBRERETE"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "Exit ducts and Sombrerete"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__extractor
+msgid "Extractor"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__accepted_date
+msgid "Fecha aceptación"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__filters_with_photo
+msgid "Filters placed with photo"
+msgstr "Filtros colocados con foto"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__filtronic
+msgid "Filtronic"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_clean_menu_operations_module
+msgid "Finalized Invoiced"
+msgstr "Finalizado y Facturado"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_plant_menu_operations_module
+msgid "Finalized and Invoiced"
+msgstr "Finalizado y Facturado"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Finish"
+msgstr "Finalizar"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.server,name:onmi_reliex_operations.action_finish_part_of_cleaning
+msgid "Finish Parts"
+msgstr "Partes finalizados"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__state__finished
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__state__finished
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__finished
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_plant__state__finished
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__finished_plant_ids
+msgid "Finished Plant"
+msgstr "Instalación finalizada"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__first_part
+msgid "First Part"
+msgstr "Primer Parte"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_follower_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_follower_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_follower_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_partner_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_partner_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_partner_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Clientes)"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_clean_menu_operations_module_full
+msgid "Full WO CLeanning"
+msgstr "Todas las órdenes de limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_plant_menu_operations_module_full
+msgid "Full Work Orders"
+msgstr "Todas las órdenes"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__gas_depressor_checked
+msgid "Gas depressor checked"
+msgstr "Depresor del gas comprobado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__gas_hose_checked
+msgid "Gas hose checked"
+msgstr "Latiguillos de gas comprobados"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__general_cleaning
+msgid "General cleaning of all components"
+msgstr "Limpieza general de todos los componentes"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__boss_name
+msgid "Gerente"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_clean_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__handled
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__state__finished
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Handled"
+msgstr "Tramitado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__state__handling
+#: model:res.groups,name:onmi_reliex_operations.group_operation_handled_cleaning
+#: model:res.groups,name:onmi_reliex_operations.group_operation_handled_plant
+msgid "Handling"
+msgstr "Tramitando"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__has_message
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__has_message
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__has_message
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__has_message
+msgid "Has Message"
+msgstr "Tiene mensaje"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__pending_debts
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__pending_debts
+msgid "Has pending debts"
+msgstr "Tiene débito pendiente"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Historial"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__holder
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__holder_machine
+msgid "Holders"
+msgstr "SOPORTES"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__human_resources_ids
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Human Resources"
+msgstr "Recursos Humanos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_human_resources
+msgid "Human resources"
+msgstr "Recursos Humanos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__hung_distance
+msgid "Hung distance"
+msgstr "DISTANCIA DE CUELGUES"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__hung_distance_comments
+msgid "Hung distance comments"
+msgstr "Comentarios"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__id
+msgid "ID"
+msgstr "Identificador"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "Identificator"
+msgstr "Identificador"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_incident__message_needaction
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__message_needaction
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_plant__message_needaction
+#: model:ir.model.fields,help:onmi_reliex_operations.field_worksheet_part__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si están marcados nuevos mensajes requieren su atención."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_incident__message_has_error
+#: model:ir.model.fields,help:onmi_reliex_operations.field_incident__message_has_sms_error
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__message_has_error
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__message_has_sms_error
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_plant__message_has_error
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_plant__message_has_sms_error
+#: model:ir.model.fields,help:onmi_reliex_operations.field_worksheet_part__message_has_error
+#: model:ir.model.fields,help:onmi_reliex_operations.field_worksheet_part__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si están marcados, algunos mensajes tienen errores de entrega."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__handled
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_plant__state__in_process
+msgid "In Process"
+msgstr "En Proceso"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_clean_handling_menu_operations_module
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_plant_in_process_menu_operations_module
+msgid "In process"
+msgstr "En progreso"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_tree_view
+msgid "Incident"
+msgstr "Incidencia"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_incident
+#: model:ir.model,name:onmi_reliex_operations.model_incident
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__incident_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__incident_ids
+#: model:ir.ui.menu,name:onmi_reliex_operations.incident_menu_operations_module
+#: model:ir.ui.menu,name:onmi_reliex_operations.incidents_main_menu_operations_module
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Incidents"
+msgstr "Incidencias"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__inspection_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__inspection_date
+msgid "Inspection date"
+msgstr "FECHA INSPECCIÓN"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__internal_comment
+msgid "Internal comments"
+msgstr "Comentarios internos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_mail_wizard_invite
+msgid "Invite wizard"
+msgstr "Asistente de invitación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__invoice_created
+msgid "Invoice created"
+msgstr "Factura creada"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__invoiced
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_plant__state__invoiced
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Invoiced"
+msgstr "Facturado"
+
+#. module: onmi_reliex_operations
+#: model:res.groups,name:onmi_reliex_operations.group_operation_invoicing_cleaning
+#: model:res.groups,name:onmi_reliex_operations.group_operation_invoicing_plant
+msgid "Invoicing"
+msgstr "Facturación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_is_follower
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_is_follower
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_is_follower
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__is_company
+msgid "Is a Company"
+msgstr "Es una compañía"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__last_part
+msgid "Last Part"
+msgstr "Último parte"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__write_uid
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__write_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__lead_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__lead_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__lead_id
+msgid "Lead"
+msgstr "Oportunidad"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__line_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__line_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__line_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__line_ids
+msgid "Line"
+msgstr "Línea"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.onmi_view_account_invoice_filter_inherit_invoice_lines
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_work_order_line
+msgid "Lines of Work Orders"
+msgstr "Líneas de Órdenes de trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__list_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__list_id
+msgid "List"
+msgstr "Lista"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_material_list
+msgid "List of Materials"
+msgstr "Listado de Materiales"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__location
+msgid "Location"
+msgstr "Ubicación"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "Machines"
+msgstr "MÁQUINAS"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__material_ids
+msgid "Material"
+msgstr "Materiales"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.material_list_act_window
+#: model:ir.actions.act_window,name:onmi_reliex_operations.material_list_leads_act_window
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_tree_view
+msgid "Material List"
+msgstr "Listado de materiales"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__material_preparation_done
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__material_preparation_done
+msgid "Material preparation done"
+msgstr "Preparación del material hecha"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sale_order__material_ids
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Materials"
+msgstr "Materiales"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_materials
+msgid "Materials from List of Materials"
+msgstr "Materiales del listado de materiales"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_has_error
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_has_error
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_has_error
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de entrega"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__accept_model__selection_field__proposed
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__custom_model__selection_field__proposed
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__proposed
+msgid "Modificar fecha propuesta"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_my_incident
+#: model:ir.ui.menu,name:onmi_reliex_operations.my_incident_menu_operations_module
+msgid "My Incidents"
+msgstr "Mis Incidencias"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_worksheet
+#: model:ir.ui.menu,name:onmi_reliex_operations.worksheet_menu_operations_module
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "My Worksheets"
+msgstr "Parte de Trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__reason
+msgid "Mótivo de no realización"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__mobile
+msgid "Móvil"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__name
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__client_datas
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__commercial_datas
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__client_datas
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__commercial_datas
+msgid "Name, Surname & NIF"
+msgstr "Nombre, Apellidos y DNI"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__state__new
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__state__new
+msgid "New"
+msgstr "Nuevo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sale_order__opportunity_wo_type__new_plant
+msgid "New Plant"
+msgstr "Instalación"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "New Worksheet"
+msgstr "Nuevo Parte de Trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__new_display_name
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__new_display_name
+msgid "New display Name"
+msgstr "Nuevo nombre mostrado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__next_checking
+msgid "Next checking"
+msgstr "Próxima revisión"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__devices_checked__no
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__filters_with_photo__no
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__gas_depressor_checked__no
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__gas_hose_checked__no
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__registers_closed__no
+msgid "No"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__state__not_handling
+msgid "No Handling"
+msgstr "Sin Tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__state__unrealized
+msgid "No realizado"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "No salesperson"
+msgstr "Sin equipo asignado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__normative
+msgid "Normative"
+msgstr "Normativa"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__devices_checked__not_applicable
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__filters_with_photo__not_applicable
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__gas_depressor_checked__not_applicable
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__gas_hose_checked__not_applicable
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__registers_closed__not_applicable
+msgid "Not applicable"
+msgstr "No procede"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__materials__display_type__line_note
+msgid "Note"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Notes"
+msgstr "Notas"
+
+#. module: onmi_reliex_operations
+#: model:mail.template,name:onmi_reliex_operations.email_template_work_order_plant
+msgid "Notification to Workers"
+msgstr "Notificación a Operarios"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__access_notifications
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__access_notifications
+msgid "Notifications of access"
+msgstr "Notificaciones de acceso"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Notify Operators"
+msgstr "Notificar a Operarios"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__name
+msgid "Number"
+msgstr "#"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_needaction_counter
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_needaction_counter
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_needaction_counter
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__incident_count
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__incident_count
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__incident_count
+msgid "Number of Incidents"
+msgstr "Número de Indicencias"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__worksheet_count
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__worksheet_count
+msgid "Number of Worksheets"
+msgstr "Número de Partes de Trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__opened_worksheet_count
+msgid "Number of Worksheets Opened"
+msgstr "Nº Partes abiertos"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__worksheetclean_count
+msgid "Number of WorksheetsCleans"
+msgstr "Número de OTL's"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_has_error_counter
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_has_error_counter
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_has_error_counter
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_incident__message_needaction_counter
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__message_needaction_counter
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_plant__message_needaction_counter
+#: model:ir.model.fields,help:onmi_reliex_operations.field_worksheet_part__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_incident__message_has_error_counter
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__message_has_error_counter
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_plant__message_has_error_counter
+#: model:ir.model.fields,help:onmi_reliex_operations.field_worksheet_part__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__cracks__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__cracks_ducts__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__cracks_machine__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__exit_duct__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__general_others_1__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__general_others_2__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__holder__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__holder_machine__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__hung_distance__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__joints__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__joints_machine__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others_1__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others_2__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__others_machine__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__seal_ducts__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__seal_machine__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist__staples__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__charge_state__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__check_components__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__correct_opening__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__correct_preassure__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__discharge_emitters__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__general_cleaning__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__good_conditions__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__preassure_check__ok
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__checklist_fire__signaling_circuits__ok
+msgid "O.K."
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:res.groups,name:onmi_reliex_operations.otl_editable
+msgid "OTL pueden editar"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "OTROS"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__comments
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__certified_comment
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__report_cleaning_comments
+msgid "Observations on report cleaning"
+msgstr "Observaciones Informe de Limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__materials__location__place
+msgid "On place"
+msgstr "En obra"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "On working"
+msgstr "EN FUNCIONAMIENTO"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.main_menu_operations_module
+msgid "Operations"
+msgstr "Operaciones"
+
+#. module: onmi_reliex_operations
+#: model:ir.module.category,name:onmi_reliex_operations.onmi_module_category_operations_cleaning
+msgid "Operations Cleaning"
+msgstr "Operaciones Limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.module.category,name:onmi_reliex_operations.onmi_module_category_operations_plant
+msgid "Operations Plant"
+msgstr "Operaciones Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__operators_notified
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__operators_notified
+msgid "Operators Notified"
+msgstr "Operarios notificados"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_purchase_order__opportunity_id
+msgid "Opportunity"
+msgstr "Oportunidad"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sale_order__opportunity_wo_type
+msgid "Opportunity Wo Type"
+msgstr "Tipo de oportunidad"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_clean_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+msgid "Order"
+msgstr "Orden"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__order_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__order_date
+msgid "Order date"
+msgstr "Fecha orden"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Other Info"
+msgstr "Otra información"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+msgid "Others (specify on PDF)"
+msgstr "OTROS (especificar)"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__general_others_1
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__general_others_2
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others_1
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others_2
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__others_machine
+msgid "Others (specify)"
+msgstr "Otros (especificar)"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Para tramitar"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__part_plant_type
+msgid "Part Plant type"
+msgstr "Tipo de parte Instalación"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Parts"
+msgstr "Partes"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "País"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:documents.folder,name:onmi_reliex_operations.documents_photo_report_folder
+msgid "Photographical Report"
+msgstr "Informe Fotográfico"
+
+#. module: onmi_reliex_operations
+#: model:documents.facet,name:onmi_reliex_operations.photo_documents
+msgid "Photographies"
+msgstr "Fotografías"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Planned"
+msgstr "Planificadas"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_calendar_view
+msgid "Planning Work Orders"
+msgstr "Órdenes de trabajo para planificar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__plant_id
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__worksheet_part__part_type__plant
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Plant"
+msgstr "Instalación"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Plant Comments"
+msgstr "Comentarios instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__plant_picture
+msgid "Plant Picture"
+msgstr "Croquis Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__plant_picture_1
+msgid "Plant Picture 1"
+msgstr "Croquis 1"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__plant_picture_2
+msgid "Plant Picture 2"
+msgstr "Croquis 2"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__plant_picture_3
+msgid "Plant Picture 3"
+msgstr "Croquis 3"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__plant_picture_4
+msgid "Plant Picture 4"
+msgstr "Croquis 4"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__workorder_plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__workorder_plant_id
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_tree_view
+msgid "Plant Work Order"
+msgstr "Orden de trabajo Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_plant_full
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__workorder_ids
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_orders_plant_main_menu_operations_module
+msgid "Plant Work Orders"
+msgstr "Órdenes de trabajo Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_plant_confirm
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_plant_in_process
+msgid "Plant Work Orders Confirm"
+msgstr "OTI Para Tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_plant
+msgid "Plant Work Orders Processed"
+msgstr "OTI Finalizada y Facturada"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_plant_to_plan
+msgid "Plant Work Orders To Plan"
+msgstr "OTI Para Planificar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Plant associated"
+msgstr "Instalación asociada"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Plant type Worksheets"
+msgstr "Partes Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__incident_type2__quotation
+msgid "Presupuesto"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__product_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__product_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__product_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__product_ref
+msgid "Product"
+msgstr "Producto"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__provisioned
+msgid "Provisioned"
+msgstr "Provisionado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__function
+msgid "Puesto de trabajo"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_purchase_order__po_selected
+msgid "Purchase Order selected"
+msgstr "Orden de compra seleccionada"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_form_view
+msgid "Purchase Orders"
+msgstr "Pedidos Compra"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Purchases"
+msgstr "Compras"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Qty"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__qty_on_parts
+msgid "Quantity being spent"
+msgstr "Cantidad consumida"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__qty_on_stock
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__qty_on_stock
+msgid "Quantity on stock"
+msgstr "Stock almacén"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__qty_to_prepair
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__qty_to_prepair
+msgid "Quantity to prepair"
+msgstr "Cantidad preparar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__worksheet_part__part_plant_type__quotation
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__quantity
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__quantity
+msgid "Quotation Quantity"
+msgstr "Cantidad presupuesto"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__rating_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__rating_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__rating_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__name
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Reference of Work Order Clean"
+msgstr "Referencia de orden de trabajo limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__name
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "Reference of Work Order Plant"
+msgstr "Referencia de orden de trabajo Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__refused
+msgid "Refused"
+msgstr "Rechazado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__refuses_sign
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__refuses_sign
+msgid "Refuses to sign"
+msgstr "Se niega a firmar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__registers_closed
+msgid "Registers closed and checked"
+msgstr "Registros cerrados y revisados"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__parent_id
+msgid "Related Company"
+msgstr "Compañía relacionada"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Related Plants"
+msgstr "Instalaciones relacionadas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__related_plant_ids
+msgid "Related plants"
+msgstr "Instalaciones relacionadas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__incident_type__reliex_info
+msgid "Reliex Information"
+msgstr "Informativa Reliex"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__report_sent
+msgid "Reports sent"
+msgstr "Informes Enviados"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Reprogramar"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_fire_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.checklist_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Reset"
+msgstr "Reiniciar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Resources"
+msgstr "Recursos"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Respuesta Cliente"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__message_has_sms_error
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__message_has_sms_error
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__message_has_sms_error
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega SMS"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__sale_id
+msgid "Sale"
+msgstr "Venta"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__sale_order_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__sale_order_id
+msgid "Sale Order"
+msgstr "Pedido de Venta"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__sale_order_line_id
+msgid "Sale Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__seal_ducts
+msgid "Seal ducts"
+msgstr "ESTANQUEIDAD EN CONDUCTOS"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__seal_machine
+msgid "Seal machine & joints"
+msgstr "ESTANQUEIDAD EN MAQUINAS Y UNIONES"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_clean_filter
+msgid "Search Cleanning Work Order"
+msgstr "Búsqueda de Órdenes de trabajo Limpieza"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+msgid "Search Plant Work Order"
+msgstr "Búsqueda Orden de trabajo Instalación"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Search Worksheets"
+msgstr "Búsqueda Partes"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__materials__display_type__line_section
+msgid "Section"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Send Reports"
+msgstr "Enviar informes"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Send by OT by mail"
+msgstr "Enviar por Mail"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__access_check
+msgid ""
+"Si el Check está True la otl pasára a estado(para tramitar), si es False a "
+"(en proceso)"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.sign_info_act_window
+#: model:ir.actions.act_window,name:onmi_reliex_operations.sign_info_act_window_plants
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view_plants
+msgid "Sign Info"
+msgstr "Información firmas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_sign_info_wizard
+msgid "Sign Wizard"
+msgstr "Wizard firma"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Sign by client"
+msgstr "Firma de cliente"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__signature_commercial
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__signature_commercial
+msgid "Signature Boss Team"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__signature_client
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__signature_client
+msgid "Signature Client"
+msgstr "Firma Cliente"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__signature_checked
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__signature_checked
+msgid "Signature checked"
+msgstr "Firma revisión"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__signature_endorsed
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__signature_endorsed
+msgid "Signature endorsed"
+msgstr "Firma visado"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Signatures"
+msgstr "Firmas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__incident__incident_type2__accident
+msgid "Siniestro"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__website
+msgid "Sitio Web"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__staples
+msgid "Staples"
+msgstr "Grapas"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__start_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__start_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__start_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__start_date
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__start_date_real
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__state
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__state
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__state
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__state_id
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "State"
+msgstr "Estado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__state
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__state
+msgid "Status."
+msgstr "Estado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__materials__location__storage
+msgid "Storage"
+msgstr "Almacén"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Street 2..."
+msgstr "Calle 2..."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Street..."
+msgstr "Calle ..."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__street2
+msgid "Street2"
+msgstr "Calle2"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.sign_info_wizard_form_view
+msgid "Stuffs to check"
+msgstr "Para revisar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__supervisor_name
+msgid "Supervisor"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__supervisor_email
+msgid "Supervisor email"
+msgstr "Email supervisor"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__supervisor_phone
+msgid "Supervisor phone"
+msgstr "Teléfono supervisor"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__supplier_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__supplier_id
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__supplier_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__supplier_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sale_order__supplier_ids
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__surplus_material
+msgid "Surplus Material"
+msgstr "Material de Obra"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__category_id
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__user_id
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_clean_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_work_order_plant_filter
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Team"
+msgstr "Equipo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__phone
+msgid "Telefono"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Teléfono"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__state
+msgid ""
+"The current state of your work order:\n"
+"\t- To Plan: Asign Work Orders data.\n"
+"\t- Planned: Waiting for Client confirmation and Worker notification.\n"
+"\t- Confirmed by Client: It is proceed to book hotels and access.\n"
+"\t- In Process: Fill daily worksheets.\n"
+"\t- To finish: Checked report information. Send reports.\n"
+"\t- Finished: Invoice is created and send to client.\n"
+"\t- Invoiced: Recieve receipt according to expiration."
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_plant__state
+msgid ""
+"The current state of your work order:\n"
+"\t- To Plan: Waiting for Purchase order confirmed.\n"
+"\t- To Handle: Asign Work Orders data.\n"
+"\t- In Process: It is proceed to book hotels and access.\n"
+"\t- Finished: Invoice is created and send to client.\n"
+"\t- Invoiced: Receive receipt according to expiration."
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_worksheet_part__state
+msgid ""
+"The current state of your worksheet:\n"
+"\t- To Do: Init state \n"
+"\t- To Check: Worker fill all data and Worksheet is waiting for checking\n"
+"\t- Done & Checked: Filled and Checked."
+msgstr ""
+"Estados de su parte de horas:\n"
+"\t- Por Hacer: Estado inicial.\n"
+"\t- Por Revisar: Operario/a rellena los datos pertinentes y el parte se "
+"queda a las espera de revisión.\n"
+"\t- Hecho y Revisado: Estado final."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.checklist_fire_act_window
+msgid "There is no examples click here to add new Checklist fire."
+msgstr ""
+"No hay registros, haga click aquí para añadir nueva Verificación contra "
+"incendios."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.checklist_act_window
+msgid "There is no examples click here to add new Checklist."
+msgstr "No hay ejemplos , haga click aquí para añadir una nueva Checklist."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.material_list_act_window
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.material_list_leads_act_window
+msgid "There is no examples click here to add new Material List."
+msgstr "No hay ejemplos, clicke aquí para añadir nuevo Listado de Materiales."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.sign_info_act_window
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.sign_info_act_window_plants
+msgid "There is no examples click here to add new Sign Info."
+msgstr ""
+"No hay ejemplos, clicke aquí para añadir nueva información para firma."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "This customer have some pending debts."
+msgstr ""
+"El cliente relacionado con este establecimiento tiene débito pendiente."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "This customer have some pending debts. Please..."
+msgstr ""
+"El cliente relacionado con este establecimiento tiene débito pendiente. Por "
+"favor,..."
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__incident_type2
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+msgid "Tipo"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__name_description
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.material_list_form_view
+msgid "Title"
+msgstr "Título"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__worksheet_part__state__to_check
+msgid "To Check"
+msgstr "Por Revisar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__worksheet_part__state__to_do
+msgid "To Do"
+msgstr "Por Hacer"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__to_finish
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_clean_in_process_menu_operations_module
+msgid "To Finish"
+msgstr "Para finalizar"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_plant_confirm_menu_operations_module
+msgid "To Hand"
+msgstr "Para Tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__confirm
+msgid "To Handl"
+msgstr "Para tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_plant__state__to_hand
+msgid "To Handle"
+msgstr "Para tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_clean_confirm_menu_operations_module
+msgid "To Handled"
+msgstr "Para Tramitar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_clean__state__to_plan
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__work_order_plant__state__to_plan
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_plant_to_plan_menu_operations_module
+msgid "To Plan"
+msgstr "Para planificar"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_clean_planned_menu_operations_module
+msgid "To confirm"
+msgstr "Para confirmar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "To invoice this plant"
+msgstr "Facturar esta instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.work_order_clean_planning_menu_operations_module
+msgid "To plan"
+msgstr "Para Planificar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Unassigned"
+msgstr "No asignado"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__quantity
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__qty_consumed
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "Units"
+msgstr "Uds"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.incident_form_view
+msgid "Unrealized"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__make_visible
+msgid "User"
+msgstr "Usuario"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_corrective_action__user_execute
+msgid "User executes"
+msgstr "Responsable ejecucción"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__user_ids
+msgid "Users"
+msgstr "Usuarios/as"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__correct_opening
+msgid ""
+"Verification of the correct opening of the ball valves of the main valve of "
+"the extinguishing container"
+msgstr ""
+"Verificación de la correcta abertura de las válvulas de bola de la válvula "
+"principal del recipiente de extinción"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__good_conditions
+msgid ""
+"Verification of the good condition of the trip and alarm devices (if they "
+"exist)"
+msgstr ""
+"Verificación del buen estado de los dispositivos de disparo y alarma (si "
+"existen)"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__check_components
+msgid "Verification of the good state of the system components"
+msgstr "Limpieza general de todos los componentes"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__discharge_emitters
+msgid ""
+"Verification that the discharge emitters (nozzles, sprinklers, diffusers, "
+"etc.) are in good condition and free of obstacles for their correct "
+"operation."
+msgstr ""
+"Comprobación de que los emisores de descarga (boquillas, rociadores, "
+"difusores, etc) están en buen estado y libres de obstáculos para su "
+"correcto funcionamiento."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_incident
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_my_incident
+msgid "View Incidents"
+msgstr "Ver incidencias"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_handling
+msgid "View Work order Handling, register Work orders Handling."
+msgstr "Ver órdenes de trabajo tramitadas, registrarlas."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_confirm
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_planned
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_confirm
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_in_process
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_to_plan
+msgid "View Work order Planned, register Work orders Planned."
+msgstr "Ver Órdenes de trabajo planeadas y confirmadas, registrarlas."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_to_finish
+msgid "View Work order to finish, register Work orders to finish."
+msgstr "Ver Órdenes de trabajo a finalizar, registrarlas."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_to_plan
+msgid "View Work order to plan, register Work orders to plan."
+msgstr "Ver órdenes de trabajo por planificar, registrarlas."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_full
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_full
+msgid "View Work order, register Work orders."
+msgstr "Ver orden de trabajo, registrar órdenes de trabajo."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_full
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_full
+msgid "View Work orders"
+msgstr "Vista órdenes de trabajo"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_handling
+msgid "View Work orders Handling"
+msgstr "Vista Órdenes de trabajo Por tramitar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_confirm
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_planned
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_confirm
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_in_process
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant_to_plan
+msgid "View Work orders Planned"
+msgstr "Vista órdenes de trabajo Planeadas"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_plant
+msgid "View Work orders processed"
+msgstr "Vista Órdenes de trabajo Procesadas"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_to_finish
+msgid "View Work orders to finish."
+msgstr "Vista Órdenes de trabajo a finalizar."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_work_order_clean_to_plan
+msgid "View Work orders to plan"
+msgstr "Vista Órdenes de trabajo a planear"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_full_worksheet
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_worksheet
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_worksheet_plant_to_plan
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_worksheet_to_plan
+msgid "View Worksheet, register Worksheet."
+msgstr "Ver Partes de Trabajo, registrarlas."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_full_worksheet
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_worksheet
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_worksheet_to_plan
+msgid "View Worksheets"
+msgstr "Vista Partes de trabajo"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_worksheet_plant_to_plan
+msgid "View Worksheets of new plant"
+msgstr "Ver parte de horas de instalación"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_incident
+#: model_terms:ir.actions.act_window,help:onmi_reliex_operations.onmi_action_my_incident
+msgid "View incidents, register incident."
+msgstr "Vista incidentes, registrar incidente."
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_plant_form_view
+msgid "WO invoiced for this plant"
+msgstr "Órdenes facturadas para esta instalación"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "Website"
+msgstr "Web"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__website_message_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__website_message_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__website_message_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes web"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,help:onmi_reliex_operations.field_incident__website_message_ids
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_clean__website_message_ids
+#: model:ir.model.fields,help:onmi_reliex_operations.field_work_order_plant__website_message_ids
+#: model:ir.model.fields,help:onmi_reliex_operations.field_worksheet_part__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación web"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__wo_clean_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__wo_clean_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__wo_clean_id
+msgid "Wo Clean"
+msgstr "OT Limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__wo_plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__wo_plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_line__wo_plant_id
+msgid "Wo Plant"
+msgstr "OT Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_accept_model__work_order_clean_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_custom_model__work_order_clean_id
+msgid "Work Order Clean"
+msgstr "Orden de trabajo limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_clean_handling
+msgid "Work Orders In process"
+msgstr "OTL En Progreso"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_clean_to_finish
+msgid "Work Orders to finish"
+msgstr "OTL Para Finalizar"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_work_order_clean_to_plan
+msgid "Work Orders to plan"
+msgstr "OTL Para planificar"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__work_notes
+msgid "Work notes"
+msgstr "Notas Orden de trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model,name:onmi_reliex_operations.model_work_order_plant
+msgid "Work order Plant"
+msgstr "Órdenes de trabajo Instalación"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__workorder_clean_id
+msgid "Workorder Clean"
+msgstr "Órden de trabajo Limpieza"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__workorder_plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist_fire__workorder_plant_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_material_list__workorder_plant_id
+msgid "Workorder Plant"
+msgstr "Órden de trabajo Instalación"
+
+#. module: onmi_reliex_operations
+#: model:mail.template,subject:onmi_reliex_operations.email_template_work_order_plant
+msgid ""
+"Works on {{ object.name }}\n"
+"            "
+msgstr ""
+"Partes en {{ object.name }}\n"
+"            "
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_human_resources__worksheet_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_incident__worksheet_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_materials__worksheet_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__worksheet_id
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__worksheet_ids
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_plant__worksheet_ids
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_tree_view
+msgid "Worksheet"
+msgstr "Parte de Trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_sign_info_wizard__worksheet_name
+msgid "Worksheet Name"
+msgstr "Nombre del Parte de trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_worksheet_part__name
+msgid "Worksheet Reference"
+msgstr "Referencia de Parte de Trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_worksheet_plant_to_plan
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_worksheet_to_plan
+msgid "Worksheet clean to plan"
+msgstr "Partes Instalación por planificar"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.act_window,name:onmi_reliex_operations.onmi_action_full_worksheet
+#: model:ir.model,name:onmi_reliex_operations.model_worksheet_part
+#: model:ir.ui.menu,name:onmi_reliex_operations.worksheet_main_menu_operations_module
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_calendar_view
+msgid "Worksheets"
+msgstr "Parte de Trabajo"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.worksheet_to_plan_menu_operations_module
+msgid "Worksheets clean to plan"
+msgstr "Partes Limpieza para planificar"
+
+#. module: onmi_reliex_operations
+#: model:ir.ui.menu,name:onmi_reliex_operations.worksheet_plant_to_plan_menu_operations_module
+msgid "Worksheets plant to plan"
+msgstr "Partes Instalación para planificar"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.view_worksheet_search_view
+msgid "Worksheets that are assigned to me"
+msgstr "Partes asignados a mi"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.worksheet_form_view
+msgid "YOU HAVE TO CHECK MATERIALS AND LOCATIONS OF THEM"
+msgstr "TIENE QUE REVISAR LOS MATERIALES Y SU LOCALIZACIÓN"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__devices_checked__yes
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__filters_with_photo__yes
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__gas_depressor_checked__yes
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__gas_hose_checked__yes
+#: model:ir.model.fields.selection,name:onmi_reliex_operations.selection__sign_info_wizard__registers_closed__yes
+msgid "Yes"
+msgstr "Si"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "ZIP"
+msgstr "CP"
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_work_order_clean__zip
+msgid "Zip"
+msgstr "CP"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "e.g. Sales Director"
+msgstr "Por ejemplo Director de ventas"
+
+#. module: onmi_reliex_operations
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_operations.work_order_clean_form_view
+msgid "e.g. https://www.odoo.com"
+msgstr ""
+
+#. module: onmi_reliex_operations
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__joints
+#: model:ir.model.fields,field_description:onmi_reliex_operations.field_checklist__joints_machine
+msgid "joints"
+msgstr "juntas"
+
+#. module: onmi_reliex_operations
+#: model:ir.actions.server,name:onmi_reliex_operations.onmi_res_work_order_clean_cron_ir_actions_server
+msgid "onmi OTLs recordatorio"
+msgstr ""

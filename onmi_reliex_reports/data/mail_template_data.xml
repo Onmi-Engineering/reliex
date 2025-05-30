@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--region PLANTILLA SO SIMPLIFICADO-->
+        <record id="onmi_mail_template_edi_sale_simplified" model="mail.template">
+            <field name="name">Sales Order Simplified: Send by email</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="subject">{{ object.company_id.name }} {{ object.state in ('draft', 'sent') and
+                (ctx.get('proforma') and 'Proforma' or 'Quotation') or 'Order' }} (Ref {{ object.name or 'n/a' }})
+            </field>
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        <t t-set="doc_name" t-value="'quotation' if object.state in ('draft', 'sent') else 'order'"/>
+                        Hello,
+                        <br/>
+                        <br/>
+                        Your
+                        <t t-if="ctx.get('proforma')">
+                            Pro forma invoice for
+                            <t t-out="doc_name or ''">quotation</t>
+                            <strong t-out="object.name or ''">S00052</strong>
+                            <t t-if="object.origin">
+                                (with reference:
+                                <t t-out="object.origin or ''"/>
+                                )
+                            </t>
+                            amounting in <strong
+                                t-out="format_amount(object.amount_total, object.pricelist_id.currency_id) or ''">$
+                            10.00
+                        </strong> is available.
+                        </t>
+                        <t t-else="">
+                            <t t-out="doc_name or ''">quotation</t>
+                            <strong t-out="object.name or ''"/>
+                            <t t-if="object.origin">
+                                (with reference: <t t-out="object.origin or ''">S00052</t> )
+                            </t>
+                            amounting in <strong
+                                t-out="format_amount(object.amount_total, object.pricelist_id.currency_id) or ''">$
+                            10.00
+                        </strong> is ready for review.
+                        </t>
+                        <br/>
+                        <br/>
+                        Do not hesitate to contact us if you have any questions.
+                        <br/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template" ref="action_report_saleorder_simplified"/>
+            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!--endregion-->
+        <!--region PLANTILLA FIRMA CLIENTE PTL-->
+        <record id="onmi_mail_template_worksheet_signed_document" model="mail.template">
+            <field name="name">Signed document: Send by email</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="subject">Confirmation of Worksheet (Ref {{ object.name or 'n/a' }})</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+            <field name="email_to">{{ object._get_email_to_document_signed() }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear<t t-out="object.establishment_id.supervisor_name"/>,
+                        <br/>
+                        <br/>
+                        I am attaching a cleaning certificate for the services performed in your establishment<t
+                            t-out="object.establishment_id.name"/>.
+                        <br/>
+                        <br/>
+                        Please do not hesitate to contact us if you have any questions or concerns about the work
+                        performed. We are available to serve your needs and make sure your facility continues to run
+                        smoothly.
+                        <br/>
+                        <br/>
+                        We appreciate your trust in our services and hope to have the opportunity to work with you again
+                        in the future.
+                        <br/>
+                        Best regards,
+                        <br/>
+                        <br/>
+                        <t t-out="object.create_uid.company_id.name"/>
+                        <br/>
+                        ESB73884132
+                        <br/>
+                        <t t-out="object.create_uid.company_id.mobile"/>,
+                        <t t-out="object.create_uid.company_id.email"/>
+                        <br/>
+                        Work order Clean:
+                        <t t-out="object.name"/>
+                        <br/>
+                        <img t-attf-src="/logo.png?company={{ object.create_uid.company_id.id }}"
+                             style="padding: 0px; margin: 0px; height: auto; width: 80px;"
+                             t-att-alt="object.create_uid.company_id.name"/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template" ref="action_report_worksheet_part"/>
+            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">{{ object.establishment_id.lang }}</field>
+        </record>
+        <!--endregion-->
+        <!--region PLANTILLA INFORMES OTL-->
+        <record id="onmi_mail_template_workorder_reports_document" model="mail.template">
+            <field name="name">Cleaning Certifieds</field>
+            <field name="model_id" ref="onmi_reliex_operations.model_work_order_clean"/>
+            <field name="subject">Cleaning Certifieds ({{ object.establishment_id.name or 'n/a' }})</field>
+            <field name="send_reports" eval="True"/>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object._get_attendee_emails_reports() }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear<t t-out="object.establishment_id.supervisor_name"/>,
+                        <br/>
+                        <br/>
+                        I am attaching a cleaning certificate for the services performed in your establishment<t
+                            t-out="object.establishment_id.name"/>.
+                        <br/>
+                        <br/>
+                        Please do not hesitate to contact us if you have any questions or concerns about the work
+                        performed. We are available to serve your needs and make sure your facility continues to run
+                        smoothly.
+                        <br/>
+                        <br/>
+                        We appreciate your trust in our services and hope to have the opportunity to work with you again
+                        in the future.
+                        <br/>
+                        Best regards,
+                        <br/>
+                        <br/>
+                        <t t-out="object.create_uid.company_id.name"/>
+                        <br/>
+                        ESB73884132
+                        <br/>
+                        <t t-out="object.create_uid.company_id.mobile"/>,
+                        <t t-out="object.create_uid.company_id.email"/>
+                        <br/>
+                        Work order Clean:
+                        <t t-out="object.name"/>
+                        <br/>
+                        <img t-attf-src="/logo.png?company={{ object.create_uid.company_id.id }}"
+                             style="padding: 0px; margin: 0px; height: auto; width: 80px;"
+                             t-att-alt="object.create_uid.company_id.name"/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template" ref="action_report_work_order_clean"/>
+            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!--endregion-->
+        <!--region PLANTILLA CONFIRMACIÓN OTL-->
+        <record id="onmi_mail_template_workorder_clean_confirm_document4" model="mail.template">
+            <field name="name">Workorder Clean: Confirming</field>
+            <field name="model_id" ref="onmi_reliex_operations.model_work_order_clean"/>
+            <field name="subject">Confirmar fecha limpieza</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object._get_attendee_emails_confirmed() }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Estimado/a<t t-out="object.establishment_id.boss_name"/>,
+                        <br/>
+                        <br/>
+                        Después de recibir aceptación del presupuesto de limpieza con referencia
+                        <t t-set="first_order" t-value="object.lead_id.order_ids.filtered(lambda r: r.name)[0]"/>
+                        <t t-out="first_order.name"/>
+                        Me pongo en contacto con usted para proponerle la siguiente fecha disponible para realizar el
+                        servicio de limpieza presupuestado.
+                        <br/>
+                        <br/>
+                        <strong>Establecimiento:</strong>
+                        <t t-out="object.establishment_id.name"/>
+                        <br/>
+                        <t t-out="object.establishment_id.street"/>
+                        <br/>
+                        <br/>
+                        <strong>Fechas y horarios:</strong>
+                        <br/>
+                        <t t-set="day_count" t-value="1"/>
+                        <t t-foreach="object.worksheet_ids" t-as="works">
+                            <t t-out="'Día ' + str(day_count) + ': '"/>
+                            <t t-out="works.start_date_tz.strftime('%d-%m-%Y %H:%M:%S')"/>
+                            <t t-set="day_count" t-value="day_count + 1"/>
+                            <br/>
+                        </t>
+                        <br/>
+                        <strong>Por favor, indique su aceptación o propuesta de fecha alternativa al hilo de este email.</strong>
+                        <br/>
+                        <br/>
+                        Gracias por su atención, esperamos su respuesta.
+                        <br/>
+                        Un saludo,
+                        <br/>
+                        <br/>
+                        <t t-out="object.create_uid.company_id.name"/>
+                        <br/>
+                        <t t-out="object.create_uid.company_id.mobile"/>,
+                        <t t-out="object.create_uid.company_id.email"/>
+                        <br/>
+                        Orden de Trabajo de Limpieza:
+                        <t t-out="object.name"/>
+                        <br/>
+                        <img t-attf-src="/logo.png?company={{ object.create_uid.company_id.id }}"
+                             style="padding: 0px; margin: 0px; height: auto; width: 80px;"
+                             t-att-alt="object.create_uid.company_id.name"/>
+                    </p>
+                </div>
+            </field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!--endregion-->
+        <!--region PLANTILLA ASIGNACIÓN TRABAJO OPERARIOS-->
+        <record id="onmi_mail_template_worksheet_clean_assign_work" model="mail.template">
+            <field name="name">Worksheets: New job assigned</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="subject">New job design in {{object.establishment_id.name}} on
+                date{{format_datetime(object.start_date, tz=user.tz, dt_format='dd.MM.YYYY HH:mm')}}
+            </field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object._get_attendee_emails_workers()}}
+            </field>
+            <field name="body_html" type="html">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    <strong># Message for team leader</strong>
+                    <br/>
+                    <br/>
+                    You have been assigned the following job:
+                    <br/>
+                    - Support operators:
+                    <t t-foreach="object.employee_id" t-as="emp">
+                        <t t-out="emp.name"/>,
+                    </t>
+                    <br/>
+                    - Establishment:
+                    <t t-out="object.establishment_id.name"/>
+                    <br/>
+                    - Establishment address:
+                    <t t-out="object.establishment_id.street"/>,
+                    <t t-out="object.establishment_id.city"/>
+                    <br/>
+                    - Worksheet date:
+                    <t t-out="format_datetime(object.start_date, tz=user.tz, dt_format='dd.MM.YYYY HH:mm')"/>
+                    <br/>
+                    <br/>
+                    - Establishment mobile:
+                    <t t-out="object.establishment_id.phone"/>
+                    <br/>
+                    - Establishment boss mobile:
+                    <t t-out="object.establishment_id.mobile"/>
+                    <br/>
+                    <br/>
+                    <strong># Message for workers</strong>
+                    <br/>
+                    <br/>
+                    You have been assigned the following job:
+                    <br/>
+                    - Team Leader:
+                    <t t-out="object.user_id.name"/>
+                    <br/>
+                    - Establishment:
+                    <t t-out="object.establishment_id.name"/>
+                    <br/>
+                    - Establishment address:
+                    <t t-out="object.establishment_id.street"/>,
+                    <t t-out="object.establishment_id.city"/>
+                    <br/>
+                    - Worksheet date:
+                    <t t-out="format_datetime(object.start_date, tz=user.tz, dt_format='dd.MM.YYYY HH:mm')"/>
+                    <br/>
+                    <br/>
+                    - Establishment mobile:
+                    <t t-out="object.establishment_id.phone"/>
+                    <br/>
+                    - Establishment boss mobile:
+                    <t t-out="object.establishment_id.mobile"/>
+                    <br/>
+                    <img t-attf-src="/logo.png?company={{ object.create_uid.company_id.id }}"
+                         style="padding: 0px; margin: 0px; height: auto; width: 80px;"
+                         t-att-alt="object.create_uid.company_id.name"/>
+                </p>
+            </field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+        <!--endregion-->
+
+        <record id="onmi_mail_template_recurring_mail" model="mail.template">
+            <field name="name">Correo Recurrente</field>
+            <field name="model_id" ref="onmi_reliex_operations.model_work_order_clean"/>
+            <field name="subject">Recordatorio de limpieza 24h antes del servicio.</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{object._get_attendee_emails_reports()}}
+            </field>
+            <field name="body_html" type="html">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    <br/>
+                    <br/>
+                    Le recordamos que nuestros operarios acudirán a realizar la limpieza del sistema de extracción de
+                    humos:
+                    (<t t-out="object.establishment_id.name"/>)(<t t-out="object.start_date"/>)
+                    <br/>
+                    <br/>
+                    IMPORTANTE!!!: Le agradecemos nos contestes que todo es correcto y que tienen acceso.
+                    <br/>
+                    <br/>
+                    Gracias y un saludo,
+                    <br/>
+                    Ino Hernández
+                    <br/>
+                    <img src="onmi_reliex_reports/static/img/reliex.jpg" alt="Reliex" style="width: 25%;"/>
+                    <br/>
+                    <img src="onmi_reliex_reports/static/img/bureau.jpg" alt="Bureau" style="width: 25%;"/>
+                    <br/>
+                    <br/>
+                    Gestión en Sistemas de Extracción, S.L
+                    <br/>
+                    Calle Morera, 43 - Parcela 9 - Pl El saladar
+                    <br/>
+                    30.850 Totana (Murcia)
+                    <br/>
+                </p>
+            </field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+
+        <record id="onmi_mail_template_workorder_reports_confirm23" model="mail.template">
+            <field name="name">Recordatorio de limpieza</field>
+            <field name="model_id" ref="onmi_reliex_operations.model_work_order_clean"/>
+            <field name="subject">DOCUMENTACIÓN DE TRABAJADORES Y VEHICULO PARA SU PROXIMA LIMPIEZA EN {{object.establishment_id.name or 'n/a' }}</field>
+            <field name="send_reports" eval="True"/>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object._get_attendee_emails_confirmed()}}</field>
+            <field name="body_html" type="html">
+
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Estimado/a<t t-out="object.establishment_id.supervisor_name"/>,
+                        <br/>
+                        <br/>
+                        Adjunto DNI de los técnicos que irán a realizar la limpieza e Higienización del Sistema de
+                        Extracción de Humos de vuestras instalaciones.
+                        <t
+                                t-out="object.establishment_id.name"/>:
+                        <t t-set="day_count" t-value="1"/>
+                        <lu>
+                            <t t-foreach="object.worksheet_ids" t-as="works">
+                                <li>
+                                    <t t-out="'Día ' + str(day_count) + ': '"/>
+                                    <t t-out="works.start_date_tz.strftime('%d-%m-%Y %H:%M:%S')"/>
+                                    <t t-set="day_count" t-value="day_count + 1"/>
+                                </li>
+                            </t>
+                        </lu>
+                        <p>
+                            IMPORTANTE NECESITAMOS CONTESTACIÓN A ESTE CORREO CONFIRMANDO QUE TODO ES CORRECTO.
+                        </p>
+                        <br/>
+                        <br/>
+                        ● El vehículo de empresa que llevaremos y su conductor son:
+                        <br/>
+                        <t t-if="object.user_id">
+                            <t t-set="vehicle"
+                               t-value="object.env['fleet.vehicle'].search([('driver_id', 'in', [object.user_id.partner_id.id])], limit=1)"/>
+                            <t t-set="emp"
+                               t-value="object.env['hr.employee'].search([('user_partner_id', 'in', [object.user_id.partner_id.id])], limit=1)"/>
+                            -<t t-out="vehicle.model_id.name"/>[<t t-out="vehicle.license_plate"/>]. Contacto:
+                            <t t-out="emp.name"/>
+                            DNI:
+                            <t t-out="emp.identification_id"/>
+                            Tlf:
+                            <t t-out="emp.work_phone"/>
+                            <br/>
+                        </t>
+                        <br/>
+                        ● La información de los operarios para este trabajo es:
+                        <br/>
+                        <t t-foreach="object.employee_id" t-as="emp">
+                            Contacto <t t-out="emp.name"/>, DNI: <t t-out="emp.identification_id"/>, Tlf: <t t-out="emp.work_phone"/>
+                            <br/>
+                        </t>
+                        <b>
+                            <span style="color: red;">-IMPORTANTE, los restaurantes que estáis en centros comerciales o
+                                en
+                                edificios,
+                                por favor, enviad a los centros comerciales/comunidad de vecinos los datos de los
+                                técnicos e informar de que tenemos que subir a la cubierta del edificio para realizar
+                                la limpieza de extractores.
+                            </span>
+                        </b>
+                        <br/>
+                        <br/>
+                        <b>
+                            <span style="color: red;">Si necesitáis algún documento más decídmelo.</span>
+                        </b>
+                        <br/>
+                        <br/>
+                        <b>
+                            <span style="color: red;">Recordad que necesitamos aproximadamente unas 7 h de trabajo.
+                            </span>
+                        </b>
+                        <br/>
+                        <img src="onmi_reliex_reports/static/img/reliex.jpg" alt="Reliex" style="width: 25%;"/>
+                        <br/>
+                        <img src="onmi_reliex_reports/static/img/bureau.jpg" alt="Bureau" style="width: 25%;"/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template" ref="action_report_work_order_clean"/>
+            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

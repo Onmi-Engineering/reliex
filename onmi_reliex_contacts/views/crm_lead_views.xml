@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="onmi_crm_lead_form_inherit_wo_type" model="ir.ui.view">
+            <field name="name">onmi.crm.lead.form.inherit.wo_type</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_schedule_meeting']" position="before">
+                    <!--                    <button class="oe_stat_button" icon="fa-star" invisible="incident_opened_count < 1 or wo_type == 'new_plant'" name="action_show_incident_opened" type="object">-->
+                    <button class="oe_stat_button" icon="fa-star"
+                            invisible="incident_opened_count &lt; 1 or wo_type == 'new_plant'"
+                            name="action_show_incident_opened" type="object">
+                        <div class="o_stat_info">
+                            <field class="o_stat_value" name="incident_opened_count"/>
+                            <span class="o_stat_text" invisible="incident_opened_count &lt; 2">
+                                Pending Incidents
+                            </span>
+                            <span class="o_stat_text" invisible="incident_opened_count &gt; 1">
+                                Pending Incident
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" icon="fa-star" invisible="wo_type == 'new_plant'"
+                            name="action_show_incident_related" type="object">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">
+                                All Incidents
+                            </span>
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="attributes">
+                    <attribute name="options">
+                        {'no_create_edit': True, 'no_create':False, 'no_open':False}
+                    </attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_set_won_rainbowman']" position="before">
+                    <button class="oe_highlight" invisible="wo_type == 'cleaning'" name="action_create_material_list"
+                            string="Create Material Lists" type="object"/>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" icon="fa-list" invisible="wo_type == 'cleaning'"
+                            name="action_material_list" type="object">
+                        <div class="o_stat_info">
+                            Material Lists
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="wo_type" options="{'horizontal': true}" widget="radio"/>
+                </xpath>
+                <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="attributes">
+                    <attribute name="domain">
+                        ['|', ('company_id', '=', False), ('company_id', '=', company_id), ('type', '=',
+                        'establishment')]
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="attributes">
+                    <attribute name="domain">
+                        ['|', ('team_id', '=', team_id), ('team_id', '=', False), ('type', '=',
+                        wo_type)]
+                    </attribute>
+                </xpath>
+                <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="attributes">
+                    <attribute name="string">
+                        Establishment
+                    </attribute>
+                </xpath>
+                <xpath expr="//label[@for='email_from']" position="before">
+                    <field domain="[('type','=','plant'), ('parent_id', '=', partner_id)]" name="plant_ids"
+                           options="{'color_field': 'color', 'no_create_edit': True, 'no_create':True, 'no_open':True}"
+                           widget="many2many_tags"/>
+                </xpath>
+                <xpath expr="// notebook" position="inside">
+                    <page name="work_notes" string="Notes for workorder">
+                        <field name="work_notes" nolabel="1"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_case_form_view_oppor_inherit_no_new_quot" model="ir.ui.view">
+            <field name="name">crm.case.form.view.oppor.inherit.no_new_quot</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button" position="attributes">
+                    <attribute name="invisible">wo_type == 'new_plant'</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="onmi_quick_create_opportunity_form_inherit_wo_type" model="ir.ui.view">
+            <field name="name">onmi.quick.create.opportunity.form.inherit.wo_type</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/group" position="inside">
+                    <field name="wo_type" options="{'horizontal': true}" readonly="1" required="True" widget="radio"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="replace">
+                </xpath>
+            </field>
+        </record>
+        <record id="crm_lead_action_pipeline_cleaning" model="ir.actions.act_window">
+            <field name="name">Pipeline Cleaning</field>
+            <field name="res_model">crm.lead</field>
+            <field name="view_mode">kanban,tree,graph,pivot,form,calendar,activity</field>
+            <field name="domain">[('type','=','opportunity'), ('wo_type', '=', 'cleaning')]</field>
+            <field name="context">{
+                'default_type': 'opportunity',
+                'default_wo_type': 'cleaning',
+                }
+            </field>
+            <field name="search_view_id" ref="crm.view_crm_case_opportunities_filter"/>
+        </record>
+        <record id="crm.crm_lead_action_pipeline" model="ir.actions.act_window">
+            <field name="name">Pipeline New Plant</field>
+            <field name="domain">[('type','=','opportunity'), ('wo_type', '=', 'new_plant')]</field>
+            <field name="context">{
+                'default_type': 'opportunity',
+                'default_wo_type': 'new_plant',
+                }
+            </field>
+        </record>
+
+        <record id="onmi_inherit_mail_activity_schedule_view_form" model="ir.ui.view">
+            <field name="name">onmi_inherit_mail_activity_schedule_view_form</field>
+            <field name="model">mail.activity.schedule</field>
+            <field name="inherit_id" ref="calendar.mail_activity_schedule_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_create_calendar_event']" position="replace">
+                    <button string="Abrir Calendario"
+                            invisible="activity_category not in ('meeting', 'phonecall', 'default')"
+                            name="action_create_calendar_event" type="object" class="btn-primary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="onmi_inherit_view_crm_lead_kanban_inherit" model="ir.ui.view">
+            <field name="name">onmi_inherit_view_crm_lead_kanban_inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="attributes">
+                    <attribute name="default_order">date_last_stage_update desc</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem action="crm_lead_action_pipeline_cleaning" id="menu_crm_opportunities_cleaning"
+                  name="My Pipeline Cleaning" parent="crm.crm_menu_sales" sequence="0"/>
+        <menuitem action="crm.crm_lead_action_pipeline" id="menu_crm_opportunities_cleaning2"
+                  name="Mi Pipeline Instalación" parent="crm.crm_menu_sales" sequence="0"/>
+
+
+    </data>
+</odoo>

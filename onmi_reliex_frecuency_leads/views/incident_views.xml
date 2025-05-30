@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="incident_search_view" model="ir.ui.view">
+            <field name="name">incident.search</field>
+            <field name="model">incident</field>
+            <field name="arch" type="xml">
+                <search string="Incidents">
+                    <field name="name"/>
+                    <field name="plant_id"/>
+                    <filter string="Pending Quot incidents" domain="[('state', 'in', ['not_handling', 'handling', ]), ('incident_type2', '=', 'quotation')]"
+                            name="not_handling_quot_incidents"/>
+                    <separator/>
+                    <filter string="Not handling" domain="[('state', '=', 'not_handling')]" name="not_handling_incidents"/>
+                    <separator/>
+                    <filter string="Handling" domain="[('state', '=', 'handling')]" name="handling_incidents"/>
+                    <separator/>
+                    <filter string="Finished" domain="[('state', '=', 'finished')]" name="finished_incidents"/>
+                    <separator/>
+                    <filter string="Unrealized" domain="[('incident_type2', '=', 'not_realized')]" name="unrealized_incidents"/>
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter string="Incident type" name="incident_type" domain="[]" context="{'group_by':'incident_type'}"/>
+                        <filter string="Second Incident type" name="incident_type2" domain="[]" context="{'group_by':'incident_type2'}"/>
+                        <filter string="Create date" name="create_date" domain="[]" context="{'group_by':'create_date'}"/>
+                        <filter string="Plant" name="plant_id" domain="[]" context="{'group_by':'plant_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

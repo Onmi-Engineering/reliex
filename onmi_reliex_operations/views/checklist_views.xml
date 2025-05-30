@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="checklist_form_view" model="ir.ui.view">
+            <field name="name">checklist.form</field>
+            <field name="model">checklist</field>
+            <field name="arch" type="xml">
+                <form string="Checklist Fumes">
+                    <header>
+                        <button class="oe_highlight" invisible="state != 'new'" name="button_finish" string="Finish" type="object"/>
+                        <button class="oe_highlight" invisible="state != 'finished'" name="button_reset" string="Reset" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Identificator"/>
+                            </h1>
+                        </div>
+                        <div>
+                            <strong>
+                                General data
+                            </strong>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="company_id"/>
+                                <field name="workorder_plant_id"/>
+                                <field name="plant_id"/>
+                                <field name="inspection_date"/>
+                                <field name="details"/>
+                            </group>
+                        </group>
+                        <div>
+                            <strong>
+                                2.1 Extract system
+                            </strong>
+                        </div>
+                        <div>
+                            Ducts
+                        </div>
+                        <group>
+                            <group>
+                                <field name="hung_distance" options="{'horizontal': true}" widget="radio"/>
+                                <field name="holder" options="{'horizontal': true}" widget="radio"/>
+                                <field name="joints" options="{'horizontal': true}" widget="radio"/>
+                                <field name="staples" options="{'horizontal': true}" widget="radio"/>
+                                <field name="cracks" options="{'horizontal': true}" widget="radio"/>
+                                <field name="others" options="{'horizontal': true}" widget="radio"/>
+                            </group>
+                            <group>
+                                <field name="hung_distance_comments" required="hung_distance == 'comments'"/>
+                                <field name="holder_comments" required="holder == 'comments'"/>
+                                <field name="joints_comments" required="joints == 'comments'"/>
+                                <field name="staples_comments" required="staples == 'comments'"/>
+                                <field name="cracks_comments" required="cracks == 'comments'"/>
+                                <field name="others_comments" required="others == 'comments'"/>
+                            </group>
+                        </group>
+                        <div>
+                            Exit ducts and Sombrerete
+                        </div>
+                        <group>
+                            <group>
+                                <field name="cracks_ducts" options="{'horizontal': true}" widget="radio"/>
+                                <field name="others_1" options="{'horizontal': true}" widget="radio"/>
+                                <field name="others_2" options="{'horizontal': true}" widget="radio"/>
+                            </group>
+                            <group>
+                                <field name="cracks_ducts_comments" required="cracks_ducts == 'comments'"/>
+                                <field name="others_1_comments" required="others_1 == 'comments'"/>
+                                <field name="others_2_comments" required="others_2 == 'comments'"/>
+                            </group>
+                        </group>
+                        <div>
+                            Machines
+                        </div>
+                        <group>
+                            <group>
+                                <field name="holder_machine" options="{'horizontal': true}" widget="radio"/>
+                                <field name="joints_machine" options="{'horizontal': true}" widget="radio"/>
+                                <field name="cracks_machine" options="{'horizontal': true}" widget="radio"/>
+                                <field name="others_machine" options="{'horizontal': true}" widget="radio"/>
+                            </group>
+                            <group>
+                                <field name="holder_machine_comments" required="holder_machine == 'comments'"/>
+                                <field name="joints_machine_comments" required="joints_machine == 'comments'"/>
+                                <field name="cracks_machine_comments" required="cracks_machine == 'comments'"/>
+                                <field name="others_machine_comments" required="others_machine == 'comments'"/>
+                            </group>
+                        </group>
+                        <div>
+                            On working
+                        </div>
+                        <group>
+                            <group>
+                                <field name="seal_ducts" options="{'horizontal': true}" widget="radio"/>
+                                <field name="seal_machine" options="{'horizontal': true}" widget="radio"/>
+                                <field name="exit_duct" options="{'horizontal': true}" widget="radio"/>
+                            </group>
+                            <group>
+                                <field name="seal_ducts_comments" required="seal_ducts == 'comments'"/>
+                                <field name="seal_machine_comments" required="seal_machine == 'comments'"/>
+                                <field name="exit_duct_comments" required="exit_duct == 'comments'"/>
+                            </group>
+                        </group>
+                        <div>
+                            Others (specify on PDF)
+                        </div>
+                        <div>
+                            Corrective Actions
+                        </div>
+                        <group>
+                            <field class="oe_inline oe_no_button" name="corrective_ids" nolabel="1" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="corrective_action"/>
+                                    <field name="completion_date"/>
+                                    <field name="user_execute"/>
+                                </tree></field>
+                        </group>
+                        <div>
+                            According to this report, duct is:
+                        </div>
+                        <group>
+                            <group>
+                                <field name="accepted"/>
+                            </group>
+                            <group>
+                                <field name="refused"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="checked_by"/>
+                            </group>
+                            <group>
+                                <field name="signature_checked" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group col="2">
+                            <field name="checked_date"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="endorsed_by"/>
+                            </group>
+                            <group>
+                                <field name="signature_endorsed" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group col="2">
+                            <field name="endorsed_date"/>
+                        </group>
+                    </sheet>
+                </form></field>
+        </record>
+        <record id="checklist_tree_view" model="ir.ui.view">
+            <field name="name">checklist.tree</field>
+            <field name="model">checklist</field>
+            <field name="arch" type="xml">
+                <tree string="Checklist Fumes">
+                    <field name="name"/>
+                    <field name="workorder_plant_id"/>
+                    <field name="state"/>
+                </tree></field>
+        </record>
+        <record id="checklist_act_window" model="ir.actions.act_window">
+            <field name="name">Checklists Fumes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">checklist</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    There is no examples click here to add new Checklist.
+                </p></field>
+        </record>
+        <menuitem groups="group_operation_administrator_plant" id="checklist_menu_parent" name="Checklists" parent="main_menu_operations_module"/>
+        <menuitem action="checklist_act_window" id="checklist_menu" name="Checklists Fumes" parent="checklist_menu_parent"/>
+    </data>
+</odoo>

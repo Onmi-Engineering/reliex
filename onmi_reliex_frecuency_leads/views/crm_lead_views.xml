@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oeng_crm_lead_form_inherit_starred_button" model="ir.ui.view">
+            <field name="name">oeng.crm.lead.form.inherit.starred.button</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_show_incident_related']" position="replace">
+                </xpath>
+                <xpath expr="//button[@name='action_schedule_meeting']" position="before">
+                    <field invisible="1" name="has_quotation_incidents"/>
+                    <button class="oe_stat_button" icon="fa-star" invisible="has_quotation_incidents == False"
+                            name="action_show_incident_related" style="background-color: #F6FC57;color: black;"
+                            type="object">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">
+                                All Incident
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" icon="fa-star" invisible="has_quotation_incidents == True"
+                            name="action_show_incident_related" type="object">
+                        <div class="o_stat_info">
+                            <span class="o_stat_text">
+                                All Incident
+                            </span>
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="attributes">
+                    <attribute name="context">
+                        {'default_type': 'establishment'}
+                    </attribute>
+                </xpath>
+                <xpath expr="//group[@name='opportunity_partner']/field[@name='partner_id']" position="before">
+                    <field invisible="client_id == False" name="client_id"/>
+                </xpath>
+                <xpath expr="//h1/.." position="before">
+                    <field invisible="1" name="parent_partner_id"/>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <button class="oe_highlight" invisible="parent_partner_id != False"
+                                name="button_generate_partner" string="Generate partner" style="text-align: right;"
+                                type="object"/>
+                    </div>
+                    <br/>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="attributes">
+                    <attribute name="context">
+                        {'default_type': 'establishment'}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Agrego icono de facturado en tarjeta de crm-->
+        <record id="oeng_crm_lead_form_inherit_kanban_view" model="ir.ui.view">
+            <field name="name">oeng.crm.lead.form.inherit.kanban.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='team_id']" position="after">
+                    <field name="has_invoice"/>
+                </xpath>
+                <xpath expr="//div[@class='oe_kanban_bottom_left']" position="inside">
+                    <span t-if="record.has_invoice and record.has_invoice.raw_value === true"
+                          class="fa fa-eur ms-1 text-success" title="Tiene facturas" role="img"
+                          aria-label="Tiene facturas"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Agrego busqueda por facturado-->
+        <record id="oeng_crm_lead_form_inherit_opportunities_filter" model="ir.ui.view">
+            <field name="name">oeng.crm.lead.form.inherit.opoortunities.filter</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='lost']" position="after">
+                    <filter string="Facturado" name="has_invoice" domain="[('has_invoice', '=', True)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

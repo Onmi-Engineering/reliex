@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="oeng_res_partner_kanban_view_inherit_plant_type" model="ir.ui.view">
+            <field name="name">oeng_res_partner_kanban_view_inherit_plant_type</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div/div/strong" position="before">
+                    <t t-if="record.plant_type.raw_value == 'to_plant'">
+                        <strong style="color: green !important;">
+                            <field name="plant_type"/>
+                        </strong>
+                    </t>
+                    <t t-if="record.plant_type.raw_value == 'to_clean'">
+                        <strong style="color: blue !important;">
+                            <field name="plant_type"/>
+                        </strong>
+                    </t>
+                </xpath>
+            </field>
+        </record>
+        <record id="onmi_view_partner_form_inherit_page" model="ir.ui.view">
+            <field name="name">onmi.view.res.partner.form.inherit.page</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//h1" position="replace">
+                    <div class="o_row">
+                        <label for="partner_code"/>
+                        <field name="partner_code"/>
+                    </div>
+                    <h1>
+                        <field class="text-break" default_focus="1" id="company"
+                               invisible="is_company == False or type == 'establishment'" name="name"
+                               placeholder="e.g. Lumber Inc" required="type == 'contact' and is_company == True"/>
+                        <field class="text-break" default_focus="1" id="individual"
+                               invisible="is_company == True or type == 'plant' or type == 'establishment'" name="name"
+                               placeholder="e.g. Brandom Freeman" required="type == 'contact' and is_company == False"/>
+                        <field class="text-break" default_focus="1" id="plant"
+                               invisible="is_company == True or type != 'plant'" name="name"
+                               placeholder="e.g. Building (if exists) - Plant"
+                               required="type == 'contact' and is_company == False"/>
+                        <field class="text-break" default_focus="1" id="establishment"
+                               invisible="is_company == True or type != 'establishment'" name="name"
+                               placeholder="Establishment name only"
+                               required="type == 'contact' and is_company == False"/>
+                    </h1>
+                </xpath>
+                <!-- ORGANIZACIÓN DE MAILS Y TELÉFONOS DE CONTACTO -->
+                <xpath expr="//label[@for='email']" position="attributes">
+                    <attribute name="invisible">type == 'establishment'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='email']" position="attributes">
+º                </xpath>
+                <xpath expr="//label[@for='mobile']" position="attributes">
+                    <attribute name="invisible">type == 'establishment'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile']/.." position="attributes">
+                    <attribute name="invisible">type == 'establishment'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="replace"/>
+                <xpath expr="//field[@name='mobile']/.." position="after">
+                    <field name="user_id" invisible="type not in ['contact', 'establishment']"
+                           widget="many2one_avatar_user" domain="[('share', '=', False)]"/>
+                    <field name="boss_name" string="Contact person"/>
+                    <field invisible="type not in ['contact', 'establishment']" name="function"/>
+                    <label class="oe_inline" for="email" invisible="type != 'establishment'"/>
+                    <div class="o_row o_row_readonly" invisible="type != 'establishment'">
+                        <button class="fa fa-ban text-danger" context="{'default_email': email}"
+                                invisible="is_blacklisted == False"
+                                modifiers='{"invisible": [["is_blacklisted", "=", false]]}'
+                                name="mail_action_blacklist_remove"
+                                title="Este correo electrónico está en la lista negra para envíos masivos. Haga clic para eliminar la lista negra."
+                                type="object"/>
+                        <field context="{'gravatar_image': True}" modifiers='{"required": [["user_ids", "!=", []]]}'
+                               name="email" on_change="1" required="user_ids != [] and type != 'plant'" widget="email"/>
+                    </div>
+                    <field invisible="type != 'establishment'" name="mobile" widget="phone"/>
+                    <field name="access_check" widget="boolean_toggle" string="Acceso documental"/>
+                    <field name="access_vehicle" widget="boolean_toggle" string="Acceso vehiculo"/>
+                    <field name="website" string="Webiste" widget="url" placeholder="e.g. https://www.odoo.com" invisible="type != 'establishment'"/>
+                    <field name="category_id" widget="many2many_tags" invisible="type != 'establishment'" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="e.g. &quot;B2B&quot;, &quot;VIP&quot;, &quot;Consulting&quot;, ..."/>
+                </xpath>
+                <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                    <attribute name="string">
+                        Establishment Plants
+                    </attribute>
+                    <attribute name="invisible">type == 'plant'</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_type']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page invisible="type != 'plant'" name="technical_data" string="Take technical data">
+                        <group>
+                            <group>
+                                <field name="days_plant"/>
+                            </group>
+                            <group>
+                                <field name="days_clean"/>
+                            </group>
+                        </group>
+                        <label for="cooker_hood_ids"/>
+                        <group>
+                            <field context="{'default_plant_id': active_id}" domain="[('plant_id', '=', active_id)]"
+                                   name="cooker_hood_ids" nolabel="1">
+                                <form string="Cooker hoods">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="name"/>
+                                            <h1>
+                                                <field name="name" placeholder="Name"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field domain="[('id', '=', id)]" name="plant_id" readonly="True"/>
+                                                <field name="plenum"/>
+                                                <field name="material"/>
+                                                <field name="location"/>
+                                                <field name="soiling_degree" widget="priority"/>
+                                            </group>
+                                            <group>
+                                                <field name="number_filters"/>
+                                                <field name="material_filter"/>
+                                                <field name="location_filter"/>
+                                                <field name="dimmensions"/>
+                                                <field name="cleaning_filters"/>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="comments"
+                                                   style="width: 100%;display: flex;justify-content: space-between;"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                        <label for="duct_ids"/>
+                        <group>
+                            <field name="duct_ids" nolabel="1">
+                                <form string="Duct">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="name"/>
+                                            <h1>
+                                                <field name="name" placeholder="Name"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="plant_id" readonly="True"/>
+                                                <field name="type"/>
+                                                <field name="round"/>
+                                                <field invisible="round == False" name="dimmensions_diameter"/>
+                                                <field invisible="round == False" name="ei30"/>
+                                                <field name="square"/>
+                                                <field invisible="square == False" name="dimmensions_square"/>
+                                                <field name="location"/>
+                                                <field name="demountable_roof"/>
+                                                <field name="noise_problems"/>
+                                            </group>
+                                            <group>
+                                                <field invisible="1" name="do_registers"/>
+                                                <field invisible="do_registers == False" name="register_qty_squared"/>
+                                                <field invisible="do_registers == False" name="register_qty_round"/>
+                                                <field name="vertical_meters"/>
+                                                <field name="horizontal_meters"/>
+                                                <field name="soiling_degree" widget="priority"/>
+                                                <field name="manually_machine"/>
+                                                <field name="hydraulic_machine"/>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="comments"
+                                                   style="width: 100%;display: flex;justify-content: space-between;"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                        <label for="extractor_ids"/>
+                        <group>
+                            <field name="extractor_ids" nolabel="1">
+                                <form string="Extractors">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <label for="name"/>
+                                            <h1>
+                                                <field name="name" placeholder="Name"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <field name="plant_id" readonly="True"/>
+                                                <field name="model_and_brand"/>
+                                                <field name="type"/>
+                                                <field invisible="type != 'centrifugal'" name="transmission"/>
+                                                <field invisible="transmission != 'pulley'" name="belt_ref"/>
+                                                <field invisible="transmission != 'pulley'" name="substitute_belt"/>
+                                                <field name="locations"/>
+                                            </group>
+                                            <group>
+                                                <field invisible="1" name="do_registers"/>
+                                                <field invisible="1                                                                                                         "
+                                                       name="register_qty"/>
+                                                <field name="has_water_intake"/>
+                                                <field name="epis"/>
+                                                <field name="has_power_supply"/>
+                                                <field name="noise"/>
+                                                <field name="soiling_degree" widget="priority"/>
+                                            </group>
+                                        </group>
+                                        <group>
+                                            <field name="comments"
+                                                   style="width: 100%;display: flex;justify-content: space-between;"/>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                    <page invisible="type != 'plant'" name="calculations_and_croquis"
+                          string="Calculations Previous Croquis">
+                        <field context="{'default_res_model': 'res.partner'}" name="attachment_ids" nolabel="1"
+                               string="Select Files">
+                            <tree>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="file_size"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page invisible="type != 'plant'" name="croquis" string="Plant Croquis">
+                        <group>
+                            <group>
+                                <field name="plant_picture_1" nolabel="1" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="plant_picture_2" nolabel="1" widget="image"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="plant_picture_3" nolabel="1" widget="image"/>
+                            </group>
+                            <group>
+                                <field name="plant_picture_4" nolabel="1" widget="image"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page invisible="type != 'establishment'" name="dealings" string="Dealings">
+                        <group>
+                            <field name="access_url" widget="url"/>
+                        </group>
+                        <group>
+                            <field name="access_notifications" nolabel="1" colspan="2"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='child_ids']/.." position="replace">
+                </xpath>
+                <xpath expr="//notebook/page[@name='sales_purchases']" position="before">
+                    <page name="contacts" string="Contacts">
+                        <field context="{'default_type': 'contact', 'default_parent_id': active_id,}"
+                               domain="[('type', '=', 'contact')]" name="contact_ids"></field>
+                    </page>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" icon="fa-exclamation-triangle" name="action_view_incidents"
+                            type="object">
+                        <field name="incident_count" string="Incidents" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//div[@name='button_box']/button[@name='schedule_meeting']" position="before">
+                    <button class="oe_stat_button" icon="fa-building" invisible="type != 'establishment'"
+                            name="action_view_plants" type="object">
+                        <field name="plant_count" string="Plants" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" icon="fa-building"
+                            invisible="type != 'contact' and company_type != 'company'" name="action_view_establishment"
+                            type="object">
+                        <field name="establishment_count" string="Establishments" widget="statinfo"/>
+                    </button>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="after">
+                    <group>
+                        <field name="type"/>
+                        <field invisible="is_company != True" name="fictitious_customer"/>
+                        <field invisible="type != 'establishment'" name="frecuency_active"/>
+                        <field invisible="type != 'establishment'" name="technical_analysis"/>
+                        <field invisible="type != 'establishment'" name="noise_problems"/>
+                        <field invisible="type != 'establishment'" name="price"/>
+                        <field invisible="type != 'establishment' or frecuency_active == False" name="delay"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field invisible="type != 'establishment'" name="alert_establishment"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="onmi_crm_lead_partner_kanban_view_inherit_new_display_name" model="ir.ui.view">
+            <field name="name">onmi.res.partner.kanban.inherit.new_display_name</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//strong/field[@name='display_name']" position="replace">
+                    <field name="new_display_name"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="onmi_res_partner_search_inherit_plant_est_client" model="ir.ui.view">
+            <field name="name">onmi.res.partner.search.inherit.plant.est.client</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//separator" position="before">
+                    <separator/>
+                    <filter domain="[('customer_rank','>', 0)]" name="customer" string="Clients"/>
+                    <filter domain="[('fictitious_customer','=', True)]" name="ficticious_customer"
+                            string="Ficticious Customers"/>
+                    <filter domain="[('supplier_rank','>', 0)]" name="supplier" string="Suppliers"/>
+                    <filter domain="[('type', '=', 'establishment')]" name="type_establishments"
+                            string="Establishments"/>
+                    <filter domain="[('type', '=', 'plant')]" name="type_plants" string="Plants"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="action_plants" model="ir.actions.act_window">
+            <field name="name">Plants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('parent_id.id', '=', active_id),
+                ('type', '=', 'plant')]
+            </field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+        <record id="action_establishment" model="ir.actions.act_window">
+            <field name="name">Establishments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('parent_id.id', '=', active_id),
+                ('type', '=', 'establishment')]
+            </field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <record id="onmi_res_partner_filter_inherit_search" model="ir.ui.view">
+            <field name="name">onmi_res_partner_filter_inherit_search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="partner_code"
+                           filter_domain="[('partner_code', 'ilike', self)]"
+                           string="Código interno"/>
+                </xpath>
+            </field>
+        </record>
+<!--        <record id="oeng_222" model="ir.ui.view">-->
+<!--            <field name="name">oeng_222</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="base.view_partner_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//field[@name='website']" position="attributes">-->
+<!--                    <attribute name="invisible">type == 'establishment'</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

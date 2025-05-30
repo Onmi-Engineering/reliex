@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="onmi_view_order_form_inherit_booleans" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.booleans</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_confirm'][last()]" position="attributes">
+                    <attribute name="string">
+                        Confirm Quotation</attribute>
+                </xpath>
+                <xpath expr="//button[@id='action_confirm']" position="attributes">
+                    <attribute name="string">
+                        Confirm Quotation</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field invisible="establishment_id == False" name="establishment_id" readonly="1" widget="res_partner_many2one"/>
+                </xpath>
+                <xpath expr="//group[@name='sale_header']" position="after">
+                    <group>
+                        <group>
+                            <field invisible="1" name="make_visible"/>
+                            <field name="complete_system" readonly="make_visible == False"/>
+                            <field name="cooker_hood" readonly="make_visible == False"/>
+                        </group>
+                        <group>
+                            <field name="duct" readonly="make_visible == False"/>
+                            <field name="extractor" string="Extractor" readonly="make_visible == False"/>
+                            <field name="filtronic" readonly="make_visible == False"/>
+                        </group>
+                        <group>
+                            <field name="establishment_days_of_clean" invisible="state != 'draft'"/>
+                        </group>
+                    </group>
+                </xpath></field>
+        </record>
+    </data>
+</odoo>

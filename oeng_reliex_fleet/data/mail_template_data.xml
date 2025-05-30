@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+        <!-- Plantilla de correo para recordatorio de vencimiento de ITV -->
+        <record id="mail_template_itv_expiration_reminder" model="mail.template">
+            <field name="name">Recordatorio de vencimiento de ITV</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+            <field name="subject">Recordatorio: ITV de vehículo {{ object.name }} vence en 30 días</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object.manager_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p>Estimado/a <t t-out="object.manager_id.name or ''"/>,</p>
+                    <p>Le informamos que la ITV del vehículo <strong><t t-out="object.name or ''"/></strong>
+                    con matrícula <strong><t t-out="object.license_plate or ''"/></strong>
+                    vencerá el <strong><t t-out="object.itv_expiration or ''"/></strong>,
+                    es decir, en 30 días.</p>
+                    <p>Por favor, programe la revisión correspondiente.</p>
+                    <p>Saludos cordiales,</p>
+                    <p>Sistema de Gestión de Flota</p>
+                </div>
+            </field>
+            <field name="lang">{{ object.manager_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+                <!-- Plantilla de correo para recordatorio de vencimiento del seguro -->
+        <record id="mail_template_ins_expiration_reminder" model="mail.template">
+            <field name="name">Recordatorio de vencimiento del seguro</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+            <field name="subject">Recordatorio: Seguro del vehículo {{ object.name }} vence en 30 días</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object.manager_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p>Estimado/a <t t-out="object.manager_id.name or ''"/>,</p>
+                    <p>Le informamos que la póliza del vehículo <strong><t t-out="object.name or ''"/></strong>
+                    con matrícula <strong><t t-out="object.license_plate or ''"/></strong>
+                    vencerá el <strong><t t-out="object.itv_expiration or ''"/></strong>,
+                    es decir, en 30 días.</p>
+                    <p>Por favor, programe la renovación correspondiente.</p>
+                    <p>Saludos cordiales,</p>
+                    <p>Sistema de Gestión de Flota</p>
+                </div>
+            </field>
+            <field name="lang">{{ object.manager_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Acción planificada (cron) para verificar vencimientos de ITV -->
+        <record id="ir_cron_check_itv_expiration" model="ir.cron">
+            <field name="name">Verificar vencimiento de ITV</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+            <field name="state">code</field>
+            <field name="code">model._check_itv_expiration()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- Acción planificada (cron) para verificar vencimientos de ITV -->
+        <record id="ir_cron_check_itv_expiration" model="ir.cron">
+            <field name="name">Verificar vencimiento del seguro</field>
+            <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+            <field name="state">code</field>
+            <field name="code">model._check_ins_expiration()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

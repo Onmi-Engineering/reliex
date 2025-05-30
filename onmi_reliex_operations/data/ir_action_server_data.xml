@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_finish_part_of_cleaning" model="ir.actions.server">
+            <field name="name">Finish Parts</field>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_worksheet_part"/>
+            <field name="binding_model_id" ref="model_worksheet_part"/>
+            <field name="code">
+                records.action_server_finish_workseet_cleaning()
+            </field>
+        </record>
+    </data>
+</odoo>

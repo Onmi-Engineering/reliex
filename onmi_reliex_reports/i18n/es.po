@@ -1,0 +1,1465 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* onmi_reliex_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-15 15:32+0000\n"
+"PO-Revision-Date: 2023-03-15 16:39+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,print_report_name:onmi_reliex_reports.action_report_checklist
+msgid ""
+"\n"
+"                'Checklist - %s' % (object.name)\n"
+"            "
+msgstr ""
+"\n"
+"                'Lista Verificación humos - %s' % (object.name)\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,print_report_name:onmi_reliex_reports.action_report_checklist_fire
+msgid ""
+"\n"
+"                'Checklist fire - %s' % (object.name)\n"
+"            "
+msgstr ""
+"\n"
+"                'Lista Verificación incendios - %s' % (object.name)\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,print_report_name:onmi_reliex_reports.action_report_certifieds_work_order_clean
+#: model:ir.actions.report,print_report_name:onmi_reliex_reports.action_report_worksheet_part_certified
+msgid ""
+"\n"
+"                'Cleaning Certified - %s' % (object.name)\n"
+"            "
+msgstr ""
+"\n"
+"                'Certificados Limpieza - %s' % (object.name)\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,print_report_name:onmi_reliex_reports.action_report_work_order_clean
+msgid ""
+"\n"
+"                'Report Cleaning - %s' % (object.name)\n"
+"            "
+msgstr ""
+"\n"
+"                'Informe Limpieza - %s' % (object.name)\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,print_report_name:onmi_reliex_reports.action_report_worksheet_part
+msgid ""
+"\n"
+"                'Worksheet - %s' % (object.name)\n"
+"            "
+msgstr ""
+"\n"
+"                'Parte de Trabajo - %s' % (object.name)\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,print_report_name:onmi_reliex_reports.action_report_saleorder_simplified
+msgid ""
+"\n"
+"                (object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object."
+"name)\n"
+"            "
+msgstr ""
+"\n"
+"                (object.state in ('draft', 'sent') and 'Presupuesto - %s' % (object.name)) or 'Pedido - %s' % (object."
+"name)\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+")\n"
+"                        <br/>\n"
+"                        Report date:"
+msgstr ""
+")\n"
+"                        <br/>\n"
+"                        Fecha informe:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "1. ANTECEDENTES"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "1. DESCRIPCION DEL SERVICIO. FASE 1."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"1.2. Reducción del riesgo de incendio y/o contaminación de los productos de alimentación,\n"
+"                        realizando\n"
+"                        trabajos de:\n"
+"                        <br/>"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "10"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "11"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "12"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "13"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "14"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "15"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "16"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "17"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "18"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "2. DESCRIPCION DEL SERVICIO. FASE 2."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"2. OBSERVACIONES, RECOMENDACIONES Y MEDIDAS CORRECTORAS PARA CONSEGUIR LAS CONDICIONES\n"
+"                        HIGIÉNICO-SANITARIAS ÓPTIMAS EN LA INSTALACIÓN."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"2.1. Estudio “in situ” de las instalaciones, su estado, distribución y realización de\n"
+"                                accesos\n"
+"                                al disponer de planos actualizados de las mismas."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"2.2. Con los resultados de la inspección efectuada se genera una Programación de los\n"
+"                                Trabajos, métodos y productos a utilizar en los procesos siguientes."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"2.3. Los trabajos de Desengrase y Limpieza que se han realizado se llevaron a cabo en el\n"
+"                                conducto de extracción:"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"3.1. Una vez finalizados los trabajos descritos, se procedió de nuevo a la realización\n"
+"                                de mediciones e inspecciones visuales para comparar con los resultados obtenidos en "
+"la\n"
+"                                revisión realizada antes de las operaciones de limpieza."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"3.2. A juicio del Director del proyecto, los resultados arrojados por estas nuevas\n"
+"                                pruebas han sido muy satisfactorias."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid "30/38912"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "4. CONDICIONES QUE CUMPLEN LOS MATERIALES"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "5. EQUIPOS Y MAQUINARIA"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "6. PRODUCTOS QUÍMICOS"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid ""
+"<br/>\n"
+"                                            Limpieza y desengrase de campana mediante espumado activo y aclarado\n"
+"                                            posterior."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid ""
+"<br/>\n"
+"                                            Limpieza y desengrase de extractor mediante espumado activo y aclarado\n"
+"                                            posterior."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid ""
+"<br/>\n"
+"                                            Limpieza y desengrase en conducto mediante cepillado automático."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid ""
+"<br/>\n"
+"                                        Verificación posterior de la limpieza.\n"
+"                                        <br/>\n"
+"                                        <br/>\n"
+"                                        De acuerdo con el Real Decreto 314/2006, de 17 de marzo, por el que se "
+"aprueba\n"
+"                                        el Código Técnico de la Edificación y la normativa contra incendios, donde se\n"
+"                                        estipula una limpieza periódica anual para campanas, conductos y extractores. "
+"Y\n"
+"                                        para campanas con una superficie mayor a 2m2 se estipula una frecuencia de\n"
+"                                        limpieza mínima semestral."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid ""
+"<br/>\n"
+"                                    Mobile:"
+msgstr ""
+"<br/>\n"
+"                                    Móvil:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"<br/>\n"
+"                    <strong>Fdo.:</strong>\n"
+"                    Ismael Murcia Llorca\n"
+"                    <br/>\n"
+"                    (Boss)\n"
+"                    <br/>"
+msgstr ""
+"<br/>\n"
+"                    <strong>Fdo.:</strong>\n"
+"                    Ismael Murcia Llorca\n"
+"                    <br/>\n"
+"                    (Gerente)<br/>"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,body_html:onmi_reliex_reports.onmi_mail_template_workorder_clean_confirm_document
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"box-sizing:border-box;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Estimado/a <t t-out=\"object.establishment_id.boss_name\" data-oe-t-inline=\"true\" oe-keep-"
+"contenteditable=\"\" contenteditable=\"false\"></t>,\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Después de recibir aceptación del presupuesto de limpieza con referencia\n"
+"                        <t t-out=\"object.lead_id.order_ids.name\" data-oe-t-inline=\"true\" oe-keep-"
+"contenteditable=\"\" contenteditable=\"false\"></t>\n"
+"                        Me pongo en contacto con usted para proponerle la siguiente fecha disponible para realizar el "
+"servicio de limpieza presupuestado\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        <t t-out=\"object.establishment_id.name\" data-oe-t-inline=\"true\" oe-keep-"
+"contenteditable=\"\" contenteditable=\"false\"></t>\n"
+"                        <br>\n"
+"                        <t t-out=\"object.establishment_id.street\" data-oe-t-inline=\"true\" oe-keep-"
+"contenteditable=\"\" contenteditable=\"false\"></t>\n"
+"                        <br>\n"
+"                        <t t-out=\"object.start_date\" t-options=\"{'widget': 'datetime', 'format': 'd/MM/Y - hh:"
+"mm'}\" data-oe-t-inline=\"true\" oe-keep-contenteditable=\"\" contenteditable=\"false\"></t>\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        Gracias por su atención, esperamos su respuesta.\n"
+"                        <br>\n"
+"                        Un saludo,\n"
+"                        <br>\n"
+"                        <br>\n"
+"                        <t t-out=\"object.create_uid.company_id.name\" data-oe-t-inline=\"true\" oe-keep-"
+"contenteditable=\"\" contenteditable=\"false\"></t>\n"
+"                        <br>\n"
+"                        \t968639820, i.hernandez@reliex.es<br>\n"
+"                        Orden de Trabajo de Limpieza:\n"
+"                        <t t-out=\"object.name\" data-oe-t-inline=\"true\" oe-keep-contenteditable=\"\" "
+"contenteditable=\"false\"></t>\n"
+"                        <br>\n"
+"                        <img t-attf-src=\"/logo.png?company={{ object.create_uid.company_id.id }}\" style=\"border-"
+"style:none;box-sizing:border-box;vertical-align:middle;padding: 0px; margin: 0px; height: 0px; width: 80px;\" t-att-"
+"alt=\"object.create_uid.company_id.name\" width=\"80px\" height=\"0\">\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:mail.template,body_html:onmi_reliex_reports.onmi_mail_template_edi_sale_simplified
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        <t t-set=\"doc_name\" t-value=\"'quotation' if object.state in ('draft', 'sent') else "
+"'order'\"/>\n"
+"                        Hello,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Your\n"
+"                        <t t-if=\"ctx.get('proforma')\">\n"
+"                            Pro forma invoice for\n"
+"                            <t t-out=\"doc_name or ''\">quotation</t>\n"
+"                            <strong t-out=\"object.name or ''\">S00052</strong>\n"
+"                            <t t-if=\"object.origin\">\n"
+"                                (with reference: <t t-out=\"object.origin or ''\"/> )\n"
+"                            </t>\n"
+"                            amounting in <strong t-out=\"format_amount(object.amount_total, object.pricelist_id."
+"currency_id) or ''\">$\n"
+"                            10.00\n"
+"                        </strong> is available.\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <t t-out=\"doc_name or ''\">quotation</t>\n"
+"                            <strong t-out=\"object.name or ''\"/>\n"
+"                            <t t-if=\"object.origin\">\n"
+"                                (with reference: <t t-out=\"object.origin or ''\">S00052</t> )\n"
+"                            </t>\n"
+"                            amounting in <strong t-out=\"format_amount(object.amount_total, object.pricelist_id."
+"currency_id) or ''\">$\n"
+"                            10.00\n"
+"                        </strong> is ready for review.\n"
+"                        </t>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Do not hesitate to contact us if you have any questions.\n"
+"                        <br/>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        <t t-set=\"doc_name\" t-value=\"'presupuesto' if object.state in ('draft', 'sent') else "
+"'pedido'\"/>\n"
+"                        Hola,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Su\n"
+"                        <t t-if=\"ctx.get('proforma')\">\n"
+"                            Factura pro forma para\n"
+"                            <t t-out=\"doc_name or ''\">presupuesto</t>\n"
+"                            <strong t-out=\"object.name or ''\">S00052</strong>\n"
+"                            <t t-if=\"object.origin\">\n"
+"                                (con referencia: <t t-out=\"object.origin or ''\"/> )\n"
+"                            </t>\n"
+"                            con la cantidad de <strong t-out=\"format_amount(object.amount_total, object.pricelist_id."
+"currency_id) or ''\">$\n"
+"                            10.00\n"
+"                        </strong> está lista.\n"
+"                        </t>\n"
+"                        <t t-else=\"\">\n"
+"                            <t t-out=\"doc_name or ''\">presupuesto</t>\n"
+"                            <strong t-out=\"object.name or ''\"/>\n"
+"                            <t t-if=\"object.origin\">\n"
+"                                (con referencia: <t t-out=\"object.origin or ''\">S00052</t> )\n"
+"                            </t>\n"
+"                            con la cantidad de <strong t-out=\"format_amount(object.amount_total, object.pricelist_id."
+"currency_id) or ''\">$\n"
+"                            10.00\n"
+"                        </strong> está disponible para su revisión.\n"
+"                        </t>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        No dude en contactar con nosotros si tuviera alguna duda.\n"
+"                        <br/>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model:mail.template,body_html:onmi_reliex_reports.onmi_mail_template_workorder_reports_document
+#: model:mail.template,body_html:onmi_reliex_reports.onmi_mail_template_worksheet_signed_document
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear<t t-out=\"object.establishment_id.supervisor_name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        I am attaching a cleaning certificate for the services performed in your establishment<t t-"
+"out=\"object.establishment_id.name\"/>.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Please do not hesitate to contact us if you have any questions or concerns about the work\n"
+"                        performed. We are available to serve your needs and make sure your facility continues to run\n"
+"                        smoothly.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        We appreciate your trust in our services and hope to have the opportunity to work with you "
+"again\n"
+"                        in the future.\n"
+"                        <br/>\n"
+"                        Best regards,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <t t-out=\"object.create_uid.company_id.name\"/>\n"
+"                        <br/>\n"
+"                        ESB73884132\n"
+"                        <br/>\n"
+"                        <t t-out=\"object.create_uid.company_id.mobile\"/>,\n"
+"                        <t t-out=\"object.create_uid.company_id.email\"/>\n"
+"                        <br/>\n"
+"                        Work order Clean:\n"
+"                        <t t-out=\"object.name\"/>\n"
+"                        <br/>\n"
+"                        <img t-attf-src=\"/logo.png?company={{ object.create_uid.company_id.id }}\" style=\"padding: "
+"0px; margin: 0px; height: auto; width: 80px;\" t-att-alt=\"object.create_uid.company_id.name\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Estimado/a <t t-out=\"object.establishment_id.supervisor_name\"/>,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        Le adjunto los certificados de limpieza de los servicios realizados en su establecimiento<t t-"
+"out=\"object.establishment_id.name\"/>.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"\t\t\tPor favor, no dude en contactar con nosotros si tiene alguna pregunta respecto a nuestro trabajo.\n"
+"\t\t\tEstamos dispponibles para lo que necesite y esperamos siga contratando nuestros servicios.\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"\t\t\tApreciamos su confianza en nuestros servicios y esperamos tener la oportunidad que trabajar juntos más "
+"adelante.\n"
+"                        <br/>\n"
+"                        Un saludo,\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <t t-out=\"object.create_uid.company_id.name\"/>\n"
+"                        <br/>\n"
+"                        ESB73884132\n"
+"                        <br/>\n"
+"                        <t t-out=\"object.create_uid.company_id.mobile\"/>,\n"
+"                        <t t-out=\"object.create_uid.company_id.email\"/>\n"
+"                        <br/>\n"
+"                        Orden de Limpieza:\n"
+"                        <t t-out=\"object.name\"/>\n"
+"                        <br/>\n"
+"                        <img t-attf-src=\"/logo.png?company={{ object.create_uid.company_id.id }}\" style=\"padding: "
+"0px; margin: 0px; height: auto; width: 80px;\" t-att-alt=\"object.create_uid.company_id.name\"/>\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model:mail.template,body_html:onmi_reliex_reports.onmi_mail_template_worksheet_clean_assign_work
+msgid ""
+"<p style=\"box-sizing:border-box;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    <strong style=\"box-sizing:border-box;font-weight:500;\"># Mensaje para el jefe de equipo:</"
+"strong>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    Se le ha asignado el siguiente trabajo:\n"
+"                    <br>\n"
+"                    - Operarios:\n"
+"                    <t t-foreach=\"object.employee_id\" t-as=\"emp\">\n"
+"                        <t t-out=\"emp.name\"></t>,\n"
+"                    </t>\n"
+"                    <br>\n"
+"                    - Establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.name\"></t>\n"
+"                    <br>\n"
+"                    - Dirección del establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.street\"></t>,\n"
+"                    <t t-out=\"object.establishment_id.city\"></t>\n"
+"                    <br>\n"
+"                    - Fecha del parte de trabajo:\n"
+"                    <t t-out=\"format_datetime(object.start_date, tz=user.tz, dt_format='dd.MM.YYYY HH:mm')\"></t>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    - Tfno. del Establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.phone\"></t>\n"
+"                    <br>\n"
+"                    - Tfno. Gerente Establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.mobile\"></t>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    <strong style=\"box-sizing:border-box;font-weight:500;\"># Mensaje para operarios:</strong>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    Se le ha asignado el siguiente trabajo:\n"
+"                    <br>\n"
+"                    - Jefe de Equipo:\n"
+"                    <t t-out=\"object.user_id.name\"></t>\n"
+"                    <br>\n"
+"                    - Establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.name\"></t>\n"
+"                    <br>\n"
+"                    - Dirección establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.street\"></t>,\n"
+"                    <t t-out=\"object.establishment_id.city\"></t>\n"
+"                    <br>\n"
+"                    - Fecha del parte de trabajo:\n"
+"                    <t t-out=\"format_datetime(object.start_date, tz=user.tz, dt_format='dd.MM.YYYY HH:mm')\"></t>\n"
+"                    <br>\n"
+"                    <br>\n"
+"                    - Tfno. del Establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.phone\"></t>\n"
+"                    <br>\n"
+"                    - Tfno. Gerente Establecimiento:\n"
+"                    <t t-out=\"object.establishment_id.mobile\"></t>\n"
+"                    <br>\n"
+"                    <img t-attf-src=\"/logo.png?company={{ object.create_uid.company_id.id }}\" style=\"border-style:"
+"none;box-sizing:border-box;vertical-align:middle;padding: 0px; margin: 0px; height: 0px; width: 80px;\" t-att-"
+"alt=\"object.create_uid.company_id.name\" width=\"80px\" height=\"0\">\n"
+"                </p>\n"
+"            "
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong style=\"margin-right: 10px;\">ADDRESS</strong>"
+msgstr "<strong style=\"margin-right: 10px;\">DIRECCIÓN</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong style=\"margin-right: 10px;\">CITY</strong>"
+msgstr "<strong style=\"margin-right: 10px;\">POBLACIÓN</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong style=\"margin-right: 10px;\">COMMERCIAL NAME</strong>"
+msgstr "<strong style=\"margin-right: 10px;\">NOMBRE COMERCIAL</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong style=\"margin-right: 10px;\">PHONE</strong>"
+msgstr "<strong style=\"margin-right: 10px;\">TLF.:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong style=\"margin-right: 10px;\">STATE</strong>"
+msgstr "<strong style=\"margin-right: 10px;\">PROVINCIA</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>#</strong>"
+msgstr "<strong>Nº</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>1.- BACKGROUND INFORMATION</strong>"
+msgstr "<strong>1.- ANTECEDENTES GENERALES</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>1.- GENERAL DATA</strong>"
+msgstr "<strong>1.- DATOS GENERALES</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>2.- CHECKING OF THE SYSTEM</strong>"
+msgstr "<strong>2.- REVISIÓN DEL SISTEMA</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>2.- VENTILATION-EXTRACTION SYSTEM</strong>"
+msgstr "<strong>2.- SISTEMA DE EXTRACCIÓN-VENTILACIÓN</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>ACCORDING TO THIS REPORT, DUCT IS:</strong>"
+msgstr "<strong>DE ACUERDO A INFORME EL CONDUCTO ES:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>CHECKED BY</strong>"
+msgstr "<strong>REVISADO POR</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>CHECKING OF</strong>"
+msgstr "<strong>REVISIÓN DE</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>CHECKING TYPE:</strong>"
+msgstr "<strong>TIPO DE REVISIÓN:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>COMPANY:</strong>"
+msgstr "<strong>COMPAÑÍA:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>COMPLETION DATE</strong>"
+msgstr "<strong>FECHA REALIZACIÓN</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>CORRECTIVE ACTION</strong>"
+msgstr "<strong>MEDIDA CORRECTIVA</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>DATE</strong>"
+msgstr "<strong>FECHA</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>DETAILS OF WORKS TO DO:</strong>"
+msgstr "<strong>DETALLE DE LOS TRABAJOS A REALIZAR</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>DUCTS:</strong>"
+msgstr "<strong>CONDUCTOS:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "<strong>Date:</strong>"
+msgstr "<strong>Fecha:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>END TIME</strong>"
+msgstr "<strong>HORA FIN</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>ENDORSED BY</strong>"
+msgstr "<strong>VISADO POR</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid ""
+"<strong>Fdo.:</strong>\n"
+"                                Ismael Murcia Llorca\n"
+"                                <br/>\n"
+"                                (Boss)"
+msgstr ""
+"<strong>Fdo.:</strong>\n"
+"                                Ismael Murcia Llorca\n"
+"                                <br/>\n"
+"                                (Gerente)"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>INCIDENTS</strong>"
+msgstr "<strong>INCIDENCIAS</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>INIT TIME</strong>"
+msgstr "<strong>HORA INICIO</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>INSPECTION DATE:</strong>"
+msgstr "<strong>FECHA INSPECCIÓN:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>MACHINES:</strong>"
+msgstr "<strong>MÁQUINAS:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>NEXT CHECKING:</strong>"
+msgstr "<strong>PRÓXIMA REVISIÓN:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>OBSERVATIONS</strong>"
+msgstr "<strong>OBSERVACIONES</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>ON WORKING:</strong>"
+msgstr "<strong>EN FUNCIONAMIENTO</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>OTHERS ( specify just in case)</strong>"
+msgstr "<strong>OTROS (especificar en su caso)</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "<strong>OUT DUCT &amp; CAP NUT:</strong>"
+msgstr "<strong>CONDUCTOS SALIDA Y SOMBRERETE:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>PARTNER</strong>"
+msgstr "<strong>CLIENTE</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>PLANT PROCESSED</strong>"
+msgstr "<strong>INSTALACIÓN TRATADA</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>PLANTS PROCESSED</strong>"
+msgstr "<strong>INSTALACIONES TRATADAS</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>RESOURCES CONSUMED</strong>"
+msgstr "<strong>RECURSOS CONSUMIDOS</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>SIGN</strong>"
+msgstr "<strong>FIRMA</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>STATE</strong>"
+msgstr "<strong>ESTADO</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>TECHNICIANS: Boss team:</strong>"
+msgstr "<strong>TÉCNICOS: Jefe de Equipo:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "<strong>Treatment leader</strong>"
+msgstr "<strong>Responsable del tratamiento</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>USER EXECUTES</strong>"
+msgstr "<strong>RESPONSABLE EJECUCCIÓN</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "<strong>WORK:</strong>"
+msgstr "<strong>OBRA:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>WORKSHEET PART</strong>"
+msgstr "<strong>PARTE DE TRABAJO</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "<strong>Workers:</strong>"
+msgstr "<strong>Empleados:</strong>"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "ACCEPTED"
+msgstr "ACEPTADO"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Action Protocol"
+msgstr "Protocolo de Actuación"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Address"
+msgstr "Dirección"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"Además, se incluyen las observaciones y recomendaciones de las medidas correctoras oportunas\n"
+"                        para conseguir las condiciones higiénico-sanitarias óptimas en la instalación."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"Asimismo, le comunicamos que puede ejercer sus derechos de acceso, rectificación, cancelación y\n"
+"                        oposición ante el Responsable del Fichero en nuestras oficinas de C/ Morera, 43 Parcela 9 P."
+"I.\n"
+"                        El Saladar – Totana (Murcia), debiéndose identificar mediante DNI, Pasaporte o Tarjeta de\n"
+"                        Residencia."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid "Authorized record keeper"
+msgstr "Registro mantenedor autorizado"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Bioteq15"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Bussiness name"
+msgstr "Razón social"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "CHECKLIST FIRE OF SYSTEM CHECKING"
+msgstr "LISTA DE VERIFICACIÓN DE REVISIÓN DEL SISTEMA"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "CHECKLIST FUME ON GARAGE"
+msgstr "LISTA DE VERIFICACIÓN DE EXTRACCIÓN DE HUMOS EN GARAJES"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "CONDUCTOS Y CAMPANAS:"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "CONTROL DE CALIDAD DEL SERVICIO"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "CRACKS, OXIDE, GENERAL STATE"
+msgstr "GRIETAS, FISURAS, OXIDOS, ESTADO GENERAL"
+
+#. module: onmi_reliex_reports
+#: model:ir.model.fields,field_description:onmi_reliex_reports.field_mail_template__can_write
+msgid "Can Write"
+msgstr "Puede escribir"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "Checking the correct pressure of the detection line (end-of-line manometer)"
+msgstr "Comprobación de la correcta presión de la línea de detección (manómetro final de línea)"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "Checking the pressure of the extinguishing container"
+msgstr "Comprobación de la presión del recipiente de extinción"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "Checking the signaling circuits"
+msgstr "Comprobación de los circuitos de señalización"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid ""
+"Checking the state of charge of the extinguishing agent in the extinguishing\n"
+"                                    container"
+msgstr "Comprobación del estado de carga del agente extintor en el recipiente de extinción"
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,name:onmi_reliex_reports.action_report_checklist_fire
+msgid "Checklist Fire"
+msgstr "Verificación sistema contra incendios"
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,name:onmi_reliex_reports.action_report_checklist
+msgid "Checklist Fume"
+msgstr "Lista de Verificación humos"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "City:"
+msgstr "Ciudad:"
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,name:onmi_reliex_reports.action_report_certifieds_work_order_clean
+#: model:ir.actions.report,name:onmi_reliex_reports.action_report_worksheet_part_certified
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Cleaning Certified"
+msgstr "Certificados Limpieza"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,name:onmi_reliex_reports.onmi_mail_template_workorder_reports_document
+msgid "Cleaning Certifieds"
+msgstr "Certificados Limpieza"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,subject:onmi_reliex_reports.onmi_mail_template_workorder_reports_document
+msgid "Cleaning Certifieds ({{ object.establishment_id.name or 'n/a' }})"
+msgstr "Certificados Limpieza ({{ object.establishment_id.name or 'n/a' }})"
+
+#. module: onmi_reliex_reports
+#: model:ir.model,name:onmi_reliex_reports.model_work_order_clean
+msgid "Cleanning Work Orders"
+msgstr "Órdenes de trabajo Limpieza"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.worksheet_form_view_inherit_notify_workers
+msgid "Click when you want to send info to operators."
+msgstr "Clique cuando quiera enviar información a operarios."
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Comprobación Técnica."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:mail.template,subject:onmi_reliex_reports.onmi_mail_template_worksheet_signed_document
+msgid "Confirmation of Worksheet (Ref {{ object.name or 'n/a' }})"
+msgstr "Confirmación del parte de trabajo (Ref {{ object.name or 'n/a' }})"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,subject:onmi_reliex_reports.onmi_mail_template_workorder_clean_confirm_document
+msgid "Confirmation of date and time for cleaning the smoke extraction system"
+msgstr "Confirmación de fecha y hora de limpieza de sistema de extracción de humos"
+
+#. module: onmi_reliex_reports
+#: model:ir.model,name:onmi_reliex_reports.model_res_company
+msgid "Description"
+msgstr "Descripción"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Desengrase."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Desmontaje."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "EXIT DUCTS &amp; CAP NUTS"
+msgstr "CONDUCTOS SALIDA Y SOMBRERETE"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "EXTRACTORES:"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"El servicio comprende dos fases que se describen a continuación:\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        1.1. Evaluación del estado técnico e higiénico de la instalación del que comprende:\n"
+"                        <br/>"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "El servicio realizado consiste en:"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:ir.model,name:onmi_reliex_reports.model_mail_template
+msgid "Email Templates"
+msgstr "Plantillas de correo electrónico"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"En cumplimiento de lo establecido en la Ley Orgánica 15/1999, de 13 de diciembre, de Protección\n"
+"                        de Datos de Carácter Personal, le informamos de que los datos que figuran en el presente\n"
+"                        documento forman parte de un fichero propiedad de GESTIÓN EN SISTEMAS DE EXTRACCIÓN, S.L\n"
+"                        inscrito en la Agencia Española de Protección de Datos."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "Establishment leader sign, confirm that work is over and checked."
+msgstr "Firma responsable establecimiento, indicando que trabajo está terminado y revisado."
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Establishment worked:"
+msgstr "Establecimiento:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Estimated next cleaning date:"
+msgstr "Fecha estimada próxima limpieza:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid "Evaluación del estado higiénico de las instalaciones del sistema de extracción."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid ""
+"Evaluación del estado higiénico de las instalaciones del sistema de extracción.\n"
+"                                        <br/>\n"
+"                                        Limpieza y desengrase de campana mediante espumado activo y aclarado\n"
+"                                        posterior.\n"
+"                                        <br/>\n"
+"                                        Limpieza y desengrase de extractor mediante espumado activo y aclarado\n"
+"                                        posterior.\n"
+"                                        <br/>\n"
+"                                        Limpieza y desengrase en conducto mediante cepillado automático.\n"
+"                                        <br/>\n"
+"                                        Verificación posterior de la limpieza.\n"
+"                                        <br/>"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "General cleaning of all components"
+msgstr "Limpieza general de todos los componentes"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "HOLDERS"
+msgstr "SOPORTES"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "HUNG DISTANCE"
+msgstr "DISTANCIA DE CUELGUES"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "INFORME DEL SERVICIO DE LIMPIEZA E HIGIENIZACIÓN DEL CONDUCTO DE EXTRACCIÓN"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Identification details of hiring company and plant processed"
+msgstr "Datos de identificación de la empresa contratante e instalación tratada"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Identification details of sanitation &amp; cleaning company"
+msgstr "Datos de identificación de la empresa de limpieza e higienización"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "JOINTS"
+msgstr "JUNTAS"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "LIMPIEZA DEL SISTEMA DE EXTRACCIÓN DE HUMOS EN"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "La dirección de"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Limpieza del interior de los conductos."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Limpieza del interior del plenum en campana."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Limpieza."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Los productos químicos utilizados:"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Los trabajos efectuados son los siguientes:"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "MEMORIA DEL SERVICIO"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:ir.model.fields,field_description:onmi_reliex_reports.field_worksheet_part__next_frecuency_date
+msgid "Next frecuency date"
+msgstr "Siguiente fecha frecuencia"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.work_order_clean_form_view_inherit_notify_operators
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.worksheet_form_view_inherit_notify_workers
+msgid "Notify Operators"
+msgstr "Notificar Operarios"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.work_order_clean_form_view_inherit_notify_operators
+msgid "Notify operators from worksheets"
+msgstr "Notificar operarios de partes"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,subject:onmi_reliex_reports.onmi_mail_template_worksheet_clean_assign_work
+msgid ""
+"Nuevo trabajo en {{object.establishment_id.name}} en la fecha {{format_datetime(object.start_date, tz=user.tz, "
+"dt_format='dd.MM.YYYY HH:mm')}}"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "OTHERS (Specify)"
+msgstr "OTROS (especificar)"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Office:"
+msgstr "Oficina:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid ""
+"Office: 968 639 820 - 635 254 359\n"
+"                                    <br/>\n"
+"                                    Technical Dep.: 689 036 722"
+msgstr ""
+"Oficina: 968 639 820 - 635 254 359\n"
+"                                    <br/>\n"
+"                                    Departamento Técnico: 689 036 722"
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,name:onmi_reliex_reports.action_report_worksheet_part
+msgid "Partner Sign"
+msgstr "Firma Cliente"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Plant worked:"
+msgstr "Instalación tratada:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+msgid "Plant worked: LIMPIEZA E HIGIENIZACIÓN DEL SISTEMA DE EXTRACCIÓN DE HUMOS"
+msgstr "Instalación: LIMPIEZA E HIGIENIZACIÓN DEL SISTEMA DE EXTRACCIÓN DE HUMOS"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "Plant:"
+msgstr "Instalación:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Product Names: RELIDEX &amp; BIOTEC15."
+msgstr "Nombre de producto: RELIDEX &amp; BIOTEC15."
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Programación de los trabajos derivados de los puntos anteriores."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,name:onmi_reliex_reports.action_report_saleorder_simplified
+msgid "Quotation / Order Simplified"
+msgstr "Presupuesto/ Orden Simplificada"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "REFUSED"
+msgstr "RECHAZADO"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"RELIEX ha utilizado equipos y maquinaria que presentan y cumplen con la norma vigente que les\n"
+"                        sea aplicable de la Delegación de Industria local o departamento correspondiente, presentando\n"
+"                        buen estado de conservación, no representando un peligro para el propio trabajador o terceros."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Realización de registros de limpieza en conductos."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "Refuses to sign"
+msgstr "Se niega a firmar"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Relidex"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "Reliex leader sign"
+msgstr "Firma Responsable RELIEX"
+
+#. module: onmi_reliex_reports
+#: model:ir.actions.report,name:onmi_reliex_reports.action_report_work_order_clean
+msgid "Report Cleaning"
+msgstr "Informe Limpieza"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "SEAL DUCTS"
+msgstr "ESTANQUEIDAD EN CONDUCTOS"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "SEAL MACHINE &amp; JOINTS"
+msgstr "ESTANQUEIDAD EN MAQUINAS Y UNIONES"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "STAPLES"
+msgstr "GRAPAS"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,name:onmi_reliex_reports.onmi_mail_template_edi_sale_simplified
+msgid "Sales Order Simplified: Send by email"
+msgstr "Orden de venta simplificada: Envío mail"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Se aportan fichas técnicas, de seguridad, así como los protocolos utilizados."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"Se entrega un certificado donde constará la fecha de la limpieza, así como el protocolo seguido.\n"
+"                        También se proporcionan los resultados mediante fotografías de la instalación del antes y\n"
+"                        después de la limpieza."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:ir.model.fields,field_description:onmi_reliex_reports.field_mail_template__send_reports
+msgid "Send reports"
+msgstr "Enviar informes"
+
+#. module: onmi_reliex_reports
+#: model:ir.model,name:onmi_reliex_reports.model_sign_info_wizard
+msgid "Sign Wizard"
+msgstr "Wizard firma"
+
+#. module: onmi_reliex_reports
+#: model:ir.model.fields,field_description:onmi_reliex_reports.field_res_company__signature_leader
+msgid "Signature leader"
+msgstr "Firma responsable"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,name:onmi_reliex_reports.onmi_mail_template_worksheet_signed_document
+msgid "Signed document: Send by email"
+msgstr "Documento Firmado: envío por mail"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "State:"
+msgstr "Estado:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"Su finalidad es la de documentar al usuario de las actuaciones realizadas y de las limitaciones\n"
+"                        que ofrece la instalación, para un mayor control y seguimiento de las acciones realizadas y "
+"con\n"
+"                        el fin de facilitar al usuario los posibles problemas derivados de la actuación en el conducto."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"Todos los materiales utilizados para la realización del presente proyecto son productos normales\n"
+"                        de un fabricante de reconocida garantía técnica y de calidad acreditada, conservándose hasta "
+"su\n"
+"                        utilización en las debidas condiciones al objeto de preservarlos de toda alteración."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"Todos los materiales y productos utilizados son de la mejor calidad entre los de su clase, en\n"
+"                        armonía con las aplicaciones a las que hayan de ser sometidos."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Toma de imágenes."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Treatment date:"
+msgstr "Fecha del tratamiento:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "Used Products"
+msgstr "Productos Utilizados"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_certified_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_certified_document
+msgid "VAT:"
+msgstr "CIF:"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid "Verificación."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid ""
+"Verification of the correct opening of the ball valves of the main valve of the\n"
+"                                    extinguishing container"
+msgstr "Verificación de la correcta abertura de las válvulas de bola de la válvula principal del recipiente de extinción"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "Verification of the good condition of the trip and alarm devices (if they exist)"
+msgstr "Verificación del buen estado de los dispositivos de disparo y alarma (si existen)"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "Verification of the good state of the system components"
+msgstr "Limpieza general de todos los componentes"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid ""
+"Verification that the discharge emitters (nozzles, sprinklers, diffusers, etc.) are\n"
+"                                    in good condition and free of obstacles for their correct operation."
+msgstr ""
+"Comprobación de que los emisores de descarga (boquillas, rociadores, difusores, etc) están en buen estado y libres de "
+"obstáculos para su correcto funcionamiento."
+
+#. module: onmi_reliex_reports
+#: model:mail.template,name:onmi_reliex_reports.onmi_mail_template_workorder_clean_confirm_document
+msgid "Workorder Clean: Confirming"
+msgstr "Orden de Trabajo Limpieza: Confirmación"
+
+#. module: onmi_reliex_reports
+#: model:ir.model,name:onmi_reliex_reports.model_worksheet_part
+msgid "Worksheets"
+msgstr "Partes de Trabajo"
+
+#. module: onmi_reliex_reports
+#: model:mail.template,name:onmi_reliex_reports.onmi_mail_template_worksheet_clean_assign_work
+msgid "Worksheets: New job assigned"
+msgstr "Partes: nuevo trabajo asignado"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_cleaning_document
+msgid ""
+"solicitó a RELIEX la realización de lasoperaciones de Higienización de sus equipos y\n"
+"                        conducciones de extracción de humos en cocina sita en"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_worksheet_document
+msgid "uds."
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:mail.template,report_name:onmi_reliex_reports.onmi_mail_template_edi_sale_simplified
+#: model:mail.template,report_name:onmi_reliex_reports.onmi_mail_template_workorder_reports_document
+#: model:mail.template,report_name:onmi_reliex_reports.onmi_mail_template_worksheet_signed_document
+msgid "{{ (object.name or '').replace('/','_') }}"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model:mail.template,subject:onmi_reliex_reports.onmi_mail_template_edi_sale_simplified
+msgid ""
+"{{ object.company_id.name }} {{ object.state in ('draft', 'sent') and\n"
+"                (ctx.get('proforma') and 'Proforma' or 'Quotation') or 'Order' }} (Ref {{ object.name or 'n/a' }})\n"
+"            "
+msgstr ""
+"{{ object.company_id.name }} {{ object.state in ('draft', 'sent') and\n"
+"                (ctx.get('proforma') and 'Proforma' or 'Presupuesto') or 'Pedido' }} (Ref {{ object.name or 'n/a' }})\n"
+"            "
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "□ O.K. ■"
+msgstr ""
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+msgid "□ O.K. □ Observations"
+msgstr "□ O.K. □ Observaciones"
+
+#. module: onmi_reliex_reports
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_document
+#: model_terms:ir.ui.view,arch_db:onmi_reliex_reports.report_checklist_fire_document
+msgid "□ Observations"
+msgstr "□ Observaciones"

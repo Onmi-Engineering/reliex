@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_checklist_document">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <div class="page" style="font-size: 15px;">
+                    <div class="oe_structure"/>
+                    <h1 style="font-size:27px !important;">CHECKLIST FUME ON GARAGE</h1>
+                    <table name="table_genera_data" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>1.- GENERAL DATA</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>COMPANY:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.company_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>WORK:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.plant_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>INSPECTION DATE:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.inspection_date"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>DETAILS OF WORKS TO DO:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.details"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="table_check_data" width="100%"
+                           style="margin-top:10px;border: thin solid;border-color: black;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="4" style="border: thin solid;border-color: black;">
+                                    <strong>2.- VENTILATION-EXTRACTION SYSTEM</strong>
+                                </td>
+                            </tr>
+                            <tr style="color: white">
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>#</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>CHECKING OF</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>STATE</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>OBSERVATIONS</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+
+                                </td>
+                                <td colspan="3" style="border: thin solid;border-color: black;">
+                                    <strong>DUCTS:</strong>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    1
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    HUNG DISTANCE
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.hung_distance == 'ok'">
+                                        ■
+                                        <span t-field="doc.hung_distance"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.hung_distance"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.hung_distance != 'ok'">
+                                        <span t-field="doc.hung_distance_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    2
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    HOLDERS
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.holder == 'ok'">
+                                        ■
+                                        <span t-field="doc.holder"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.holder"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.holder != 'ok'">
+                                        <span t-field="doc.holder_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    3
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    JOINTS
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.joints == 'ok'">
+                                        ■
+                                        <span t-field="doc.joints"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.joints"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.joints != 'ok'">
+                                        <span t-field="doc.joints_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    4
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    STAPLES
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.staples == 'ok'">
+                                        ■
+                                        <span t-field="doc.staples"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.staples"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.staples != 'ok'">
+                                        <span t-field="doc.staples_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    5
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    CRACKS, OXIDE, GENERAL STATE
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.cracks == 'ok'">
+                                        ■
+                                        <span t-field="doc.cracks"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.cracks"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.cracks != 'ok'">
+                                        <span t-field="doc.cracks_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    6
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    OTHERS (Specify)
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.others == 'ok'">
+                                        ■
+                                        <span t-field="doc.others"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.others"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.others != 'ok'">
+                                        <span t-field="doc.others_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+
+                                </td>
+                                <td style="border: thin solid;border-color: black;" colspan="3">
+                                    <strong>OUT DUCT &amp; CAP NUT:</strong>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    7
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    CRACKS, OXIDE, GENERAL STATE
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.cracks_ducts == 'ok'">
+                                        ■
+                                        <span t-field="doc.cracks_ducts"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.cracks_ducts"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.cracks_ducts != 'ok'">
+                                        <span t-field="doc.cracks_ducts_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    8
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    OTHERS (Specify)
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.others_1 == 'ok'">
+                                        ■
+                                        <span t-field="doc.others_1"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.others_1"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.others_1 != 'ok'">
+                                        <span t-field="doc.others_1_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    9
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    OTHERS (Specify)
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.cracks_ducts == 'ok'">
+                                        ■
+                                        <span t-field="doc.others_2"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.others_2"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.others_2 != 'ok'">
+                                        <span t-field="doc.others_2_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+
+                                </td>
+                                <td style="border: thin solid;border-color: black;" colspan="3">
+                                    <strong>MACHINES:</strong>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    10
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    HOLDERS
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.holder_machine == 'ok'">
+                                        ■
+                                        <span t-field="doc.holder_machine"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.holder_machine"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.holder_machine != 'ok'">
+                                        <span t-field="doc.holder_machine_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    11
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    JOINTS
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.joints_machine == 'ok'">
+                                        ■
+                                        <span t-field="doc.joints_machine"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.joints_machine"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.joints_machine != 'ok'">
+                                        <span t-field="doc.joints_machine_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    12
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    CRACKS, OXIDE, GENERAL STATE
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.cracks_machine == 'ok'">
+                                        ■
+                                        <span t-field="doc.cracks_machine"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.cracks_machine"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.cracks_machine != 'ok'">
+                                        <span t-field="doc.cracks_machine_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    13
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    OTHERS (Specify)
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.others_machine == 'ok'">
+                                        ■
+                                        <span t-field="doc.others_machine"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.others_machine"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.others_machine != 'ok'">
+                                        <span t-field="doc.others_machine_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+
+                                </td>
+                                <td style="border: thin solid;border-color: black;" colspan="3">
+                                    <strong>ON WORKING:</strong>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    14
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    SEAL DUCTS
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.seal_ducts == 'ok'">
+                                        ■
+                                        <span t-field="doc.seal_ducts"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.seal_ducts"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.seal_ducts != 'ok'">
+                                        <span t-field="doc.seal_ducts_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    15
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    SEAL MACHINE &amp; JOINTS
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.seal_machine == 'ok'">
+                                        ■
+                                        <span t-field="doc.seal_machine"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.seal_machine"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.seal_machine != 'ok'">
+                                        <span t-field="doc.seal_machine_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    16
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    EXIT DUCTS &amp; CAP NUTS
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.exit_duct == 'ok'">
+                                        ■
+                                        <span t-field="doc.exit_duct"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.exit_duct"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.exit_duct != 'ok'">
+                                        <span t-field="doc.exit_duct_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+
+                                </td>
+                                <td style="border: thin solid;border-color: black;" colspan="3">
+                                    <strong>OTHERS ( specify just in case)</strong>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    17
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    □ O.K. □ Observations
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    18
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    □ O.K. □ Observations
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="table_check_data" width="100%"
+                           style="border: thin solid;border-color: black;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr style="color: white">
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>#</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>CORRECTIVE ACTION</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>COMPLETION DATE</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>USER EXECUTES</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.corrective_ids" t-as="c">
+                                <tr>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.name"/>
+                                    </td>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.corrective_action"/>
+                                    </td>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.completion_date"/>
+                                    </td>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.user_execute"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <p style="page-break-before:always;"/>
+                    <p style="">
+                        <strong>ACCORDING TO THIS REPORT, DUCT IS:</strong>
+                    </p>
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <t t-if="doc.accepted">■</t>
+                                <t t-else="">□</t>
+                                ACCEPTED
+                            </td>
+                            <td>
+                                <t t-if="doc.refused">■</t>
+                                <t t-else="">□</t>
+                                REFUSED
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="margin-top:10px;border: thin solid;border-color: black;" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>CHECKED BY</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>SIGN</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>DATE</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.checked_by"/>
+                                </td>
+                                <td width="34%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <t t-if="doc.signature_checked">
+                                        <img style="max-height: 4cm; max-width: 8cm;"
+                                             t-att-src="image_data_uri(doc.signature_checked)"/>
+                                    </t>
+                                </td>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.checked_date"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="border: thin solid;border-color: black;" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>ENDORSED BY</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>SIGN</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>DATE</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.endorsed_by"/>
+                                </td>
+                                <td width="34%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <t t-if="doc.signature_endorsed">
+                                        <img style="max-height: 4cm; max-width: 8cm;"
+                                             t-att-src="image_data_uri(doc.signature_endorsed)"/>
+                                    </t>
+                                </td>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.endorsed_date"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_checklist">
+            <t t-call="web.html_container">
+                <t t-set="is_simplified" t-value="True"/>
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="onmi_reliex_reports.report_checklist_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

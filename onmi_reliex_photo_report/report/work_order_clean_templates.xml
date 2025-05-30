@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_photographical_document">
+            <t t-call="web.external_layout">
+                <t t-set="company" t-value="res_company"></t>
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <t t-set="worksheet_ids" t-value="doc.env['worksheet.part'].search([('workorder_id', '=', doc.id)])"/>
+                <div class="page">
+                    <style>
+                        {
+                        }
+                    </style>
+                    <div class="oe_structure"/>
+                    <h1>Photographical Report</h1>
+                    <table width="50%" style="border-bottom: hidden;">
+                        <tr>
+                            <td>
+                                <strong>
+                                    Cleaning date
+                                </strong>
+                            </td>
+                            <td>
+                                <span t-field="doc.start_date"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>
+                                    Establishment
+                                </strong>
+                            </td>
+                            <td>
+                                <span t-field="doc.establishment_id.name"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <t t-foreach="worksheet_ids" t-as="ws">
+                        <t t-set="attachments"
+                           t-value="doc.env['ir.attachment'].search([('res_model', '=', 'worksheet.part'), ('res_id', '=', ws.id), ('mimetype', '=', 'image/jpeg')])"/>
+                        <t t-if="len(attachments)>=1">
+                            <table width="100%" style="border-top: 3px solid;">
+                                <tr>
+                                    <td col="2">
+                                        <strong>
+                                            Name:
+                                            <span t-field="ws.name"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </table>
+                        </t>
+                        <table width="100%">
+                            <t t-foreach="attachments" t-as="attachment">
+                                <t t-if="attachment.datas">
+                                    <img style="max-width: 27%;margin: 1%;"
+                                         t-att-src="image_data_uri(attachment.datas)"/>
+                                </t>
+                            </t>
+                        </table>
+
+                    </t>
+
+                </div>
+            </t>
+        </template>
+
+        <template id="report_photographical">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="onmi_reliex_photo_report.report_photographical_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

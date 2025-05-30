@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="onmi_inherit_fleet_vehicle_view_form" model="ir.ui.view">
+            <field name="name">onmi_inherit_fleet_vehicle_view_form</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="before">
+                    <field name="owner_type"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="onmi_inherit_fleet_vehicle_view_form2" model="ir.ui.view">
+            <field name="name">onmi_inherit_fleet_vehicle_view_form2</field>
+            <field name="model">fleet.vehicle</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='note']" position="before">
+                    <page string="ITV - Seguro" name="itv_ins">
+                        <group>
+                            <group string="ITV">
+                                <field name="itv_expiration"/>
+                            </group>
+                            <group string="Seguro">
+                                <field name="insurance_company"/>
+                                <field name="insurance_expiration"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

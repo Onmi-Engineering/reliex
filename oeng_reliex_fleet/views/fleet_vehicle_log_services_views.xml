@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="onmi_view_fleet_vehicle_log_services_form_inherit" model="ir.ui.view">
+            <field name="name">onmi.fleet.vehicle.log.services.form.inherit</field>
+            <field name="model">fleet.vehicle.log.services</field>
+            <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="attributes">
+                    <attribute name="required">service_type_id.name == 'Repostaje'</attribute>
+                </xpath>
+                <xpath expr="//div[@class='o_row']" position="after">
+                    <field name="liters" required="service_type_id.name == 'Repostaje'"/>
+                    <field name="ticket" string="Ticket"/>
+                </xpath>
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sign_info_wizard_form_view" model="ir.ui.view">
+            <field name="name">sign.info.wizard.form</field>
+            <field name="model">sign.info.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sign Info">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="worksheet_name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="start_date"/>
+                                <field name="user_id"/>
+                            </group>
+                            <group>
+                                <field name="duration" widget="float_time"/>
+                                <field invisible="part_type != 'cleaning'" name="plant_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field invisible="1" name="part_type"/>
+                            <field name="worksheet_id" readonly="True"/>
+                        </group>
+                        <group invisible="part_type != 'cleaning'" name="cleaning_comments">
+                            <div style="text-align: center;">
+                                <strong>
+                                    Comments
+                                </strong>
+                            </div>
+                            <field name="certified_comment" nolabel="1" readonly="True"/>
+                        </group>
+                        <group invisible="part_type != 'plant'" name="plant_comments">
+                            <div style="text-align: center;">
+                                <strong>
+                                    Comments
+                                </strong>
+                            </div>
+                            <field name="comments" nolabel="1" readonly="True"/>
+                        </group>
+<!--                        <group string="Stuffs to check" style="width: 100%;display: flex;justify-content: space-between;">-->
+                        <group string="Stuffs to check">
+                            <field name="filters_with_photo" options="{'horizontal': true}" required="True" style="width: 100%;display: flex;justify-content: space-between;" widget="radio"/>
+                            <field name="registers_closed" options="{'horizontal': true}" style="width: 100%;display: flex;justify-content: space-between;" widget="radio"/>
+                            <field name="gas_hose_checked" options="{'horizontal': true}" style="width: 100%;display: flex;justify-content: space-between;" widget="radio"/>
+                            <field name="gas_depressor_checked" options="{'horizontal': true}" style="width: 100%;display: flex;justify-content: space-between;" widget="radio"/>
+                            <field name="devices_checked" options="{'horizontal': true}" style="width: 100%;display: flex;justify-content: space-between;" widget="radio"/>
+                        </group>
+                        <div style="text-align: center;">
+                            <strong>
+                                Resources applied
+                            </strong>
+                        </div>
+                        <field name="resource_ids"><tree>
+                                <field name="product_id"/>
+                                <field name="qty_consumed"/>
+                            </tree></field>
+                        <div style="text-align: center;">
+                            <strong>
+                                Incidents
+                            </strong>
+                        </div>
+                        <field name="incident_ids"><tree>
+                                <field name="description"/>
+                            </tree></field>
+                        <group col="4">
+                            <field name="operation_review"/>
+                        </group>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="signature_client"/>
+                            </group>
+                            <group>
+                                <field name="signature_client" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="client_datas"/>
+                            </group>
+                            <group>
+                                <field name="client_datas" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="refuses_sign"/>
+                        </group>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="signature_commercial"/>
+                            </group>
+                            <group>
+                                <field name="signature_commercial" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="commercial_datas"/>
+                            </group>
+                            <group>
+                                <field name="commercial_datas" nolabel="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button class="btn-primary" data-hotkey="q" name="confirm_sign_and_send" string="Confirm and send" type="object"/>
+                        <button class="btn-secondary" data-hotkey="z" special="cancel" string="Cancel"/>
+                    </footer>
+                </form></field>
+        </record>
+        <record id="sign_info_wizard_form_view_plants" model="ir.ui.view">
+            <field name="name">sign.info.wizard.form</field>
+            <field name="model">sign.info.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sign Info">
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="worksheet_name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="start_date"/>
+                                <field name="user_id"/>
+                            </group>
+                            <group>
+                                <field name="duration" widget="float_time"/>
+                                <field name="establishment_id" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field invisible="1" name="part_type"/>
+                            <field name="worksheet_id" readonly="True"/>
+                        </group>
+                        <group name="plant_comments">
+                            <div style="text-align: center;">
+                                <strong>
+                                    Comments
+                                </strong>
+                            </div>
+                            <field name="comments" nolabel="1" readonly="True"/>
+                        </group>
+                        <div style="text-align: center;">
+                            <strong>
+                                Resources applied
+                            </strong>
+                        </div>
+                        <field name="line_ids"><tree>
+                                <field name="product_id"/>
+                                <field name="qty_consumed"/>
+                                <field name="plant_id"/>
+                            </tree></field>
+                        <div style="text-align: center;">
+                            <strong>
+                                Incidents
+                            </strong>
+                        </div>
+                        <field name="incident_ids"><tree>
+                                <field name="description"/>
+                            </tree></field>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="signature_client"/>
+                            </group>
+                            <group>
+                                <field name="signature_client" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="client_datas"/>
+                            </group>
+                            <group>
+                                <field name="client_datas" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="refuses_sign"/>
+                        </group>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="signature_commercial"/>
+                            </group>
+                            <group>
+                                <field name="signature_commercial" nolabel="1" widget="signature"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <label class="o_light_label" for="commercial_datas"/>
+                            </group>
+                            <group>
+                                <field name="commercial_datas" nolabel="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button class="btn-primary" data-hotkey="q" name="confirm_sign_and_send" string="Confirm and send" type="object"/>
+                        <button class="btn-secondary" data-hotkey="z" special="cancel" string="Cancel"/>
+                    </footer>
+                </form></field>
+        </record>
+        <record id="sign_info_act_window" model="ir.actions.act_window">
+            <field name="name">Sign Info</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sign.info.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sign_info_wizard_form_view"/>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{'default_worksheet_id': active_id}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Sign Info.
+                </p></field>
+        </record>
+        <record id="sign_info_act_window_plants" model="ir.actions.act_window">
+            <field name="name">Sign Info</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sign.info.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sign_info_wizard_form_view_plants"/>
+            <field name="target">new</field>
+            <field name="domain">[]</field>
+            <field name="context">{'default_worksheet_id': active_id}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Sign Info.
+                </p></field>
+        </record>
+    </data>
+</odoo>

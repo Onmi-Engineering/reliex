@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="onmi_crm_stage_form_inherit_visible_type" model="ir.ui.view">
+            <field name="name">onmi.crm.stage.form.inherit.visible.type</field>
+            <field name="model">crm.stage</field>
+            <field name="inherit_id" ref="crm.crm_stage_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='fold']" position="after">
+                    <field name="type" widget="radio"/>
+                    <field name="frecuency" />
+                    <field name="incident" />
+                    <field name="doing_quotation" />
+
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

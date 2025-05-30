@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="worksheet_form_view_inherit_notify_workers" model="ir.ui.view">
+            <field name="name">company.form.inherit.leader.sign</field>
+            <field name="model">worksheet.part</field>
+            <field name="inherit_id" ref="onmi_reliex_operations.worksheet_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button
+                            string="Notify Operators"
+                            name="action_worksheet_notify_workers"
+                            groups="onmi_reliex_operations.group_operation_administrator_cleaning"
+                            type="object"
+                            class="oe_highlight" title="Click when you want to send info to operators."/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

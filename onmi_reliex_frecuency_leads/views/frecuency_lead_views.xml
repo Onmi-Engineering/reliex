@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="frecuency_lead_form_view" model="ir.ui.view">
+            <field name="name">frecuency.lead.form</field>
+            <field name="model">frecuency.lead</field>
+            <field name="arch" type="xml">
+                <form string="Frecuency leads">
+                    <header>
+                        <button name="button_create_lead_related" string="Create Lead"
+                                invisible="status == 'created' or lead_id != False or sale_id != False"
+                                type="object"/>
+                        <button class="oe_link" name="recalculate_dates" string="Recalculate WOC dates"
+                                invisible="status == 'created' or lead_id != False or sale_id != False"
+                                type="object"/>
+                        <field name="status" options="{'fold_field': 'fold'}" statusbar_visible="current,expired,created"
+                               widget="statusbar"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name" readonly="status == 'expired'"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="establishment_id" string="Cliente" readonly="status == 'expired'"/>
+                                <field name="establishment" readonly="status == 'expired'"/>
+                                <field name="state_id" readonly="status == 'expired'"/>
+                                <field name="previous_workorder_id" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="last_workorder_date" readonly="1"/>
+                                <field name="delay" readonly="status == 'expired'"/>
+                                <field name="calculated_date" readonly="status == 'expired'"/>
+                                <field name="full_cleanning_days" readonly="status == 'expired'"/>
+                                <field invisible="lead_id == False" name="lead_id" readonly="1"/>
+                                <field invisible="sale_id == False" name="sale_id" readonly="1" string="Presupuesto"/>
+                                <field invisible="workorder_id == False" name="workorder_id" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="frecuency_lead_tree_view" model="ir.ui.view">
+            <field name="name">frecuency.lead.tree</field>
+            <field name="model">frecuency.lead</field>
+            <field name="arch" type="xml">
+                <tree create="1" multi_edit="1" string="Frecuency leads">
+                    <header>
+                        <button name="button_create_lead_related" string="Create Lead" type="object"/>
+                        <button class="oe_link" name="recalculate_dates" string="Recalculate WOC dates" type="object"/>
+                    </header>
+                    <field name="name"/>
+                    <field name="establishment" optional="show"/>
+                    <field name="state_id" optional="show"/>
+                    <field name="city" string="Ciudad" optional="show"/>
+                    <field name="last_workorder_date" optional="show"/>
+                    <field name="delay" optional="show"/>
+                    <field name="calculated_date" optional="show"/>
+                    <field name="full_cleanning_days" optional="show"/>
+                    <field name="previous_workorder_id"/>
+                    <field name="sale_id" optional="hide"/>
+                    <field name="lead_id" optional="hide"/>
+                    <field decoration-info="status == 'current'" decoration-warning="status == 'expired'"
+                           decoration-success="status == 'created'"
+                           name="status"
+                           optional="show" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+        <record id="frecuency_lead_search_view" model="ir.ui.view">
+            <field name="name">frecuency.lead.search</field>
+            <field name="model">frecuency.lead</field>
+            <field name="arch" type="xml">
+                <search string="Frecuency leads">
+                    <field name="name"/>
+                    <field name="establishment_id"/>
+                    <filter domain="[('status', '=', 'current')]" name="current_leads" string="Current"/>
+                    <separator/>
+                    <filter domain="[('status', '=', 'expired')]" name="expired_leads" string="Expired"/>
+                    <separator/>
+                    <filter domain="[('status', '=', 'created')]" name="created_leads" string="Oportunidades creadas"/>
+                    <separator/>
+                    <group expand="1" string="Group By">
+                        <filter context="{'group_by':'establishment_id'}" domain="[]" name="establishment_id"
+                                string="Establecimiento"/>
+                        <filter context="{'group_by':'state_id'}" domain="[]" name="establishment_state"
+                                string="State of establishment"/>
+                        <filter context="{'group_by':'last_workorder_date'}" domain="[]" name="last_workorder_date"
+                                string="Last WOC date"/>
+                        <filter context="{'group_by':'calculated_date'}" domain="[]" name="calculated_date"
+                                string="Siguiente fecha de limpieza"/>
+                        <filter context="{'group_by':'delay'}" domain="[]" name="delay" string="Frecuencia"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="frecuency_lead_act_window" model="ir.actions.act_window">
+            <field name="name">Frecuency leads</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">frecuency.lead</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_current_leads': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no examples click here to add new Frecuency leads.
+                </p>
+            </field>
+        </record>
+        <menuitem action="frecuency_lead_act_window" id="frecuency_lead_menu" name="Frecuency leads"
+                  parent="crm.crm_menu_root" sequence="1"/>
+    </data>
+</odoo>

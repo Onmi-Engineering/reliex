@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_checklist_fire_document">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <div class="page" style="font-size: 15px;">
+                    <div class="oe_structure"/>
+                    <h1 style="font-size:27px !important;">CHECKLIST FIRE OF SYSTEM CHECKING</h1>
+                    <table name="table_genera_data" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>1.- BACKGROUND INFORMATION</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>COMPANY:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.company_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>WORK:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.plant_id.name"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>INSPECTION DATE:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.inspection_date"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>CHECKING TYPE:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.checking_type"/>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td>
+                                    <strong>NEXT CHECKING:</strong>
+                                    <span style="margin-left:5 px;" t-field="doc.next_checking"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="table_check_data" width="100%"
+                           style="margin-top:10px;border: thin solid;border-color: black;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td colspan="4" style="border: thin solid;border-color: black;">
+                                    <strong>2.- CHECKING OF THE SYSTEM</strong>
+                                </td>
+                            </tr>
+                            <tr style="color: white">
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>#</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>CHECKING OF</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>STATE</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>OBSERVATIONS</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;" width="5%">
+                                    1
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    Checking the state of charge of the extinguishing agent in the extinguishing
+                                    container
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.charge_state == 'ok'">
+                                        ■
+                                        <span t-field="doc.charge_state"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.charge_state"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.charge_state != 'ok'">
+                                        <span t-field="doc.charge_state_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    2
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    Checking the pressure of the extinguishing container
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.preassure_check == 'ok'">
+                                        ■
+                                        <span t-field="doc.preassure_check"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.preassure_check"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.preassure_check != 'ok'">
+                                        <span t-field="doc.preassure_check_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    3
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    Verification of the correct opening of the ball valves of the main valve of the
+                                    extinguishing container
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.correct_opening == 'ok'">
+                                        ■
+                                        <span t-field="doc.correct_opening"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.correct_opening"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.correct_opening != 'ok'">
+                                        <span t-field="doc.correct_opening_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    4
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    Checking the correct pressure of the detection line (end-of-line manometer)
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.correct_preassure == 'ok'">
+                                        ■
+                                        <span t-field="doc.correct_preassure"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.correct_preassure"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.correct_preassure != 'ok'">
+                                        <span t-field="doc.correct_preassure_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    5
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    Verification that the discharge emitters (nozzles, sprinklers, diffusers, etc.) are
+                                    in good condition and free of obstacles for their correct operation.
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.discharge_emitters == 'ok'">
+                                        ■
+                                        <span t-field="doc.discharge_emitters"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.discharge_emitters"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.discharge_emitters != 'ok'">
+                                        <span t-field="doc.discharge_emitters_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    6
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                   Verification of the good condition of the trip and alarm devices (if they exist)
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.good_conditions == 'ok'">
+                                        ■
+                                        <span t-field="doc.good_conditions"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.good_conditions"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.good_conditions != 'ok'">
+                                        <span t-field="doc.good_conditions_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    7
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    Checking the signaling circuits
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.signaling_circuits == 'ok'">
+                                        ■
+                                        <span t-field="doc.signaling_circuits"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.signaling_circuits"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.signaling_circuits != 'ok'">
+                                        <span t-field="doc.signaling_circuits_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    8
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    Verification of the good state of the system components
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.check_components == 'ok'">
+                                        ■
+                                        <span t-field="doc.check_components"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.check_components"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.check_components != 'ok'">
+                                        <span t-field="doc.check_components_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                            <tr style="border: thin solid;">
+                                <td style="border: thin solid;border-color: black;">
+                                    9
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    General cleaning of all components
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.general_cleaning == 'ok'">
+                                        ■
+                                        <span t-field="doc.general_cleaning"/>
+                                        □ Observations
+                                    </t>
+                                    <t t-else="">
+                                        □ O.K. ■
+                                        <span t-field="doc.general_cleaning"/>
+                                    </t>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <t t-if="doc.general_cleaning != 'ok'">
+                                        <span t-field="doc.general_cleaning_comments"/>
+                                    </t>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table name="table_check_data" width="100%"
+                           style="border: thin solid;border-color: black;">
+                        <thead style="background-color:#A9A9A9">
+                            <tr style="color: white">
+                                <td style="border: thin solid;border-color: black;" width="5%">
+                                    <strong>#</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>CORRECTIVE ACTION</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>COMPLETION DATE</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black;">
+                                    <strong>USER EXECUTES</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.corrective_ids" t-as="c">
+                                <tr>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.name"/>
+                                    </td>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.corrective_action"/>
+                                    </td>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.completion_date"/>
+                                    </td>
+                                    <td style="border: thin solid;border-color: black;">
+                                        <span t-field="c.user_execute"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <p style="page-break-before:always;"/>
+                    <p style="">
+                        <strong><span t-field="doc.normative"/></strong>
+                    </p>
+                    <table style="margin-top:10px;border: thin solid;border-color: black;" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>CHECKED BY</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>SIGN</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>DATE</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.checked_by"/>
+                                </td>
+                                <td width="34%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <t t-if="doc.signature_checked">
+                                        <img style="max-height: 4cm; max-width: 8cm;"
+                                             t-att-src="image_data_uri(doc.signature_checked)"/>
+                                    </t>
+                                </td>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.checked_date"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="border: thin solid;border-color: black;" width="100%">
+                        <thead style="background-color:#A9A9A9">
+                            <tr>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>ENDORSED BY</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>SIGN</strong>
+                                </td>
+                                <td style="border: thin solid;border-color: black; text-align:center;">
+                                    <strong>DATE</strong>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.endorsed_by"/>
+                                </td>
+                                <td width="34%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <t t-if="doc.signature_endorsed">
+                                        <img style="max-height: 4cm; max-width: 8cm;"
+                                             t-att-src="image_data_uri(doc.signature_endorsed)"/>
+                                    </t>
+                                </td>
+                                <td width="33%" style="border: thin solid;border-color: black; text-align:center;">
+                                    <span t-field="doc.endorsed_date"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_checklist_fire">
+            <t t-call="web.html_container">
+                <t t-set="is_simplified" t-value="True"/>
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="onmi_reliex_reports.report_checklist_fire_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

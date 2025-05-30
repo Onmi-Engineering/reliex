@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="worksheet_form_view" model="ir.ui.view">
+            <field name="name">worksheet.form.view</field>
+            <field name="model">worksheet.part</field>
+            <field name="arch" type="xml">
+                <form string="Worksheet">
+                    <header>
+                        <button class="oe_highlight" invisible="state != 'to_do'" name="action_checked" string="Finished" title="Click when work is finished" type="object"/>
+                        <button class="oe_highlight" invisible="state != 'to_check'" name="action_done" string="Checked" title="Click when work is checked" type="object"/>
+                        <button class="oe_highlight" name="action_reset" string="Reset" title="Click when you want to reset worksheet" type="object"/>
+                        <button invisible="state != 'to_do'" name="action_sign_info_act_window" string="Sign by client" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" icon="fa-exclamation-triangle" name="action_view_incident" type="object">
+                                <field name="incident_count" string="Incidents" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <div invisible="first_part == False" name="message_alert" style="color: #e50a0a !important;text-align: center;">
+                                YOU HAVE TO CHECK MATERIALS AND LOCATIONS OF THEM
+                            </div>
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="part_type" options="{'horizontal': true}" readonly="True" widget="radio"/>
+                                <field invisible="part_type == 'cleaning'" name="part_plant_type" options="{'horizontal': true}" widget="radio"/>
+                                <field domain="[('is_company', '=', True)]" invisible="1" name="partner_id" readonly="True"/>
+                                <field domain="[('type', '=', 'establishment'),('parent_id','=', partner_id)]" name="establishment_id" readonly="True"/>
+                                <field name="alert_establishment_related" readonly="1" options="{'safe': true}" class="text-danger"/>
+                                <field domain="[('type', '=', 'plant'),('parent_id','=', establishment_id)]" invisible="part_type == 'plant'" name="plant_id" readonly="False"/>
+                                <field invisible="workorder_id == False or part_type == 'plant'" name="workorder_id" readonly="True"/>
+<!--                                <field invisible="workorder_ids == False or part_type == 'cleaning'" name="workorder_ids" readonly="True" widget="many2many_tags"/>-->
+                                <field invisible="part_type == 'cleaning'" name="workorder_plant_id" readonly="True" />
+                            </group>
+                            <group>
+                                <field invisible="part_type == 'cleaning'" name="first_part"/>
+                                <field invisible="part_type == 'cleaning'" name="last_part"/>
+                                <field domain="[('parent_id', '=', establishment_id), ('type', '=', 'plant')]" invisible="part_type == 'cleaning' or last_part == False" name="finished_plant_ids" widget="many2many_tags"/>
+                                <field name="completion_date"/>
+                                <field name="start_date"/>
+                                <field name="start_date_real" invisible="1"/>
+                                <field name="end_date" invisible="1"/>
+                                <field name="duration" widget="float_time"/>
+                                <field name="user_id"/>
+                                <field name="employee_id" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page invisible="part_type != 'cleaning'" name="clean_resources" string="Resources" >
+                                <field name="cleaning_line_ids" widget="section_and_note_one2many" mode="tree">
+                                    <tree editable="bottom">
+<!--                                        <control>-->
+<!--                                            <create name="add_line_control" string="PRUEBA" type="action"-->
+<!--                                                    context="{'form_view_ref': 'view_product_form'}"-->
+<!--                                                    action="action_open_product_form"/>-->
+<!--                                        </control>-->
+                                        <field name="product_id"/>
+                                        <field name="description_sale" string="Descripción"/>
+                                        <field name="qty_consumed"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page invisible="part_type == 'cleaning'" name="resources" string="Resources">
+                                <control>
+                                    <create name="add_product_control" string="Add a product"/>
+                                </control>
+                                <field context="{'default_worksheet_id': active_id}" domain="[('worksheet_id', '=', active_id)]" name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="product_id"/>
+                                        <field label="Units" name="qty_consumed"/>
+                                        <field name="location"/>
+                                        <field name="plant_id" string="Plant associated"/>
+                                    </tree></field>
+                            </page>
+                            <page invisible="part_type == 'cleaning'" name="human_resources" string="Human Resources">
+                                <group>
+                                    <field context="{'default_worksheet_id': active_id}" domain="[('worksheet_id', '=', active_id)]" name="human_resources_ids" nolabel="1" widget="section_and_note_one2many">
+                                        <tree editable="bottom">
+                                            <field name="product_id"/>
+                                            <field label="Qty" name="quantity"/>
+                                        </tree></field>
+                                </group>
+                            </page>
+                            <page name="signatures" string="Signatures">
+                                <group col="4">
+                                    <field name="operation_review" readonly="1"/>
+                                </group>
+                                <group>
+                                    <group>
+                                        <label class="o_light_label" for="signature_client"/>
+                                    </group>
+                                    <group>
+                                        <field name="signature_client" nolabel="1" readonly="1" widget="signature"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <label class="o_light_label" for="client_datas"/>
+                                    </group>
+                                    <group>
+                                        <field name="client_datas" nolabel="1" readonly="1"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="refuses_sign" readonly="1"/>
+                                </group>
+                                <group>
+                                    <group>
+                                        <label class="o_light_label" for="signature_commercial"/>
+                                    </group>
+                                    <group>
+                                        <field name="signature_commercial" nolabel="1" widget="signature"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <label class="o_light_label" for="commercial_datas"/>
+                                    </group>
+                                    <group>
+                                        <field name="commercial_datas" nolabel="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page invisible="part_type != 'plant'" name="comments" string="Plant Comments">
+                                <group>
+                                    <field name="comments"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="o_attachment_preview" options="{'preview_priority_type': 'pdf'}"/>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form></field>
+        </record>
+        <record id="worksheet_tree_view" model="ir.ui.view">
+            <field name="name">worksheet.tree</field>
+            <field name="model">worksheet.part</field>
+            <field name="arch" type="xml">
+                <tree string="Worksheet">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="establishment_id"/>
+                    <field name="plant_id"/>
+                    <field name="completion_date"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                </tree></field>
+        </record>
+        <record id="worksheet_calendar_view" model="ir.ui.view">
+            <field name="name">worksheet.calendar.view</field>
+            <field name="model">worksheet.part</field>
+            <field name="arch" type="xml">
+                <calendar all_day="allday" color="user_id" create="1" date_start="start_date_real"
+                          event_open_popup="true"
+                          form_view_id="%(onmi_reliex_operations.worksheet_form_view)d" hide_time="false" mode="week"
+                          string="Worksheets" event_limit="20">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field filters="1" invisible="0" name="user_id"/>
+                    <field name="user_id"/>
+                    <field name="employee_id" options="{'color_field': 'color', 'no_create_edit': True}"
+                           widget="many2many_tags"/>
+                </calendar>
+            </field>
+        </record>
+        <record id="view_worksheet_search_view" model="ir.ui.view">
+            <field name="name">view.worksheet.search.view</field>
+            <field name="model">worksheet.part</field>
+            <field name="arch" type="xml">
+                <search string="Search Worksheets">
+                    <field filter_domain="[('establishment_id', 'ilike', self)]" name="establishment_id" string="Establishment"/>
+                    <field filter_domain="[                         '|',                         ('partner_id', 'ilike', self),                         ('name', 'ilike', self),]" name="name" string="Worksheet"/>
+<!--                    <field filter_domain="[('establishment_id', 'ilike', self)]" name="establishment_id" string="Establishment"/>-->
+                    <field filter_domain="[('plant_id', 'ilike', self)]" name="plant_id" string="Plant"/>
+                    <field name="user_id"/>
+                    <field name="employee_id" options="{'color_field': 'color', 'no_create_edit': True}" widget="many2many_tags"/>
+                    <separator/>
+                    <filter domain="[('part_type', '=', 'plant')]" help="Plant type Worksheets" name="plant" string="Plant"/>
+                    <filter domain="[('part_type', '=', 'cleaning')]" help="Cleaning type Worksheets" name="cleaning" string="Cleaning"/>
+                    <separator/>
+                    <filter domain="[('user_id', '=', uid)]" help="Worksheets that are assigned to me" name="worksheets_assigned_to_me" string="My Worksheets"/>
+                    <filter domain="[('user_id', '=', False)]" help="No salesperson" name="unassigned" string="Unassigned"/>
+                    <separator/>
+                    <group colspan="16" expand="0" string="Group By">
+                        <filter context="{'group_by':'user_id'}" name="salesperson" string="Team"/>
+                    </group>
+                </search></field>
+        </record>
+        <!-- ACTION PARA PT's -->
+        <record id="onmi_action_worksheet" model="ir.actions.act_window">
+            <field name="name">My Worksheets</field>
+            <field name="res_model">worksheet.part</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="worksheet_tree_view"/>
+            <field name="search_view_id" ref="view_worksheet_search_view"/>
+            <field name="domain">[('user_id', '=', uid)]</field>
+            <field name="context">{'search_default_worksheets_assigned_to_me': 1}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('worksheet_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('worksheet_form_view')})]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Worksheets
+                </p>
+                <p>
+                    View Worksheet, register Worksheet.
+                </p></field>
+        </record>
+        <record id="onmi_action_full_worksheet" model="ir.actions.act_window">
+            <field name="name">Worksheets</field>
+            <field name="res_model">worksheet.part</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_id" ref="worksheet_tree_view"/>
+            <field name="search_view_id" ref="view_worksheet_search_view"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('worksheet_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('worksheet_form_view')})]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Worksheets
+                </p>
+                <p>
+                    View Worksheet, register Worksheet.
+                </p></field>
+        </record>
+
+        <record id="onmi_action_worksheet_to_plan" model="ir.actions.act_window">
+            <field name="name">Worksheet clean to plan</field>
+            <field name="res_model">worksheet.part</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="view_id" ref="worksheet_tree_view"/>
+            <field name="domain">[('workorder_id.state', '=', 'to_plan'),('part_type', '=', 'cleaning')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'calendar', 'view_id': ref('worksheet_calendar_view')}),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('worksheet_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('worksheet_form_view')})]"
+                   name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Worksheets
+                </p>
+                <p>
+                    View Worksheet, register Worksheet.
+                </p>
+            </field>
+        </record>
+
+        <record id="onmi_action_worksheet_plant_to_plan" model="ir.actions.act_window">
+            <field name="name">Worksheet clean to plan</field>
+            <field name="res_model">worksheet.part</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="view_id" ref="worksheet_tree_view"/>
+            <field name="domain">[('part_type', '=', 'plant')]</field>
+            <field name="context">{}</field>
+            <field eval="[(5, 0, 0),                           (0, 0, {'view_mode': 'calendar', 'view_id': ref('worksheet_calendar_view')}),                           (0, 0, {'view_mode': 'tree', 'view_id': ref('worksheet_tree_view')}),                           (0, 0, {'view_mode': 'form', 'view_id': ref('worksheet_form_view')})]" name="view_ids"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    View Worksheets of new plant
+                </p>
+                <p>
+                    View Worksheet, register Worksheet.
+                </p></field>
+        </record>
+        <!-- MENUS -->
+        <menuitem id="worksheet_main_menu_operations_module" name="Worksheets" parent="main_menu_operations_module" sequence="4"/>
+        <!-- SUBMENÚ DE PARTES -->
+        <menuitem action="onmi_action_worksheet" groups="group_operation_boss_team_plant,group_operation_boss_team_cleaning" id="worksheet_menu_operations_module" name="My Worksheets" parent="worksheet_main_menu_operations_module" sequence="1"/>
+        <menuitem action="onmi_action_full_worksheet" groups="group_operation_administrator_cleaning,group_operation_administrator_plant" id="full_worksheet_menu_operations_module" name="All Worksheets" parent="worksheet_main_menu_operations_module" sequence="2"/>
+        <!-- SUBMENÚ PLANIFICACIÓN -->
+        <menuitem action="onmi_action_worksheet_to_plan" groups="group_operation_administrator_cleaning" id="worksheet_to_plan_menu_operations_module" name="Worksheets clean to plan" parent="work_orders_clean_main_menu_operations_module" sequence="1"/>
+        <menuitem action="onmi_action_worksheet_plant_to_plan" groups="group_operation_administrator_plant" id="worksheet_plant_to_plan_menu_operations_module" name="Worksheets plant to plan" parent="work_orders_plant_main_menu_operations_module" sequence="1"/>
+
+<!--        <record id="view_product_form" model="ir.ui.view">-->
+<!--            <field name="name">product</field>-->
+<!--            <field name="model">worksheet.part</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <field name="product_ref">-->
+<!--                        <tree>-->
+<!--                            <field name="name"/>-->
+<!--                            <field name="default_code"/>-->
+<!--                            <field name="list_price"/>-->
+<!--                        </tree>-->
+<!--                    </field>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record id="action_open_product_form" model="ir.actions.act_window">-->
+<!--            <field name="name">Select Product</field>-->
+<!--            <field name="res_model">worksheet.part</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="view_id" ref="view_product_form"/>-->
+<!--            <field name="target">new</field>-->
+<!--        </record>-->
+
+    </data>
+</odoo>
