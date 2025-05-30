@@ -4,7 +4,6 @@ from odoo import fields, models, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    # complete_system = fields.Boolean('Complete system')
     complete_system = fields.Boolean(string='Complete System', compute='_compute_complete_system', store=True)
     cooker_hood = fields.Boolean('Cooker hood')
     duct = fields.Boolean('Duct')
@@ -65,14 +64,14 @@ class SaleOrder(models.Model):
 
     @api.onchange('order_line')
     def _onchange_order_line_complete_system(self):
-        # Calcular complete_system
+        # Mantengo funcion anterior de marcar el campo complete_system
         product_lines = self.order_line.filtered(lambda l: not l.display_type)
         self.complete_system = any(
             line.product_id.product_tmpl_id.is_system_complete
             for line in product_lines
         )
 
-        # Gestionar la nota
+        # Nota a agregar
         note_text = ("[SERVICIO] Aclaraciones del servicio:\n"
                      "-Equipo humano formado por dos técnicos, con amplia experiencia y formación.\n"
                      "-Equipos mecánicos adaptados para este tipo instalaciones.\n"
@@ -84,13 +83,13 @@ class SaleOrder(models.Model):
                      "-Queda excluida la limpieza de los filtros de la/s campana/s.\n"
                      "-Verificación post venta de la calidad del servicio.")
 
-        # Buscar por una parte única del texto en lugar del texto completo
+        # Buscar por una parte única del texto si existe ya en el pedido
         existing_note = self.order_line.filtered(
             lambda l: l.display_type == 'line_note' and '[SERVICIO] Aclaraciones del servicio:' in (l.name or '')
         )
 
         if self.complete_system and not existing_note:
-            # Agregar nota
+            # agregar nota
             new_line = self.env['sale.order.line'].new({
                 'display_type': 'line_note',
                 'name': note_text,
