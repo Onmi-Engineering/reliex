@@ -43,6 +43,8 @@
                 </xpath>
                 <xpath expr="//div[hasclass('oe_title')]" position="after">
                     <field invisible="type != 'plant'" name="plant_type" options="{'horizontal': true}" widget="radio"/>
+                    <field invisible="type != 'plant'" name="type_clean" options="{'horizontal': true}" widget="radio"/>
+<!--                    <field invisible="type != 'plant' or plant_type != 'to_clean'" name="type_clean" options="{'horizontal': true}" widget="radio"/>-->
                     <group invisible="type != 'plant'">
                         <group>
                             <field name="total_days_clean"/>

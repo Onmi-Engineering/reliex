@@ -24,6 +24,10 @@ class ResPartner(models.Model):
     days_clean = fields.Integer('Contracted days of cleaning')
     days_plant = fields.Integer('Days on plant')
     audit_notes = fields.Html('Audit notes')
+    type_clean = fields.Selection([
+        ('crystal', 'Cristales'),
+        ('climate', 'Climtaización')
+    ], string='Tipo limpieza')
     # endregion
 
     def _compute_woc_count(self):

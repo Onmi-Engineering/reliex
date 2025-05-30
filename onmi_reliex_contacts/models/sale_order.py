@@ -55,13 +55,45 @@ class SaleOrder(models.Model):
                         'onmi_reliex_contacts.stage_quotation_accepted_new_plant')
         return result
 
+    # @api.depends('order_line.product_id.product_tmpl_id.is_system_complete')
+    # def _compute_complete_system(self):
+    #     for order in self:
+    #         order.complete_system = any(
+    #             line.product_id.product_tmpl_id.is_system_complete
+    #             for line in order.order_line
+    #         )
 
+    @api.onchange('order_line')
+    def _onchange_order_line_complete_system(self):
+        # Calcular complete_system
+        product_lines = self.order_line.filtered(lambda l: not l.display_type)
+        self.complete_system = any(
+            line.product_id.product_tmpl_id.is_system_complete
+            for line in product_lines
+        )
 
+        # Gestionar la nota
+        note_text = ("[SERVICIO] Aclaraciones del servicio:\n"
+                     "-Equipo humano formado por dos técnicos, con amplia experiencia y formación.\n"
+                     "-Equipos mecánicos adaptados para este tipo instalaciones.\n"
+                     "-Limpieza de conductos realizada con cepillado neumático, siempre que sea la opción más óptima.*\n"
+                     "-Espuma activa desengrasante.\n"
+                     "-Plastificado de todas las zonas susceptibles a mancharse.\n"
+                     "-Certificado administrativo de la limpieza.\n"
+                     "-Subsanación in situ de cualquier deficiencia relacionada con el Sistema de extracción de humos (siempre que sea posible) y, en caso de no ser posible, valoración de la misma para su posterior reparación.\n"
+                     "-Queda excluida la limpieza de los filtros de la/s campana/s.\n"
+                     "-Verificación post venta de la calidad del servicio.")
 
-    @api.depends('order_line.product_id.product_tmpl_id.is_system_complete')
-    def _compute_complete_system(self):
-        for order in self:
-            order.complete_system = any(
-                line.product_id.product_tmpl_id.is_system_complete
-                for line in order.order_line
-            )
+        # Buscar por una parte única del texto en lugar del texto completo
+        existing_note = self.order_line.filtered(
+            lambda l: l.display_type == 'line_note' and '[SERVICIO] Aclaraciones del servicio:' in (l.name or '')
+        )
+
+        if self.complete_system and not existing_note:
+            # Agregar nota
+            new_line = self.env['sale.order.line'].new({
+                'display_type': 'line_note',
+                'name': note_text,
+                'order_id': self.id,
+            })
+            self.order_line |= new_line
