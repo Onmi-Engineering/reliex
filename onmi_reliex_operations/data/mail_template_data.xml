@@ -39,13 +39,11 @@
             <field name="partner_to"></field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px; font-family: Arial, sans-serif; color: #333;">
-                    <h2 style="color: #875A7B; margin-bottom: 20px;">Nueva Incidencia Generada</h2>
                     <p style="margin-bottom: 15px;">Estimado cliente,</p>
                     <p style="margin-bottom: 20px;">Se ha generado una nueva incidencia con los siguientes detalles:</p>
-
                     <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; border-left: 4px solid #875A7B;">
                         <p style="margin: 8px 0;">
-                            <strong>Nombre de la incidencia:</strong>
+                            <strong>Número de incidencia:</strong>
                             <t t-out="object.name or ''"/>
                         </p>
                         <p style="margin: 8px 0;">
@@ -66,15 +64,19 @@
                         </p>
                         <p style="margin: 8px 0;">
                             <strong>Descripción:</strong>
+                            <div style="margin-left: 20px; margin-top: 5px;">
+                                <t t-out="object.description or ''"/>
+                            </div>
                         </p>
-                        <div style="margin-left: 20px; margin-top: 5px;">
-                            <t t-out="object.description or ''"/>
-                        </div>
                     </div>
 
                     <p style="margin-top: 20px;">Si tiene alguna pregunta, no dude en contactarnos.</p>
 
                     <p style="margin-top: 15px;">Saludos cordiales.
+                    <br/>
+                    <img t-attf-src="/logo.png?company={{ object.create_uid.company_id.id }}"
+                         style="padding: 0px; margin: 0px; height: auto; width: 80px;"
+                         t-att-alt="object.create_uid.company_id.name"/>
                     </p>
                 </div>
             </field>
