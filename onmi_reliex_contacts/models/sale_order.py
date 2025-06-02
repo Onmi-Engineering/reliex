@@ -9,11 +9,8 @@ class SaleOrder(models.Model):
     duct = fields.Boolean('Duct')
     extractor = fields.Boolean('Extractor')
     filtronic = fields.Boolean('Filtronic')
-
     establishment_id = fields.Many2one('res.partner')
-
     make_visible = fields.Boolean(string="User", compute="get_user", default=True)
-
     establishment_days_of_clean = fields.Integer(
         string='Days of clean',
         # related='partner_id.establishment_days_clean',
