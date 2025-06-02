@@ -29,5 +29,58 @@
             <field name="lang">{{ object.partner_id.lang }}</field>
             <field name="auto_delete" eval="True"/>
         </record>
+
+        <!--        AGREGADO    -->
+        <record id="email_template_incident_notification" model="mail.template">
+            <field name="name">Incident Notification</field>
+            <field name="model_id" ref="model_incident"/>
+            <field name="subject">Nueva Incidencia generada - {{ object.name or '' }}</field>
+            <field name="email_from">{{ (object.create_uid.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to"></field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px; font-family: Arial, sans-serif; color: #333;">
+                    <h2 style="color: #875A7B; margin-bottom: 20px;">Nueva Incidencia Generada</h2>
+                    <p style="margin-bottom: 15px;">Estimado cliente,</p>
+                    <p style="margin-bottom: 20px;">Se ha generado una nueva incidencia con los siguientes detalles:</p>
+
+                    <div style="background-color: #f9f9f9; padding: 20px; border-radius: 5px; border-left: 4px solid #875A7B;">
+                        <p style="margin: 8px 0;">
+                            <strong>Nombre de la incidencia:</strong>
+                            <t t-out="object.name or ''"/>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <strong>Título:</strong>
+                            <t t-out="object.name_description or ''"/>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <strong>Establecimiento:</strong>
+                            <t t-out="object.establishment_id.name or ''"/>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <strong>Instalación:</strong>
+                            <t t-out="object.plant_id.name or ''"/>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <strong>Parte de trabajo:</strong>
+                            <t t-out="object.worksheet_id.name or ''"/>
+                        </p>
+                        <p style="margin: 8px 0;">
+                            <strong>Descripción:</strong>
+                        </p>
+                        <div style="margin-left: 20px; margin-top: 5px;">
+                            <t t-out="object.description or ''"/>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px;">Si tiene alguna pregunta, no dude en contactarnos.</p>
+
+                    <p style="margin-top: 15px;">Saludos cordiales.
+                    </p>
+                </div>
+            </field>
+            <field name="lang">{{ object.establishment_id.lang or 'es_ES' }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
     </data>
 </odoo>
