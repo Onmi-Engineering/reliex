@@ -16,6 +16,7 @@ This module adds functionality to the Operations module
     'depends': ['base',
                 'web',
                 'onmi_reliex_operations',
+                'onmi_reliex_reports',
                 'sale',
                 'sale_crm'],
 
@@ -25,6 +26,7 @@ This module adds functionality to the Operations module
         'views/worksheet_view_enh01.xml',
         # 'views/crm_saleorder_doc_enh01.xml',
         # 'views/crm_saleorder_view_enh01.xml',
+        'views/res_partner_enh01.xml',
     ],
 
     'assets': {

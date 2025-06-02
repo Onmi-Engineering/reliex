@@ -9,7 +9,7 @@
                 <xpath expr="//field[@name='fictitious_customer']" position="after">
                     <field name="invoice_email"/>
                     <field name="certif_email"/>
-                    <field name="stablish_email"/>
+                    <field name="stablish_email"  invisible="type != 'establishment'"/>
                 </xpath>
 
             </field>
