@@ -44,7 +44,6 @@
                 <xpath expr="//div[hasclass('oe_title')]" position="after">
                     <field invisible="type != 'plant'" name="plant_type" options="{'horizontal': true}" widget="radio"/>
                     <field invisible="type != 'plant'" name="type_clean" options="{'horizontal': true}" widget="radio"/>
-<!--                    <field invisible="type != 'plant' or plant_type != 'to_clean'" name="type_clean" options="{'horizontal': true}" widget="radio"/>-->
                     <group invisible="type != 'plant'">
                         <group>
                             <field name="total_days_clean"/>
@@ -92,10 +91,14 @@
                                                 <field name="waterproof_luminaire"/>
                                             </group>
                                         </group>
+<!--                                        <label for="cooker_comments"/>-->
+<!--                                        <group style="width: 200%;display: flex;justify-content: space-between;">-->
+<!--                                            <field name="cooker_comments" nolabel="1"/>-->
+<!--                                        </group>-->
                                         <label for="cooker_comments"/>
-                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                        <div class="o_group">
                                             <field name="cooker_comments" nolabel="1"/>
-                                        </group>
+                                        </div>
                                         <separator/>
                                         <group name="duct" string="DUCT DATA">
                                             <group>
@@ -141,10 +144,14 @@
                                                 </tree>
                                             </field>
                                         </group>
+<!--                                        <label for="duct_comments"/>-->
+<!--                                        <group style="width: 200%;display: flex;justify-content: space-between;">-->
+<!--                                            <field name="duct_comments" nolabel="1"/>-->
+<!--                                        </group>-->
                                         <label for="duct_comments"/>
-                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                        <div class="o_group">
                                             <field name="duct_comments" nolabel="1"/>
-                                        </group>
+                                        </div>
                                         <separator/>
                                         <group name="extractor_data" string="EXTRACTOR DATA">
                                             <group>
@@ -207,10 +214,14 @@
                                                 <field name="extractor_soiling_degree" widget="priority"/>
                                             </group>
                                         </group>
+<!--                                        <label for="extractor_comments"/>-->
+<!--                                        <group style="width: 200%;display: flex;justify-content: space-between;">-->
+<!--                                            <field name="extractor_comments" nolabel="1"/>-->
+<!--                                        </group>-->
                                         <label for="extractor_comments"/>
-                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                        <div class="o_group">
                                             <field name="extractor_comments" nolabel="1"/>
-                                        </group>
+                                        </div>
                                         <separator/>
                                         <group name="filtronic" string="FILTRONIC DATA">
                                             <group>
@@ -226,10 +237,14 @@
                                                        name="filtrina_replacement"/>
                                             </group>
                                         </group>
+<!--                                        <label for="filtronic_comments"/>-->
+<!--                                        <group style="width: 200%;display: flex;justify-content: space-between;">-->
+<!--                                            <field name="filtronic_comments" nolabel="1"/>-->
+<!--                                        </group>-->
                                         <label for="filtronic_comments"/>
-                                        <group style="width: 200%;display: flex;justify-content: space-between;">
+                                        <div class="o_group">
                                             <field name="filtronic_comments" nolabel="1"/>
-                                        </group>
+                                        </div>
                                     </sheet>
                                 </form>
                             </field>
