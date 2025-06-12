@@ -523,7 +523,7 @@
 
         <!-- Crear la categoría del grupo -->
         <record id="module_category_onmi_reliex_operations" model="ir.module.category">
-            <field name="name">Onmi Reliex Operations</field>
+            <field name="name">Onmi Reliex Monitors</field>
             <field name="description">Permisos para operaciones Onmi Reliex</field>
             <field name="sequence">10</field>
         </record>
