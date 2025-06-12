@@ -509,17 +509,32 @@
         <!--endregion-->
 
         <!--grupos especiales-->
-    <record id="onmi_category_permisos_especiales" model="ir.module.category">
-        <field name="name">Permisos Especiales</field>
-        <field name="description">Categoría para permisos especiales en el sistema</field>
-        <field name="sequence">20</field>
-    </record>
+        <record id="onmi_category_permisos_especiales" model="ir.module.category">
+            <field name="name">Permisos Especiales</field>
+            <field name="description">Categoría para permisos especiales en el sistema</field>
+            <field name="sequence">20</field>
+        </record>
 
-    <record id="onmi_group_permisos_especiales" model="res.groups">
-        <field name="name">Bloqueo de campos</field>
-        <field name="category_id" ref="onmi_category_permisos_especiales"/>
-        <field name="comment">Usuarios con bloqueo para editar campos restringidos</field>
-    </record>
+        <record id="onmi_group_permisos_especiales" model="res.groups">
+            <field name="name">Bloqueo de campos</field>
+            <field name="category_id" ref="onmi_category_permisos_especiales"/>
+            <field name="comment">Usuarios con bloqueo para editar campos restringidos</field>
+        </record>
+
+        <!-- Crear la categoría del grupo -->
+        <record id="module_category_onmi_reliex_operations" model="ir.module.category">
+            <field name="name">Onmi Reliex Operations</field>
+            <field name="description">Permisos para operaciones Onmi Reliex</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Crear el grupo -->
+        <record id="group_monitor_manager" model="res.groups">
+            <field name="name">Monitor Manager</field>
+            <field name="category_id" ref="module_category_onmi_reliex_operations"/>
+            <field name="comment">Usuarios que pueden ver y gestionar el campo Monitor</field>
+        </record>
+
 
     </data>
 </odoo>
