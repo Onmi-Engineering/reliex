@@ -643,7 +643,7 @@ class WorkOrdersClean(models.Model):
 
             return {
                 'warning': {
-                    'title': 'Operación Peligrosa',
+                    'title': 'ATENCIÓN!!!!',
                     'message': message
                 }
             }
