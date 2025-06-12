@@ -5,6 +5,7 @@ import base64
 import datetime
 import html2text
 from datetime import timedelta
+from odoo.exceptions import UserError, ValidationError
 
 
 class CustomModel(models.Model):
@@ -59,7 +60,7 @@ class WorkOrdersClean(models.Model):
     new_display_name = fields.Char('New display Name', compute="_compute_new_display_name")
 
     comments_notes = fields.Html('Comments Notes', compute="compute_comments_notes")
-
+    complete_system = fields.Boolean('Complete system', tracking=True)
     boss_name = fields.Char('Gerente', related='establishment_id.boss_name')
     parent_id = fields.Many2one('res.partner', related='establishment_id.parent_id')
     supervisor_name = fields.Char('Supervisor', related='establishment_id.supervisor_name')
@@ -140,7 +141,7 @@ class WorkOrdersClean(models.Model):
     invoice_created = fields.Boolean('Invoice created')
     report_sent = fields.Boolean('Reports sent')
 
-    complete_system = fields.Boolean('Complete system', tracking=True)
+    # complete_system = fields.Boolean('Complete system', tracking=True)
     cooker_hood = fields.Boolean('Cooker hood')
     duct = fields.Boolean('Duct')
     extractor = fields.Boolean('Extractor')
@@ -158,6 +159,9 @@ class WorkOrdersClean(models.Model):
         related='establishment_id.alert_establishment',
         readonly=True
     )
+
+    monitor = fields.Many2one('res.users', string='Monitor')
+
 
     def write(self, values):
         old_start_date = self.start_date
@@ -620,3 +624,22 @@ class WorkOrdersClean(models.Model):
         for val in vals:
             val['name'] = self.env['ir.sequence'].next_by_code('work.order.clean') or _('New')
         return super().create(vals)
+
+
+    # Se agrega para dar aviso si desmarcan esta casilla ya que se utiliza para genera la oportunidad de frecuencia en CRM
+    @api.onchange('complete_system')
+    def _onchange_complete_system(self):
+        if self._origin.complete_system != self.complete_system:  # Solo si realmente cambió
+            if self.complete_system:
+                message = ('PELIGRO: Está activando el sistema completo. '
+                           'Asegúrese de que esta acción es necesaria. Al hacerlo se generará una oportunidad de frecuencia')
+            else:
+                message = ('ADVERTENCIA: Está desactivando el sistema completo. '
+                           'Asegúrese de que esta acción es necesaria. Al hacerlo NO se generará una oportunidad de frecuencia')
+
+            return {
+                'warning': {
+                    'title': 'Operación Peligrosa',
+                    'message': message
+                }
+            }

@@ -258,6 +258,7 @@
                 <tree string="Cleanning Work Order">
                     <field name="name"/>
                     <field name="user_id"/>
+                    <field name="monitor"/>
                     <field name="employee_id" widget="many2many_tags"/>
                     <field name="establishment_id"/>
                     <field name="start_date"/>
