@@ -310,11 +310,14 @@
                     <field name="user_id"/>
                     <filter domain="[('state','=','confirmed')]" name="conmfirmed_work_orders_clean_filter"
                             string="Confirmed"/>
+                    <field name="monitor" groups="onmi_reliex_operations.group_monitor_manager"/>
+                    <filter domain="[('monitor','=',uid)]" name="my_monitor_filter" string="Mis Monitoreos" groups="onmi_reliex_operations.group_monitor_manager"/>
                     <group expand="0" string="Group By">
                         <filter context="{'group_by': 'user_id'}" domain="[]" name="team" string="Team"/>
                         <filter context="{'group_by': 'partner_id'}" domain="[]" name="customer" string="Customer"/>
                         <filter context="{'group_by': 'establishment_id'}" domain="[]" name="establishment"
                                 string="Establishment"/>
+                        <filter context="{'group_by': 'monitor'}" domain="[]" name="monitor_group" string="Monitor" groups="onmi_reliex_operations.group_monitor_manager"/>
                     </group>
                 </search>
             </field>

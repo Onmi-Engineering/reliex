@@ -160,7 +160,11 @@ class WorkOrdersClean(models.Model):
         readonly=True
     )
 
-    monitor = fields.Many2one('res.users', string='Monitor')
+    monitor = fields.Many2one(
+        'res.users',
+        string='Monitor',
+        domain=lambda self: [('groups_id', 'in', [self.env.ref('onmi_reliex_operations.group_monitor_manager').id])]
+    )
 
 
     def write(self, values):
