@@ -102,7 +102,7 @@ class Worksheet(models.Model):
     tec_oper2 = fields.Char(string="Nombre y Apellidos")
     tec_date_init = fields.Datetime(string="Fecha y hora de inicio")
     tec_date_end = fields.Datetime(string="Fecha y hora de fin")
-    tec_attachment = fields.Binary(string="Adjunto", required=True)
+    tec_attachment = fields.Binary(string="Adjunto")
 
     def _compute_new_display_name(self):
         for rec in self:
