@@ -104,6 +104,7 @@
                                        name="establishment_id"/>
                                 <field name="alert_establishment_related" readonly="1"
                                        options="{'safe': true}" class="text-danger"/>
+                                <field name="monitor" groups="onmi_reliex_operations.group_monitor_manager"/>
                                 <field name="user_id"/>
                                 <field name="employee_id" options="{'color_field': 'color', 'no_create_edit': True}"
                                        widget="many2many_tags"/>
@@ -258,7 +259,6 @@
                 <tree string="Cleanning Work Order">
                     <field name="name"/>
                     <field name="user_id"/>
-                    <field name="monitor"/>
                     <field name="employee_id" widget="many2many_tags"/>
                     <field name="establishment_id"/>
                     <field name="start_date"/>
