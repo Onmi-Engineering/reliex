@@ -635,7 +635,7 @@ class WorkOrdersClean(models.Model):
     def _onchange_complete_system(self):
         if self._origin.complete_system != self.complete_system:  # Solo si realmente cambió
             if self.complete_system:
-                message = ('PELIGRO: Está activando el sistema completo. '
+                message = ('ADVERTENCIA: Está activando el sistema completo. '
                            'Asegúrese de que esta acción es necesaria. Al hacerlo se generará una oportunidad de frecuencia')
             else:
                 message = ('ADVERTENCIA: Está desactivando el sistema completo. '
