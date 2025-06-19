@@ -73,7 +73,8 @@ class MaterialList(models.Model):
                                                    })]})
 
             rec.lead_id.stage_id = self.env['crm.stage'].search(
-                [('type', '=', 'new_plant'), ('doing_quotation', '=', True)], limit=1)
+                # [('type', '=', 'new_plant'), ('doing_quotation', '=', True)], limit=1)
+                [('type', '=', 'cleaning'), ('doing_quotation', '=', True)], limit = 1)
 
     @api.model_create_multi
     def create(self, vals):

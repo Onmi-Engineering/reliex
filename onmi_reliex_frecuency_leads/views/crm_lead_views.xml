@@ -85,6 +85,9 @@
             <field name="arch" type="xml">
                 <xpath expr="//filter[@name='lost']" position="after">
                     <filter string="Facturado" name="has_invoice" domain="[('has_invoice', '=', True)]"/>
+                    <separator/>
+                    <filter string="Limpieza" name="cleaning" domain="[('wo_type', '=','cleaning')]"/>
+                    <filter string="Instalación" name="new_plant" domain="[('wo_type', '=','new_plant')]"/>
                 </xpath>
             </field>
         </record>
