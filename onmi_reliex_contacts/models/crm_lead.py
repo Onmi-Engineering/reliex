@@ -292,7 +292,8 @@ class CrmLead(models.Model):
                 workorders.sudo().write({'worksheet_ids': worksheets})
                 worksheets.sudo().write({'workorder_ids': workorders})
 
-            self.stage_id = self.env['crm.stage'].search([('is_won', '=', True), ('type', '=', 'new_plant')])
+            # self.stage_id = self.env['crm.stage'].search([('is_won', '=', True), ('type', '=', 'new_plant')])
+            self.stage_id = self.env['crm.stage'].search([('is_won', '=', True), ('type', '=', 'cleaning')])
         return res
 
     def action_sale_quotations_new(self):

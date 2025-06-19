@@ -36,7 +36,8 @@ class SaleOrder(models.Model):
                         'onmi_reliex_contacts.stage_quotation_send_cleaning')
                 else:
                     rec.opportunity_id.stage_id = self.env.ref(
-                        'onmi_reliex_contacts.stage_quotation_send_new_plant')
+                        'onmi_reliex_contacts.stage_quotation_send_cleaning')
+                        # 'onmi_reliex_contacts.stage_quotation_send_new_plant')
         return result
 
     def action_confirm(self):
@@ -48,7 +49,8 @@ class SaleOrder(models.Model):
                         'onmi_reliex_contacts.stage_quotation_accepted_cleaning')
                 else:
                     rec.opportunity_id.stage_id = self.env.ref(
-                        'onmi_reliex_contacts.stage_quotation_accepted_new_plant')
+                        'onmi_reliex_contacts.stage_quotation_accepted_cleaning')
+                        # 'onmi_reliex_contacts.stage_quotation_accepted_new_plant')
         return result
 
     # @api.depends('order_line.product_id.product_tmpl_id.is_system_complete')

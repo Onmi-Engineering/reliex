@@ -61,11 +61,18 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='team_id']" position="after">
                     <field name="has_invoice"/>
+                    <field name="wo_type"/>
                 </xpath>
                 <xpath expr="//div[@class='oe_kanban_bottom_left']" position="inside">
                     <span t-if="record.has_invoice and record.has_invoice.raw_value === true"
                           class="fa fa-eur ms-1 text-success" title="Tiene facturas" role="img"
                           aria-label="Tiene facturas"/>
+                    <span t-if="record.wo_type and record.wo_type.raw_value === 'cleaning'"
+                          class="fa fa-tint text-info" title="Limpieza" role="img"
+                          aria-label="Limpieza"/>
+                    <span t-if="record.wo_type and record.wo_type.raw_value === 'new_plant'"
+                          class="fa fa-wrench text-warning" title="Instalación" role="img"
+                          aria-label="Instalación"/>
                 </xpath>
             </field>
         </record>
