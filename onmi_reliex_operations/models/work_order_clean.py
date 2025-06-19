@@ -165,6 +165,20 @@ class WorkOrdersClean(models.Model):
         string='Monitor',
         domain=lambda self: [('groups_id', 'in', [self.env.ref('onmi_reliex_operations.group_monitor_manager').id])]
     )
+    # # # # # # # # # # # # PARA MOSTRAR DEUDA DE CLIENTE# # # # # # # # # # # # # # # v
+    total_debt = fields.Monetary(
+        string='Total Deuda',
+        currency_field='currency_id',
+        readonly=True
+    )
+
+    currency_id = fields.Many2one(
+        'res.currency',
+        string='Moneda',
+        default=lambda self: self.env.company.currency_id
+    )
+    # # # # # # # # # # # # PARA MOSTRAR DEUDA DE CLIENTE# # # # # # # # # # # # # # # v
+
 
 
     def write(self, values):
@@ -647,3 +661,52 @@ class WorkOrdersClean(models.Model):
                     'message': message
                 }
             }
+
+    # # # # # # # # # # # # PARA MOSTRAR DEUDA DE CLIENTE# # # # # # # # # # # # # # # v
+
+    def action_show_customer_debt(self):
+        """Acción para mostrar las facturas pendientes del cliente"""
+        if not self.partner_id:
+            raise UserError("Debe seleccionar un cliente primero.")
+
+        # Buscar facturas no pagadas
+        domain = [
+            ('partner_id', '=', self.partner_id.id),
+            ('move_type', 'in', ['out_invoice', 'out_refund']),
+            ('state', '=', 'posted'),
+            ('payment_state', 'in', ['not_paid', 'in_payment', 'partial'])
+        ]
+
+        # Buscar facturas no pagadas y calcular total de deuda
+        unpaid_invoices = self.env['account.move'].search(domain)
+        total_debt = sum(unpaid_invoices.mapped('amount_total_signed'))
+
+        # Actualizar el campo total_debt
+        self.total_debt = total_debt
+
+        if total_debt == 0:
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': 'Sin Deuda',
+                    'message': f'El cliente {self.partner_id.name} no tiene deuda pendiente.',
+                    'type': 'success',
+                    'sticky': False,
+                }
+            }
+
+        # Retornar la acción para abrir la vista de facturas
+        return {
+            'type': 'ir.actions.act_window',
+            'name': f'Deuda de {self.partner_id.name}',
+            'res_model': 'account.move',
+            'view_mode': 'tree,form',
+            'domain': domain,
+            'context': {
+                'default_partner_id': self.partner_id.id,
+                'search_default_group_by_partner': 1,
+            },
+            'target': 'current',
+        }
+    # # # # # # # # # # # # PARA MOSTRAR DEUDA DE CLIENTE# # # # # # # # # # # # # # # v

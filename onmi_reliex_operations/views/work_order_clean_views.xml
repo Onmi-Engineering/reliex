@@ -77,6 +77,21 @@
                                     type="object">
                                 <field name="incident_count" string="Incidents" widget="statinfo"/>
                             </button>
+
+                            <button class="btn-success" icon="fa-bell-o" string="Ver Deuda Cliente"
+                                    name="action_show_customer_debt"
+                                    type="object"
+                                    invisible="total_debt > 0">
+                                <field name="total_debt" string="Adeudado" widget="statinfo"/>
+                            </button>
+
+                            <button class="btn-danger" icon="fa-bell" string="Ver Deuda Cliente"
+                                    name="action_show_customer_debt"
+                                    type="object"
+                                    invisible="total_debt &lt;= 0">
+                                <field name="total_debt" string="Adeudado" widget="statinfo"/>
+                            </button>
+
                         </div>
                         <div class="oe_title">
                             <div invisible="pending_debts == False" name="message_alert"
