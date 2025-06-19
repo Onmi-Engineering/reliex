@@ -134,6 +134,16 @@
                                     <field name="comments"/>
                                 </group>
                             </page>
+                            <page invisible="part_type != 'plant'" name="technical" string="Información técnica">
+                                <group>
+                                    <field name="tec_vehicle"/>
+                                    <field name="tec_oper1"/>
+                                    <field name="tec_oper2"/>
+                                    <field name="tec_date_init" widget="datetime"/>
+                                    <field name="tec_date_end" widget="datetime"/>
+                                    <field name="tec_attachment"/>
+                                </group>
+                            </page>
                         </notebook>
                     </sheet>
                     <div class="o_attachment_preview" options="{'preview_priority_type': 'pdf'}"/>
