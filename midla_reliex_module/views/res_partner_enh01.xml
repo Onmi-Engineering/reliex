@@ -7,9 +7,9 @@
             <field name="arch" type="xml">
 
                 <xpath expr="//field[@name='fictitious_customer']" position="after">
-                    <field name="invoice_email"/>
-                    <field name="certif_email"/>
-                    <field name="stablish_email"  invisible="type != 'establishment'"/>
+                    <field name="invoice_email" invisible="type != 'contact'"/>
+                    <field name="certif_email" invisible="type != 'establishment'"/>
+                    <field name="stablish_email" invisible="type != 'establishment'"/>
                 </xpath>
 
             </field>
