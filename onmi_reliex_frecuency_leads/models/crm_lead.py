@@ -49,6 +49,10 @@ class CrmLead(models.Model):
             raise UserError(_('You cant generate client if you dont define establishment.'))
         self.client_id = self.env['res.partner'].create({
             'name': _('VAT of ') + self.partner_id.name,
+            'is_company': True,
+        })
+        self.partner_id.write({
+            'is_company': True,
         })
         self.partner_id.parent_id = self.client_id
 
