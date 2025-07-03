@@ -22,3 +22,16 @@ class MailComposeMessage(models.TransientModel):
                           ('mimetype', '=', 'application/pdf')]
                 attachment_to_assign = self.env['ir.attachment'].search(domain)
                 rec.attachment_ids = attachment_to_assign
+
+
+    def send_mail(self, auto_commit=False):
+        followers_to_restore = self.env.context.get('followers_to_restore', [])
+        work_order_id = self.env.context.get('work_order_id')
+
+        result = super(MailComposeMessage, self).send_mail(auto_commit=auto_commit)
+
+        # Restauro seguidores usando metodo asíncrono
+        if followers_to_restore and work_order_id:
+            self.env['work.order.clean'].browse(work_order_id).with_delay()._restore_followers(followers_to_restore)
+
+        return result

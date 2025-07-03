@@ -95,6 +95,13 @@ class WorksheetPart(models.Model):
         template = self.env.ref('onmi_reliex_reports.onmi_mail_template_worksheet_clean_assign_work')
         if template.lang:
             lang = template._render_lang(self.ids)[self.id]
+
+        current_followers = self.message_partner_ids.ids
+
+        if current_followers:
+            self.message_unsubscribe(current_followers)
+            print(f"Seguidores eliminados: {current_followers}")
+
         ctx = {
             'default_model': 'worksheet.part',
             'default_res_ids': self.ids,
@@ -105,6 +112,8 @@ class WorksheetPart(models.Model):
             'custom_layout': "mail.mail_notification_paynow",
             'force_email': True,
             'model_description': self._description,
+            'followers_to_restore': current_followers,
+            'work_order_id': self.id,
         }
         return {
             'type': 'ir.actions.act_window',

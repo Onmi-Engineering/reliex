@@ -38,6 +38,13 @@ class SaleOrder(models.Model):
                     rec.opportunity_id.stage_id = self.env.ref(
                         'onmi_reliex_contacts.stage_quotation_send_cleaning')
                         # 'onmi_reliex_contacts.stage_quotation_send_new_plant')
+
+        current_followers = self.message_partner_ids.ids
+
+        if current_followers:
+            self.message_unsubscribe(current_followers)
+            print(f"Seguidores eliminados: {current_followers}")
+
         return result
 
     def action_confirm(self):

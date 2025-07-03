@@ -385,6 +385,12 @@ class WorkOrdersClean(models.Model):
         if template.lang:
             lang = template._render_lang(self.ids)[self.id]
 
+        # Para borrar seguidores al enviar correo, luego restaura mas abajo
+        current_followers = self.message_partner_ids.ids
+        if current_followers:
+            self.message_unsubscribe(current_followers)
+
+
         ctx = {
             'default_model': 'work.order.clean',
             'default_res_ids': self.ids,
@@ -395,6 +401,10 @@ class WorkOrdersClean(models.Model):
             'custom_layout': "mail.mail_notification_paynow",
             'force_email': True,
             'model_description': self._description,
+            # Para que no envie a seguidores
+            'followers_to_restore': current_followers,
+            'work_order_id': self.id,  # Pasar el ID del registro
+
         }
 
         action = {
@@ -502,6 +512,12 @@ class WorkOrdersClean(models.Model):
         template = self.env.ref('onmi_reliex_reports.onmi_mail_template_workorder_reports_document')
         if template.lang:
             lang = template._render_lang(self.ids)[self.id]
+
+        current_followers = self.message_partner_ids.ids
+
+        if current_followers:
+            self.message_unsubscribe(current_followers)
+            print(f"Seguidores eliminados: {current_followers}")
         ctx = {
             'default_model': 'work.order.clean',
             'default_res_ids': self.ids,
@@ -512,6 +528,8 @@ class WorkOrdersClean(models.Model):
             'custom_layout': "mail.mail_notification_paynow",
             'force_email': True,
             'model_description': self._description,
+            'followers_to_restore': current_followers,
+            'work_order_id': self.id,
         }
         self.report_sent = True
         return {
@@ -686,52 +704,6 @@ class WorkOrdersClean(models.Model):
             else:
                 record.total_debt = 0.0
 
-    # def action_show_customer_debt(self):
-    #     """Acción para mostrar las facturas pendientes del cliente"""
-    #     if not self.partner_id:
-    #         raise UserError("Debe seleccionar un cliente primero.")
-    #
-    #     # Buscar facturas no pagadas
-    #     domain = [
-    #         ('partner_id', '=', self.partner_id.id),
-    #         ('move_type', 'in', ['out_invoice', 'out_refund']),
-    #         ('state', '=', 'posted'),
-    #         ('payment_state', 'in', ['not_paid', 'in_payment', 'partial'])
-    #     ]
-    #
-    #     # Buscar facturas no pagadas y calcular total de deuda
-    #     unpaid_invoices = self.env['account.move'].search(domain)
-    #     total_debt = sum(unpaid_invoices.mapped('amount_total_signed'))
-    #
-    #     # Actualizar el campo total_debt
-    #     self.total_debt = total_debt
-    #
-    #     if total_debt == 0:
-    #         return {
-    #             'type': 'ir.actions.client',
-    #             'tag': 'display_notification',
-    #             'params': {
-    #                 'title': 'Sin Deuda',
-    #                 'message': f'El cliente {self.partner_id.name} no tiene deuda pendiente.',
-    #                 'type': 'success',
-    #                 'sticky': False,
-    #             }
-    #         }
-    #
-    #     # Retornar la acción para abrir la vista de facturas
-    #     return {
-    #         'type': 'ir.actions.act_window',
-    #         'name': f'Deuda de {self.partner_id.name}',
-    #         'res_model': 'account.move',
-    #         'view_mode': 'tree,form',
-    #         'domain': domain,
-    #         'context': {
-    #             'default_partner_id': self.partner_id.id,
-    #             'search_default_group_by_partner': 1,
-    #         },
-    #         'target': 'current',
-    #     }
-
     def action_show_customer_debt(self):
         """Acción para mostrar las facturas pendientes del cliente"""
         if not self.partner_id:
@@ -769,4 +741,12 @@ class WorkOrdersClean(models.Model):
             },
             'target': 'current',
         }
-    # # # # # # # # # # # # PARA MOSTRAR DEUDA DE CLIENTE# # # # # # # # # # # # # # # v
+    # # # # # # # # # # # # FIN PARA MOSTRAR DEUDA DE CLIENTE# # # # # # # # # # # # # # # v
+
+    def _restore_followers(self, follower_ids):
+        """Restaurar seguidores de forma asíncrona"""
+        try:
+            self.message_subscribe(follower_ids)
+            print(f"Seguidores restaurados: {follower_ids}")
+        except Exception as e:
+            print(f"Error restaurando seguidores: {e}")
