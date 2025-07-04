@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="quotation_selection_wizard_form" model="ir.ui.view">
+        <field name="name">quotation.selection.wizard.form</field>
+        <field name="model">quotation.selection.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Seleccionar Presupuesto">
+                <sheet>
+                    <group>
+                        <field name="lead_id" readonly="1"/>
+                        <field name="quotation_ids" widget="many2many_tags" readonly="1"/>
+                        <field name="selected_quotation_id"
+                               options="{'no_create': True, 'no_create_edit': True}"
+                               domain="[('id', 'in', quotation_ids)]"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm_selected_quotation"
+                                type="object"
+                                string="Confirmar Presupuesto"
+                                class="btn-primary"/>
+                        <button name="action_close_wizard"
+                                type="object"
+                                string="Cerrar"
+                                class="btn-secondary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

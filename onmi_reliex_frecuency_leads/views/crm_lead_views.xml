@@ -8,6 +8,9 @@
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='action_show_incident_related']" position="replace">
                 </xpath>
+               <xpath expr="//button[@name='action_set_won_rainbowman']" position="attributes">
+                    <attribute name="groups">onmi_reliex_frecuency_leads.group_button_won</attribute>
+                </xpath>
                 <xpath expr="//button[@name='action_schedule_meeting']" position="before">
                     <field invisible="1" name="has_quotation_incidents"/>
                     <button class="oe_stat_button" icon="fa-star" invisible="has_quotation_incidents == False"
@@ -50,6 +53,17 @@
                         {'default_type': 'establishment'}
                     </attribute>
                 </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_confirm_quotations"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-check-circle"
+                            invisible="quotation_count == 0"
+                            help="Confirmar presupuestos asociados">
+                        <field name="quotation_count" widget="statinfo"
+                               string="Confirmar Presupuestos"/>
+                    </button>
+                </xpath>
             </field>
         </record>
 
@@ -73,6 +87,9 @@
                     <span t-if="record.wo_type and record.wo_type.raw_value === 'new_plant'"
                           class="fa fa-wrench text-warning" title="Instalación" role="img"
                           aria-label="Instalación"/>
+                </xpath>
+                <xpath expr="//field[@name='stage_id']" position="attributes">
+                    <attribute name="groups">onmi_reliex_frecuency_leads.group_button_won</attribute>
                 </xpath>
             </field>
         </record>

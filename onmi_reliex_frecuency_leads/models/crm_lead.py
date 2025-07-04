@@ -23,6 +23,15 @@ class CrmLead(models.Model):
         store=True,
     )
 
+    ##########D36
+    # Campo computado para contar presupuestos
+    quotation_count = fields.Integer(
+        string='Número de Presupuestos',
+        compute='_compute_quotation_count'
+    )
+
+    ##########D36
+
     # Función para calcular si tiene facturas
     @api.depends('related_invoice_ids')
     def _compute_has_invoice(self):
@@ -131,3 +140,50 @@ class CrmLead(models.Model):
                 frecuency_lead.write({
                     'workorder_id': woc_lead.id,
                 })
+
+    ##########D36
+    @api.depends('order_ids')
+    def _compute_quotation_count(self):
+        for lead in self:
+            lead.quotation_count = len(lead.order_ids.filtered(lambda o: o.state in ['draft', 'sent']))
+
+    def action_confirm_quotations(self):
+        """Acción para confirmar presupuestos asociados a la oportunidad"""
+        self.ensure_one()
+
+        # Obtener presupuestos en estado borrador o enviado
+        quotations = self.order_ids.filtered(lambda o: o.state in ['draft', 'sent'])
+
+        if not quotations:
+            raise UserError(_('No hay presupuestos pendientes de confirmación para esta oportunidad.'))
+
+        if len(quotations) == 1:
+            # Si hay solo un presupuesto, confirmarlo directamente
+            quotation = quotations[0]
+            quotation.action_confirm()
+
+            # Mostrar mensaje sticky
+            return {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': _('Presupuesto Confirmado'),
+                    'message': _('El presupuesto %s ha sido confirmado correctamente.') % quotation.name,
+                    'type': 'success',
+                    'sticky': True,
+                }
+            }
+        else:
+            # Si hay múltiples presupuestos, abrir wizard de selección
+            return {
+                'type': 'ir.actions.act_window',
+                'name': _('Seleccionar Presupuesto a Confirmar'),
+                'res_model': 'quotation.selection.wizard',
+                'view_mode': 'form',
+                'target': 'new',
+                'context': {
+                    'default_lead_id': self.id,
+                    'default_quotation_ids': [(6, 0, quotations.ids)]
+                }
+            }
+    ##########D36
