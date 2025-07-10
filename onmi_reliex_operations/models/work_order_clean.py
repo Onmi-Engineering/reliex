@@ -421,16 +421,75 @@ class WorkOrdersClean(models.Model):
             self.write({'state': 'waiting'})
             return action
 
+    # def action_confirm_by_mail(self):
+    #     ''' Opens a wizard to compose an email, with relevant mail template loaded by default '''
+    #     if not self.employee_id:
+    #         raise UserError("Debe indicar los operarios primero.")
+    #     self.ensure_one()
+    #     template_id = self.env.ref('onmi_reliex_reports.onmi_mail_template_workorder_reports_confirm23').id
+    #     lang = self.env.context.get('lang')
+    #     template = self.env.ref('onmi_reliex_reports.onmi_mail_template_workorder_reports_confirm23')
+    #     if template.lang:
+    #         lang = template._render_lang(self.ids)[self.id]
+    #     ctx = {
+    #         'default_model': 'work.order.clean',
+    #         'default_res_ids': self.ids,
+    #         'default_use_template': bool(template_id),
+    #         'default_template_id': template_id,
+    #         'default_composition_mode': 'comment',
+    #         'mark_so_as_sent': True,
+    #         'custom_layout': "mail.mail_notification_paynow",
+    #         'force_email': True,
+    #         'model_description': self._description,
+    #     }
+    #     action = {
+    #         'type': 'ir.actions.act_window',
+    #         'view_mode': 'form',
+    #         'res_model': 'mail.compose.message',
+    #         'views': [(False, 'form')],
+    #         'view_id': False,
+    #         'target': 'new',
+    #         'context': ctx,
+    #     }
+    #     if action:
+    #         if self.state == 'assign' and self.access_check == True:
+    #             self.write({'state': 'handled'})
+    #         else:
+    #             self.write({'state': 'confirm'})
+    #
+    #     return action
     def action_confirm_by_mail(self):
         ''' Opens a wizard to compose an email, with relevant mail template loaded by default '''
         if not self.employee_id:
             raise UserError("Debe indicar los operarios primero.")
         self.ensure_one()
+
+        # Generar el reporte como attachment
+        try:
+            # En Odoo 17, la sintaxis para generar reportes es así:
+            report_action = self.env.ref('onmi_reliex_reports.action_report_work_order_clean')
+            pdf_content, _ = self.env['ir.actions.report']._render_qweb_pdf(report_action, self.ids)
+
+            attachment = self.env['ir.attachment'].create({
+                'name': f'Reporte_{self.name.replace("/", "_")}.pdf',
+                'type': 'binary',
+                'datas': base64.b64encode(pdf_content),
+                'res_model': self._name,
+                'res_id': self.id,
+                'mimetype': 'application/pdf'
+            })
+            attachment_ids = [attachment.id]
+        except Exception as e:
+            # Si falla la generación del reporte, continuar sin adjunto
+            attachment_ids = []
+            print(f"Error generando reporte: {e}")
+
         template_id = self.env.ref('onmi_reliex_reports.onmi_mail_template_workorder_reports_confirm23').id
         lang = self.env.context.get('lang')
         template = self.env.ref('onmi_reliex_reports.onmi_mail_template_workorder_reports_confirm23')
         if template.lang:
             lang = template._render_lang(self.ids)[self.id]
+
         ctx = {
             'default_model': 'work.order.clean',
             'default_res_ids': self.ids,
@@ -441,7 +500,9 @@ class WorkOrdersClean(models.Model):
             'custom_layout': "mail.mail_notification_paynow",
             'force_email': True,
             'model_description': self._description,
+            'default_attachment_ids': [(6, 0, attachment_ids)] if attachment_ids else [],
         }
+
         action = {
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
@@ -451,6 +512,7 @@ class WorkOrdersClean(models.Model):
             'target': 'new',
             'context': ctx,
         }
+
         if action:
             if self.state == 'assign' and self.access_check == True:
                 self.write({'state': 'handled'})
