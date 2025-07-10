@@ -335,15 +335,102 @@
             <field name="auto_delete" eval="False"/>
         </record>
 
+<!--        <record id="onmi_mail_template_workorder_reports_confirm23" model="mail.template">-->
+<!--            <field name="name">Recordatorio de limpieza</field>-->
+<!--            <field name="model_id" ref="onmi_reliex_operations.model_work_order_clean"/>-->
+<!--            <field name="subject">DOCUMENTACIÓN DE TRABAJADORES Y VEHICULO PARA SU PROXIMA LIMPIEZA EN {{object.establishment_id.name or 'n/a' }}</field>-->
+<!--            <field name="send_reports" eval="True"/>-->
+<!--            <field name="email_from">{{ user.email_formatted }}</field>-->
+<!--            <field name="email_to">{{ object._get_attendee_emails_confirmed()}}</field>-->
+<!--            <field name="body_html" type="html">-->
+
+<!--                <div style="margin: 0px; padding: 0px;">-->
+<!--                    <p style="margin: 0px; padding: 0px; font-size: 13px;">-->
+<!--                        Estimado/a<t t-out="object.establishment_id.supervisor_name"/>,-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        Adjunto DNI de los técnicos que irán a realizar la limpieza e Higienización del Sistema de-->
+<!--                        Extracción de Humos de vuestras instalaciones.-->
+<!--                        <t-->
+<!--                                t-out="object.establishment_id.name"/>:-->
+<!--                        <t t-set="day_count" t-value="1"/>-->
+<!--                        <lu>-->
+<!--                            <t t-foreach="object.worksheet_ids" t-as="works">-->
+<!--                                <li>-->
+<!--                                    <t t-out="'Día ' + str(day_count) + ': '"/>-->
+<!--                                    <t t-out="works.start_date_tz.strftime('%d-%m-%Y %H:%M:%S')"/>-->
+<!--                                    <t t-set="day_count" t-value="day_count + 1"/>-->
+<!--                                </li>-->
+<!--                            </t>-->
+<!--                        </lu>-->
+<!--                        <p>-->
+<!--                            IMPORTANTE NECESITAMOS CONTESTACIÓN A ESTE CORREO CONFIRMANDO QUE TODO ES CORRECTO.-->
+<!--                        </p>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        ● El vehículo de empresa que llevaremos y su conductor son:-->
+<!--                        <br/>-->
+<!--                        <t t-if="object.user_id">-->
+<!--                            <t t-set="vehicle"-->
+<!--                               t-value="object.env['fleet.vehicle'].search([('driver_id', 'in', [object.user_id.partner_id.id])], limit=1)"/>-->
+<!--                            <t t-set="emp"-->
+<!--                               t-value="object.env['hr.employee'].search([('user_partner_id', 'in', [object.user_id.partner_id.id])], limit=1)"/>-->
+<!--                            -<t t-out="vehicle.model_id.name"/>[<t t-out="vehicle.license_plate"/>]. Contacto:-->
+<!--                            <t t-out="emp.name"/>-->
+<!--                            DNI:-->
+<!--                            <t t-out="emp.identification_id"/>-->
+<!--                            Tlf:-->
+<!--                            <t t-out="emp.work_phone"/>-->
+<!--                            <br/>-->
+<!--                        </t>-->
+<!--                        <br/>-->
+<!--                        ● La información de los operarios para este trabajo es:-->
+<!--                        <br/>-->
+<!--                        <t t-foreach="object.employee_id" t-as="emp">-->
+<!--                            Contacto <t t-out="emp.name"/>, DNI: <t t-out="emp.identification_id"/>, Tlf: <t t-out="emp.work_phone"/>-->
+<!--                            <br/>-->
+<!--                        </t>-->
+<!--                        <b>-->
+<!--                            <span style="color: red;">-IMPORTANTE, los restaurantes que estáis en centros comerciales o-->
+<!--                                en-->
+<!--                                edificios,-->
+<!--                                por favor, enviad a los centros comerciales/comunidad de vecinos los datos de los-->
+<!--                                técnicos e informar de que tenemos que subir a la cubierta del edificio para realizar-->
+<!--                                la limpieza de extractores.-->
+<!--                            </span>-->
+<!--                        </b>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        <b>-->
+<!--                            <span style="color: red;">Si necesitáis algún documento más decídmelo.</span>-->
+<!--                        </b>-->
+<!--                        <br/>-->
+<!--                        <br/>-->
+<!--                        <b>-->
+<!--                            <span style="color: red;">Recordad que necesitamos aproximadamente unas 7 h de trabajo.-->
+<!--                            </span>-->
+<!--                        </b>-->
+<!--                        <br/>-->
+<!--                        <img src="onmi_reliex_reports/static/img/reliex.jpg" alt="Reliex" style="width: 25%;"/>-->
+<!--                        <br/>-->
+<!--                        <img src="onmi_reliex_reports/static/img/bureau.jpg" alt="Bureau" style="width: 25%;"/>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </field>-->
+<!--&lt;!&ndash;            <field name="report_template" ref="action_report_work_order_clean"/>&ndash;&gt;-->
+<!--            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>-->
+<!--            <field name="lang">{{ object.partner_id.lang }}</field>-->
+<!--            <field name="auto_delete" eval="True"/>-->
+<!--        </record>-->
         <record id="onmi_mail_template_workorder_reports_confirm23" model="mail.template">
             <field name="name">Recordatorio de limpieza</field>
             <field name="model_id" ref="onmi_reliex_operations.model_work_order_clean"/>
-            <field name="subject">DOCUMENTACIÓN DE TRABAJADORES Y VEHICULO PARA SU PROXIMA LIMPIEZA EN {{object.establishment_id.name or 'n/a' }}</field>
-            <field name="send_reports" eval="True"/>
+            <field name="subject">DOCUMENTACIÓN DE TRABAJADORES Y VEHICULO PARA SU PROXIMA LIMPIEZA EN
+                {{object.establishment_id.name or 'n/a' }}
+            </field>
             <field name="email_from">{{ user.email_formatted }}</field>
             <field name="email_to">{{ object._get_attendee_emails_confirmed()}}</field>
             <field name="body_html" type="html">
-
                 <div style="margin: 0px; padding: 0px;">
                     <p style="margin: 0px; padding: 0px; font-size: 13px;">
                         Estimado/a<t t-out="object.establishment_id.supervisor_name"/>,
@@ -351,10 +438,9 @@
                         <br/>
                         Adjunto DNI de los técnicos que irán a realizar la limpieza e Higienización del Sistema de
                         Extracción de Humos de vuestras instalaciones.
-                        <t
-                                t-out="object.establishment_id.name"/>:
+                        <t t-out="object.establishment_id.name"/>:
                         <t t-set="day_count" t-value="1"/>
-                        <lu>
+                        <ul>
                             <t t-foreach="object.worksheet_ids" t-as="works">
                                 <li>
                                     <t t-out="'Día ' + str(day_count) + ': '"/>
@@ -362,7 +448,7 @@
                                     <t t-set="day_count" t-value="day_count + 1"/>
                                 </li>
                             </t>
-                        </lu>
+                        </ul>
                         <p>
                             IMPORTANTE NECESITAMOS CONTESTACIÓN A ESTE CORREO CONFIRMANDO QUE TODO ES CORRECTO.
                         </p>
@@ -387,7 +473,8 @@
                         ● La información de los operarios para este trabajo es:
                         <br/>
                         <t t-foreach="object.employee_id" t-as="emp">
-                            Contacto <t t-out="emp.name"/>, DNI: <t t-out="emp.identification_id"/>, Tlf: <t t-out="emp.work_phone"/>
+                            Contacto<t t-out="emp.name"/>, DNI:<t t-out="emp.identification_id"/>, Tlf:
+                            <t t-out="emp.work_phone"/>
                             <br/>
                         </t>
                         <b>
@@ -417,8 +504,6 @@
                     </p>
                 </div>
             </field>
-<!--            <field name="report_template" ref="action_report_work_order_clean"/>-->
-            <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
             <field name="lang">{{ object.partner_id.lang }}</field>
             <field name="auto_delete" eval="True"/>
         </record>
