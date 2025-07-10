@@ -417,7 +417,7 @@
                     </p>
                 </div>
             </field>
-            <field name="report_template" ref="onmi_reliex_operations.action_report_work_order_clean"/>
+            <field name="report_template" ref="action_report_work_order_clean"/>
             <field name="report_name">{{ (object.name or '').replace('/','_') }}</field>
             <field name="lang">{{ object.partner_id.lang }}</field>
             <field name="auto_delete" eval="True"/>
