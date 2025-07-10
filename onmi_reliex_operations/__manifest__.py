@@ -4,7 +4,7 @@
     'summary': 'New main menu Operations.',
     'description': 'New main menu Operations.',
     'category': 'ONMI developments',
-    'author': 'ONMI Engineering',
+    'author': 'ONMI Engineering.',
     'license': 'LGPL-3',
     'depends': ['base', 'mail', 'product', 'onmi_reliex_contacts', 'sale', 'sale_crm', 'purchase', 'hr', 'mail'],
     'data': [
