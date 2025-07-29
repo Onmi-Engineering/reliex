@@ -148,8 +148,8 @@
 
         <menuitem action="crm_lead_action_pipeline_cleaning" id="menu_crm_opportunities_cleaning"
                   name="My Pipeline Cleaning" parent="crm.crm_menu_sales" sequence="0"/>
-        <menuitem action="crm.crm_lead_action_pipeline" id="menu_crm_opportunities_cleaning2"
-                  name="Mi Pipeline Instalación" parent="crm.crm_menu_sales" sequence="0"/>
+<!--        <menuitem action="crm.crm_lead_action_pipeline" id="menu_crm_opportunities_cleaning2"-->
+<!--                  name="Mi Pipeline Instalación" parent="crm.crm_menu_sales" sequence="0"/>-->
 
 
     </data>
