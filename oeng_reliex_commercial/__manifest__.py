@@ -13,6 +13,8 @@
         'views/res_partner_views.xml',
         'views/duct_register_views.xml',
         'views/sale_order_views.xml',
+        'views/crm_lead_views.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'application': True,

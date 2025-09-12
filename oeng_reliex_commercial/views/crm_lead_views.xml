@@ -1,0 +1,119 @@
+<odoo>
+    <data>
+        <record id="crm_lead_extra_contact_tree_view" model="ir.ui.view">
+            <field name="name">crm.lead.extra.contact.tree</field>
+            <field name="model">crm.lead.extra.contact</field>
+            <field name="arch" type="xml">
+                <tree string="Contactos Adicionales" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="extra_contact_name" string="Nombre"/>
+                    <field name="extra_contact_function" string="Puesto de trabajo"/>
+                    <field name="extra_contact_mobile" string="Móvil" widget="phone"/>
+                    <field name="lead_id" string="Lead/Oportunidad" readonly="1"/>
+                    <field name="active" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_lead_extra_contact_form_view" model="ir.ui.view">
+            <field name="name">crm.lead.extra.contact.form</field>
+            <field name="model">crm.lead.extra.contact</field>
+            <field name="arch" type="xml">
+                <form string="Contacto Adicional">
+                    <sheet>
+                        <group>
+                            <field name="lead_id" required="1"/>
+                            <field name="extra_contact_name"/>
+                            <field name="extra_contact_function"/>
+                            <field name="extra_contact_mobile" widget="phone"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="crm_lead_extra_contact_search_view" model="ir.ui.view">
+            <field name="name">crm.lead.extra.contact.search</field>
+            <field name="model">crm.lead.extra.contact</field>
+            <field name="arch" type="xml">
+                <search string="Buscar Contactos">
+                    <field name="extra_contact_name"/>
+                    <field name="extra_contact_function"/>
+                    <field name="extra_contact_mobile"/>
+                    <field name="lead_id"/>
+
+                    <filter string="Activos" name="active" domain="[('active', '=', True)]"/>
+                    <filter string="Inactivos" name="active" domain="[('active', '=', False)]"/>
+                    <filter string="Con Móvil" name="with_mobile" domain="[('extra_contact_mobile', '!=', False)]"/>
+
+                    <group expand="0" string="Agrupar por">
+                        <filter string="Lead" name="group_by_lead" context="{'group_by': 'lead_id'}"/>
+                        <filter string="Puesto de trabajo" name="group_by_function" context="{'group_by': 'extra_contact_function'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_crm_lead_extra_contact_clean" model="ir.actions.act_window">
+            <field name="name">Contactos Adicionales</field>
+            <field name="res_model">crm.lead.extra.contact</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="crm_lead_extra_contact_search_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No hay contactos adicionales creados
+                </p>
+                <p>
+                    Haz clic en "Crear" para agregar el primer contacto adicional.
+                </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_crm_lead_extra_contact_main"
+            name="Contactos Adicionales"
+            parent="crm.crm_menu_sales"
+            action="action_crm_lead_extra_contact_clean"
+            sequence="15"
+            groups="sales_team.group_sale_salesman"/>
+
+<!--        <menuitem-->
+<!--            id="menu_crm_lead_extra_contact_configuration"-->
+<!--            name="Contactos Adicionales 2"-->
+<!--            parent="crm.crm_menu_config"-->
+<!--            action="action_crm_lead_extra_contact_clean"-->
+<!--            sequence="10"-->
+<!--            groups="sales_team.group_sale_manager"/>-->
+
+        <record id="crm_lead_view_form_extra_contacts" model="ir.ui.view">
+            <field name="name">crm.lead.form.extra.contacts</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='lead']//group[@class='mt48']//div[@class='o_row o_row_readonly']" position="after">
+                    <separator string="Contactos Adicionales" colspan="2"/>
+                    <field name="extra_contact_ids" nolabel="1" colspan="2">
+                        <tree string="Contactos Adicionales"
+                              editable="bottom"
+                              create_text="Agregar Contacto"
+                              limit="10">
+                            <field name="sequence" widget="handle"/>
+                            <field name="extra_contact_name" string="Nombre"/>
+                            <field name="extra_contact_function" string="Puesto de trabajo"/>
+                            <field name="extra_contact_mobile" string="Móvil" widget="phone"/>
+                        </tree>
+                    </field>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_extra_contacts"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-users">
+                        <field name="extra_contact_count" widget="statinfo" string="Contactos adicionales"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
