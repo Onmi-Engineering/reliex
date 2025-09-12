@@ -79,6 +79,7 @@
                                                 <field name="material"/>
                                                 <field name="plenum"/>
                                                 <field name="cooker_dimmensions"/>
+                                                <field name="faces" widget="selection_badge"/>
                                                 <field name="soiling_degree" widget="priority"/>
                                             </group>
                                             <group>

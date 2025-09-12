@@ -14,6 +14,11 @@ class CookerHood(models.Model):
         ('galvan', 'Galva'),
         ('inox_galvan0', 'Outdoor Inox / Indoor Galva')], string='Material')
     cooker_dimmensions = fields.Char('Dimmensions')
+    faces = fields.Selection([
+        ('1','1'),
+        ('2','2'),
+        ('3','3'),
+        ('4','4')], string="Caras abiertas")
     plenum = fields.Boolean('Take plenum')
     fire_protection = fields.Boolean('Fire protection')
     waterproof_luminaire = fields.Boolean('Waterproof luminaire')
