@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "midla_reliex_module",
+    'name': "midla_reliex_module.",
 
     'summary': "Module with improvements to Operations.",
 
