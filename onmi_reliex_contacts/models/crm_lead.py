@@ -96,20 +96,6 @@ class CrmLead(models.Model):
         '''
                 LIMPIEZA: Genera OTL por establecimiento y PTL por instalación y días de limpieza.
         '''
-        # if self.wo_type == 'cleaning':
-        #     wo_clean = self.env['work.order.clean'].sudo().create({
-        #         'name': _('New'),
-        #         'partner_id': self.partner_id.parent_id.id,
-        #         'establishment_id': self.partner_id.id,
-        #         'related_plant_ids': self.plant_ids.ids,
-        #         'lead_id': self.id,
-        #         'user_id': self.user_id.id,
-        #         'complete_system': self.order_ids.filtered(lambda o: o.state == 'sale')[0].complete_system,
-        #         'cooker_hood': self.order_ids.filtered(lambda o: o.state == 'sale')[0].cooker_hood,
-        #         'duct': self.order_ids.filtered(lambda o: o.state == 'sale')[0].duct,
-        #         'extractor': self.order_ids.filtered(lambda o: o.state == 'sale')[0].extractor,
-        #         'filtronic': self.order_ids.filtered(lambda o: o.state == 'sale')[0].filtronic,
-        #     })
         if self.wo_type == 'cleaning':
             # Crear un diccionario con los valores base
             wo_clean_vals = {
@@ -135,37 +121,7 @@ class CrmLead(models.Model):
 
             # Generar líneas de recursos asociadas a wo_clean = líneas de presupuesto.
             lines = self.env['materials']
-            '''
-            Se agrega esto para poder transportar las notas y secciones del presupuesto a OTL y partes abajo
-            esta el codigo original comentado *1   
-            '''
-            # for sale_line in self.order_ids.filtered(lambda so: so.state == 'sale').order_line:
-            #     if sale_line.display_type in ('line_section', 'line_note'):
-            #         # Agregar las líneas de sección y nota a la orden de trabajo de limpieza
-            #         wo_clean.sudo().write({
-            #             'line_ids': [(0, 0, {
-            #                 'name': sale_line.name,  # Usar el nombre para estas líneas
-            #                 'display_type': sale_line.display_type,
-            #                 'wo_clean_id': wo_clean.id,
-            #                 'sale_order_line_id': sale_line.id
-            #             })]
-            #         })
-            #     else:
-            #         # Manejar líneas de productos normales
-            #         wo_clean.sudo().write({
-            #             'line_ids': [(0, 0, {
-            #                 'product_id': sale_line.product_id.id,
-            #                 'quantity': sale_line.product_uom_qty,
-            #                 'wo_clean_id': wo_clean.id,
-            #                 'sale_order_line_id': sale_line.id
-            #             })]
-            #         })
-            #         lines += self.env['materials'].sudo().create({
-            #             'product_id': sale_line.product_id.id,
-            #             'quantity': sale_line.product_uom_qty,
-            #             'sale_order_line_id': sale_line.id,
-            #         })
-            # CODIGO ORIGINAL *1
+
             for sale_line in self.order_ids.filtered(lambda so: so.state == 'sale').order_line.filtered(
                     lambda ol: ol.display_type != 'line_section' and ol.display_type != 'line_note'):
                 wo_clean.sudo().write({
@@ -240,17 +196,6 @@ class CrmLead(models.Model):
                         purchase_lines -= purchase_line_product
                     for rec in range(plant.days_plant):
                         if first_part == False:
-                            # worksheet = self.env['worksheet.part'].sudo().create({
-                            #     'name': _('New'),
-                            #     'partner_id': self.partner_id.parent_id.id,
-                            #     'establishment_id': self.partner_id.id,
-                            #     'part_type': 'plant',
-                            #     'start_date': day_init + timedelta(days=rec),
-                            #     'end_date': day_init + timedelta(days=rec) + timedelta(hours=1),
-                            #     'allday': True,
-                            #     'user_id': self.user_id.id,
-                            #     'first_part': True,
-                            # })
                             worksheet = self.env['worksheet.part'].sudo().create({
                                 'name': _('New'),
                                 'partner_id': self.partner_id.parent_id.id,
@@ -262,17 +207,6 @@ class CrmLead(models.Model):
                             })
                             first_part = True
                         else:
-                            # worksheet = self.env['worksheet.part'].sudo().create({
-                            #     'name': _('New'),
-                            #     'partner_id': self.partner_id.parent_id.id,
-                            #     'establishment_id': self.partner_id.id,
-                            #     'workorder_plant_id': wo_plant.id,
-                            #     'part_type': 'plant',
-                            #     'start_date': day_init + timedelta(days=rec),
-                            #     'end_date': day_init + timedelta(days=rec) + timedelta(hours=1),
-                            #     'allday': True,
-                            #     'user_id': self.user_id.id,
-                            # })
                             worksheet = self.env['worksheet.part'].sudo().create({
                                 'name': _('New'),
                                 'partner_id': self.partner_id.parent_id.id,
@@ -292,7 +226,6 @@ class CrmLead(models.Model):
                 workorders.sudo().write({'worksheet_ids': worksheets})
                 worksheets.sudo().write({'workorder_ids': workorders})
 
-            # self.stage_id = self.env['crm.stage'].search([('is_won', '=', True), ('type', '=', 'new_plant')])
             self.stage_id = self.env['crm.stage'].search([('is_won', '=', True), ('type', '=', 'cleaning')])
         return res
 
