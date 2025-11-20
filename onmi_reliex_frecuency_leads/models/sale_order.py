@@ -32,8 +32,6 @@ class SaleOrder(models.Model):
 
         self.write(self._prepare_confirmation_values())
 
-        # Context key 'default_name' is sometimes propagated up to here.
-        # We don't need it and it creates issues in the creation of linked records.
         context = self._context.copy()
         context.pop('default_name', None)
         context.pop('default_user_id', None)
@@ -45,7 +43,7 @@ class SaleOrder(models.Model):
         if self.env.context.get('send_email'):
             self._send_order_confirmation_mail()
 
-        # ========== GENERACIÓN DE WORK.ORDER.CLEAN Y WORKSHEET.PART ==========
+        # ========== GENERACION DE OTL Y PARTES ==========
         for order in self:
             # Solo generar si es tipo limpieza
             if hasattr(order, 'opportunity_wo_type') and order.opportunity_wo_type == 'cleaning':
@@ -93,7 +91,7 @@ class SaleOrder(models.Model):
 
                 wo_clean = self.env['work.order.clean'].sudo().create(wo_clean_vals)
 
-                # Generar líneas de materiales desde las líneas del pedido
+                # Generar lìneas de materiales desde las líneas del pedido
                 lines = self.env['materials']
 
                 for sale_line in order.order_line.filtered(
@@ -141,7 +139,4 @@ class SaleOrder(models.Model):
                                     'sale_order_line_id': line.sale_order_line_id.id,
                                     'worksheet_id': part.id
                                 })]})
-
-        # ========== FIN GENERACIÓN ==========
-
         return True
