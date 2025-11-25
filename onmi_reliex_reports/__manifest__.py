@@ -23,6 +23,7 @@
         'views/sale_order_views.xml',
         'views/worksheet_views.xml',
         'views/work_order_clean.xml',
+        'views/account_move_views.xml',
     ],
     'installable': True,
     'application': True,

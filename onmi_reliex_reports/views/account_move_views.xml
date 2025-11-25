@@ -1,22 +1,8 @@
 <?xml version="1.0"?>
 <odoo>
-    <template id="report_saleorder_document_inherit" name="Report Saleorder Document Inherit" inherit_id="sale.report_saleorder_document">
-        <xpath expr="//div[hasclass('page')]//h2[hasclass('mt-4')]" position="inside">
-            <div>
-                <span t-out="doc.opportunity_id.name"></span>
-            </div>
-        </xpath>
-        <xpath expr="//span[@t-field='doc.user_id']" position="replace">
-            <span class="m-0" t-field="doc.partner_id.user_id"/>
-        </xpath>
-        <xpath expr="//t[@t-set='information_block']" position="inside">
-            <t t-if="doc.establishment_id">
-                Establecimiento:
-                <span t-field="doc.establishment_id"/>
-            </t>
-        </xpath>
-
-        <xpath expr="//span[@name='order_note']" position="after">
+    <template id="report_invoice_document_inherit" name="Report Invoice Document Inherit"
+              inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@name='comment']" position="after">
             <div style="margin-top: 20px; text-align: justify; font-size: 10px; color: #555;">
                 <p> En caso de que la Empresa no pueda realizar los servicios de limpieza industrial por causas ajenas a
                     su voluntad y no imputables a la misma —incluyendo, de forma enunciativa, falta de acceso a las
