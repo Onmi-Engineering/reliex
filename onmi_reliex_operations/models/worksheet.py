@@ -219,7 +219,7 @@ class Worksheet(models.Model):
                     if checked and rec.workorder_id.state == 'to_finish':
                         rec.workorder_id.action_finished()
                         message = _(
-                            "Se ha creado una nueva presupuesto por frecuencia")
+                            "Se ha creado un nuevi presupuesto por frecuencia")
                         return {
                             'type': 'ir.actions.client',
                             'tag': 'display_notification',
