@@ -133,7 +133,8 @@
                                 <field name="description_date" nolabel="1" colspan="2"/>
                                 <field name="end_date" readonly="1"/>
                                 <field invisible="1" name="pending_debts"/>
-                                <field name="lead_id" readonly="True" string="Oportunidad de origen"/>
+                                <field name="lead_id" readonly="True" string="Oportunidad de origen"
+                                       invisible="not lead_id"/>
                             </group>
                         </group>
                         <group>

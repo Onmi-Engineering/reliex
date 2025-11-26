@@ -1,5 +1,4 @@
 from odoo import fields, models, api, _
-from datetime import datetime, timedelta
 from odoo.exceptions import UserError
 
 
@@ -8,6 +7,7 @@ class WorkOderClean(models.Model):
 
     frecuency_oport_related = fields.Many2one('frecuency.lead')
     wo_created_by_incident = fields.Boolean('Created by incident')
+    sale_order_related = fields.Many2one('sale.order')
 
     def action_finished(self):
         super(WorkOderClean, self).action_finished()
