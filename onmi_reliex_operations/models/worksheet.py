@@ -219,12 +219,12 @@ class Worksheet(models.Model):
                     if checked and rec.workorder_id.state == 'to_finish':
                         rec.workorder_id.action_finished()
                         message = _(
-                            "Se ha creado una nueva oportunidad por frecuencia")
+                            "Se ha creado una nueva presupuesto por frecuencia")
                         return {
                             'type': 'ir.actions.client',
                             'tag': 'display_notification',
                             'params': {
-                                'title': _('Oportunidad Creada'),
+                                'title': _('Presupuesto Creado'),
                                 'message': message,
                                 'sticky': True,
                                 'type': 'success',
