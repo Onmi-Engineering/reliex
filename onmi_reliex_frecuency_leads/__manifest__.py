@@ -14,6 +14,7 @@
         'views/incident_views.xml',
         'views/crm_lead_views.xml',
         'views/work_order_clean_views.xml',
+        'views/sale_order_views.xml',
         'wizards/quotation_selection_wizard_views.xml',
     ],
     'installable': True,

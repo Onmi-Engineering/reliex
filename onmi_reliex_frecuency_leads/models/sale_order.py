@@ -6,6 +6,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     wo_clean_origin = fields.Many2one('work.order.clean')
+    wo_clean_created = fields.Many2one('work.order.clean')
 
     def action_confirm(self):
         """ Confirm the given quotation(s) and set their confirmation date.
@@ -77,6 +78,7 @@ class SaleOrder(models.Model):
                 # Crear el work.order.clean
                 wo_clean_vals = {
                     'name': _('New'),
+                    'sale_order_related': order.id,
                     'partner_id': establishment_id.parent_id.id,  # Cliente principal
                     'establishment_id': establishment_id.id,  # Establecimiento desde OTL origen
                     'related_plant_ids': [(6, 0, plant_ids.ids)] if plant_ids else [],  # Instalaciones desde OTL origen
@@ -90,6 +92,7 @@ class SaleOrder(models.Model):
                 }
 
                 wo_clean = self.env['work.order.clean'].sudo().create(wo_clean_vals)
+                order.wo_clean_created = wo_clean.id
 
                 # Generar lìneas de materiales desde las líneas del pedido
                 lines = self.env['materials']
@@ -139,4 +142,28 @@ class SaleOrder(models.Model):
                                     'sale_order_line_id': line.sale_order_line_id.id,
                                     'worksheet_id': part.id
                                 })]})
-        return True
+
+        # return True
+            # Mensaje para notificación
+            message = _(
+                "Se ha creado una nueva OTL: %s para el cliente %s") % (
+                          wo_clean.name,
+                          wo_clean.partner_id.name
+                      )
+
+            notification = {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': _('OTL CREADA'),
+                    'message': message,
+                    'sticky': True,
+                    'type': 'success',
+                    'next': {'type': 'ir.actions.act_window_close'},
+                    'messageIsHtml': True
+                }
+            }
+
+        # Retornar notificación si existe
+        if notification:
+            return notification

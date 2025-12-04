@@ -8,7 +8,9 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='lead_id']" position="after">
                     <field name="frecuency_oport_related" readonly="True" string="Oportunidad de frecuencia relacionada"
-                           invisible="frecuency_oport_related == False"/>
+                           invisible="not frecuency_oport_related"/>
+                    <field name="sale_order_related" readonly="True" string="Presupuesto por frecuencia relacionado"
+                           invisible="not sale_order_related"/>
                 </xpath>
             </field>
         </record>
