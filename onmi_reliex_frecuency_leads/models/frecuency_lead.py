@@ -1,4 +1,5 @@
 from odoo import fields, models, api, _
+from odoo.exceptions import UserError
 from datetime import datetime, timedelta
 
 
@@ -36,111 +37,35 @@ class FrecuencyLead(models.Model):
                     rec.full_cleanning_days = sum(plants.mapped('days_plant'))
 
     # def button_create_lead_related(self):
-    #     '''
-    #         MOD 07/01--> Genera una nueva oportunidad en estado "Presupuesto Frecuencia" para poder empezar a realizar
-    #         el trabajo de este presupuesto, o crea directamente una orden de venta si el valor esperado
-    #         es menor a 500.
-    #     '''
     #     for rec in self:
     #         if not rec.lead_id:
     #             last_workorder = rec.previous_workorder_id
     #             related_lead = last_workorder.lead_id
     #
-    #             # Verificar el expected_revenue del lead relacionado
-    #             if related_lead.expected_revenue and related_lead.expected_revenue >= 500:
-    #                 # Crear nuevo lead como antes
-    #                 stage_frecuency = self.env['crm.stage'].search([('frecuency', '=', True)])
-    #                 info = _('Last Workorder: ') + last_workorder.name + _('\nPlants that had been cleaned:\n')
-    #                 info_plants = ''
-    #                 for p in last_workorder.related_plant_ids:
-    #                     info_plants += '    - ' + p.name + '\n'
-    #                 info += info_plants
-    #
-    #                 lead_data = {
-    #                     'name': _('Lead created by Frecuency - ') + rec.establishment_id.name,
-    #                     'partner_id': rec.establishment_id.id,
-    #                     'plant_ids': last_workorder.related_plant_ids.ids,
-    #                     'type': 'opportunity',
-    #                     'stage_id': stage_frecuency.id,
-    #                     'wo_type': 'cleaning',
-    #                     'description': info,
-    #                     'created_by_frecuency': True,
-    #                 }
-    #                 new_lead = self.env['crm.lead'].create(lead_data)
-    #                 rec.write({
-    #                     'lead_id': new_lead.id,
-    #                     'status': 'created',
-    #                 })
-    #             else:
-    #                 # Crear directamente una orden de venta
-    #                 sale_order_data = {
-    #                     'partner_id': rec.establishment_id.id,
-    #                     'opportunity_id': related_lead.id,
-    #                     'company_id': self.env.company.id,
-    #                 }
-    #                 new_sale = self.env['sale.order'].create(sale_order_data)
-    #                 rec.write({
-    #                     'sale_id': new_sale.id,
-    #                     'status': 'created',
-    #                 })
-    #                 # Mostrar mensaje al usuario
-    #                 message = _(
-    #                     "Se ha creado un presupuesto porque el ingreso esperado de la oportunidad es menor a 500 euros")
-    #                 return {
-    #                     'type': 'ir.actions.client',
-    #                     'tag': 'display_notification',
-    #                     'params': {
-    #                         'title': _('Presupuesto Creado'),
-    #                         'message': message,
-    #                         'sticky': True,
-    #                         'type': 'success',
-    #                         'next': {'type': 'ir.actions.act_window_close'},
-    #                     }
-    #                 }
-
-    def button_create_lead_related(self):
-        '''
-            MOD 07/01--> Genera una nueva oportunidad en estado "Presupuesto Frecuencia" para poder empezar a realizar
-            el trabajo de este presupuesto, o crea directamente una orden de venta si el valor esperado
-            es menor a 500.
-            MOD 21/04--> Se quita la funcionalidad de que cree presupuesto (después de 1 mes de prueba borrar la funcion
-            comentada arriba)
-        '''
-        for rec in self:
-            if not rec.lead_id:
-                last_workorder = rec.previous_workorder_id
-
-                # Crear nuevo lead
-                stage_frecuency = self.env['crm.stage'].search([('frecuency', '=', True)])
-                info = _('Last Workorder: ') + last_workorder.name + _('\nPlants that had been cleaned:\n')
-                info_plants = ''
-                for p in last_workorder.related_plant_ids:
-                    info_plants += '    - ' + p.name + '\n'
-                info += info_plants
-
-                lead_data = {
-                    'name': _('Lead created by Frecuency - ') + rec.establishment_id.name,
-                    'partner_id': rec.establishment_id.id,
-                    'plant_ids': last_workorder.related_plant_ids.ids,
-                    'type': 'opportunity',
-                    'stage_id': stage_frecuency.id,
-                    'wo_type': 'cleaning',
-                    'description': info,
-                    'created_by_frecuency': True,
-                }
-                new_lead = self.env['crm.lead'].create(lead_data)
-                rec.write({
-                    'lead_id': new_lead.id,
-                    'status': 'created',
-                })
-
-    # def recalculate_dates(self):
-    #     for rec in self:
-    #         if rec.previous_workorder_id:
+    #             sale_order_data = {
+    #                 'partner_id': rec.establishment_id.id,
+    #                 'opportunity_id': related_lead.id,
+    #                 'company_id': self.env.company.id,
+    #             }
+    #             new_sale = self.env['sale.order'].create(sale_order_data)
     #             rec.write({
-    #                 'last_workorder_date': rec.previous_workorder_id.start_date,
-    #                 'calculated_date': rec.previous_workorder_id.start_date.date() + timedelta(days=rec.establishment_id.delay),
+    #                 'sale_id': new_sale.id,
+    #                 'status': 'created',
     #             })
+    #             # Mostrar mensaje al usuario
+    #             message = _(
+    #                 "Se ha creado un presupuesto por frecuencia")
+    #             return {
+    #                 'type': 'ir.actions.client',
+    #                 'tag': 'display_notification',
+    #                 'params': {
+    #                     'title': _('Presupuesto Creado'),
+    #                     'message': message,
+    #                     'sticky': True,
+    #                     'type': 'success',
+    #                     'next': {'type': 'ir.actions.act_window_close'},
+    #                 }
+    #                 }
 
     def recalculate_dates(self):
         for record in self:
@@ -208,3 +133,114 @@ class FrecuencyLead(models.Model):
         Acción planificada para revisar diariamente si hay leads de frecuencia que deben marcarse como expirados.
         """
         return self.check_expired_dates()
+
+
+    def button_create_lead_related(self):
+        for rec in self:
+            if not rec.lead_id:
+                last_workorder = rec.previous_workorder_id
+                related_lead = last_workorder.lead_id
+
+                # Obtener la lista de precios por defecto o la del cliente
+                pricelist = self.establishment_id.property_product_pricelist or self.env['product.pricelist'].search([],
+                                                                                                                     limit=1)
+                client_partner = self.establishment_id.parent_id
+
+                sale_order_vals = {
+                    'partner_id': client_partner.id,  # Cliente principal
+                    'partner_shipping_id': self.establishment_id.id,  # Establecimiento como dirección de entrega
+                    'partner_invoice_id': client_partner.id,
+                    'complete_system': True,
+                    'cooker_hood': last_workorder.cooker_hood,
+                    'duct': last_workorder.duct,
+                    'opportunity_wo_type': 'cleaning',
+                    'wo_clean_origin': last_workorder.id,
+                    'extractor': last_workorder.extractor,
+                    'filtronic': last_workorder.filtronic,
+                    'date_order': fields.Datetime.now(),
+                    'pricelist_id': pricelist.id,
+                    'origin': last_workorder.name,  # Referencia a la orden de trabajo
+                    'user_id': client_partner.user_id.id if client_partner.user_id else False,
+                    # Usuario desde el cliente
+                    'note': _('Presupuesto generado automáticamente desde OTL: %s\n'
+                              'Fecha del servicio: %s\n'
+                              'Sistema completo realizado.') % (last_workorder.name, last_workorder.start_date.date()),
+                }
+
+                new_sale_order = self.env['sale.order'].create(sale_order_vals)
+
+                # Buscar el producto con is_system_complete = True
+                system_complete_product = self.env['product.product'].search([
+                    ('is_system_complete', '=', True)
+                ], limit=1)
+
+                if system_complete_product:
+                    # Crear la línea del pedido con el producto de sistema completo
+                    line_vals = {
+                        'order_id': new_sale_order.id,
+                        'product_id': system_complete_product.id,
+                        'name': system_complete_product.display_name,
+                        'product_uom_qty': 1,
+                        'product_uom': system_complete_product.uom_id.id,
+                        'price_unit': system_complete_product.list_price,
+                        'tax_id': [(6, 0, system_complete_product.taxes_id.ids)],
+                    }
+
+                    # Crear la línea del pedido
+                    self.env['sale.order.line'].create(line_vals)
+
+                    # Agregar nota de servicio si no existe ya
+                    note_text = ("[SERVICIO] Aclaraciones del servicio:\n"
+                                 "-Equipo humano formado por dos técnicos, con amplia experiencia y formación.\n"
+                                 "-Equipos mecánicos adaptados para este tipo instalaciones.\n"
+                                 "-Limpieza de conductos realizada con cepillado neumático, siempre que sea la opción más óptima.*\n"
+                                 "-Espuma activa desengrasante.\n"
+                                 "-Plastificado de todas las zonas susceptibles a mancharse.\n"
+                                 "-Certificado administrativo de la limpieza.\n"
+                                 "-Subsanación in situ de cualquier deficiencia relacionada con el Sistema de extracción de humos (siempre que sea posible) y, en caso de no ser posible, valoración de la misma para su posterior reparación.\n"
+                                 "-Queda excluida la limpieza de los filtros de la/s campana/s.\n"
+                                 "-Verificación post venta de la calidad del servicio.")
+
+                    # Verificar si ya existe una nota con este contenido
+                    existing_note = new_sale_order.order_line.filtered(
+                        lambda l: l.display_type == 'line_note' and '[SERVICIO] Aclaraciones del servicio:' in (
+                                    l.name or '')
+                    )
+
+                    # Si no existe, crear la línea de nota
+                    if not existing_note:
+                        note_vals = {
+                            'order_id': new_sale_order.id,
+                            'display_type': 'line_note',
+                            'name': note_text,
+                            'sequence': 9999,  # Para que aparezca al final
+                        }
+                        self.env['sale.order.line'].create(note_vals)
+
+                else:
+                    raise UserError(_('No se encontró ningún producto con "Sistema Completo" activado. '
+                                      'Por favor, configure un producto con el campo is_system_complete = True.'))
+
+                # Mensaje para notificación
+                message = _(
+                    "Se ha creado un nuevo presupuesto: %s para el cliente %s") % (
+                              new_sale_order.name,
+                              new_sale_order.partner_id.name
+                          )
+
+                notification = {
+                    'type': 'ir.actions.client',
+                    'tag': 'display_notification',
+                    'params': {
+                        'title': _('PRESUPUESTO CREADO'),
+                        'message': message,
+                        'sticky': True,
+                        'type': 'success',
+                        'next': {'type': 'ir.actions.act_window_close'},
+                        'messageIsHtml': True
+                    }
+                }
+
+                # Retornar notificación si existe
+            if notification:
+                return notification

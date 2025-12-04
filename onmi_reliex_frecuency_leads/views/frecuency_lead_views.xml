@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <form string="Frecuency leads">
                     <header>
-                        <button name="button_create_lead_related" string="Create Lead"
+                        <button name="button_create_lead_related" string="Create Sale Order"
                                 invisible="status == 'created' or lead_id != False or sale_id != False"
                                 type="object"/>
                         <button class="oe_link" name="recalculate_dates" string="Recalculate WOC dates"
