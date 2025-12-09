@@ -50,6 +50,17 @@ class ResPartner(models.Model):
 
     frecuency_active = fields.Boolean(string='Quotations by frecuency active')
     delay = fields.Integer(string='Frecuency delay (days)', default=365)
+    hour_open_establishment = fields.Float(string='Hora Apertura')
+    hour_close_establishment = fields.Float(string='Hora Cierre')
+    day_close = fields.Selection([
+        ('lun', 'Lunes'),
+        ('mar', 'Martes'),
+        ('mie', 'Miércoles'),
+        ('jue', 'Jueves'),
+        ('vier', 'Viernes'),
+        ('sab', 'Sábado'),
+        ('dom', 'Domingo')
+    ])
 
     # region DATOS TÉCNICOS
 
@@ -91,10 +102,6 @@ class ResPartner(models.Model):
     access_vehicle = fields.Boolean(string='Acceso vehiculo', help="Autorización municipal para acceso vehículo")
     alert_establishment = fields.Html(string='Alerta establecimiento',
                                       help='Este alerta será visible solo si la Orden de trabajo esta en estado "Para planificar')
-
-    alert_establishment = fields.Html(string='Alerta establecimiento',
-                                      help='Este alerta será visible solo si la Orden de trabajo esta en estado "Para planificar')
-
     # endregion
 
     # CORRECCION ERROR EN MAIN CON ESTA FUNCION
