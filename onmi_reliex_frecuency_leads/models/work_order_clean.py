@@ -30,8 +30,10 @@ class WorkOderClean(models.Model):
                 'name': _('PENDING FRECUENCY LEAD - ') + self.establishment_id.name,
                 'establishment_id': self.establishment_id.id,
                 'previous_workorder_id': self.id,
-                'calculated_date': self.start_date.date() + timedelta(days=self.establishment_id.delay),
+                # 'calculated_date': self.start_date.date() + timedelta(days=self.establishment_id.delay),
+                'calculated_date': self.start_date.date() + timedelta(days=self.worksheet_ids.plant_id.delay),
                 'last_workorder_date': self.start_date.date(),
+                'delay': self.worksheet_ids.plant_id.delay,
             }
             new_frecuency_lead = self.env['frecuency.lead'].create(frecuency_lead_vals)
 
@@ -56,84 +58,84 @@ class WorkOderClean(models.Model):
                 }
             }
 
-        # Si complete_system es False y fue creado por incidente, verificar si expected_revenue <500
-        elif not self.complete_system and self.wo_created_by_incident and self.lead_id and self.lead_id.expected_revenue < 500:
-            # Buscar etapa de incidente
-            stage_incident = self.env['crm.stage'].search([('incident', '=', True)])
-            client_id = self.establishment_id.parent_id.parent_id
-
-            # Crear descripción para el incidente
-            description = 'Lead created by OTL with expected revenue < 500 - OTL Origen ' + str(self.name or '')
-
-            # Datos para crear la oportunidad
-            lead_data = {
-                'name': _('Lead created by OTL with expected revenue < 500'),
-                'partner_id': self.establishment_id.parent_id.id,
-                'plant_ids': [(4, self.worksheet_ids.plant_id.id)],
-                'type': 'opportunity',
-                'stage_id': stage_incident.id,
-                'wo_type': 'cleaning',
-                'user_id': client_id.user_id.id if client_id and client_id.user_id else False,
-                'description': description,
-            }
-
-            # Crear la oportunidad
-            new_lead = self.env['crm.lead'].create(lead_data)
-
-            # Mensaje para notificación
-            message = _(
-                "Se ha creado una nueva oportunidad por incidente: %s") % new_lead.name
-
-            notification = {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': _('OPORTUNIDAD CREADA'),
-                    'message': message,
-                    'sticky': True,
-                    'type': 'success',
-                    'next': {'type': 'ir.actions.act_window_close'},
-                    'messageIsHtml': True
-                }
-            }
-        # Si complete_system es False y fue creado por incidente, verificar si expected_revenue >=500
-        elif not self.complete_system and self.wo_created_by_incident and self.lead_id and self.lead_id.expected_revenue >= 500:
-            client_id = self.establishment_id.parent_id.parent_id
-
-            # Crear descripción para el incidente
-            description = 'Lead created by OTL with expected revenue > 500 - OTL Origen ' + str(self.name or '')
-
-            # Datos para crear la oportunidad
-            lead_data = {
-                'name': _('Lead created by OTL with expected revenue > 500'),
-                'partner_id': self.establishment_id.parent_id.id,
-                'plant_ids': [(4, self.worksheet_ids.plant_id.id)],
-                'type': 'opportunity',
-                # 'stage_id': stage_incident.id,
-                'wo_type': 'cleaning',
-                'user_id': client_id.user_id.id if client_id and client_id.user_id else False,
-                'description': description,
-            }
-
-            # Crear la oportunidad
-            new_lead = self.env['crm.lead'].create(lead_data)
-
-            # Mensaje para notificación
-            message = _(
-                "Se ha creado una nueva oportunidad por incidente: %s") % new_lead.name
-
-            notification = {
-                'type': 'ir.actions.client',
-                'tag': 'display_notification',
-                'params': {
-                    'title': _('OPORTUNIDAD CREADA'),
-                    'message': message,
-                    'sticky': True,
-                    'type': 'success',
-                    'next': {'type': 'ir.actions.act_window_close'},
-                    'messageIsHtml': True
-                }
-            }
+        # # Si complete_system es False y fue creado por incidente, verificar si expected_revenue <500
+        # elif not self.complete_system and self.wo_created_by_incident and self.lead_id and self.lead_id.expected_revenue < 500:
+        #     # Buscar etapa de incidente
+        #     stage_incident = self.env['crm.stage'].search([('incident', '=', True)])
+        #     client_id = self.establishment_id.parent_id.parent_id
+        #
+        #     # Crear descripción para el incidente
+        #     description = 'Lead created by OTL with expected revenue < 500 - OTL Origen ' + str(self.name or '')
+        #
+        #     # Datos para crear la oportunidad
+        #     lead_data = {
+        #         'name': _('Lead created by OTL with expected revenue < 500'),
+        #         'partner_id': self.establishment_id.parent_id.id,
+        #         'plant_ids': [(4, self.worksheet_ids.plant_id.id)],
+        #         'type': 'opportunity',
+        #         'stage_id': stage_incident.id,
+        #         'wo_type': 'cleaning',
+        #         'user_id': client_id.user_id.id if client_id and client_id.user_id else False,
+        #         'description': description,
+        #     }
+        #
+        #     # Crear la oportunidad
+        #     new_lead = self.env['crm.lead'].create(lead_data)
+        #
+        #     # Mensaje para notificación
+        #     message = _(
+        #         "Se ha creado una nueva oportunidad por incidente: %s") % new_lead.name
+        #
+        #     notification = {
+        #         'type': 'ir.actions.client',
+        #         'tag': 'display_notification',
+        #         'params': {
+        #             'title': _('OPORTUNIDAD CREADA'),
+        #             'message': message,
+        #             'sticky': True,
+        #             'type': 'success',
+        #             'next': {'type': 'ir.actions.act_window_close'},
+        #             'messageIsHtml': True
+        #         }
+        #     }
+        # # Si complete_system es False y fue creado por incidente, verificar si expected_revenue >=500
+        # elif not self.complete_system and self.wo_created_by_incident and self.lead_id and self.lead_id.expected_revenue >= 500:
+        #     client_id = self.establishment_id.parent_id.parent_id
+        #
+        #     # Crear descripción para el incidente
+        #     description = 'Lead created by OTL with expected revenue > 500 - OTL Origen ' + str(self.name or '')
+        #
+        #     # Datos para crear la oportunidad
+        #     lead_data = {
+        #         'name': _('Lead created by OTL with expected revenue > 500'),
+        #         'partner_id': self.establishment_id.parent_id.id,
+        #         'plant_ids': [(4, self.worksheet_ids.plant_id.id)],
+        #         'type': 'opportunity',
+        #         # 'stage_id': stage_incident.id,
+        #         'wo_type': 'cleaning',
+        #         'user_id': client_id.user_id.id if client_id and client_id.user_id else False,
+        #         'description': description,
+        #     }
+        #
+        #     # Crear la oportunidad
+        #     new_lead = self.env['crm.lead'].create(lead_data)
+        #
+        #     # Mensaje para notificación
+        #     message = _(
+        #         "Se ha creado una nueva oportunidad por incidente: %s") % new_lead.name
+        #
+        #     notification = {
+        #         'type': 'ir.actions.client',
+        #         'tag': 'display_notification',
+        #         'params': {
+        #             'title': _('OPORTUNIDAD CREADA'),
+        #             'message': message,
+        #             'sticky': True,
+        #             'type': 'success',
+        #             'next': {'type': 'ir.actions.act_window_close'},
+        #             'messageIsHtml': True
+        #         }
+        #     }
 
         # Retornar notificación si existe
         if notification:

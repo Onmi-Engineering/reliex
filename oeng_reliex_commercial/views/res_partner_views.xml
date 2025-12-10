@@ -6,7 +6,7 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="onmi_reliex_contacts.onmi_view_partner_form_inherit_page"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='delay']" position="after">
+                <xpath expr="//field[@name='price']" position="after">
                     <field invisible="type != 'establishment'" name="establishment_days_clean"/>
                     <field invisible="type != 'establishment'" name="establishment_days_plant"/>
                 </xpath></field>
@@ -51,6 +51,10 @@
                         </group>
                         <group>
                             <field name="days_plant"/>
+                        </group>
+                        <group>
+                            <field invisible="type != 'plant'" name="frecuency_active"/>
+                            <field invisible="type != 'plant' or frecuency_active == False" name="delay"/>
                         </group>
                     </group>
                     <group invisible="type != 'plant'" name="technical_data" string="TECHNICAL DATA">
