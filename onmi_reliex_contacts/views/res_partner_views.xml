@@ -297,6 +297,9 @@
                 </xpath>
                 <xpath expr="//field[@name='category_id']" position="after">
                     <field invisible="type != 'establishment'" name="alert_establishment"/>
+                    <field name="hour_open_establishment" widget="float_time"/>
+                    <field name="hour_close_establishment" widget="float_time"/>
+                    <field name="day_close" string="Día de cierre" widget="selection_badge"/>
                 </xpath>
             </field>
         </record>
