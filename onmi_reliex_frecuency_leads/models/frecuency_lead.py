@@ -11,12 +11,23 @@ class FrecuencyLead(models.Model):
     name = fields.Char('Name', required=1)
     establishment_id = fields.Many2one('res.partner', domain=[('type', '=', 'establishment')], required=1)
     establishment = fields.Char(related='establishment_id.name', string="Establishment", store=True)
+
+    ######AGREGADO PARA SO37
+    plant_id = fields.Many2one('res.partner', domain=[('type', '=', 'plant')], required=1)
+    plant = fields.Char(related='plant_id.name', string="Plant", store=True)
+    ######AGREGADO PARA SO37
+
     state_id = fields.Many2one(related='establishment_id.state_id', store=True)
     city = fields.Char(related='establishment_id.city', store=True)
     # calculated_date = fields.Date('Next cleanning date')
     calculated_date = fields.Date(string='Fecha calculada', compute='recalculate_dates', store=True)
     last_workorder_date = fields.Date('Last workorder date', help="Start date of last workorder of this establishment.")
-    delay = fields.Integer(related='establishment_id.delay', store=True)
+
+    ######AGREGADO PARA SO37
+    # delay = fields.Integer(related='establishment_id.delay', store=True)
+    delay = fields.Integer(related='previous_workorder_id.worksheet_ids.plant_id.delay', store=True)
+    ######AGREGADO PARA SO37
+
     full_cleanning_days = fields.Integer('Days of full cleaning', compute='_compute_full_cleanning_days')
     status = fields.Selection([
         ("current", "Current"),
@@ -36,37 +47,6 @@ class FrecuencyLead(models.Model):
                 if plants:
                     rec.full_cleanning_days = sum(plants.mapped('days_plant'))
 
-    # def button_create_lead_related(self):
-    #     for rec in self:
-    #         if not rec.lead_id:
-    #             last_workorder = rec.previous_workorder_id
-    #             related_lead = last_workorder.lead_id
-    #
-    #             sale_order_data = {
-    #                 'partner_id': rec.establishment_id.id,
-    #                 'opportunity_id': related_lead.id,
-    #                 'company_id': self.env.company.id,
-    #             }
-    #             new_sale = self.env['sale.order'].create(sale_order_data)
-    #             rec.write({
-    #                 'sale_id': new_sale.id,
-    #                 'status': 'created',
-    #             })
-    #             # Mostrar mensaje al usuario
-    #             message = _(
-    #                 "Se ha creado un presupuesto por frecuencia")
-    #             return {
-    #                 'type': 'ir.actions.client',
-    #                 'tag': 'display_notification',
-    #                 'params': {
-    #                     'title': _('Presupuesto Creado'),
-    #                     'message': message,
-    #                     'sticky': True,
-    #                     'type': 'success',
-    #                     'next': {'type': 'ir.actions.act_window_close'},
-    #                 }
-    #                 }
-
     def recalculate_dates(self):
         for record in self:
             if record.last_workorder_date and record.delay:
@@ -78,7 +58,20 @@ class FrecuencyLead(models.Model):
         '''
             Acción planificada que se ejecuta solo 1 vez para revisar si se necesita generar un nuevo registro de presupuestos de frecuencia para un establecimiento.
         '''
-        frecuency_establishments = self.env['res.partner'].search([('type', '=', 'establishment'), ('frecuency_active', '=', True)])
+        ######AGREGADO PARA SO37
+        # frecuency_establishments = self.env['res.partner'].search([('type', '=', 'establishment'), ('frecuency_active', '=', True)])
+
+        # Buscar plants con frecuency_active = True y obtener sus establishments (parent_id)
+        frecuency_plants = self.env['res.partner'].search([
+            ('type', '=', 'plant'),
+            ('frecuency_active', '=', True)
+        ])
+        # Obtener los establishments únicos (parent_id de las plants)
+        frecuency_establishments = frecuency_plants.mapped('parent_id').filtered(
+            lambda est: est.type == 'establishment'
+        )
+        ######AGREGADO PARA SO37
+
         for est in frecuency_establishments:
             # Órdenes del establecimiento que tenga algún check a True y que esté finalizada o facturada.
             wo_domain = ['&',

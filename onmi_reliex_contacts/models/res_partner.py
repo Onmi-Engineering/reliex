@@ -96,16 +96,6 @@ class ResPartner(models.Model):
                                       help='Este alerta será visible solo si la Orden de trabajo esta en estado "Para planificar')
 
     # endregion
-
-    # CORRECCION ERROR EN MAIN CON ESTA FUNCION
-    # def _compute_new_display_name(self):
-    #     for rec in self:
-    #         rec.new_display_name = ''
-    #         if rec.parent_id:
-    #             rec.new_display_name += rec.parent_id.name + ' - ' + rec.name
-    #         else:
-    #             rec.new_display_name += rec.name
-
     def _compute_new_display_name(self):
         for rec in self:
             rec.new_display_name = ''
@@ -115,8 +105,6 @@ class ResPartner(models.Model):
                 rec.new_display_name = parent_name + ' - ' + name
             else:
                 rec.new_display_name = name
-
-    # CORRECCION ERROR EN MAIN CON ESTA FUNCION
 
     def _compute_plant_count(self):
         for rec in self:
