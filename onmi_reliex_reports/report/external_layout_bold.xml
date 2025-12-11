@@ -13,7 +13,12 @@
                             efectivamente generados.
                             Dichos gastos incluirán, en su caso, los costes de desplazamiento del personal y maquinaria, los
                             tiempos de espera, y los costes de planificación y preparación del servicio.</p>
-                        <img src="/onmi_reliex_reports/static/img/cyc_certifica.png" style="width: 50px; height: auto;" alt="Empresa Asegurada Crédito y Caución 2025"/>
+                        <img src="/onmi_reliex_reports/static/img/cyc_certifica_Es_BN alta.jpg" style="width: 50px; height: auto;" alt="Empresa Asegurada Crédito y Caución 2025"/>
+                        <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-end text-center">
+                            <li class="list-inline-item"><strong><span class="page"/></strong></li>
+                        </ul>
+                    </div>
+                    <div class="col-1">
                         <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-end text-center">
                             <li class="list-inline-item"><strong><span class="page"/></strong></li>
                         </ul>
