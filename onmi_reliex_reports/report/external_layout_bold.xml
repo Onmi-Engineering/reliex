@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="external_layout_bold_custom_footer" inherit_id="web.external_layout_bold">
+        <!-- Reemplazar el footer completo -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer o_clean_footer')]" position="replace">
+            <div t-attf-class="footer o_clean_footer o_company_#{company.id}_layout" style="text-align: left !important;">
+                <div class="row">
+                    <div style="margin-top: 20px; text-align: justify; font-size: 10px; color: black;">
+                        <p>En caso de que la Empresa no pueda realizar los servicios de limpieza industrial por causas ajenas a
+                            su voluntad y no imputables a la misma —incluyendo, de forma enunciativa, falta de acceso a las
+                            instalaciones, paradas técnicas, restricciones operativas, incidencias internas del Cliente o
+                            cualquier circunstancia que impida la ejecución del servicio— el Cliente deberá abonar los gastos
+                            efectivamente generados.
+                            Dichos gastos incluirán, en su caso, los costes de desplazamiento del personal y maquinaria, los
+                            tiempos de espera, y los costes de planificación y preparación del servicio.</p>
+                        <img src="/onmi_reliex_reports/static/img/cyc_certifica.png" style="width: 50px; height: auto;" alt="Empresa Asegurada Crédito y Caución 2025"/>
+                        <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-end text-center">
+                            <li class="list-inline-item"><strong><span class="page"/></strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
