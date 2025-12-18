@@ -8,6 +8,7 @@
     'license': 'LGPL-3',
     'depends': ['onmi_reliex_contacts', 'onmi_reliex_operations', 'onmi_reliex_photo_report'],
     'data': [
+        'report/external_layout_bold.xml',
         'report/sale_order_templates.xml',
         'report/worksheet_part_templates.xml',
         'report/checklist_templates.xml',

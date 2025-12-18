@@ -15,6 +15,7 @@
         'views/crm_stage_views.xml',
         'views/crm_lead_views.xml',
         'views/product_template_views.xml',
+        'views/cyc_views.xml',
     ],
     'installable': True,
     'application': True,

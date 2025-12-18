@@ -102,6 +102,15 @@ class ResPartner(models.Model):
     access_vehicle = fields.Boolean(string='Acceso vehiculo', help="Autorización municipal para acceso vehículo")
     alert_establishment = fields.Html(string='Alerta establecimiento',
                                       help='Este alerta será visible solo si la Orden de trabajo esta en estado "Para planificar')
+
+    partner_cyc = fields.Integer(string='CYC Number')
+
+    insurance_caution_ids = fields.One2many(
+        comodel_name='insurance.caution',
+        compute='_compute_insurance_caution_ids',
+        string='Insurance Cautions CYC',
+    )
+
     # endregion
     def _compute_new_display_name(self):
         for rec in self:
@@ -272,3 +281,13 @@ class ResPartner(models.Model):
                     partner.partner_code = self._get_sequence_prefix(partner.type)
                 else:
                     partner.partner_code = self._get_sequence_prefix('other')
+
+    @api.depends('partner_cyc')
+    def _compute_insurance_caution_ids(self):
+        for partner in self:
+            if partner.partner_cyc:
+                partner.insurance_caution_ids = self.env['insurance.caution'].search([
+                    ('cyc_number', '=', partner.partner_cyc)
+                ])
+            else:
+                partner.insurance_caution_ids = False

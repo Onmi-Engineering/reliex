@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="external_layout_bold_custom_footer" inherit_id="web.external_layout_bold">
+        <!-- Reemplazar el footer completo -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer o_clean_footer')]" position="replace">
+            <div t-attf-class="footer o_clean_footer o_company_#{company.id}_layout"
+                 style="text-align: left !important;">
+                <div class="row">
+                    <!-- Contenido solo para primera página -->
+                    <div class="footer-first-page"
+                         style="margin-top: 20px; text-align: justify; font-size: 10px; color: black;">
+                        <img src="/onmi_reliex_reports/static/img/cyc_certifica_col.png" style="width: 50px; height: auto;"
+                             alt="Empresa Asegurada"/>
+                        <span style="margin-left: 10px; font-weight: bold; font-size: 9px;">
+                             OPERACIÓN ASEGURADA CON CRÉDITO Y CAUCIÓN
+                        </span>
+                        <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-end text-center">
+                            <li class="list-inline-item"><strong><span class="page"/></strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contenido solo para última página -->
+                    <div class="footer-last-page"
+                         style="margin-top: 8px; text-align: justify; font-size: 9px; color: black; display: none;">
+                        <p>En caso de que la Empresa no pueda realizar los servicios de limpieza industrial por causas
+                            ajenas a
+                            su voluntad y no imputables a la misma —incluyendo, de forma enunciativa, falta de acceso a
+                            las
+                            instalaciones, paradas técnicas, restricciones operativas, incidencias internas del Cliente
+                            o
+                            cualquier circunstancia que impida la ejecución del servicio— el Cliente deberá abonar los
+                            gastos
+                            efectivamente generados.
+                            Dichos gastos incluirán, en su caso, los costes de desplazamiento del personal y maquinaria,
+                            los
+                            tiempos de espera, y los costes de planificación y preparación del servicio.</p>
+                        <img src="/onmi_reliex_reports/static/img/cyc_certifica.png" style="width: 50px; height: auto;"
+                             alt="Empresa Asegurada"/>
+                        <ul t-if="report_type == 'pdf'" class="list-inline pagenumber float-end text-center">
+                            <li class="list-inline-item"><strong><span class="page"/></strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <script>
+                    function subst() {
+                    var vars = {};
+                    var query_strings_from_url = document.location.search.substring(1).split('&amp;');
+                    for (var query_string in query_strings_from_url) {
+                    if (query_strings_from_url.hasOwnProperty(query_string)) {
+                    var temp_var = query_strings_from_url[query_string].split('=', 2);
+                    vars[temp_var[0]] = decodeURI(temp_var[1]);
+                    }
+                    }
+                    var page = parseInt(vars.page);
+                    var topage = parseInt(vars.topage);
+
+                    if (topage > 1) {
+                    // Múltiples páginas
+                    if (page === topage) {
+                    // Última página: mostrar texto legal
+                    document.querySelector('.footer-first-page').style.display = 'none';
+                    document.querySelector('.footer-last-page').style.display = 'block';
+                    } else {
+                    // Otras páginas: solo imagen
+                    document.querySelector('.footer-first-page').style.display = 'block';
+                    document.querySelector('.footer-last-page').style.display = 'none';
+                    }
+                    }
+                    // Si solo hay una página, se queda con el footer-first-page visible
+                    }
+                </script>
+            </div>
+        </xpath>
+    </template>
+</odoo>
