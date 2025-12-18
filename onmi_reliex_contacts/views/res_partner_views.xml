@@ -371,15 +371,38 @@
                 </xpath>
             </field>
         </record>
-<!--        <record id="oeng_222" model="ir.ui.view">-->
-<!--            <field name="name">oeng_222</field>-->
-<!--            <field name="model">res.partner</field>-->
-<!--            <field name="inherit_id" ref="base.view_partner_form"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <xpath expr="//field[@name='website']" position="attributes">-->
-<!--                    <attribute name="invisible">type == 'establishment'</attribute>-->
-<!--                </xpath>-->
-<!--            </field>-->
-<!--        </record>-->
+
+        <record id="res_partner_view_form_inherit_insurance_caution" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.insurance.caution</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='ref']" position="after">
+                    <field name="partner_cyc"/>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page string="Insurance Cautions CYC" name="insurance_cautions">
+                        <field name="insurance_caution_ids" readonly="1">
+                            <tree>
+                                <field name="cyc_number"/>
+                                <field name="policy"/>
+                                <field name="cyc_vat" optional="hide"/>
+                                <field name="section"/>
+                                <field name="proposed_date"/>
+                                <field name="amount_requested" sum="Total Requested"/>
+                                <field name="amount_granted" sum="Total Granted"/>
+                                <field name="cyc_state" optional="hide"/>
+                                <field name="locality" optional="hide"/>
+                                <field name="duration" optional="hide"/>
+                                <field name="cancellation_date" optional="hide"/>
+                                <field name="state" widget="badge" decoration-success="state == 'vig'"
+                                       decoration-danger="state == 'lim'"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>

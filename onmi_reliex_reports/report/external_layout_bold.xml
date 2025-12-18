@@ -21,7 +21,7 @@
 
                     <!-- Contenido solo para última página -->
                     <div class="footer-last-page"
-                         style="margin-top: 20px; text-align: justify; font-size: 10px; color: black; display: none;">
+                         style="margin-top: 8px; text-align: justify; font-size: 9px; color: black; display: none;">
                         <p>En caso de que la Empresa no pueda realizar los servicios de limpieza industrial por causas
                             ajenas a
                             su voluntad y no imputables a la misma —incluyendo, de forma enunciativa, falta de acceso a

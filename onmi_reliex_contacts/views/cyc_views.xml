@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- List View -->
+    <record id="insurance_caution_view_list" model="ir.ui.view">
+        <field name="name">insurance.caution.list</field>
+        <field name="model">insurance.caution</field>
+        <field name="arch" type="xml">
+            <tree create="1" delete="0">
+                <field name="cyc_number"/>
+                <field name="cyc_partner_name"/>
+                <field name="cyc_vat" optional="hide"/>
+                <field name="policy"/>
+                <field name="section"/>
+                <field name="proposed_date" optional="hide"/>
+                <field name="amount_requested" sum="Total Requested"/>
+                <field name="amount_granted" sum="Total Granted"/>
+                <field name="cyc_state" optional="hide"/>
+                <field name="locality" optional="hide"/>
+                <field name="postal_code" optional="hide"/>
+                <field name="duration" optional="hide"/>
+                <field name="cancellation_date" optional="hide"/>
+                <field name="state" widget="badge" decoration-success="state == 'vig'"
+                       decoration-danger="state == 'lim'" readonly="0"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="insurance_caution_view_form" model="ir.ui.view">
+        <field name="name">insurance.caution.form</field>
+        <field name="model">insurance.caution</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0" delete="0" string="Insurance Caution" class="o_module_form">
+                <sheet>
+                    <group>
+                        <group string="General Information">
+                            <field name="cyc_number"/>
+                            <field name="cyc_partner_name"/>
+                            <field name="cyc_vat"/>
+                            <field name="policy"/>
+                            <field name="section"/>
+                            <field name="state" widget="badge" readonly="0"/>
+                        </group>
+                        <group string="Location">
+                            <field name="cyc_state"/>
+                            <field name="locality"/>
+                            <field name="postal_code"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Amounts">
+                            <field name="amount_requested"/>
+                            <field name="amount_granted"/>
+                        </group>
+                        <group string="Dates">
+                            <field name="proposed_date"/>
+                            <field name="duration"/>
+                            <field name="cancellation_date"/>
+                        </group>
+                    </group>
+                    <group string="Additional Information">
+                        <field name="reason" placeholder="Enter reason..."/>
+                        <field name="notes" placeholder="Enter notes..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="insurance_caution_view_search" model="ir.ui.view">
+        <field name="name">insurance.caution.search</field>
+        <field name="model">insurance.caution</field>
+        <field name="arch" type="xml">
+            <search string="Insurance Cautions">
+                <field name="cyc_number"/>
+                <field name="policy"/>
+                <field name="cyc_vat"/>
+                <field name="locality"/>
+                <field name="postal_code"/>
+                <filter string="Vigor" name="filter_vig" domain="[('state', '=', 'vig')]"/>
+                <filter string="Limited/Refused" name="filter_lim" domain="[('state', '=', 'lim')]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Section" name="group_section" context="{'group_by': 'section'}"/>
+                    <filter string="State" name="group_state" context="{'group_by': 'state'}"/>
+                    <filter string="Locality" name="group_locality" context="{'group_by': 'locality'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="insurance_caution_action" model="ir.actions.act_window">
+        <field name="name">Insurance Cautions CYC</field>
+        <field name="res_model">insurance.caution</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="insurance_caution_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first insurance caution
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu item under Contacts (res.partner) -->
+    <menuitem
+            id="menu_insurance_caution"
+            name="Insurance Cautions CYC"
+            action="insurance_caution_action"
+            parent="contacts.res_partner_menu_config"
+            sequence="10"/>
+
+</odoo>
